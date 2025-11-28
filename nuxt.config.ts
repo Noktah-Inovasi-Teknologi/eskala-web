@@ -5,6 +5,13 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   css: ["./app/assets/css/main.css"],
   devtools: { enabled: true },
+  fonts: {
+    google: {
+      families: {
+        Poppins: [400, 500, 600, 700]
+      }
+    }
+  },
   hub: {
     database: true,
   },
