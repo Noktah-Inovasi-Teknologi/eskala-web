@@ -1,1 +1,44 @@
 @import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme {
+  --font-display: "Poppins", sans-serif;
+}
+
+@theme static {
+  --color-cobalt-50: #eff6ff;
+  --color-cobalt-100: #dbeafe;
+  --color-cobalt-200: #bfdbfe;
+  --color-cobalt-300: #93c5fd;
+  --color-cobalt-400: #1d4ed8;
+  --color-cobalt-500: #1743c5;
+  --color-cobalt-600: #1238b2;
+  --color-cobalt-700: #0d2d9f;
+  --color-cobalt-800: #09238c;
+  --color-cobalt-900: #051979;
+  --color-cobalt-950: #020b3d;
+
+  --color-copper-50: #FFF7ED;
+  --color-copper-100: #FFEDD5;
+  --color-copper-200: #FED7AA;
+  --color-copper-300: #FDBA74;
+  --color-copper-400: #FB923C;
+  --color-copper-500: #F97316;
+  --color-copper-600: #EA580C;
+  --color-copper-700: #C2410C;
+  --color-copper-800: #9A3412;
+  --color-copper-900: #7C2D12;
+  --color-copper-950: #431407;
+
+  --color-obsidian-50: #FAFBFC;
+  --color-obsidian-100: #F8FAFC;
+  --color-obsidian-200: #F1F5F9;
+  --color-obsidian-300: #E2E8F0;
+  --color-obsidian-400: #CBD5E1;
+  --color-obsidian-500: #94A3B8;
+  --color-obsidian-600: #64748B;
+  --color-obsidian-700: #475569;
+  --color-obsidian-800: #334155;
+  --color-obsidian-900: #1E293B;
+  --color-obsidian-950: #0F172A;
+}
