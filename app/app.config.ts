@@ -5,6 +5,14 @@ export default defineAppConfig({
       secondary: "copper",
       neutral: "obsidian",
     },
+    card: {
+      slots: {
+        body: "flex"
+      }
+    },
+    container: {
+      base: "w-full max-w-auto mx-auto px-8 sm:px-12 lg:px-16",
+    },
     // navigationMenu: {
     //   slots: {},
     //   compoundVariants: [

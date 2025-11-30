@@ -71,7 +71,7 @@ const items = ref([
 <template>
   <nav class="flex items-center justify-between px-4 py-2">
     <!-- Logo/Brand -->
-    <div class="font-poppins text-xl font-bold">
+    <div class="font-[Poppins] text-xl font-semibold">
       Eskala
     </div>
     

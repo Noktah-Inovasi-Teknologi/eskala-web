@@ -16,6 +16,9 @@ export default defineNuxtConfig({
     database: true,
   },
   modules: ["@nuxt/content", "@nuxt/ui", "@nuxthub/core"],
+  ui: {
+    colorMode: false,
+  },
   vite: {
     plugins: [tailwindcss()],
   },
