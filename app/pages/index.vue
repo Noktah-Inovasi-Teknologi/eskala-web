@@ -70,6 +70,39 @@ const strengths = ref([
     image: "/images/3.png",
   },
 ]);
+
+const processSteps = ref([
+  {
+    title: "Konsultasi & Analisis",
+    description: "Kami mendengarkan kebutuhan bisnis Anda dan menganalisis target audiens untuk merancang strategi yang tepat.",
+    icon: "i-heroicons-chat-bubble-left-right",
+    color: "primary"
+  },
+  {
+    title: "Perencanaan Konten",
+    description: "Tim kreatif kami merancang kalender konten dan strategi komunikasi yang sesuai dengan brand identity Anda.",
+    icon: "i-heroicons-calendar-days",
+    color: "primary"
+  },
+  {
+    title: "Produksi Konten",
+    description: "Pembuatan konten visual dan copywriting yang engaging, profesional, dan sesuai dengan standar industri.",
+    icon: "i-heroicons-camera",
+    color: "primary"
+  },
+  {
+    title: "Publikasi & Monitoring",
+    description: "Posting konten secara terjadwal dan monitoring performa untuk optimasi berkelanjutan.",
+    icon: "i-heroicons-chart-bar",
+    color: "primary"
+  },
+  {
+    title: "Evaluasi & Laporan",
+    description: "Analisis hasil dan penyusunan laporan komprehensif untuk perbaikan strategi di periode berikutnya.",
+    icon: "i-heroicons-document-chart-bar",
+    color: "primary"
+  }
+]);
 </script>
 
 <template>
@@ -266,6 +299,18 @@ const strengths = ref([
             "
           </div>
         </div>
+      </div>
+    </UContainer>
+    <UContainer id="section-process" class="flex flex-col gap-16 py-16">
+      <div class="text-center">
+        <h2 class="text-5xl font-[Poppins] mb-4">Proses Kerja Kami</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Kami mengikuti proses yang terstruktur dan transparan untuk memastikan hasil terbaik bagi bisnis Anda
+        </p>
+      </div>
+      
+      <div class="max-w-6xl mx-auto">
+        <UTimeline :items="processSteps" size="3xl" />
       </div>
     </UContainer>
     <div id="section-categories"></div>
