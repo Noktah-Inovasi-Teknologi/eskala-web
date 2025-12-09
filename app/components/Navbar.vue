@@ -69,7 +69,7 @@ const items = ref([
 </script>
 
 <template>
-  <nav class="flex items-center justify-between px-4 py-2">
+  <nav class="flex items-center justify-between px-6 py-4 mx-auto max-w-7xl">
     <!-- Logo/Brand -->
     <div class="font-[Poppins] text-xl font-semibold">
       Eskala

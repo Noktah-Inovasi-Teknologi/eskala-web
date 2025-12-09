@@ -11,7 +11,7 @@ export default defineAppConfig({
       }
     },
     container: {
-      base: "w-full max-w-auto mx-auto px-8 sm:px-12 lg:px-16",
+      base: "w-full max-w-7xl mx-auto px-6",
     },
     // navigationMenu: {
     //   slots: {},
