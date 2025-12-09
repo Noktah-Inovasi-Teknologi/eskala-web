@@ -340,18 +340,18 @@ const pricingTabs = ref([
   <div>
     <UContainer
       id="section-hero"
-      class="flex py-20 items-center relative min-h-screen"
+      class="flex py-24 items-center relative min-h-screen"
     >
-      <div class="grid lg:grid-cols-2 gap-12 items-center w-full">
+      <div class="grid lg:grid-cols-2 gap-16 items-center w-full"
         <!-- Left Side - Enhanced Copywriting -->
-        <div class="space-y-8">
+        <div class="space-y-12">
           <!-- Badge -->
           <UBadge color="primary" variant="soft" size="lg" class="inline-flex">
             🚀 Tingkatkan Brand Awareness Anda
           </UBadge>
 
           <!-- Main Headline -->
-          <div class="space-y-6">
+          <div class="space-y-8">
             <h1 class="text-5xl lg:text-7xl font-bold leading-tight">
               <span class="text-gray-900">Keahlian Anda</span><br />
               <span class="text-primary">mengubah hidup.</span><br />
@@ -371,7 +371,7 @@ const pricingTabs = ref([
           </p>
 
           <!-- CTA Buttons -->
-          <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <div class="flex flex-col sm:flex-row gap-6 pt-8">
             <UButton size="xl" class="px-8 py-4">
               Mulai Konsultasi Gratis
             </UButton>
@@ -381,7 +381,7 @@ const pricingTabs = ref([
           </div>
 
           <!-- Enhanced Metrics -->
-          <div class="grid grid-cols-3 gap-6 pt-8">
+          <div class="grid grid-cols-3 gap-8 pt-12">
             <div class="text-center">
               <div class="text-4xl font-bold text-primary">50%</div>
               <div class="text-sm text-gray-600 font-medium">
@@ -437,7 +437,7 @@ const pricingTabs = ref([
         </a>
       </div>
     </UContainer>
-    <UContainer id="section-pain-problem" class="flex flex-col gap-16 py-16">
+    <UContainer id="section-pain-problem" class="flex flex-col gap-20 py-24">
       <div class="text-center max-w-2xl mx-auto">
         <p>
           Dari klien-klien kami, kami berhasil mengumpulkan tiga masalah utama
@@ -451,9 +451,9 @@ const pricingTabs = ref([
         <UCard
           v-for="item in problems"
           :key="item.title"
-          class="p-4 transition-all duration-500 ease-in-out overflow-hidden group cursor-pointer hover:shadow-lg"
+          class="p-8 transition-all duration-500 ease-in-out overflow-hidden group cursor-pointer hover:shadow-lg"
           :ui="{
-            body: 'flex flex-col sm:flex-row items-center gap-6',
+            body: 'flex flex-col sm:flex-row items-center gap-8',
           }"
         >
           <div class="">
@@ -486,7 +486,7 @@ const pricingTabs = ref([
         </UCard>
       </div>
     </UContainer>
-    <UContainer id="section-strength" class="flex flex-col gap-16 py-16">
+    <UContainer id="section-strength" class="flex flex-col gap-20 py-24">
       <div class="flex flex-row text-center max-w-2xl mx-auto">
         <div>
           <p>
@@ -497,28 +497,28 @@ const pricingTabs = ref([
         </div>
       </div>
       <h2 class="text-center text-5xl font-[Poppins]">Poin Plus Kami</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <UCard
           v-for="item in strengths"
           :key="item.title"
-          class="p-4 flex flex-col items-center text-center group cursor-pointer"
+          class="p-8 flex flex-col items-center text-center group cursor-pointer"
         >
-          <div class="mb-4 group-hover:animate-bounce">
+          <div class="mb-8 group-hover:animate-bounce">
             <img :src="item.image" alt="Strength Illustration" />
           </div>
-          <div class="flex flex-col gap-4">
+          <div class="flex flex-col gap-6">
             <h3 class="text-3xl font-semibold mb-2">{{ item.title }}</h3>
             <p class="text-gray-600">{{ item.description }}</p>
           </div>
         </UCard>
       </div>
     </UContainer>
-    <UContainer id="section-social-proof" class="flex flex-col gap-16 py-16">
+    <UContainer id="section-social-proof" class="flex flex-col gap-20 py-24">
       <div class="text-center">
-        <h2 class="text-5xl font-[Poppins] mb-4">Apa Kata Klien Kami</h2>
+        <h2 class="text-5xl font-[Poppins] mb-8">Apa Kata Klien Kami</h2>
       </div>
 
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
         <!-- Left Side - Image -->
         <div class="flex justify-center">
           <div class="w-80 h-80 relative">
@@ -531,12 +531,12 @@ const pricingTabs = ref([
         </div>
 
         <!-- Right Side - Testimonial -->
-        <div class="space-y-6">
+        <div class="space-y-8">
           <!-- Opening Quote -->
           <div class="text-6xl text-primary opacity-50">"</div>
 
           <!-- Testimonial Content -->
-          <div class="space-y-6 -mt-4">
+          <div class="space-y-8 -mt-4">
             <p class="text-xl lg:text-2xl text-gray-700 leading-relaxed">
               Eskala benar-benar mengubah cara kami berkomunikasi dengan pasien.
               Konten mereka tidak hanya profesional, tetapi juga mudah dipahami
@@ -544,7 +544,7 @@ const pricingTabs = ref([
               kepercayaan pasien terhadap klinik kami meningkat drastis.
             </p>
 
-            <div class="space-y-2">
+            <div class="space-y-4">
               <h4 class="text-2xl font-semibold text-gray-900">Dr. Eddy</h4>
               <p class="text-lg text-gray-600">
                 Direktur Sabang Merauke Eye Center (SMEC) Group
@@ -557,9 +557,9 @@ const pricingTabs = ref([
         </div>
       </div>
     </UContainer>
-    <UContainer id="section-process" class="flex flex-col gap-16 py-16">
+    <UContainer id="section-process" class="flex flex-col gap-20 py-24">
       <div class="text-center">
-        <h2 class="text-5xl font-[Poppins] mb-4">Proses Kerja Kami</h2>
+        <h2 class="text-5xl font-[Poppins] mb-8">Proses Kerja Kami</h2>
         <p class="text-xl text-gray-600 max-w-2xl mx-auto">
           Kami mengikuti proses yang terstruktur dan transparan untuk memastikan
           hasil terbaik bagi bisnis Anda
@@ -570,23 +570,23 @@ const pricingTabs = ref([
         <UTimeline :items="processSteps" size="3xl" />
       </div>
     </UContainer>
-    <UContainer id="section-service" class="flex flex-col gap-16 py-16">
+    <UContainer id="section-service" class="flex flex-col gap-20 py-24">
       <div class="text-center">
-        <h2 class="text-5xl font-[Poppins] mb-4">Layanan Kami</h2>
+        <h2 class="text-5xl font-[Poppins] mb-8">Layanan Kami</h2>
         <p class="text-xl text-gray-600 max-w-2xl mx-auto">
           Solusi lengkap untuk semua kebutuhan digital marketing dan konten
           kreatif bisnis Anda
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
         <UCard
           v-for="service in services"
           :key="service.title"
-          class="p-6 hover:border-primary transition-all duration-300 group relative"
+          class="p-8 hover:border-primary transition-all duration-300 group relative"
         >
           <!-- Arrow Button -->
-          <div class="absolute top-6 right-6">
+          <div class="absolute top-8 right-8">
             <NuxtLink :to="service.link">
               <UButton
                 variant="outline"
@@ -600,8 +600,8 @@ const pricingTabs = ref([
           </div>
 
           <!-- Service Content -->
-          <div class="space-y-4 pr-12">
-            <div class="flex items-center gap-4">
+          <div class="space-y-6 pr-12">
+            <div class="flex items-center gap-6">
               <UIcon :name="service.icon" class="text-3xl text-primary" />
               <h3
                 class="text-2xl font-semibold text-gray-900 group-hover:text-primary transition-colors"
@@ -617,9 +617,9 @@ const pricingTabs = ref([
         </UCard>
       </div>
     </UContainer>
-    <UContainer id="section-pricelist" class="flex flex-col gap-16 py-16">
+    <UContainer id="section-pricelist" class="flex flex-col gap-20 py-24">
       <div class="text-center">
-        <h2 class="text-5xl font-[Poppins] mb-4">Paket Harga</h2>
+        <h2 class="text-5xl font-[Poppins] mb-8">Paket Harga</h2>
         <p class="text-xl text-gray-600 max-w-2xl mx-auto">
           Pilih paket yang sesuai dengan kebutuhan bisnis Anda. Semua paket
           dapat disesuaikan dengan budget dan target yang diinginkan.
@@ -629,12 +629,12 @@ const pricingTabs = ref([
       <div class="max-w-7xl mx-auto">
         <UTabs :items="pricingTabs" class="w-full overflow-visible">
           <template #social-media>
-            <div class="grid lg:grid-cols-3 gap-8 mt-12">
+            <div class="grid lg:grid-cols-3 gap-12 mt-16">
               <UCard
                 v-for="plan in pricingTabs[0]?.plans"
                 :key="plan.name"
                 :class="[
-                  'p-8 relative flex flex-col h-full',
+                  'p-12 relative flex flex-col h-full',
                   plan.popular
                     ? 'border-2 border-primary shadow-lg scale-105'
                     : 'border border-gray-200',
@@ -652,9 +652,9 @@ const pricingTabs = ref([
                 </div>
 
                 <!-- Plan Header -->
-                <div class="text-center mb-8">
-                  <h3 class="text-2xl font-bold mb-4">{{ plan.name }}</h3>
-                  <div class="mb-6">
+                <div class="text-center mb-12">
+                  <h3 class="text-2xl font-bold mb-6">{{ plan.name }}</h3>
+                  <div class="mb-8">
                     <span class="text-4xl font-bold text-primary">{{
                       plan.price
                     }}</span>
@@ -663,11 +663,11 @@ const pricingTabs = ref([
                 </div>
 
                 <!-- Features List -->
-                <div class="space-y-4 mb-8 grow">
+                <div class="space-y-6 mb-12 grow">
                   <div
                     v-for="feature in plan.features"
                     :key="feature.name"
-                    class="flex items-center gap-3"
+                    class="flex items-center gap-4"
                   >
                     <UIcon
                       :name="
@@ -695,12 +695,12 @@ const pricingTabs = ref([
           </template>
 
           <template #ads>
-            <div class="grid lg:grid-cols-3 gap-8 mt-12">
+            <div class="grid lg:grid-cols-3 gap-12 mt-16">
               <UCard
                 v-for="plan in pricingTabs[1]?.plans"
                 :key="plan.name"
                 :class="[
-                  'p-8 relative flex flex-col h-full',
+                  'p-12 relative flex flex-col h-full',
                   plan.popular
                     ? 'border-2 border-primary shadow-lg scale-105'
                     : 'border border-gray-200',
@@ -718,9 +718,9 @@ const pricingTabs = ref([
                 </div>
 
                 <!-- Plan Header -->
-                <div class="text-center mb-8">
-                  <h3 class="text-2xl font-bold mb-4">{{ plan.name }}</h3>
-                  <div class="mb-6">
+                <div class="text-center mb-12">
+                  <h3 class="text-2xl font-bold mb-6">{{ plan.name }}</h3>
+                  <div class="mb-8">
                     <span class="text-4xl font-bold text-primary">{{
                       plan.price
                     }}</span>
@@ -729,11 +729,11 @@ const pricingTabs = ref([
                 </div>
 
                 <!-- Features List -->
-                <div class="space-y-4 mb-8 grow">
+                <div class="space-y-6 mb-12 grow">
                   <div
                     v-for="feature in plan.features"
                     :key="feature.name"
-                    class="flex items-center gap-3"
+                    class="flex items-center gap-4"
                   >
                     <UIcon
                       :name="
@@ -761,12 +761,12 @@ const pricingTabs = ref([
           </template>
 
           <template #kol>
-            <div class="grid lg:grid-cols-3 gap-8 mt-12">
+            <div class="grid lg:grid-cols-3 gap-12 mt-16">
               <UCard
                 v-for="plan in pricingTabs[2]?.plans"
                 :key="plan.name"
                 :class="[
-                  'p-8 relative flex flex-col h-full',
+                  'p-12 relative flex flex-col h-full',
                   plan.popular
                     ? 'border-2 border-primary shadow-lg scale-105'
                     : 'border border-gray-200',
@@ -784,9 +784,9 @@ const pricingTabs = ref([
                 </div>
 
                 <!-- Plan Header -->
-                <div class="text-center mb-8">
-                  <h3 class="text-2xl font-bold mb-4">{{ plan.name }}</h3>
-                  <div class="mb-6">
+                <div class="text-center mb-12">
+                  <h3 class="text-2xl font-bold mb-6">{{ plan.name }}</h3>
+                  <div class="mb-8">
                     <span class="text-4xl font-bold text-primary">{{
                       plan.price
                     }}</span>
@@ -795,11 +795,11 @@ const pricingTabs = ref([
                 </div>
 
                 <!-- Features List -->
-                <div class="space-y-4 mb-8 grow">
+                <div class="space-y-6 mb-12 grow">
                   <div
                     v-for="feature in plan.features"
                     :key="feature.name"
-                    class="flex items-center gap-3"
+                    class="flex items-center gap-4"
                   >
                     <UIcon
                       :name="
@@ -827,12 +827,12 @@ const pricingTabs = ref([
           </template>
 
           <template #creative>
-            <div class="grid lg:grid-cols-3 gap-8 mt-12">
+            <div class="grid lg:grid-cols-3 gap-12 mt-16">
               <UCard
                 v-for="plan in pricingTabs[3]?.plans"
                 :key="plan.name"
                 :class="[
-                  'p-8 relative flex flex-col h-full',
+                  'p-12 relative flex flex-col h-full',
                   plan.popular
                     ? 'border-2 border-primary shadow-lg scale-105'
                     : 'border border-gray-200',
@@ -850,9 +850,9 @@ const pricingTabs = ref([
                 </div>
 
                 <!-- Plan Header -->
-                <div class="text-center mb-8">
-                  <h3 class="text-2xl font-bold mb-4">{{ plan.name }}</h3>
-                  <div class="mb-6">
+                <div class="text-center mb-12">
+                  <h3 class="text-2xl font-bold mb-6">{{ plan.name }}</h3>
+                  <div class="mb-8">
                     <span class="text-4xl font-bold text-primary">{{
                       plan.price
                     }}</span>
@@ -861,11 +861,11 @@ const pricingTabs = ref([
                 </div>
 
                 <!-- Features List -->
-                <div class="space-y-4 mb-8 grow">
+                <div class="space-y-6 mb-12 grow">
                   <div
                     v-for="feature in plan.features"
                     :key="feature.name"
-                    class="flex items-center gap-3"
+                    class="flex items-center gap-4"
                   >
                     <UIcon
                       :name="
@@ -895,49 +895,49 @@ const pricingTabs = ref([
       </div>
       
       <!-- Single CTA Button -->
-      <div class="text-center mt-12">
+      <div class="text-center mt-16">
         <UButton size="xl" class="px-12 py-4">
           Hubungi Kami untuk Konsultasi
         </UButton>
-        <p class="text-gray-600 mt-4">
+        <p class="text-gray-600 mt-6">
           Tidak yakin paket mana yang cocok? Tim kami siap membantu menentukan solusi terbaik untuk bisnis Anda.
         </p>
       </div>
     </UContainer>
-    <UContainer id="section-call-to-action" class="flex flex-col gap-16 py-16">
+    <UContainer id="section-call-to-action" class="flex flex-col gap-20 py-24">
       <div class="text-center max-w-4xl mx-auto">
-        <h2 class="text-5xl font-[Poppins] mb-6">Siap Transformasi Digital Bisnis Anda?</h2>
-        <p class="text-xl text-gray-600 mb-12 leading-relaxed">
+        <h2 class="text-5xl font-[Poppins] mb-8">Siap Transformasi Digital Bisnis Anda?</h2>
+        <p class="text-xl text-gray-600 mb-16 leading-relaxed">
           Jangan biarkan kompetitor unggul dalam dunia digital. Bergabunglah dengan puluhan klien yang telah merasakan pertumbuhan eksponensial bersama Eskala.
         </p>
 
         <!-- Benefits Grid -->
-        <div class="grid md:grid-cols-3 gap-8 mb-12">
+        <div class="grid md:grid-cols-3 gap-12 mb-16">
           <div class="text-center">
-            <div class="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+            <div class="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
               <UIcon name="i-heroicons-rocket-launch" class="text-2xl text-primary" />
             </div>
-            <h3 class="text-lg font-semibold mb-2">Konsultasi Gratis</h3>
+            <h3 class="text-lg font-semibold mb-4">Konsultasi Gratis</h3>
             <p class="text-gray-600">Analisis mendalam strategi digital yang tepat untuk bisnis Anda</p>
           </div>
           <div class="text-center">
-            <div class="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+            <div class="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
               <UIcon name="i-heroicons-clock" class="text-2xl text-primary" />
             </div>
-            <h3 class="text-lg font-semibold mb-2">Mulai Dalam 24 Jam</h3>
+            <h3 class="text-lg font-semibold mb-4">Mulai Dalam 24 Jam</h3>
             <p class="text-gray-600">Tim kami siap mengeksekusi strategi yang telah disepakati dengan cepat</p>
           </div>
           <div class="text-center">
-            <div class="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+            <div class="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
               <UIcon name="i-heroicons-shield-check" class="text-2xl text-primary" />
             </div>
-            <h3 class="text-lg font-semibold mb-2">Garansi Hasil</h3>
+            <h3 class="text-lg font-semibold mb-4">Garansi Hasil</h3>
             <p class="text-gray-600">Kami berkomitmen pada hasil nyata atau uang kembali dalam 30 hari</p>
           </div>
         </div>
 
         <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
           <UButton size="xl" class="px-10 py-4">
             <UIcon name="i-heroicons-phone" class="mr-2" />
             Konsultasi Gratis Sekarang
@@ -968,8 +968,8 @@ const pricingTabs = ref([
         </div> -->
 
         <!-- Social Proof -->
-        <div class="mt-8 text-center">
-          <p class="text-sm text-gray-500 mb-4">Dipercaya oleh 25+ klien tetap di seluruh Indonesia</p>
+        <div class="mt-12 text-center">
+          <p class="text-sm text-gray-500 mb-6">Dipercaya oleh 25+ klien tetap di seluruh Indonesia</p>
           <div class="flex justify-center items-center gap-2">
             <div class="flex">
               <UIcon name="i-heroicons-star-solid" class="text-yellow-400 text-lg" />
