@@ -198,7 +198,7 @@ const strengths = ref([
         </UCard>
       </div>
     </UContainer>
-    <UContainer id="section-solutions" class="flex flex-col gap-16 py-16">
+    <UContainer id="section-strength" class="flex flex-col gap-16 py-16">
       <div class="flex flex-row text-center max-w-2xl mx-auto">
         <div>
           <p>
@@ -225,7 +225,49 @@ const strengths = ref([
         </UCard>
       </div>
     </UContainer>
-    <div id="section-social-proof"></div>
+    <UContainer id="section-social-proof" class="flex flex-col gap-16 py-16">
+      <div class="text-center">
+        <h2 class="text-5xl font-[Poppins] mb-4">Apa Kata Klien Kami</h2>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Left Side - Image -->
+        <div class="flex justify-center">
+          <div class="w-80 h-80 relative">
+            <img 
+              src="/images/u1.png" 
+              alt="Dr. Eddy - Direktur SMEC Group"
+              class="w-full h-full object-cover rounded-2xl shadow-lg"
+            />
+          </div>
+        </div>
+        
+        <!-- Right Side - Testimonial -->
+        <div class="space-y-6">
+          <!-- Opening Quote -->
+          <div class="text-6xl text-primary opacity-50">
+            "
+          </div>
+          
+          <!-- Testimonial Content -->
+          <div class="space-y-6 -mt-4">
+            <p class="text-xl lg:text-2xl text-gray-700 leading-relaxed">
+              Eskala benar-benar mengubah cara kami berkomunikasi dengan pasien. Konten mereka tidak hanya profesional, tetapi juga mudah dipahami dan membangun kepercayaan. Dalam 6 bulan bekerja sama, tingkat kepercayaan pasien terhadap klinik kami meningkat drastis.
+            </p>
+            
+            <div class="space-y-2">
+              <h4 class="text-2xl font-semibold text-gray-900">Dr. Eddy</h4>
+              <p class="text-lg text-gray-600">Direktur Sabang Merauke Eye Center (SMEC) Group</p>
+            </div>
+          </div>
+          
+          <!-- Closing Quote -->
+          <div class="text-6xl text-primary opacity-50 text-right">
+            "
+          </div>
+        </div>
+      </div>
+    </UContainer>
     <div id="section-categories"></div>
     <div id="section-pricing"></div>
     <div id="section-call-to-action"></div>
