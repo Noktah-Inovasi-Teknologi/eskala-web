@@ -12,10 +12,7 @@ export default defineNuxtConfig({
       }
     }
   },
-  hub: {
-    database: true,
-  },
-  modules: ["@nuxt/content", "@nuxt/ui", "@nuxthub/core"],
+  modules: ["@nuxt/content", "@nuxt/ui"],
   ui: {
     colorMode: false,
   },
