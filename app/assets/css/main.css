@@ -3,29 +3,30 @@
 
 @theme {
   --font-display: "Poppins", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
 }
 
 @theme static {
-  --color-cobalt-50: #eff6ff;
-  --color-cobalt-100: #dbeafe;
-  --color-cobalt-200: #bfdbfe;
-  --color-cobalt-300: #93c5fd;
-  --color-cobalt-400: #1d4ed8;
-  --color-cobalt-500: #1743c5;
-  --color-cobalt-600: #1238b2;
-  --color-cobalt-700: #0d2d9f;
-  --color-cobalt-800: #09238c;
-  --color-cobalt-900: #051979;
-  --color-cobalt-950: #020b3d;
+  --color-cobalt-50: #EFF4FE;
+  --color-cobalt-100: #DCE6FD;
+  --color-cobalt-200: #BFDBFE;
+  --color-cobalt-300: #93C5FD;
+  --color-cobalt-400: #1D4ED8;
+  --color-cobalt-500: #1D4ED8;
+  --color-cobalt-600: #1A46C2;
+  --color-cobalt-700: #0D2D9F;
+  --color-cobalt-800: #09238C;
+  --color-cobalt-900: #0f2668;
+  --color-cobalt-950: #020B3D;
 
   --color-copper-50: #FFF7ED;
-  --color-copper-100: #FFEDD5;
+  --color-copper-100: #FFEED4;
   --color-copper-200: #FED7AA;
   --color-copper-300: #FDBA74;
   --color-copper-400: #FB923C;
-  --color-copper-500: #F97316;
-  --color-copper-600: #EA580C;
-  --color-copper-700: #C2410C;
+  --color-copper-500: #FB923C;
+  --color-copper-600: #EF7A1B;
+  --color-copper-700: #C45F12;
   --color-copper-800: #9A3412;
   --color-copper-900: #7C2D12;
   --color-copper-950: #431407;

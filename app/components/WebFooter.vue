@@ -1,36 +1,61 @@
 <script lang="ts" setup>
-const footerLinks = [
-  {
-    label: 'Layanan',
-    children: [
-      { label: 'Social Media Management', to: '/services/social-media-management' },
-      { label: 'Ads Management', to: '/services/ads-management' },
-      { label: 'KOL Management', to: '/services/kol-management' },
-      { label: 'Creative Service', to: '/services/creative-service' }
-    ]
-  },
-  {
-    label: 'Perusahaan',
-    children: [
-      { label: 'Tentang Kami', to: '/about' },
-      { label: 'Karya Kami', to: '/showcases' }
-    ]
-  },
-  {
-    label: 'Support',
-    children: [
-      { label: 'FAQ', to: '/faq' },
-      { label: 'Kontak', to: '/contact' },
-    ]
-  }
-]
+interface FooterLink {
+  label: string
+  to: string
+  icon?: string
+}
 
-const socialLinks = [
-  { icon: 'i-simple-icons-instagram', to: 'https://instagram.com/eskala.u', label: 'Instagram' },
-  { icon: 'i-simple-icons-tiktok', to: 'https://tiktok.com/@eskala.u', label: 'TikTok' },
-  { icon: 'i-simple-icons-facebook', to: 'https://facebook.com/eskala.u', label: 'Facebook' },
-  { icon: 'i-simple-icons-youtube', to: 'https://youtube.com/@eskala.u', label: 'YouTube' }
-]
+interface FooterSection {
+  label: string
+  children: FooterLink[]
+}
+
+const footerLinks: FooterSection[] = [
+  {
+    label: "Layanan",
+    children: [
+      {
+        label: "Social Media Management",
+        to: "/services/social-media-management",
+      },
+      { label: "Digital Marketing", to: "/services/digital-marketing" },
+      { label: "VIP", to: "/services/vip" },
+    ],
+  },
+
+  {
+    label: "Dukungan",
+    children: [
+      { label: "FAQ", to: "/faq" },
+      { label: "Tentang Kami", to: "/about" },
+    ],
+  },
+  {
+    label: "Sosial Media",
+    children: [
+      {
+        icon: "i-simple-icons-instagram",
+        label: "Instagram",
+        to: "https://instagram.com/eskala.u",
+      },
+      {
+        icon: "i-simple-icons-tiktok",
+        label: "TikTok",
+        to: "https://tiktok.com/@eskala.u",
+      },
+      {
+        icon: "i-simple-icons-facebook",
+        label: "Facebook",
+        to: "https://facebook.com/eskala.u",
+      },
+      {
+        icon: "i-simple-icons-youtube",
+        label: "YouTube",
+        to: "https://youtube.com/@eskala.u",
+      },
+    ],
+  },
+];
 </script>
 
 <template>
@@ -42,10 +67,12 @@ const socialLinks = [
           <div class="mb-8">
             <h3 class="text-2xl font-bold text-gray-900 mb-6">Eskala</h3>
             <p class="text-gray-600 text-sm leading-relaxed">
-              Partner terpercaya untuk transformasi digital bisnis Anda. Kami menghadirkan solusi komprehensif untuk semua kebutuhan marketing digital.
+              Partner kreatif untuk bisnis kesehatan Anda. Kami membantu klinik,
+              rumah sakit, dan brand kesehatan tumbuh di dunia digital melalui
+              Social Media Management dan Digital Marketing yang terukur.
             </p>
           </div>
-          
+
           <!-- Contact Info -->
           <div class="space-y-4 mb-8">
             <div class="flex items-center gap-3">
@@ -61,34 +88,21 @@ const socialLinks = [
               <span class="text-sm text-gray-600">Yogyakarta, Indonesia</span>
             </div>
           </div>
-
-          <!-- Social Links -->
-          <div class="flex gap-4">
-            <UButton
-              v-for="social in socialLinks"
-              :key="social.label"
-              :icon="social.icon"
-              :to="social.to"
-              :aria-label="social.label"
-              color="neutral"
-              variant="ghost"
-              size="sm"
-              target="_blank"
-              class="hover:text-primary"
-            />
-          </div>
         </div>
 
         <!-- Footer Links -->
         <div class="lg:col-span-3 grid md:grid-cols-3 gap-12">
           <div v-for="section in footerLinks" :key="section.label">
-            <h4 class="font-semibold text-gray-900 mb-6">{{ section.label }}</h4>
+            <h4 class="font-semibold text-gray-900 mb-6">
+              {{ section.label }}
+            </h4>
             <ul class="space-y-4">
               <li v-for="link in section.children" :key="link.label">
                 <NuxtLink
                   :to="link.to"
-                  class="text-sm text-gray-600 hover:text-primary transition-colors"
+                  class="text-sm text-gray-600 hover:text-primary transition-colors flex items-center gap-2"
                 >
+                  <UIcon v-if="link.icon" :name="link.icon" class="size-4 shrink-0" />
                   {{ link.label }}
                 </NuxtLink>
               </li>
@@ -106,10 +120,16 @@ const socialLinks = [
 
     <template #right>
       <div class="flex gap-8 text-sm">
-        <NuxtLink to="/privacy" class="text-gray-500 hover:text-primary transition-colors">
+        <NuxtLink
+          to="/privacy"
+          class="text-gray-500 hover:text-primary transition-colors"
+        >
           Privacy Policy
         </NuxtLink>
-        <NuxtLink to="/terms" class="text-gray-500 hover:text-primary transition-colors">
+        <NuxtLink
+          to="/terms"
+          class="text-gray-500 hover:text-primary transition-colors"
+        >
           Terms of Service
         </NuxtLink>
       </div>

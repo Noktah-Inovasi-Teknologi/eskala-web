@@ -6,15 +6,17 @@ export default defineNuxtConfig({
   css: ["./app/assets/css/main.css"],
   devtools: { enabled: true },
   fonts: {
-    google: {
-      families: {
-        Poppins: [400, 500, 600, 700]
-      }
-    }
+    families: [
+      { name: "Poppins", provider: "google" },
+      { name: "Plus Jakarta Sans", provider: "google" },
+    ],
   },
-  modules: ["@nuxt/content", "@nuxt/ui"],
+  modules: ["@nuxt/fonts", "@nuxt/ui"],
   ui: {
     colorMode: false,
+    theme: {
+      colors: ["primary", "secondary", "success", "info", "warning", "error", "obsidian"],
+    },
   },
   vite: {
     plugins: [tailwindcss()],

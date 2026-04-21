@@ -1,337 +1,333 @@
 <script lang="ts" setup>
-const problems = ref([
+import type { TimelineItem } from "@nuxt/ui";
+
+const keyPoints = ref([
   {
-    title: "Bisnis tidak terlihat oleh calon pelanggan",
-    description: "Sulitnya membangun kepercayaan di mata audiens.",
-    detail: [
-      "Kurangnya kehadiran online yang konsisten dan profesional.",
-      "Konten yang tidak relevan atau kurang menarik bagi target audiens.",
-      "Minimnya interaksi dan engagement di platform media sosial.",
-    ],
-    image: "/images/1.png",
+    title: "Dipercaya 12+ fasilitas kesehatan di Indonesia",
+    icon: "i-heroicons-shield-check",
   },
   {
-    title: "Tidak memiliki cukup waktu dan sumber daya untuk membuat konten",
-    description:
-      "Keterbatasan waktu dan tenaga dalam mengelola media sosial secara konsisten.",
-    detail: [
-      "Kesulitan dalam merencanakan dan menjadwalkan konten secara rutin.",
-      "Keterbatasan tim internal dalam hal keahlian pembuatan konten.",
-      "Tantangan dalam mengikuti tren dan algoritma media sosial yang terus berubah.",
-    ],
-    image: "/images/2.png",
+    title:
+      "Bersandar pada regulasi kesehatan Indonesia dan standar medis Internasional",
+    icon: "i-heroicons-document-check",
   },
   {
-    title: "Pernah bekerja dengan agensi, namun mereka tidak dapat diandalkan",
-    description:
-      "Pengalaman buruk dengan agensi yang tidak memenuhi janji dan ekspektasi.",
-    detail: [
-      "Kurangnya transparansi dan komunikasi dari agensi.",
-      "Agensi kabur dan tidak memenuhi ekspektasi dan janji yang diberikan.",
-      "Ketidaksesuaian antara strategi agensi dengan kebutuhan bisnis.",
-    ],
-    image: "/images/3.png",
-  },
-]);
-const strengths = ref([
-  {
-    title: "Cepat",
-    description:
-      "Kami mengerjakan desain konten Anda dengan cepat tanpa mengorbankan kualitas.",
-    image: "/images/1.png",
+    title: "Kontrak fleksibel tanpa komitmen tahunan",
+    icon: "i-heroicons-document-text",
   },
   {
-    title: "Responsif",
-    description:
-      "Kami selalu siap merespons kebutuhan dan perubahan yang Anda butuhkan.",
-    image: "/images/2.png",
-  },
-  {
-    title: "Paham Kebutuhan Anda",
-    description: "Kami mendengarkan dan memahami kebutuhan bisnis Anda.",
-    image: "/images/6.png",
-  },
-  {
-    title: "Fleksibel",
-    description:
-      "Kami menyesuaikan layanan kami sesuai dengan kebutuhan dan anggaran Anda.",
-    image: "/images/4.png",
-  },
-  {
-    title: "Transparan",
-    description:
-      "Kami memberikan laporan yang jelas dan terbuka tentang kinerja konten Anda.",
-    image: "/images/5.png",
-  },
-  {
-    title: "Berkualitas Tinggi",
-    description:
-      "Kami selalu mengutamakan kualitas dalam setiap konten yang kami buat.",
-    image: "/images/3.png",
+    title: "Tim tersertifikasi Meta & Google",
+    icon: "i-heroicons-academic-cap",
   },
 ]);
 
-const processSteps = ref([
+const keyQuestions = ref([
   {
-    title: "Konsultasi & Analisis",
-    description:
-      "Kami mendengarkan kebutuhan bisnis Anda dan menganalisis target audiens untuk merancang strategi yang tepat.",
-    icon: "i-heroicons-chat-bubble-left-right",
-    color: "primary",
+    number: "01",
+    title: "Berapa lama sampai terlihat hasilnya?",
+    answer:
+      "Bulan 1-3 adalah tahap audit dan membangun fondasi. Momentum pertama (engagement naik, DM pasien mulai berdatangan) biasanya terlihat di bulan 4-6. Pertumbuhan yang compounding terjadi setelah bulan ke-7.",
   },
   {
-    title: "Perencanaan Konten",
-    description:
-      "Tim kreatif kami merancang kalender konten dan strategi komunikasi yang sesuai dengan brand identity Anda.",
-    icon: "i-heroicons-calendar-days",
-    color: "primary",
+    number: "02",
+    title: "Apakah Eskala memahami regulasi iklan kesehatan?",
+    answer:
+      "Ya. Setiap konten dan creative iklan melewati medical review internal sebelum tayang, mengacu pada pedoman KKI dan Kemenkes. Kami menolak claim yang bersifat superlatif atau menjanjikan kesembuhan — dan kami akan menjelaskan alasannya kepada tim Anda.",
   },
   {
-    title: "Produksi Konten",
-    description:
-      "Pembuatan konten visual dan copywriting yang engaging, profesional, dan sesuai dengan standar industri.",
-    icon: "i-heroicons-camera",
-    color: "primary",
+    number: "03",
+    title: "Bagaimana jika kami sudah memiliki tim internal?",
+    answer:
+      "Kami bekerja dua arah: menggantikan agensi lama, atau bermitra dengan tim internal Anda. Banyak klien menggunakan kami untuk strategi dan produksi, sementara admin sosmed mereka menangani community management. Kami sesuaikan dengan struktur yang sudah ada.",
   },
   {
-    title: "Publikasi & Monitoring",
+    number: "04",
+    title: "Apakah kontraknya mengikat?",
+    answer:
+      "Tidak. Kontrak kami berjalan per semester dengan notice period 30 hari. Kami lebih memilih klien yang memperpanjang karena hasil, bukan karena terikat dengan kami. 90% klien kami memperpanjang kontrak setelah 6 bulan pertama.",
+  },
+]);
+
+const expectedResults = ref([
+  {
+    number: "01",
+    stage: "BULAN 1-3",
+    title: "Riset & Strategi",
     description:
-      "Posting konten secara terjadwal dan monitoring performa untuk optimasi berkelanjutan.",
-    icon: "i-heroicons-chart-bar",
-    color: "primary",
+      "Kami mulai dengan riset mengenai faskes, target pasien, dan posisi Anda, menyusun strategi, lalu memproduksi konten sejak bulan pertama. Fokusnya ada pada konsistensi, belum pada angka dan metrik lainnya.",
+    detail: [
+      "Riset dan audit faskes & kompetitor",
+      "Pembuatan atau improvisasi Content Pillars",
+      "Posting rutin berdasarkan Content Plan",
+      "Views dan engagement meningkat 10-30% tiap bulan",
+    ],
   },
   {
-    title: "Evaluasi & Laporan",
+    number: "02",
+    stage: "BULAN 4-6",
+    title: "Fondasi & Momentum Awal",
     description:
-      "Analisis hasil dan penyusunan laporan komprehensif untuk perbaikan strategi di periode berikutnya.",
-    icon: "i-heroicons-document-chart-bar",
-    color: "primary",
+      "Konten mulai menemukan audience-nya. DM dan konsultasi dari pasien potensial mulai berdatangan secara organik. Iklan bisa mulai dijalankan, tapi hasilnya masih belum stabil dan sangat bergantung pada kualitas konten organik yang sudah ada.",
+    detail: [
+      "Follower organik naik 3-15% tiap bulan",
+      "Data telah cukup untuk optimasi konten dan memulai iklan",
+      "1-2 konten viral (±10-50k reach)",
+      "DM pasien potensial mulai berdatangan",
+    ],
+  },
+  {
+    number: "03",
+    stage: "BULAN 7-12",
+    title: "Pertumbuhan & Optimasi",
+    description:
+      "Performa konten mulai stabil dengan pertumbuhan yang compounding. Iklan lebih efisien dan mulai memberikan hasil yang konsisten dan terukur. Rujukan via media sosial mulai menjadi saluran yang konsisten.",
+    detail: [
+      "ROAS Ads 3-33x tergantung platform dan target",
+      "Konsultasi via DM meningkat signifikan",
+      "Identitas faskes sudah lebih mudah diingat dan dipercaya pasien",
+      "Repeat appointment dari pasien yang datang via media sosial mulai terlihat",
+    ],
+  },
+]);
+
+const items = ref<TimelineItem[]>([
+  {
+    date: "Bulan 0",
+    header: "Pendekatan Awal",
+    description:
+      "Eskala mendekati Klinik Utama Gresik (KUG), salah satu cabang dari SMEC Group. Kami berhasil mendapatkan audiensi dengan tim Digital Marketing mereka dan mempresentasikan proposal kami. Mereka setuju untuk memberikan kesempatan trial selama 1 bulan — tantangan yang kami terima dengan penuh percaya diri sebagai startup yang siap membuktikan diri.",
+    icon: "i-heroicons-hand-raised",
+  },
+  {
+    date: "Bulan 1",
+    header: "Produksi Dimulai",
+    description:
+      "Content production untuk KUG resmi berjalan. Tim kami langsung membangun pipeline konten, menyesuaikan dengan brand guidelines, dan memastikan ritme posting yang konsisten sejak hari pertama.",
+    icon: "i-heroicons-rocket-launch",
+  },
+  {
+    date: "Bulan 3",
+    header: "Kepercayaan Terbukti",
+    description:
+      "Konten KUG berjalan lancar dengan peningkatan engagement dan reach yang terukur. Klien sangat puas, hingga SMEC Group mulai mempercayakan 2 cabang tambahan kepada kami, termasuk cabang yang sebelumnya ditangani agensi lain yang performanya kurang memuaskan.",
+    icon: "i-heroicons-trophy",
+  },
+  {
+    date: "Bulan 6",
+    header: "Ekspansi Besar",
+    description:
+      "Cabang terus bertambah hingga total 7 cabang. Untuk pertama kalinya, kami dipercaya menangani akun level rumah sakit — RS SMEC Balikpapan — serta akun pusat SMEC Group. Di titik ini, kami juga mulai menjalankan kampanye Ads untuk beberapa cabang, menambah channel pertumbuhan baru di samping strategi konten organik.",
+    icon: "i-heroicons-arrow-trending-up",
+  },
+  {
+    date: "Bulan 12",
+    header: "Leads Membanjir",
+    description:
+      "Kampanye Ads menghasilkan volume leads yang melampaui kapasitas customer care klien. Konten organik terus memperkuat brand authority di seluruh akun yang dikelola, menciptakan efek compounding bersama paid channel.",
+    icon: "i-heroicons-fire",
+  },
+  {
+    date: "Bulan 18",
+    header: "Dominasi Pasar",
+    description:
+      "Dengan performa Ads yang terbukti, SMEC Group meningkatkan budget iklan secara signifikan. Strategi paid dan organik bekerja beriringan, memperkuat posisi mereka sebagai salah satu fasilitas eye-care terdepan di Indonesia. Apa yang dimulai sebagai trial 1 bulan dengan satu cabang, telah berkembang menjadi kemitraan digital multi-cabang berskala penuh.",
+    icon: "i-heroicons-star",
   },
 ]);
 
 const services = ref([
   {
-    title: "End-to-End Social Media Management",
-    description:
+    label: "Social Media Management",
+    shortDescription:
       "Kelola seluruh aspek media sosial Anda dari strategi hingga eksekusi dengan pendekatan yang komprehensif dan terukur.",
     link: "/services/social-media-management",
-    icon: "i-heroicons-users",
+    icon: "i-heroicons-chat-bubble-left-right",
+    tagline: "Hadir Konsisten, Tumbuh Organik",
+    information:
+      "Cocok untuk faskes yang sudah memiliki media sosial tetapi belum memiliki strategi konten yang konsisten.",
+    description:
+      "Kalender konten bulanan untuk media sosial klinik Anda. Kami menyusun, memproduksi, dan mem-publish konten dari awal hingga akhir.",
+    point: [
+      "Content pillars yang konsisten",
+      "Community management harian",
+      "Backup konten untuk kebutuhan mendadak",
+      "Laporan performa bulanan",
+    ],
   },
   {
-    title: "Ads Management",
+    label: "Digital Marketing",
+    shortDescription:
+      "Cocok untuk faskes yang sudah memiliki konten organik stabil dan siap memperluas jangkauan pasien berbayar.",
+    link: "/services/digital-marketing",
+    icon: "i-heroicons-cursor-arrow-rays",
+    tagline: "Iklan yang Tepat, Hasil yang Maksimal",
+    information:
+      "Cocok untuk faskes yang sudah memiliki konten organik stabil dan siap memperluas jangkauan pasien berbayar.",
     description:
-      "Optimalisasi iklan berbayar di berbagai platform untuk memaksimalkan ROI dan jangkauan target audiens Anda.",
-    link: "/services/ads-management",
-    icon: "i-heroicons-megaphone",
-  },
-  {
-    title: "KOL Management",
-    description:
-      "Manajemen kolaborasi dengan Key Opinion Leaders untuk meningkatkan kredibilitas dan reach brand Anda.",
-    link: "/services/kol-management",
-    icon: "i-heroicons-star",
-  },
-  {
-    title: "All-in-One Creative Service",
-    description:
-      "Layanan kreatif lengkap mulai dari desain visual, copywriting, hingga video production untuk semua kebutuhan konten Anda.",
-    link: "/services/creative-service",
-    icon: "i-heroicons-paint-brush",
+      "Jangkau audiens dengan digital marketing dan iklan yang tertarget. Tersedia untuk platform Meta, TikTok, dan Google untuk menjangkau pasien potensial di area layanan faskes Anda.",
+    point: [
+      "Geo-targeting dalam radius jangkauan faskes",
+      "Optimasi iklan untuk hasil terbaik",
+      "A/B testing target pasien",
+      "Laporan performa iklan dan ROAS",
+    ],
   },
 ]);
 
-const pricingTabs = ref([
+const vipService = ref({
+  title: "VIP",
+  description:
+    "Penanganan kreatif lengkap all-in-one. Bundel Social Media Management dengan layanan kreatif premium untuk bisnis yang menginginkan kualitas terbaik.",
+  link: "/services/vip",
+  icon: "i-heroicons-sparkles",
+  tagline: "Semua Kebutuhan Kreatif, Satu Tim Ahli",
+  includes: [
+    "Full Social Media Management",
+    "Graphic Design",
+    "Video Production",
+    "Copywriting",
+    "Photography",
+  ],
+});
+
+const packageSMMSections = [
   {
-    label: "Social Media Management",
-    slot: "social-media",
-    plans: [
-      {
-        name: "Starter",
-        price: "Rp 2.500.000",
-        period: "/bulan",
-        features: [
-          { name: "2 Platform Media Sosial", included: true },
-          { name: "10 Post per Bulan", included: true },
-          { name: "Basic Analytics Report", included: true },
-          { name: "Community Management", included: false },
-          { name: "Content Strategy", included: false },
-          { name: "Dedicated Account Manager", included: false },
-        ],
-        popular: false,
-      },
-      {
-        name: "Professional",
-        price: "Rp 4.500.000",
-        period: "/bulan",
-        features: [
-          { name: "4 Platform Media Sosial", included: true },
-          { name: "20 Post per Bulan", included: true },
-          { name: "Advanced Analytics Report", included: true },
-          { name: "Community Management", included: true },
-          { name: "Content Strategy", included: true },
-          { name: "Dedicated Account Manager", included: false },
-        ],
-        popular: true,
-      },
-      {
-        name: "Enterprise",
-        price: "Rp 8.000.000",
-        period: "/bulan",
-        features: [
-          { name: "Unlimited Platform", included: true },
-          { name: "40 Post per Bulan", included: true },
-          { name: "Comprehensive Analytics", included: true },
-          { name: "Community Management", included: true },
-          { name: "Content Strategy", included: true },
-          { name: "Dedicated Account Manager", included: true },
-        ],
-        popular: false,
-      },
-    ],
+    title: "FOKUS & OUTPUT KONTEN",
+    keys: ["feed", "shortVideo", "maxSocialMedia"] as const,
   },
   {
-    label: "Ads Management",
-    slot: "ads",
-    plans: [
-      {
-        name: "Basic",
-        price: "Rp 3.000.000",
-        period: "/bulan",
-        features: [
-          { name: "1 Platform Advertising", included: true },
-          { name: "Budget Management", included: true },
-          { name: "Basic Targeting", included: true },
-          { name: "Creative Development", included: false },
-          { name: "A/B Testing", included: false },
-          { name: "Advanced Analytics", included: false },
-        ],
-        popular: false,
-      },
-      {
-        name: "Growth",
-        price: "Rp 5.500.000",
-        period: "/bulan",
-        features: [
-          { name: "3 Platform Advertising", included: true },
-          { name: "Budget Management", included: true },
-          { name: "Advanced Targeting", included: true },
-          { name: "Creative Development", included: true },
-          { name: "A/B Testing", included: true },
-          { name: "Advanced Analytics", included: false },
-        ],
-        popular: true,
-      },
-      {
-        name: "Scale",
-        price: "Rp 9.500.000",
-        period: "/bulan",
-        features: [
-          { name: "All Platform Advertising", included: true },
-          { name: "Budget Management", included: true },
-          { name: "Advanced Targeting", included: true },
-          { name: "Creative Development", included: true },
-          { name: "A/B Testing", included: true },
-          { name: "Advanced Analytics", included: true },
-        ],
-        popular: false,
-      },
-    ],
+    title: "PRODUKSI & EKSEKUSI",
+    keys: [
+      "photography",
+      "videography",
+      "contentEdit",
+      "copywriting",
+      "revision",
+    ] as const,
   },
   {
-    label: "KOL Management",
-    slot: "kol",
-    plans: [
-      {
-        name: "Micro",
-        price: "Rp 4.000.000",
-        period: "/campaign",
-        features: [
-          { name: "1-2 Micro Influencer", included: true },
-          { name: "Campaign Planning", included: true },
-          { name: "Content Guidelines", included: true },
-          { name: "Performance Tracking", included: true },
-          { name: "Macro Influencer Access", included: false },
-          { name: "Celebrity Endorsement", included: false },
-        ],
-        popular: false,
-      },
-      {
-        name: "Macro",
-        price: "Rp 12.000.000",
-        period: "/campaign",
-        features: [
-          { name: "1-3 Macro Influencer", included: true },
-          { name: "Campaign Planning", included: true },
-          { name: "Content Guidelines", included: true },
-          { name: "Performance Tracking", included: true },
-          { name: "Micro Influencer Access", included: true },
-          { name: "Celebrity Endorsement", included: false },
-        ],
-        popular: true,
-      },
-      {
-        name: "Mega",
-        price: "Rp 25.000.000",
-        period: "/campaign",
-        features: [
-          { name: "1 Mega Influencer", included: true },
-          { name: "Campaign Planning", included: true },
-          { name: "Content Guidelines", included: true },
-          { name: "Performance Tracking", included: true },
-          { name: "Multi-tier Influencer Mix", included: true },
-          { name: "Celebrity Endorsement", included: true },
-        ],
-        popular: false,
-      },
-    ],
+    title: "STRATEGI & PERENCANAAN",
+    keys: [
+      "monthlyContentPlan",
+      "medicalReview",
+      "contentPillars",
+      "communityManagement",
+      "competitorAnalysis",
+    ] as const,
   },
   {
-    label: "Creative Service",
-    slot: "creative",
-    plans: [
-      {
-        name: "Essential",
-        price: "Rp 3.500.000",
-        period: "/project",
-        features: [
-          { name: "Graphic Design (10 designs)", included: true },
-          { name: "Basic Copywriting", included: true },
-          { name: "2 Revision Rounds", included: true },
-          { name: "Video Production", included: false },
-          { name: "Photography Session", included: false },
-          { name: "Brand Identity Package", included: false },
-        ],
-        popular: false,
-      },
-      {
-        name: "Premium",
-        price: "Rp 7.500.000",
-        period: "/project",
-        features: [
-          { name: "Graphic Design (20 designs)", included: true },
-          { name: "Advanced Copywriting", included: true },
-          { name: "Unlimited Revisions", included: true },
-          { name: "Video Production (1 video)", included: true },
-          { name: "Photography Session", included: true },
-          { name: "Brand Identity Package", included: false },
-        ],
-        popular: true,
-      },
-      {
-        name: "Complete",
-        price: "Rp 15.000.000",
-        period: "/project",
-        features: [
-          { name: "Unlimited Designs", included: true },
-          { name: "Strategic Copywriting", included: true },
-          { name: "Unlimited Revisions", included: true },
-          { name: "Video Production (3 videos)", included: true },
-          { name: "Photography Session", included: true },
-          { name: "Brand Identity Package", included: true },
-        ],
-        popular: false,
-      },
-    ],
+    title: "LAPORAN & EVALUASI",
+    keys: ["monthlyReport", "monthlyReviewMeeting"] as const,
+  },
+];
+
+const featureLabels: Record<string, string> = {
+  mainFocus: "Fokus Utama",
+  feed: "Feed (Post/Carousel)",
+  shortVideo: "Short Video (Reels)",
+  maxSocialMedia: "Maks. Platform",
+  photography: "Fotografi",
+  videography: "Videografi",
+  contentEdit: "Editing Konten",
+  copywriting: "Copywriting",
+  revision: "Revisi",
+  monthlyContentPlan: "Content Plan Bulanan",
+  medicalReview: "Medical Review",
+  contentPillars: "Content Pillars",
+  communityManagement: "Community Management",
+  competitorAnalysis: "Competitor Analysis",
+  monthlyReport: "Laporan Bulanan",
+  monthlyReviewMeeting: "Review Meeting Bulanan",
+};
+
+const packageSMMRaw = ref([
+  {
+    mainFocus: "Konsistensi kehadiran faskes",
+    feed: 8,
+    shortVideo: 4,
+    maxSocialMedia: "1",
+    photography: true,
+    videography: true,
+    contentEdit: true,
+    copywriting: true,
+    revision: "Unlimited",
+    monthlyContentPlan: true,
+    medicalReview: true,
+    contentPillars: false,
+    communityManagement: false,
+    competitorAnalysis: false,
+    monthlyReport: "Basic",
+    monthlyReviewMeeting: true,
+  },
+  {
+    mainFocus: "Konsistensi kehadiran faskes",
+    feed: 10,
+    shortVideo: 7,
+    maxSocialMedia: "2 (Mirroring)",
+    photography: true,
+    videography: true,
+    contentEdit: true,
+    copywriting: true,
+    revision: "Unlimited",
+    monthlyContentPlan: true,
+    medicalReview: true,
+    contentPillars: true,
+    communityManagement: false,
+    competitorAnalysis: false,
+    monthlyReport: "Detailed",
+    monthlyReviewMeeting: true,
+  },
+  {
+    mainFocus: "Konsistensi kehadiran faskes",
+    feed: 16,
+    shortVideo: 8,
+    maxSocialMedia: "3",
+    photography: true,
+    videography: true,
+    contentEdit: true,
+    copywriting: true,
+    revision: "Unlimited",
+    monthlyContentPlan: true,
+    medicalReview: true,
+    contentPillars: true,
+    communityManagement: true,
+    competitorAnalysis: true,
+    monthlyReport: "Detailed + Competitor Analysis",
+    monthlyReviewMeeting: true,
+  },
+]);
+
+const packageSMMTitles = ["Starter", "Standard", "Premium"];
+
+interface Testimonial {
+  quote: string;
+  name: string;
+  position: string;
+}
+
+function getAcronym(name: string): string {
+  const namePart = name.split(",")[0] ?? "";
+  const words = namePart
+    .split(/\s+/)
+    .filter((w) => w.length >= 2 && /^[A-Z]/.test(w) && !w.includes("."));
+  return words
+    .slice(0, 2)
+    .map((w) => w.charAt(0).toUpperCase())
+    .join("");
+}
+
+const testimonials = ref<Testimonial[]>([
+  {
+    quote:
+      "Eskala benar-benar mendengarkan kami, ini hal yang jarang saya temukan pada agensi lain. Tim mereka datang langsung ke klinik, berdiskusi dengan perawat, dan memahami pasien kami terlebih dahulu sebelum memproduksi satu pun konten.",
+    name: "dr. Sukardi, MARS, FISQua",
+    position: "Direktur Utama, PT Sumatera Cahaya Mandiri (SMEC Group)",
+  },
+  {
+    quote:
+      "Selama bekerja dengan Eskala, saya melihat peningkatan yang signifikan dalam engagement media sosial kami. Konten yang mereka buat benar-benar ngena ke audiens kami, revenue kami meningkat sangat signifikan karena pasien akhirnya mengetahui keberadaan klinik kami.",
+    name: "dr. Ekhtiyanto Cahyadi Khusnul Yakin, Sp.KG",
+    position: "Owner & Dokter Spesialis Konservasi Gigi, Ecky Dental Center",
   },
 ]);
 </script>
@@ -340,645 +336,525 @@ const pricingTabs = ref([
   <div>
     <UContainer
       id="section-hero"
-      class="flex py-24 items-center relative min-h-screen"
+      class="flex flex-col gap-12 pt-24 items-center relative"
     >
-      <div class="grid lg:grid-cols-2 gap-16 items-center w-full"
-        <!-- Left Side - Enhanced Copywriting -->
-        <div class="space-y-12">
-          <!-- Badge -->
-          <UBadge color="primary" variant="soft" size="lg" class="inline-flex">
-            🚀 Tingkatkan Brand Awareness Anda
-          </UBadge>
-
-          <!-- Main Headline -->
-          <div class="space-y-8">
-            <h1 class="text-5xl lg:text-7xl font-bold leading-tight">
-              <span class="text-gray-900">Keahlian Anda</span><br />
-              <span class="text-primary">mengubah hidup.</span><br />
-              <span class="text-gray-700 text-4xl lg:text-5xl"
-                >Konten Anda harus membuktikannya.</span
-              >
+      <div class="flex gap-12 items-center">
+        <div class="flex flex-col gap-8">
+          <p class="font-display text-copper-500 font-medium">
+            ──────── Untuk fasilitas kesehatan di Indonesia
+          </p>
+          <div class="flex flex-col">
+            <h1 class="font-display text-obsidian-950 font-bold text-7xl">
+              Gaungkan kualitas pelayanan Anda,
+            </h1>
+            <h1 class="font-display text-cobalt-500 font-bold text-7xl">
+              genggam hati pasien Anda.
             </h1>
           </div>
-
-          <!-- Enhanced Subhead -->
-          <p
-            class="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl"
-          >
-            Kami membantu bisnis di Indonesia menjadi
-            <span class="font-semibold text-primary">trusted entity</span>
-            melalui pengelolaan media sosial yang strategis dan komunikatif.
+          <p class="font-body text-obsidian-950 mt-8 text-xl">
+            Eskala adalah tim kreatif berbasis di Yogyakarta. Kami bekerja
+            berdampingan dengan tim internal dan klinis Anda, untuk menciptakan
+            konten digital yang sesuai standar medis, dan dapat membangun
+            kepercayaan pasien terhadap fasilitas kesehatan Anda.
           </p>
-
-          <!-- CTA Buttons -->
-          <div class="flex flex-col sm:flex-row gap-6 pt-8">
-            <UButton size="xl" class="px-8 py-4">
-              Mulai Konsultasi Gratis
-            </UButton>
-            <UButton variant="outline" size="xl" class="px-8 py-4">
-              Lihat Portfolio Kami
-            </UButton>
-          </div>
-
-          <!-- Enhanced Metrics -->
-          <div class="grid grid-cols-3 gap-8 pt-12">
-            <div class="text-center">
-              <div class="text-4xl font-bold text-primary">50%</div>
-              <div class="text-sm text-gray-600 font-medium">
-                Pertumbuhan Rerata Selama 6 Bulan
-              </div>
-            </div>
-            <div class="text-center">
-              <div class="text-4xl font-bold text-primary">3-6</div>
-              <div class="text-sm text-gray-600 font-medium">Bulan ROI</div>
-            </div>
-            <div class="text-center">
-              <div class="text-4xl font-bold text-primary">25+</div>
-              <div class="text-sm text-gray-600 font-medium">Klien Tetap</div>
-            </div>
-          </div>
         </div>
-
-        <!-- Right Side - Video Placeholder -->
-        <div class="flex justify-center">
-          <UCard class="w-full max-w-lg">
-            <div
-              class="aspect-2/1 bg-gray-100 rounded-lg flex items-center justify-center"
-            >
-              <div class="text-center space-y-2">
-                <UIcon
-                  name="i-heroicons-play-circle"
-                  class="text-6xl text-gray-400"
-                />
-                <p class="text-gray-500">Video Placeholder</p>
-              </div>
-            </div>
-          </UCard>
-        </div>
-      </div>
-
-      <!-- Enhanced Scroll Indicator -->
-      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <a href="#section-pain-problem" class="block group">
-          <div
-            class="flex flex-col items-center space-y-2 group-hover:scale-110 transition-transform"
-          >
-            <span class="text-sm text-gray-500 font-medium"
-              >Scroll untuk lanjut</span
-            >
-            <div
-              class="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center group-hover:border-primary transition-colors"
-            >
-              <div
-                class="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-bounce group-hover:bg-primary transition-colors"
-              ></div>
-            </div>
-          </div>
-        </a>
-      </div>
-    </UContainer>
-    <UContainer id="section-pain-problem" class="flex flex-col gap-20 py-24">
-      <div class="text-center max-w-2xl mx-auto">
-        <p>
-          Dari klien-klien kami, kami berhasil mengumpulkan tiga masalah utama
-          yang sering mereka hadapi.
-        </p>
-      </div>
-      <h2 class="text-center text-5xl font-[Poppins]">
-        Masalah yang Sering Dihadapi
-      </h2>
-      <div class="flex flex-col gap-4">
-        <UCard
-          v-for="item in problems"
-          :key="item.title"
-          class="p-8 transition-all duration-500 ease-in-out overflow-hidden group cursor-pointer hover:shadow-lg"
-          :ui="{
-            body: 'flex flex-col sm:flex-row items-center gap-8',
-          }"
-        >
-          <div class="">
-            <img :src="item.image" alt="Problem Illustration" />
-          </div>
-          <div class="basis-3/2 flex flex-col justify-center">
-            <h3
-              class="text-3xl font-semibold mb-0 group-hover:mb-4 transition-all duration-500 ease-in-out"
-            >
-              {{ item.title }}
-            </h3>
-            <div
-              class="max-h-0 group-hover:max-h-96 transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100 overflow-hidden"
-            >
-              <USeparator class="mb-4" />
-              <p class="mb-4">
-                {{ item.description }}
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <UBadge
-                  v-for="detail in item.detail"
-                  :key="detail"
-                  color="secondary"
-                >
-                  {{ detail }}
-                </UBadge>
-              </div>
-            </div>
-          </div>
-        </UCard>
-      </div>
-    </UContainer>
-    <UContainer id="section-strength" class="flex flex-col gap-20 py-24">
-      <div class="flex flex-row text-center max-w-2xl mx-auto">
         <div>
-          <p>
-            Punya masalah yang sama dengan klien-klien kami? Tenang, kami siap
-            membantu. Tapi, apa yang membuat
-            <span class="text-primary font-bold">kami berbeda</span>?
+          <div
+            class="flex flex-col p-8 gap-8 rounded-3xl border border-copper-200 bg-copper-50"
+          >
+            <Icon
+              name="i-heroicons-chat-bubble-left"
+              class="text-copper-500 text-4xl"
+            />
+            <p class="font-body font-medium text-2xl text-obsidian-950">
+              "Saya ingin faskes lebih mengerti dan lebih masuk dalam dunia
+              pasien. Kita bisa lakukan itu secara digital."
+            </p>
+            <div class="flex gap-3 items-center">
+              <div
+                class="w-9 h-9 rounded-full bg-copper-500 flex items-center justify-center text-white font-semibold text-sm shrink-0"
+              >
+                DP
+              </div>
+              <div class="flex flex-col">
+                <p class="font-semibold text-obsidian-900">Donny Putra N.H.</p>
+                <p class="text-sm text-obsidian-600">
+                  Manager Digital Marketing SMEC Group
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex gap-12 items-center">
+        <UButton
+          href="https://wa.me/6285706034321"
+          size="xl"
+          class="px-4 rounded-full"
+          color="neutral"
+        >
+          <div class="w-2 h-2 bg-copper-500 rounded-full"></div>
+          Jadwalkan konsultasi gratis dengan kami
+        </UButton>
+        <UButton
+          :to="{ path: '/cases' }"
+          target="_blank"
+          size="xl"
+          class="px-4 rounded-full"
+          color="neutral"
+          variant="link"
+        >
+          atau pelajari cerita klien kami
+          <Icon name="i-heroicons-arrow-top-right-on-square" class="text-sm" />
+        </UButton>
+      </div>
+      <USeparator color="obsidian" />
+      <div class="flex justify-between gap-12">
+        <div
+          v-for="point in keyPoints"
+          :key="point.title"
+          class="flex items-center gap-4"
+        >
+          <Icon :name="point.icon" class="text-primary text-4xl" />
+          <p class="text-obsidian-950 font-medium text-sm">{{ point.title }}</p>
+        </div>
+      </div>
+      <USeparator color="obsidian" />
+    </UContainer>
+    <div id="section-key-question" class="bg-obsidian-100">
+    <UContainer class="flex flex-col gap-12 py-24">
+      <div class="flex flex-col gap-12">
+        <div class="flex flex-col gap-8">
+          <p class="font-display text-copper-500 font-medium">
+            ──────── Pertanyaan yang sering kami terima
+          </p>
+          <h2 class="font-display text-obsidian-950 font-bold text-5xl">
+            <span class="text-cobalt-500">Empat pertanyaan</span> yang hampir selalu muncul pada audiensi pertama.
+          </h2>
+        </div>
+        <div class="flex flex-col gap-12">
+          <div
+            v-for="question in keyQuestions"
+            :key="question.title"
+            class="flex flex-col gap-12"
+          >
+            <USeparator color="obsidian" />
+            <div class="flex justify-between gap-12">
+              <p class="font-display text-4xl font-bold italic text-copper-500">
+                {{ question.number }}
+              </p>
+              <h3
+                class="font-display text-2xl font-semibold text-obsidian-950 basis-2/5"
+              >
+                {{ question.title }}
+              </h3>
+              <div class="flex flex-col gap-8 basis-3/5">
+                <p
+                  class="font-display font-semibold text-sm text-cobalt-500 tracking-widest"
+                >
+                  JAWABAN KAMI
+                </p>
+                <p class="font-body text-lg text-obsidian-700 font-light">
+                  {{ question.answer }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </UContainer>
+    </div>
+    <UContainer id="section-services" class="flex gap-12 py-24">
+      <div class="flex flex-col gap-12">
+        <div class="flex flex-col gap-8">
+          <p class="font-display text-copper-500 font-medium">
+            ──────── Layanan yang kami tawarkan
+          </p>
+          <h2 class="font-display text-obsidian-950 font-bold text-5xl">
+            <span class="text-cobalt-500">Dua layanan utama</span> kami yang sesuai dengan kebutuhan Anda.
+          </h2>
+          <p class="font-body text-lg text-obsidian-700 font-light">
+            Klik untuk melihat detailnya. Sebagian besar klinik memulai dengan
+            layanan SMM, lalu menambahkan Digital Marketing ketika konten
+            organik mereka sudah cukup matang.
           </p>
         </div>
       </div>
-      <h2 class="text-center text-5xl font-[Poppins]">Poin Plus Kami</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <UCard
-          v-for="item in strengths"
-          :key="item.title"
-          class="p-8 flex flex-col items-center text-center group cursor-pointer"
-        >
-          <div class="mb-8 group-hover:animate-bounce">
-            <img :src="item.image" alt="Strength Illustration" />
-          </div>
-          <div class="flex flex-col gap-6">
-            <h3 class="text-3xl font-semibold mb-2">{{ item.title }}</h3>
-            <p class="text-gray-600">{{ item.description }}</p>
-          </div>
-        </UCard>
-      </div>
-    </UContainer>
-    <UContainer id="section-social-proof" class="flex flex-col gap-20 py-24">
-      <div class="text-center">
-        <h2 class="text-5xl font-[Poppins] mb-8">Apa Kata Klien Kami</h2>
-      </div>
-
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <!-- Left Side - Image -->
-        <div class="flex justify-center">
-          <div class="w-80 h-80 relative">
-            <img
-              src="/images/u1.png"
-              alt="Dr. Eddy - Direktur SMEC Group"
-              class="w-full h-full object-cover rounded-2xl shadow-lg"
-            />
-          </div>
-        </div>
-
-        <!-- Right Side - Testimonial -->
-        <div class="space-y-8">
-          <!-- Opening Quote -->
-          <div class="text-6xl text-primary opacity-50">"</div>
-
-          <!-- Testimonial Content -->
-          <div class="space-y-8 -mt-4">
-            <p class="text-xl lg:text-2xl text-gray-700 leading-relaxed">
-              Eskala benar-benar mengubah cara kami berkomunikasi dengan pasien.
-              Konten mereka tidak hanya profesional, tetapi juga mudah dipahami
-              dan membangun kepercayaan. Dalam 6 bulan bekerja sama, tingkat
-              kepercayaan pasien terhadap klinik kami meningkat drastis.
-            </p>
-
-            <div class="space-y-4">
-              <h4 class="text-2xl font-semibold text-gray-900">Dr. Eddy</h4>
-              <p class="text-lg text-gray-600">
-                Direktur Sabang Merauke Eye Center (SMEC) Group
-              </p>
+      <UAccordion :items="services" class="w-full">
+        <template #body="{ item }">
+          <div class="flex flex-col gap-8">
+            <p class="text-obsidian-700 text-lg">{{ item.description }}</p>
+            <UBadge
+              color="secondary"
+              size="lg"
+              class="px-4 py-2 rounded-full"
+              variant="subtle"
+            >
+              <Icon name="i-heroicons-check-badge" class="text-3xl" />{{
+                item.information
+              }}
+            </UBadge>
+            <div class="grid grid-cols-2 gap-4">
+              <div
+                v-for="point in item.point"
+                :key="point"
+                class="flex gap-2 items-center"
+              >
+                <div class="w-2 h-2 bg-copper-500 rounded-full" />
+                <p class="text-obsidian-700">{{ point }}</p>
+              </div>
             </div>
           </div>
-
-          <!-- Closing Quote -->
-          <div class="text-6xl text-primary opacity-50 text-right">"</div>
+        </template>
+      </UAccordion>
+    </UContainer>
+    <div id="section-expected-results" class="bg-obsidian-950">
+    <UContainer class="flex flex-col gap-12 py-24">
+      <div class="flex flex-col gap-12">
+        <div class="flex flex-col gap-8">
+          <p class="font-display text-copper-500 font-medium">
+            ──────── Ekspektasi hasil
+          </p>
+          <h2 class="font-display text-obsidian-50 font-bold text-5xl">
+            <span class="text-cobalt-400">Hasil yang dapat Anda harapkan</span> setelah bekerja sama dengan kami.
+          </h2>
+          <p class="font-body text-lg text-obsidian-300 font-light">
+            Pengelolaan media sosial faskes dapat dianalogikan sebagai lomba
+            maraton, bukan sprint. Butuh waktu yang tidak sebentar untuk
+            membangun kehadiran online yang kuat dan mendapatkan kepercayaan
+            pasien. Berikut adalah timeline output realistis berdasarkan
+            pengalaman kami bersama faskes di Indonesia.
+          </p>
+        </div>
+      </div>
+      <div class="flex gap-12 content-stretch">
+        <div
+          v-for="result in expectedResults"
+          :key="result.title"
+          class="flex flex-col gap-8 rounded-3xl border border-obsidian-700 bg-obsidian-900 p-8 basis-1/3"
+        >
+          <div class="flex items-center justify-between gap-8">
+            <p
+              class="font-display text-copper-500 tracking-widest font-semibold text-sm"
+            >
+              {{ result.stage }}
+            </p>
+            <p class="text-obsidian-300 font-semibold">{{ result.number }}</p>
+          </div>
+          <h3 class="font-display text-2xl font-bold text-obsidian-50">
+            {{ result.title }}
+          </h3>
+          <p class="font-body text-obsidian-300">{{ result.description }}</p>
+          <USeparator color="obsidian" />
+          <div class="flex flex-col gap-4">
+            <div v-for="detail in result.detail" class="flex flex-col">
+              <div class="flex items-center gap-4">
+                <Icon name="i-heroicons-check" class="text-secondary text-xl" />
+                <p class="text-obsidian-300 basis-4/5 text-sm">{{ detail }}</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </UContainer>
-    <UContainer id="section-process" class="flex flex-col gap-20 py-24">
-      <div class="text-center">
-        <h2 class="text-5xl font-[Poppins] mb-8">Proses Kerja Kami</h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          Kami mengikuti proses yang terstruktur dan transparan untuk memastikan
-          hasil terbaik bagi bisnis Anda
-        </p>
+    </div>
+    <div id="section-case-study" class="bg-obsidian-200">
+    <UContainer class="flex flex-col gap-12 py-24">
+      <div class="flex flex-col gap-12">
+        <div class="flex flex-col gap-8">
+          <p class="font-display text-copper-500 font-medium">
+            ──────── Studi kasus
+          </p>
+          <h2 class="font-display text-obsidian-950 font-bold text-5xl">
+            1,5 tahun bersama <span class="text-cobalt-500">SMEC Group</span>.
+          </h2>
+          <p class="font-body text-lg text-obsidian-700 font-light">
+            SMEC Group adalah salah satu grup fasilitas kesehatan mata terbesar
+            di Indonesia dengan lebih dari 10 cabang di seluruh Indonesia. Kami
+            telah bekerja sama dengan SMEC Group sejak tahun 2024 untuk
+            mengelola media sosial dan iklan mereka, dan membantu mereka
+            membangun kehadiran online yang kuat, serta meningkatkan engagement
+            dan kepercayaan pasien melalui konten yang konsisten dan berkualitas
+            tinggi.
+          </p>
+        </div>
       </div>
-
-      <div class="max-w-6xl mx-auto">
-        <UTimeline :items="processSteps" size="3xl" />
-      </div>
-    </UContainer>
-    <UContainer id="section-service" class="flex flex-col gap-20 py-24">
-      <div class="text-center">
-        <h2 class="text-5xl font-[Poppins] mb-8">Layanan Kami</h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          Solusi lengkap untuk semua kebutuhan digital marketing dan konten
-          kreatif bisnis Anda
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-        <UCard
-          v-for="service in services"
-          :key="service.title"
-          class="p-8 hover:border-primary transition-all duration-300 group relative"
+      <div class="">
+        <UTimeline
+          :items="items"
+          color="primary"
+          :default-value="items.length"
+          size="3xl"
         >
-          <!-- Arrow Button -->
-          <div class="absolute top-8 right-8">
-            <NuxtLink :to="service.link">
-              <UButton
-                variant="outline"
-                size="sm"
-                trailing-icon="i-heroicons-arrow-top-right-on-square"
-                class="hover:border-primary hover:text-primary hover:scale-110 hover:cursor-pointer transition-all duration-300"
-              >
-                Cek Lebih Lanjut
-              </UButton>
-            </NuxtLink>
-          </div>
-
-          <!-- Service Content -->
-          <div class="space-y-6 pr-12">
-            <div class="flex items-center gap-6">
-              <UIcon :name="service.icon" class="text-3xl text-primary" />
-              <h3
-                class="text-2xl font-semibold text-gray-900 group-hover:text-primary transition-colors"
-              >
-                {{ service.title }}
+          <template #description="{ item }">
+            <div
+              class="mt-8 flex flex-col gap-4 p-8 rounded-3xl border border-obsidian-300 bg-obsidian-50"
+            >
+              <h3 class="font-display text-3xl font-bold text-obsidian-950">
+                {{ item.header }}
               </h3>
+              <p class="text-obsidian-700 text-lg">{{ item.description }}</p>
             </div>
-
-            <p class="text-gray-600 leading-relaxed">
-              {{ service.description }}
+          </template>
+          <template #date="{ item }">
+            <p
+              class="ml-8 text-copper-500 font-display font-semibold text-sm tracking-widest"
+            >
+              {{ item.date?.toUpperCase() }}
+            </p>
+          </template>
+        </UTimeline>
+        <div class="w-full flex justify-center">
+          <UButton
+            :to="{ path: '/cases' }"
+            target="_blank"
+            size="xl"
+            class="px-4 rounded-full"
+            color="neutral"
+            variant="link"
+          >
+            pelajari cerita klien lainnya dalam studi kasus kami
+            <Icon
+              name="i-heroicons-arrow-top-right-on-square"
+              class="text-sm"
+            />
+          </UButton>
+        </div>
+      </div>
+    </UContainer>
+    </div>
+    <div id="section-package" class="bg-obsidian-950">
+    <UContainer class="flex flex-col gap-12 py-24">
+      <div class="flex flex-col gap-12">
+        <div class="flex flex-col gap-8">
+          <p class="font-display text-copper-500 font-medium">
+            ──────── Paket layanan kami
+          </p>
+          <div class="flex gap-8">
+            <h2 class="font-display text-obsidian-50 font-bold text-5xl">
+              End-to-end Social Media Management
+            </h2>
+            <p class="font-body text-lg text-obsidian-300 font-light">
+              Kelola sosial media klinik Anda secara menyeluruh: strategi
+              konten, produksi visual, posting, hingga monitoring. Dari awal
+              hingga akhir, tinggal terima beres.
             </p>
           </div>
-        </UCard>
+        </div>
       </div>
-    </UContainer>
-    <UContainer id="section-pricelist" class="flex flex-col gap-20 py-24">
-      <div class="text-center">
-        <h2 class="text-5xl font-[Poppins] mb-8">Paket Harga</h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          Pilih paket yang sesuai dengan kebutuhan bisnis Anda. Semua paket
-          dapat disesuaikan dengan budget dan target yang diinginkan.
-        </p>
+      <div
+        class="bg-obsidian-950 border border-obsidian-700 rounded-xl overflow-hidden"
+      >
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="border-b border-obsidian-700">
+              <th class="text-left p-6 w-1/4"></th>
+              <th
+                v-for="(pkg, i) in packageSMMRaw"
+                :key="i"
+                :class="[
+                  'text-left p-6 border-l border-obsidian-700',
+                  i === 1 && 'bg-cobalt-950/40 border-t-2 border-t-cobalt-500',
+                ]"
+              >
+                <div class="flex flex-col gap-4">
+                  <div class="flex items-center gap-3">
+                    <span class="text-3xl font-semibold text-obsidian-50">{{
+                      packageSMMTitles[i]
+                    }}</span>
+                    <UBadge
+                      v-if="i === 1"
+                      label="POPULER"
+                      color="secondary"
+                      variant="solid"
+                      class="text-obsidian-950 font-display tracking-widest font-bold"
+                    />
+                  </div>
+                  <span class="text-sm text-obsidian-300">{{
+                    pkg.mainFocus
+                  }}</span>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <template
+              v-for="section in packageSMMSections"
+              :key="section.title"
+            >
+              <tr class="border-b border-obsidian-700 bg-obsidian-900">
+                <td
+                  colspan="4"
+                  class="px-6 py-3 text-obsidian-50 text-xs font-semibold tracking-widest"
+                >
+                  {{ section.title }}
+                </td>
+              </tr>
+              <tr
+                v-for="key in section.keys"
+                :key="key"
+                class="border-b border-obsidian-700 hover:bg-obsidian-900"
+              >
+                <td class="px-6 py-4 text-obsidian-50 text-sm font-medium">
+                  {{ featureLabels[key] }}
+                </td>
+                <td
+                  v-for="(pkg, i) in packageSMMRaw"
+                  :key="i"
+                  :class="[
+                    'px-6 py-4 border-l border-obsidian-700',
+                    i === 1 && 'bg-cobalt-950/40',
+                  ]"
+                >
+                  <UIcon
+                    v-if="pkg[key] === true"
+                    name="i-heroicons-check"
+                    class="text-copper-500 text-2xl"
+                  />
+                  <UIcon
+                    v-else-if="pkg[key] === false"
+                    name="i-heroicons-minus"
+                    class="text-obsidian-300 text-2xl"
+                  />
+                  <span v-else class="text-obsidian-50 text-sm">{{
+                    pkg[key]
+                  }}</span>
+                </td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
       </div>
-
-      <div class="max-w-7xl mx-auto">
-        <UTabs :items="pricingTabs" class="w-full overflow-visible">
-          <template #social-media>
-            <div class="grid lg:grid-cols-3 gap-12 mt-16">
-              <UCard
-                v-for="plan in pricingTabs[0]?.plans"
-                :key="plan.name"
-                :class="[
-                  'p-12 relative flex flex-col h-full',
-                  plan.popular
-                    ? 'border-2 border-primary shadow-lg scale-105'
-                    : 'border border-gray-200',
-                ]"
-                :ui="{ body: 'flex flex-col' }"
-              >
-                <!-- Popular Badge -->
-                <div
-                  v-if="plan.popular"
-                  class="absolute top-4 left-0 right-0 flex justify-center"
-                >
-                  <UBadge color="primary" size="lg" class="px-4 py-1">
-                    Terpopuler
-                  </UBadge>
-                </div>
-
-                <!-- Plan Header -->
-                <div class="text-center mb-12">
-                  <h3 class="text-2xl font-bold mb-6">{{ plan.name }}</h3>
-                  <div class="mb-8">
-                    <span class="text-4xl font-bold text-primary">{{
-                      plan.price
-                    }}</span>
-                    <span class="text-gray-600 ml-2">{{ plan.period }}</span>
-                  </div>
-                </div>
-
-                <!-- Features List -->
-                <div class="space-y-6 mb-12 grow">
-                  <div
-                    v-for="feature in plan.features"
-                    :key="feature.name"
-                    class="flex items-center gap-4"
-                  >
-                    <UIcon
-                      :name="
-                        feature.included
-                          ? 'i-heroicons-check-circle'
-                          : 'i-heroicons-x-circle'
-                      "
-                      :class="
-                        feature.included ? 'text-green-500' : 'text-red-400'
-                      "
-                      class="text-xl shrink-0"
-                    />
-                    <span
-                      :class="
-                        feature.included ? 'text-gray-900' : 'text-gray-400'
-                      "
-                    >
-                      {{ feature.name }}
-                    </span>
-                  </div>
-                </div>
-
-              </UCard>
-            </div>
-          </template>
-
-          <template #ads>
-            <div class="grid lg:grid-cols-3 gap-12 mt-16">
-              <UCard
-                v-for="plan in pricingTabs[1]?.plans"
-                :key="plan.name"
-                :class="[
-                  'p-12 relative flex flex-col h-full',
-                  plan.popular
-                    ? 'border-2 border-primary shadow-lg scale-105'
-                    : 'border border-gray-200',
-                ]"
-                :ui="{ body: 'flex flex-col' }"
-              >
-                <!-- Popular Badge -->
-                <div
-                  v-if="plan.popular"
-                  class="absolute top-4 left-0 right-0 flex justify-center"
-                >
-                  <UBadge color="primary" size="lg" class="px-4 py-1">
-                    Terpopuler
-                  </UBadge>
-                </div>
-
-                <!-- Plan Header -->
-                <div class="text-center mb-12">
-                  <h3 class="text-2xl font-bold mb-6">{{ plan.name }}</h3>
-                  <div class="mb-8">
-                    <span class="text-4xl font-bold text-primary">{{
-                      plan.price
-                    }}</span>
-                    <span class="text-gray-600 ml-2">{{ plan.period }}</span>
-                  </div>
-                </div>
-
-                <!-- Features List -->
-                <div class="space-y-6 mb-12 grow">
-                  <div
-                    v-for="feature in plan.features"
-                    :key="feature.name"
-                    class="flex items-center gap-4"
-                  >
-                    <UIcon
-                      :name="
-                        feature.included
-                          ? 'i-heroicons-check-circle'
-                          : 'i-heroicons-x-circle'
-                      "
-                      :class="
-                        feature.included ? 'text-green-500' : 'text-red-400'
-                      "
-                      class="text-xl shrink-0"
-                    />
-                    <span
-                      :class="
-                        feature.included ? 'text-gray-900' : 'text-gray-400'
-                      "
-                    >
-                      {{ feature.name }}
-                    </span>
-                  </div>
-                </div>
-
-              </UCard>
-            </div>
-          </template>
-
-          <template #kol>
-            <div class="grid lg:grid-cols-3 gap-12 mt-16">
-              <UCard
-                v-for="plan in pricingTabs[2]?.plans"
-                :key="plan.name"
-                :class="[
-                  'p-12 relative flex flex-col h-full',
-                  plan.popular
-                    ? 'border-2 border-primary shadow-lg scale-105'
-                    : 'border border-gray-200',
-                ]"
-                :ui="{ body: 'flex flex-col' }"
-              >
-                <!-- Popular Badge -->
-                <div
-                  v-if="plan.popular"
-                  class="absolute top-4 left-0 right-0 flex justify-center"
-                >
-                  <UBadge color="primary" size="lg" class="px-4 py-1">
-                    Terpopuler
-                  </UBadge>
-                </div>
-
-                <!-- Plan Header -->
-                <div class="text-center mb-12">
-                  <h3 class="text-2xl font-bold mb-6">{{ plan.name }}</h3>
-                  <div class="mb-8">
-                    <span class="text-4xl font-bold text-primary">{{
-                      plan.price
-                    }}</span>
-                    <span class="text-gray-600 ml-2">{{ plan.period }}</span>
-                  </div>
-                </div>
-
-                <!-- Features List -->
-                <div class="space-y-6 mb-12 grow">
-                  <div
-                    v-for="feature in plan.features"
-                    :key="feature.name"
-                    class="flex items-center gap-4"
-                  >
-                    <UIcon
-                      :name="
-                        feature.included
-                          ? 'i-heroicons-check-circle'
-                          : 'i-heroicons-x-circle'
-                      "
-                      :class="
-                        feature.included ? 'text-green-500' : 'text-red-400'
-                      "
-                      class="text-xl shrink-0"
-                    />
-                    <span
-                      :class="
-                        feature.included ? 'text-gray-900' : 'text-gray-400'
-                      "
-                    >
-                      {{ feature.name }}
-                    </span>
-                  </div>
-                </div>
-
-              </UCard>
-            </div>
-          </template>
-
-          <template #creative>
-            <div class="grid lg:grid-cols-3 gap-12 mt-16">
-              <UCard
-                v-for="plan in pricingTabs[3]?.plans"
-                :key="plan.name"
-                :class="[
-                  'p-12 relative flex flex-col h-full',
-                  plan.popular
-                    ? 'border-2 border-primary shadow-lg scale-105'
-                    : 'border border-gray-200',
-                ]"
-                :ui="{ body: 'flex flex-col' }"
-              >
-                <!-- Popular Badge -->
-                <div
-                  v-if="plan.popular"
-                  class="absolute top-4 left-0 right-0 flex justify-center"
-                >
-                  <UBadge color="primary" size="lg" class="px-4 py-1">
-                    Terpopuler
-                  </UBadge>
-                </div>
-
-                <!-- Plan Header -->
-                <div class="text-center mb-12">
-                  <h3 class="text-2xl font-bold mb-6">{{ plan.name }}</h3>
-                  <div class="mb-8">
-                    <span class="text-4xl font-bold text-primary">{{
-                      plan.price
-                    }}</span>
-                    <span class="text-gray-600 ml-2">{{ plan.period }}</span>
-                  </div>
-                </div>
-
-                <!-- Features List -->
-                <div class="space-y-6 mb-12 grow">
-                  <div
-                    v-for="feature in plan.features"
-                    :key="feature.name"
-                    class="flex items-center gap-4"
-                  >
-                    <UIcon
-                      :name="
-                        feature.included
-                          ? 'i-heroicons-check-circle'
-                          : 'i-heroicons-x-circle'
-                      "
-                      :class="
-                        feature.included ? 'text-green-500' : 'text-red-400'
-                      "
-                      class="text-xl shrink-0"
-                    />
-                    <span
-                      :class="
-                        feature.included ? 'text-gray-900' : 'text-gray-400'
-                      "
-                    >
-                      {{ feature.name }}
-                    </span>
-                  </div>
-                </div>
-
-              </UCard>
-            </div>
-          </template>
-        </UTabs>
-      </div>
-      
-      <!-- Single CTA Button -->
-      <div class="text-center mt-16">
-        <UButton size="xl" class="px-12 py-4">
-          Hubungi Kami untuk Konsultasi
+      <div class="flex gap-12 justify-center">
+        <UButton
+          href="https://wa.me/6285706034321"
+          size="xl"
+          class="px-4 rounded-full"
+          color="secondary"
+        >
+          <div class="w-2 h-2 bg-cobalt-500 rounded-full"></div>
+          <p class="text-obsidian-950">
+            Butuh layanan Digital Marketing / Ads? Cek paket kami
+          </p>
+          <Icon
+            name="i-heroicons-arrow-top-right-on-square"
+            class="text-sm text-obsidian-950"
+          />
         </UButton>
-        <p class="text-gray-600 mt-6">
-          Tidak yakin paket mana yang cocok? Tim kami siap membantu menentukan solusi terbaik untuk bisnis Anda.
-        </p>
+        <UButton
+          :to="{ path: '/cases' }"
+          target="_blank"
+          size="xl"
+          class="px-4 rounded-full"
+          color="secondary"
+          variant="link"
+        >
+          atau pelajari detail paket layanan social media management kami
+          <Icon name="i-heroicons-arrow-top-right-on-square" class="text-sm" />
+        </UButton>
       </div>
     </UContainer>
-    <UContainer id="section-call-to-action" class="flex flex-col gap-20 py-24">
-      <div class="text-center max-w-4xl mx-auto">
-        <h2 class="text-5xl font-[Poppins] mb-8">Siap Transformasi Digital Bisnis Anda?</h2>
-        <p class="text-xl text-gray-600 mb-16 leading-relaxed">
-          Jangan biarkan kompetitor unggul dalam dunia digital. Bergabunglah dengan puluhan klien yang telah merasakan pertumbuhan eksponensial bersama Eskala.
-        </p>
-
-        <!-- Benefits Grid -->
-        <div class="grid md:grid-cols-3 gap-12 mb-16">
-          <div class="text-center">
-            <div class="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-              <UIcon name="i-heroicons-rocket-launch" class="text-2xl text-primary" />
+    </div>
+    <UContainer id="section-testimonials" class="flex gap-12 py-24">
+      <div class="flex flex-col gap-12">
+        <div class="flex flex-col gap-8">
+          <p class="font-display text-copper-500 font-medium">
+            ──────── Apa kata klien kami
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div
+            v-for="testimonial in testimonials"
+            :key="testimonial.name"
+            class="flex flex-col p-8 gap-8 rounded-3xl border border-copper-200 bg-copper-50"
+          >
+            <Icon
+              name="i-heroicons-chat-bubble-left"
+              class="text-copper-500 text-4xl"
+            />
+            <p class="font-body font-medium text-2xl text-obsidian-950">
+              "{{ testimonial.quote }}"
+            </p>
+            <div class="flex gap-3 items-center">
+              <div
+                class="w-9 h-9 rounded-full bg-copper-500 flex items-center justify-center text-white font-semibold text-sm shrink-0"
+              >
+                {{ getAcronym(testimonial.name) }}
+              </div>
+              <div class="flex flex-col">
+                <p class="font-semibold text-obsidian-900">
+                  {{ testimonial.name }}
+                </p>
+                <p class="text-sm text-obsidian-600">
+                  {{ testimonial.position }}
+                </p>
+              </div>
             </div>
-            <h3 class="text-lg font-semibold mb-4">Konsultasi Gratis</h3>
-            <p class="text-gray-600">Analisis mendalam strategi digital yang tepat untuk bisnis Anda</p>
-          </div>
-          <div class="text-center">
-            <div class="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-              <UIcon name="i-heroicons-clock" class="text-2xl text-primary" />
-            </div>
-            <h3 class="text-lg font-semibold mb-4">Mulai Dalam 24 Jam</h3>
-            <p class="text-gray-600">Tim kami siap mengeksekusi strategi yang telah disepakati dengan cepat</p>
-          </div>
-          <div class="text-center">
-            <div class="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-              <UIcon name="i-heroicons-shield-check" class="text-2xl text-primary" />
-            </div>
-            <h3 class="text-lg font-semibold mb-4">Garansi Hasil</h3>
-            <p class="text-gray-600">Kami berkomitmen pada hasil nyata atau uang kembali dalam 30 hari</p>
           </div>
         </div>
-
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <UButton size="xl" class="px-10 py-4">
-            <UIcon name="i-heroicons-phone" class="mr-2" />
-            Konsultasi Gratis Sekarang
-          </UButton>
-          <UButton variant="outline" size="xl" class="px-10 py-4">
-            <UIcon name="i-heroicons-envelope" class="mr-2" />
-            Kirim Brief Project
-          </UButton>
+      </div>
+    </UContainer>
+    <UContainer id="section-call-to-action" class="flex flex-col gap-12 py-24">
+      <div
+        class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-10 lg:p-14 flex flex-col gap-12"
+      >
+        <!-- Top: subtitle+title (left) and description (right) -->
+        <div class="flex gap-12 items-center">
+          <div class="flex flex-col gap-4 flex-1">
+            <p
+              class="font-display font-semibold text-xs tracking-widest text-cobalt-500 uppercase"
+            >
+              SIAP UNTUK BERDISKUSI?
+            </p>
+            <h2
+              class="font-display font-bold text-5xl text-obsidian-950 leading-tight"
+            >
+              Konsultasi <span class="text-cobalt-500">30 menit</span>, tanpa
+              biaya
+            </h2>
+          </div>
+          <div class="basis-2/5">
+            <p
+              class="font-body text-lg text-obsidian-600 font-light leading-relaxed"
+            >
+              Kami akan mendengarkan masalah Anda, melakukan audit, lalu
+              merekomendasikan tiga solusi, dengan atau tanpa bekerja sama
+              dengan kami.
+            </p>
+          </div>
         </div>
+        <!-- Buttons -->
+        <div class="flex flex-row justify-center gap-8">
+          <UButton
+            href="https://wa.me/6285706034321"
+            target="_blank"
+            rel="noopener noreferrer"
+            size="xl"
+            class="px-4 rounded-full"
+            color="success"
+          >
+            <Icon name="i-mdi-whatsapp" class="text-lg" />
+            Hubungi via WhatsApp
+            <Icon
+              name="i-heroicons-arrow-top-right-on-square"
+              class="text-lg"
+            />
+          </UButton>
+          <UButton
+            href="mailto:core@eskala.id"
+            size="xl"
+            class="px-4 rounded-full"
+            color="neutral"
+            variant="outline"
+          >
+            <Icon name="i-heroicons-envelope" class="text-lg" />
 
-        <!-- Contact Info -->
-        <!-- <div class="mt-8 pt-8 border-t border-gray-200">
-          <p class="text-gray-600 mb-4">Atau hubungi kami langsung:</p>
-          <div class="flex flex-col sm:flex-row gap-6 justify-center items-center text-sm">
-            <div class="flex items-center gap-2">
-              <UIcon name="i-heroicons-phone" class="text-primary" />
-              <span>+62 812-3456-7890</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <UIcon name="i-heroicons-envelope" class="text-primary" />
-              <span>hello@eskala.id</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <UIcon name="i-heroicons-map-pin" class="text-primary" />
-              <span>Jakarta, Indonesia</span>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- Social Proof -->
-        <div class="mt-12 text-center">
-          <p class="text-sm text-gray-500 mb-6">Dipercaya oleh 25+ klien tetap di seluruh Indonesia</p>
-          <div class="flex justify-center items-center gap-2">
-            <div class="flex">
-              <UIcon name="i-heroicons-star-solid" class="text-yellow-400 text-lg" />
-              <UIcon name="i-heroicons-star-solid" class="text-yellow-400 text-lg" />
-              <UIcon name="i-heroicons-star-solid" class="text-yellow-400 text-lg" />
-              <UIcon name="i-heroicons-star-solid" class="text-yellow-400 text-lg" />
-              <UIcon name="i-heroicons-star-solid" class="text-yellow-400 text-lg" />
-            </div>
-          </div>
+            Kirim brief melalui email
+            <Icon
+              name="i-heroicons-arrow-top-right-on-square"
+              class="text-lg"
+            />
+          </UButton>
         </div>
       </div>
     </UContainer>
