@@ -1,3 +1,25 @@
+<script lang="ts" setup>
+useSeoMeta({
+  title: "Social Media Management",
+  description:
+    "Kelola media sosial klinik dan rumah sakit Anda secara profesional. Paket SMM Eskala mulai 4 juta/bulan — photography, videography, copywriting, medical review, dan laporan bulanan.",
+  ogTitle: "Social Media Management untuk Faskes | Eskala",
+  ogDescription:
+    "Hadir konsisten, tumbuh organik. Paket Social Media Management khusus fasilitas kesehatan mulai 4 juta/bulan. Medical review di setiap konten, revisi unlimited.",
+  ogUrl: "https://eskala.id/services/social-media-management",
+  ogType: "website",
+  ogImage: "https://eskala.id/android-chrome-512x512.png",
+  twitterTitle: "Social Media Management untuk Faskes | Eskala",
+  twitterDescription:
+    "SMM profesional untuk klinik dan rumah sakit. Mulai 4 juta/bulan — foto, video, copywriting, medical review, revisi unlimited.",
+  twitterImage: "https://eskala.id/android-chrome-512x512.png",
+});
+
+useHead({
+  link: [{ rel: "canonical", href: "https://eskala.id/services/social-media-management" }],
+});
+</script>
+
 <template>
   <div>
     <UContainer class="py-20">

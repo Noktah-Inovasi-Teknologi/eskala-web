@@ -1,3 +1,25 @@
+<script lang="ts" setup>
+useSeoMeta({
+  title: "Digital Marketing",
+  description:
+    "Optimalkan iklan digital (Meta, TikTok, Google) dan kolaborasi KOC untuk memperluas jangkauan pasien faskes Anda. Fee berbasis persentase ad spend, tanpa biaya tetap besar.",
+  ogTitle: "Digital Marketing untuk Fasilitas Kesehatan | Eskala",
+  ogDescription:
+    "Iklan yang tepat, hasil yang maksimal. Ads Management + KOC Management khusus klinik dan rumah sakit. Fee mulai 15% dari ad spend — transparan, terukur.",
+  ogUrl: "https://eskala.id/services/digital-marketing",
+  ogType: "website",
+  ogImage: "https://eskala.id/android-chrome-512x512.png",
+  twitterTitle: "Digital Marketing untuk Fasilitas Kesehatan | Eskala",
+  twitterDescription:
+    "Ads Management & KOC Management untuk klinik dan RS. Mulai 15% dari ad spend di Meta, TikTok, Google.",
+  twitterImage: "https://eskala.id/android-chrome-512x512.png",
+});
+
+useHead({
+  link: [{ rel: "canonical", href: "https://eskala.id/services/digital-marketing" }],
+});
+</script>
+
 <template>
   <div>
     <UContainer class="py-20">

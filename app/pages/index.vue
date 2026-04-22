@@ -1,6 +1,26 @@
 <script lang="ts" setup>
 import type { TimelineItem } from "@nuxt/ui";
 
+useSeoMeta({
+  title: "Digital Marketing Agency",
+  description:
+    "Eskala adalah digital marketing agency berbasis di Yogyakarta yang spesialis membantu klinik, rumah sakit, dan brand kesehatan tumbuh melalui Social Media Management dan Digital Marketing.",
+  ogTitle: "Eskala — Digital Marketing Agency untuk Fasilitas Kesehatan Indonesia",
+  ogDescription:
+    "Partner kreatif yang memahami dunia kesehatan. Kami membantu klinik, rumah sakit, dan brand kesehatan tumbuh di dunia digital. Mulai dari Social Media Management hingga Digital Marketing.",
+  ogUrl: "https://eskala.id",
+  ogType: "website",
+  ogImage: "https://eskala.id/android-chrome-512x512.png",
+  twitterTitle: "Eskala — Digital Marketing Agency untuk Fasilitas Kesehatan",
+  twitterDescription:
+    "Partner kreatif untuk klinik, rumah sakit, dan brand kesehatan. Social Media Management & Digital Marketing spesialis faskes Indonesia.",
+  twitterImage: "https://eskala.id/android-chrome-512x512.png",
+});
+
+useHead({
+  link: [{ rel: "canonical", href: "https://eskala.id" }],
+});
+
 const keyPoints = ref([
   {
     title: "Dipercaya 12+ fasilitas kesehatan di Indonesia",
@@ -138,8 +158,6 @@ const items = ref<TimelineItem[]>([
 const services = ref([
   {
     label: "Social Media Management",
-    shortDescription:
-      "Kelola seluruh aspek media sosial Anda dari strategi hingga eksekusi dengan pendekatan yang komprehensif dan terukur.",
     link: "/services/social-media-management",
     icon: "i-heroicons-chat-bubble-left-right",
     tagline: "Hadir Konsisten, Tumbuh Organik",
@@ -156,8 +174,6 @@ const services = ref([
   },
   {
     label: "Digital Marketing",
-    shortDescription:
-      "Cocok untuk faskes yang sudah memiliki konten organik stabil dan siap memperluas jangkauan pasien berbayar.",
     link: "/services/digital-marketing",
     icon: "i-heroicons-cursor-arrow-rays",
     tagline: "Iklan yang Tepat, Hasil yang Maksimal",
@@ -330,13 +346,20 @@ const testimonials = ref<Testimonial[]>([
     position: "Owner & Dokter Spesialis Konservasi Gigi, Ecky Dental Center",
   },
 ]);
+
+const heroQuote = ref<Testimonial>({
+  quote:
+    "Saya ingin faskes lebih mengerti dan lebih masuk dalam dunia pasien. Kita bisa lakukan itu secara digital.",
+  name: "Donny Putra N.H.",
+  position: "Manager Digital Marketing SMEC Group",
+});
 </script>
 
 <template>
   <div>
     <UContainer
       id="section-hero"
-      class="flex flex-col gap-12 pt-24 items-center relative"
+      class="flex flex-col gap-12 py-24 items-center relative"
     >
       <div class="flex gap-12 items-center">
         <div class="flex flex-col gap-8">
@@ -351,7 +374,7 @@ const testimonials = ref<Testimonial[]>([
               genggam hati pasien Anda.
             </h1>
           </div>
-          <p class="font-body text-obsidian-950 mt-8 text-xl">
+          <p class="font-body text-lg text-obsidian-700 font-light">
             Eskala adalah tim kreatif berbasis di Yogyakarta. Kami bekerja
             berdampingan dengan tim internal dan klinis Anda, untuk menciptakan
             konten digital yang sesuai standar medis, dan dapat membangun
@@ -367,19 +390,20 @@ const testimonials = ref<Testimonial[]>([
               class="text-copper-500 text-4xl"
             />
             <p class="font-body font-medium text-2xl text-obsidian-950">
-              "Saya ingin faskes lebih mengerti dan lebih masuk dalam dunia
-              pasien. Kita bisa lakukan itu secara digital."
+              "{{ heroQuote.quote }}"
             </p>
             <div class="flex gap-3 items-center">
               <div
                 class="w-9 h-9 rounded-full bg-copper-500 flex items-center justify-center text-white font-semibold text-sm shrink-0"
               >
-                DP
+                {{ getAcronym(heroQuote.name) }}
               </div>
               <div class="flex flex-col">
-                <p class="font-semibold text-obsidian-900">Donny Putra N.H.</p>
+                <p class="font-semibold text-obsidian-900">
+                  {{ heroQuote.name }}
+                </p>
                 <p class="text-sm text-obsidian-600">
-                  Manager Digital Marketing SMEC Group
+                  {{ heroQuote.position }}
                 </p>
               </div>
             </div>
@@ -389,23 +413,23 @@ const testimonials = ref<Testimonial[]>([
       <div class="flex gap-12 items-center">
         <UButton
           href="https://wa.me/6285706034321"
+          target="_blank"
           size="xl"
           class="px-4 rounded-full"
-          color="neutral"
+          color="success"
         >
-          <div class="w-2 h-2 bg-copper-500 rounded-full"></div>
+          <Icon name="i-mdi-whatsapp" class="text-lg" />
           Jadwalkan konsultasi gratis dengan kami
         </UButton>
         <UButton
           :to="{ path: '/cases' }"
-          target="_blank"
           size="xl"
           class="px-4 rounded-full"
           color="neutral"
           variant="link"
         >
           atau pelajari cerita klien kami
-          <Icon name="i-heroicons-arrow-top-right-on-square" class="text-sm" />
+          <Icon name="i-heroicons-arrow-right" class="text-sm" />
         </UButton>
       </div>
       <USeparator color="obsidian" />
@@ -415,15 +439,14 @@ const testimonials = ref<Testimonial[]>([
           :key="point.title"
           class="flex items-center gap-4"
         >
-          <Icon :name="point.icon" class="text-primary text-4xl" />
+          <Icon :name="point.icon" class="text-copper-500 text-4xl" />
           <p class="text-obsidian-950 font-medium text-sm">{{ point.title }}</p>
         </div>
       </div>
       <USeparator color="obsidian" />
     </UContainer>
     <div id="section-key-question" class="bg-obsidian-100">
-    <UContainer class="flex flex-col gap-12 py-24">
-      <div class="flex flex-col gap-12">
+      <UContainer class="flex flex-col gap-12 py-24">
         <div class="flex flex-col gap-8">
           <p class="font-display text-copper-500 font-medium">
             ──────── Pertanyaan yang sering kami terima
@@ -461,29 +484,26 @@ const testimonials = ref<Testimonial[]>([
             </div>
           </div>
         </div>
-      </div>
-    </UContainer>
+      </UContainer>
     </div>
     <UContainer id="section-services" class="flex gap-12 py-24">
-      <div class="flex flex-col gap-12">
-        <div class="flex flex-col gap-8">
-          <p class="font-display text-copper-500 font-medium">
-            ──────── Layanan yang kami tawarkan
-          </p>
-          <h2 class="font-display text-obsidian-950 font-bold text-5xl">
-            <span class="text-cobalt-500">Dua layanan utama</span> kami yang sesuai dengan kebutuhan Anda.
-          </h2>
-          <p class="font-body text-lg text-obsidian-700 font-light">
-            Klik untuk melihat detailnya. Sebagian besar klinik memulai dengan
-            layanan SMM, lalu menambahkan Digital Marketing ketika konten
-            organik mereka sudah cukup matang.
-          </p>
-        </div>
+      <div class="flex flex-col gap-8">
+        <p class="font-display text-copper-500 font-medium">
+          ──────── Layanan yang kami tawarkan
+        </p>
+        <h2 class="font-display text-obsidian-950 font-bold text-5xl">
+          <span class="text-cobalt-500">Dua layanan utama</span> kami yang sesuai dengan kebutuhan Anda.
+        </h2>
+        <p class="font-body text-lg text-obsidian-700 font-light">
+          Klik untuk melihat detailnya. Sebagian besar klinik memulai dengan
+          layanan SMM, lalu menambahkan Digital Marketing ketika konten
+          organik mereka sudah cukup matang.
+        </p>
       </div>
       <UAccordion :items="services" class="w-full">
         <template #body="{ item }">
           <div class="flex flex-col gap-8">
-            <p class="text-obsidian-700 text-lg">{{ item.description }}</p>
+            <p class="font-body text-lg text-obsidian-700 font-light">{{ item.description }}</p>
             <UBadge
               color="secondary"
               size="lg"
@@ -501,7 +521,7 @@ const testimonials = ref<Testimonial[]>([
                 class="flex gap-2 items-center"
               >
                 <div class="w-2 h-2 bg-copper-500 rounded-full" />
-                <p class="text-obsidian-700">{{ point }}</p>
+                <p class="font-body text-obsidian-700">{{ point }}</p>
               </div>
             </div>
           </div>
@@ -509,8 +529,7 @@ const testimonials = ref<Testimonial[]>([
       </UAccordion>
     </UContainer>
     <div id="section-expected-results" class="bg-obsidian-950">
-    <UContainer class="flex flex-col gap-12 py-24">
-      <div class="flex flex-col gap-12">
+      <UContainer class="flex flex-col gap-12 py-24">
         <div class="flex flex-col gap-8">
           <p class="font-display text-copper-500 font-medium">
             ──────── Ekspektasi hasil
@@ -526,41 +545,39 @@ const testimonials = ref<Testimonial[]>([
             pengalaman kami bersama faskes di Indonesia.
           </p>
         </div>
-      </div>
-      <div class="flex gap-12 content-stretch">
-        <div
-          v-for="result in expectedResults"
-          :key="result.title"
-          class="flex flex-col gap-8 rounded-3xl border border-obsidian-700 bg-obsidian-900 p-8 basis-1/3"
-        >
-          <div class="flex items-center justify-between gap-8">
-            <p
-              class="font-display text-copper-500 tracking-widest font-semibold text-sm"
-            >
-              {{ result.stage }}
-            </p>
-            <p class="text-obsidian-300 font-semibold">{{ result.number }}</p>
-          </div>
-          <h3 class="font-display text-2xl font-bold text-obsidian-50">
-            {{ result.title }}
-          </h3>
-          <p class="font-body text-obsidian-300">{{ result.description }}</p>
-          <USeparator color="obsidian" />
-          <div class="flex flex-col gap-4">
-            <div v-for="detail in result.detail" class="flex flex-col">
-              <div class="flex items-center gap-4">
-                <Icon name="i-heroicons-check" class="text-secondary text-xl" />
-                <p class="text-obsidian-300 basis-4/5 text-sm">{{ detail }}</p>
+        <div class="flex gap-12 content-stretch">
+          <div
+            v-for="result in expectedResults"
+            :key="result.title"
+            class="flex flex-col gap-8 rounded-3xl border border-obsidian-700 bg-obsidian-900 p-8 basis-1/3"
+          >
+            <div class="flex items-center justify-between gap-8">
+              <p
+                class="font-display text-copper-500 tracking-widest font-semibold text-sm"
+              >
+                {{ result.stage }}
+              </p>
+              <p class="text-obsidian-300 font-semibold">{{ result.number }}</p>
+            </div>
+            <h3 class="font-display text-2xl font-bold text-obsidian-50">
+              {{ result.title }}
+            </h3>
+            <p class="font-body text-obsidian-300 font-light">{{ result.description }}</p>
+            <USeparator color="obsidian" />
+            <div class="flex flex-col gap-4">
+              <div v-for="detail in result.detail" :key="detail" class="flex flex-col">
+                <div class="flex items-center gap-4">
+                  <Icon name="i-heroicons-check" class="text-secondary text-xl" />
+                  <p class="font-body text-obsidian-300 basis-4/5 text-sm">{{ detail }}</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </UContainer>
+      </UContainer>
     </div>
     <div id="section-case-study" class="bg-obsidian-200">
-    <UContainer class="flex flex-col gap-12 py-24">
-      <div class="flex flex-col gap-12">
+      <UContainer class="flex flex-col gap-12 py-24">
         <div class="flex flex-col gap-8">
           <p class="font-display text-copper-500 font-medium">
             ──────── Studi kasus
@@ -578,54 +595,48 @@ const testimonials = ref<Testimonial[]>([
             tinggi.
           </p>
         </div>
-      </div>
-      <div class="">
-        <UTimeline
-          :items="items"
-          color="primary"
-          :default-value="items.length"
-          size="3xl"
-        >
-          <template #description="{ item }">
-            <div
-              class="mt-8 flex flex-col gap-4 p-8 rounded-3xl border border-obsidian-300 bg-obsidian-50"
-            >
-              <h3 class="font-display text-3xl font-bold text-obsidian-950">
-                {{ item.header }}
-              </h3>
-              <p class="text-obsidian-700 text-lg">{{ item.description }}</p>
-            </div>
-          </template>
-          <template #date="{ item }">
-            <p
-              class="ml-8 text-copper-500 font-display font-semibold text-sm tracking-widest"
-            >
-              {{ item.date?.toUpperCase() }}
-            </p>
-          </template>
-        </UTimeline>
-        <div class="w-full flex justify-center">
-          <UButton
-            :to="{ path: '/cases' }"
-            target="_blank"
-            size="xl"
-            class="px-4 rounded-full"
-            color="neutral"
-            variant="link"
+        <div>
+          <UTimeline
+            :items="items"
+            color="primary"
+            :default-value="items.length"
+            size="3xl"
           >
-            pelajari cerita klien lainnya dalam studi kasus kami
-            <Icon
-              name="i-heroicons-arrow-top-right-on-square"
-              class="text-sm"
-            />
-          </UButton>
+            <template #description="{ item }">
+              <div
+                class="mt-8 flex flex-col gap-4 p-8 rounded-3xl border border-obsidian-300 bg-obsidian-50"
+              >
+                <h3 class="font-display text-3xl font-bold text-obsidian-950">
+                  {{ item.header }}
+                </h3>
+                <p class="font-body text-lg text-obsidian-700 font-light">{{ item.description }}</p>
+              </div>
+            </template>
+            <template #date="{ item }">
+              <p
+                class="ml-8 text-copper-500 font-display font-semibold text-sm tracking-widest"
+              >
+                {{ item.date?.toUpperCase() }}
+              </p>
+            </template>
+          </UTimeline>
+          <div class="w-full flex justify-center">
+            <UButton
+              :to="{ path: '/cases' }"
+              size="xl"
+              class="px-4 rounded-full"
+              color="neutral"
+              variant="link"
+            >
+              pelajari cerita klien lainnya dalam studi kasus kami
+              <Icon name="i-heroicons-arrow-right" class="text-sm" />
+            </UButton>
+          </div>
         </div>
-      </div>
-    </UContainer>
+      </UContainer>
     </div>
     <div id="section-package" class="bg-obsidian-950">
-    <UContainer class="flex flex-col gap-12 py-24">
-      <div class="flex flex-col gap-12">
+      <UContainer class="flex flex-col gap-12 py-24">
         <div class="flex flex-col gap-8">
           <p class="font-display text-copper-500 font-medium">
             ──────── Paket layanan kami
@@ -641,10 +652,9 @@ const testimonials = ref<Testimonial[]>([
             </p>
           </div>
         </div>
-      </div>
-      <div
-        class="bg-obsidian-950 border border-obsidian-700 rounded-xl overflow-hidden"
-      >
+        <div
+          class="bg-obsidian-950 border border-obsidian-700 rounded-2xl overflow-hidden"
+        >
         <table class="w-full border-collapse">
           <thead>
             <tr class="border-b border-obsidian-700">
@@ -724,71 +734,65 @@ const testimonials = ref<Testimonial[]>([
             </template>
           </tbody>
         </table>
-      </div>
-      <div class="flex gap-12 justify-center">
-        <UButton
-          href="https://wa.me/6285706034321"
-          size="xl"
-          class="px-4 rounded-full"
-          color="secondary"
-        >
-          <div class="w-2 h-2 bg-cobalt-500 rounded-full"></div>
-          <p class="text-obsidian-950">
-            Butuh layanan Digital Marketing / Ads? Cek paket kami
-          </p>
-          <Icon
-            name="i-heroicons-arrow-top-right-on-square"
-            class="text-sm text-obsidian-950"
-          />
-        </UButton>
-        <UButton
-          :to="{ path: '/cases' }"
-          target="_blank"
-          size="xl"
-          class="px-4 rounded-full"
-          color="secondary"
-          variant="link"
-        >
-          atau pelajari detail paket layanan social media management kami
-          <Icon name="i-heroicons-arrow-top-right-on-square" class="text-sm" />
-        </UButton>
-      </div>
-    </UContainer>
-    </div>
-    <UContainer id="section-testimonials" class="flex gap-12 py-24">
-      <div class="flex flex-col gap-12">
-        <div class="flex flex-col gap-8">
-          <p class="font-display text-copper-500 font-medium">
-            ──────── Apa kata klien kami
-          </p>
         </div>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div
-            v-for="testimonial in testimonials"
-            :key="testimonial.name"
-            class="flex flex-col p-8 gap-8 rounded-3xl border border-copper-200 bg-copper-50"
+        <div class="flex gap-12 justify-center">
+          <UButton
+            to="/services/digital-marketing"
+            size="xl"
+            class="px-4 rounded-full text-obsidian-950"
+            color="secondary"
           >
-            <Icon
-              name="i-heroicons-chat-bubble-left"
-              class="text-copper-500 text-4xl"
-            />
-            <p class="font-body font-medium text-2xl text-obsidian-950">
-              "{{ testimonial.quote }}"
-            </p>
-            <div class="flex gap-3 items-center">
-              <div
-                class="w-9 h-9 rounded-full bg-copper-500 flex items-center justify-center text-white font-semibold text-sm shrink-0"
-              >
-                {{ getAcronym(testimonial.name) }}
-              </div>
-              <div class="flex flex-col">
-                <p class="font-semibold text-obsidian-900">
-                  {{ testimonial.name }}
-                </p>
-                <p class="text-sm text-obsidian-600">
-                  {{ testimonial.position }}
-                </p>
-              </div>
+            Cek paket Digital Marketing / Ads
+            <Icon name="i-heroicons-arrow-right" class="text-sm" />
+          </UButton>
+          <UButton
+            to="/services/social-media-management"
+            size="xl"
+            class="px-4 rounded-full"
+            color="secondary"
+            variant="link"
+          >
+            atau pelajari detail paket layanan social media management kami
+            <Icon name="i-heroicons-arrow-right" class="text-sm" />
+          </UButton>
+        </div>
+      </UContainer>
+    </div>
+    <UContainer id="section-testimonials" class="flex flex-col gap-12 py-24">
+      <div class="flex flex-col gap-8">
+        <p class="font-display text-copper-500 font-medium">
+          ──────── Apa kata klien kami
+        </p>
+        <h2 class="font-display text-obsidian-950 font-bold text-5xl">
+          Cerita <span class="text-cobalt-500">dari klien</span> kami.
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div
+          v-for="testimonial in testimonials"
+          :key="testimonial.name"
+          class="flex flex-col p-8 gap-8 rounded-3xl border border-copper-200 bg-copper-50"
+        >
+          <Icon
+            name="i-heroicons-chat-bubble-left"
+            class="text-copper-500 text-4xl"
+          />
+          <p class="font-body font-medium text-2xl text-obsidian-950">
+            "{{ testimonial.quote }}"
+          </p>
+          <div class="flex gap-3 items-center">
+            <div
+              class="w-9 h-9 rounded-full bg-copper-500 flex items-center justify-center text-white font-semibold text-sm shrink-0"
+            >
+              {{ getAcronym(testimonial.name) }}
+            </div>
+            <div class="flex flex-col">
+              <p class="font-semibold text-obsidian-900">
+                {{ testimonial.name }}
+              </p>
+              <p class="text-sm text-obsidian-600">
+                {{ testimonial.position }}
+              </p>
             </div>
           </div>
         </div>
@@ -815,7 +819,7 @@ const testimonials = ref<Testimonial[]>([
           </div>
           <div class="basis-2/5">
             <p
-              class="font-body text-lg text-obsidian-600 font-light leading-relaxed"
+              class="font-body text-lg text-obsidian-700 font-light leading-relaxed"
             >
               Kami akan mendengarkan masalah Anda, melakukan audit, lalu
               merekomendasikan tiga solusi, dengan atau tanpa bekerja sama
