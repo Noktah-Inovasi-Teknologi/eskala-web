@@ -83,7 +83,7 @@ When the user asks to create a new page or route in the application.
            </div>
            <div class="flex flex-row justify-center gap-8">
              <UButton
-               href="https://wa.me/6285706034321"
+               href="https://wa.me/6282230712718"
                target="_blank"
                rel="noopener noreferrer"
                size="xl"

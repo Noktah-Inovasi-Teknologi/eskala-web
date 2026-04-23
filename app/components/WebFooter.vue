@@ -81,7 +81,7 @@ const footerLinks: FooterSection[] = [
             </div>
             <div class="flex items-center gap-3">
               <UIcon name="i-heroicons-phone" class="text-primary" />
-              <span class="text-sm text-gray-600">+62 857-0603-4321</span>
+              <span class="text-sm text-gray-600">+62 822-3071-2718</span>
             </div>
             <div class="flex items-center gap-3">
               <UIcon name="i-heroicons-map-pin" class="text-primary" />

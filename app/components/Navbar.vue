@@ -79,7 +79,7 @@ const items = ref([
     <UButton
       variant="solid"
       icon="i-simple-icons-whatsapp"
-      href="https://wa.me/6285706034321"
+      href="https://wa.me/6282230712718"
       target="_blank"
       external
       color="success"

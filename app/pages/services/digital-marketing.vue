@@ -294,7 +294,7 @@ const faqItems = ref([
       </div>
       <div class="flex gap-12 items-center">
         <UButton
-          href="https://wa.me/6285706034321"
+          href="https://wa.me/6282230712718"
           target="_blank"
           size="xl"
           class="px-4 rounded-full"
@@ -584,7 +584,7 @@ const faqItems = ref([
         </div>
         <div class="flex gap-12 justify-center">
           <UButton
-            href="https://wa.me/6285706034321"
+            href="https://wa.me/6282230712718"
             target="_blank"
             size="xl"
             class="px-4 rounded-full text-obsidian-950"
@@ -736,7 +736,7 @@ const faqItems = ref([
         </div>
         <div class="flex flex-row justify-center gap-8">
           <UButton
-            href="https://wa.me/6285706034321"
+            href="https://wa.me/6282230712718"
             target="_blank"
             rel="noopener noreferrer"
             size="xl"

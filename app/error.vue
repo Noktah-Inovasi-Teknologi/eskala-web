@@ -61,7 +61,7 @@ const handleError = () => clearError({ redirect: "/" });
             Kembali ke Beranda
           </UButton>
           <UButton
-            href="https://wa.me/6285706034321?text=Halo+Eskala!+Saya+tertarik+untuk+konsultasi."
+            href="https://wa.me/6282230712718?text=Halo+Eskala!+Saya+tertarik+untuk+konsultasi."
             target="_blank"
             size="xl"
             color="success"

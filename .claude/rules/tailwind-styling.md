@@ -111,7 +111,7 @@ For dark sections (obsidian-950 background):
 
 ```vue
 <!-- Primary: WhatsApp / main CTA -->
-<UButton href="https://wa.me/6285706034321" color="success" class="px-4 rounded-full" size="xl">
+<UButton href="https://wa.me/6282230712718" color="success" class="px-4 rounded-full" size="xl">
   <Icon name="i-mdi-whatsapp" />Hubungi via WhatsApp
 </UButton>
 
