@@ -80,7 +80,7 @@ Always use `font-display` for headings and `font-body` for body copy — not `fo
   - Digital Marketing — Ads + KOC (15% / 20% / 25% of ad spend)
   - Eskala VIP — all-in-one creative bundle (15 Juta/bulan)
 - **Deprecated/merged**: Ads Management, KOL Management, Creative Service (standalone) — these no longer exist as separate pages
-- **Contact**: core@eskala.id, +62 857-0603-4321 (WhatsApp: wa.me/6285706034321)
+- **Contact**: core@eskala.id, +62 822-3071-2718 (WhatsApp: wa.me/6282230712718)
 - **Social media**: @eskala.u on all platforms
 
 ## Nuxt UI Config (`app.config.ts`)

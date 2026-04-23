@@ -20,8 +20,8 @@ Tim kreatif yang memahami dunia kesehatan — bukan vendor yang menunggu brief, 
 ## Contact Information
 
 - **Email**: core@eskala.id
-- **Phone / WhatsApp**: +62 857-0603-4321
-- **WhatsApp link**: `https://wa.me/6285706034321`
+- **Phone / WhatsApp**: +62 822-3071-2718
+- **WhatsApp link**: `https://wa.me/6282230712718`
 
 ## Social Media Handles
 
@@ -242,7 +242,7 @@ KOC: 1K–100K followers, genuine users, higher engagement than KOL. Geo-targeti
 
 ### Primary CTA
 - Text: "Jadwalkan konsultasi gratis dengan kami" / "Hubungi via WhatsApp"
-- Link: `https://wa.me/6285706034321`
+- Link: `https://wa.me/6282230712718`
 - Style: `color="success"`, `rounded-full`, WhatsApp icon
 
 ### WhatsApp Message Template

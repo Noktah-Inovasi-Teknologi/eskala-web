@@ -182,7 +182,7 @@ const lastUpdated = "22 April 2026";
               core@eskala.id
             </UButton>
             <UButton
-              href="https://wa.me/6285706034321"
+              href="https://wa.me/6282230712718"
               color="success"
               class="px-4 rounded-full"
               size="lg"

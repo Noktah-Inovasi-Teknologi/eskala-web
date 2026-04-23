@@ -412,7 +412,7 @@ const heroQuote = ref<Testimonial>({
       </div>
       <div class="flex gap-12 items-center">
         <UButton
-          href="https://wa.me/6285706034321"
+          href="https://wa.me/6282230712718"
           target="_blank"
           size="xl"
           class="px-4 rounded-full"
@@ -830,7 +830,7 @@ const heroQuote = ref<Testimonial>({
         <!-- Buttons -->
         <div class="flex flex-row justify-center gap-8">
           <UButton
-            href="https://wa.me/6285706034321"
+            href="https://wa.me/6282230712718"
             target="_blank"
             rel="noopener noreferrer"
             size="xl"
