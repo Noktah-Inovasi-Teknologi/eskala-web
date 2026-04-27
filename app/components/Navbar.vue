@@ -37,6 +37,7 @@ const items = ref([
     icon: "i-heroicons-chart-bar-square",
     description:
       "Lihat bagaimana kami membantu klien kami tumbuh besar dan sukses.",
+    to: "/case-study",
   },
   {
     label: "Tentang Kami",
