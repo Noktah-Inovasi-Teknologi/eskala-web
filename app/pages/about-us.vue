@@ -3,7 +3,7 @@ useSeoMeta({
   title: "Tentang Kami | Eskala",
   description:
     "Eskala adalah digital marketing agency berbasis di Yogyakarta yang berdedikasi membantu fasilitas kesehatan dan bisnis jasa Indonesia tumbuh secara digital.",
-  ogTitle: "Tentang Kami | Eskala",
+  ogTitle: "Tentang Kami",
   ogDescription:
     "Partner kreatif yang paham dunia kesehatan. Didirikan 2024, berbasis di Yogyakarta.",
   ogUrl: "https://eskala.id/about-us",

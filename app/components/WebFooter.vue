@@ -19,7 +19,6 @@ const footerLinks: FooterSection[] = [
         to: "/services/social-media-management",
       },
       { label: "Digital Marketing", to: "/services/digital-marketing" },
-      { label: "VIP", to: "/services/vip" },
     ],
   },
 
@@ -27,7 +26,7 @@ const footerLinks: FooterSection[] = [
     label: "Dukungan",
     children: [
       { label: "FAQ", to: "/faq" },
-      { label: "Tentang Kami", to: "/about" },
+      { label: "Tentang Kami", to: "/about-us" },
     ],
   },
   {
@@ -42,16 +41,6 @@ const footerLinks: FooterSection[] = [
         icon: "i-simple-icons-tiktok",
         label: "TikTok",
         to: "https://tiktok.com/@eskala.u",
-      },
-      {
-        icon: "i-simple-icons-facebook",
-        label: "Facebook",
-        to: "https://facebook.com/eskala.u",
-      },
-      {
-        icon: "i-simple-icons-youtube",
-        label: "YouTube",
-        to: "https://youtube.com/@eskala.u",
       },
     ],
   },
