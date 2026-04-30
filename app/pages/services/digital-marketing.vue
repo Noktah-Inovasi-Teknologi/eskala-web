@@ -49,7 +49,7 @@ const adsCapabilities = ref([
     icon: "i-heroicons-clipboard-document-check",
     title: "Creative Brief & Medical Review",
     description:
-      "Menyiapkan brief untuk creative iklan, lalu mereview-nya dari sisi regulasi sebelum tayang. Produksi creative tersedia melalui paket VIP.",
+      "Menyiapkan brief untuk creative iklan, lalu mereview-nya dari sisi regulasi sebelum tayang.",
   },
   {
     icon: "i-heroicons-map-pin",
@@ -250,7 +250,7 @@ const faqItems = ref([
     number: "02",
     title: "Apakah pembuatan ad creative termasuk?",
     answer:
-      "Tidak, kecuali Anda mengambil paket Eskala VIP yang memang sudah termasuk produksi creative. Untuk paket Digital Marketing standar, kami menyiapkan brief dan medical review, sementara produksi creative dilakukan oleh tim internal Anda atau agensi creative pilihan Anda.",
+      "Tidak. Untuk paket Digital Marketing, kami menyiapkan brief dan medical review, sementara produksi creative dilakukan oleh tim internal Anda atau agensi creative pilihan Anda.",
   },
   {
     number: "03",

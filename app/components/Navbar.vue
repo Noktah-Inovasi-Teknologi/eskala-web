@@ -23,13 +23,6 @@ const items = ref([
           "Optimalisasi iklan berbayar dan kolaborasi KOC untuk ROI yang maksimal.",
         to: "/services/digital-marketing",
       },
-      // {
-      //   label: "VIP",
-      //   icon: "i-heroicons-sparkles",
-      //   description: "Penanganan kreatif lengkap all-in-one untuk bisnis premium.",
-      //   to: "/services/vip",
-      //   badge: "Premium",
-      // },
     ],
   },
   {

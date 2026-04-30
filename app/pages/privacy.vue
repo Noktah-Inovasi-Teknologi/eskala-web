@@ -84,7 +84,7 @@ const lastUpdated = "22 April 2026";
             Data yang kami kumpulkan digunakan untuk tujuan berikut:
           </p>
           <ul class="flex flex-col gap-2 pl-5 list-disc">
-            <li class="font-body text-obsidian-700 font-light leading-relaxed">Memberikan, mengelola, dan meningkatkan layanan Social Media Management, Digital Marketing, dan Eskala VIP</li>
+            <li class="font-body text-obsidian-700 font-light leading-relaxed">Memberikan, mengelola, dan meningkatkan layanan Social Media Management dan Digital Marketing</li>
             <li class="font-body text-obsidian-700 font-light leading-relaxed">Berkomunikasi dengan Anda mengenai proyek, laporan bulanan, dan pembaruan layanan</li>
             <li class="font-body text-obsidian-700 font-light leading-relaxed">Memproses pembayaran dan administrasi kontrak</li>
             <li class="font-body text-obsidian-700 font-light leading-relaxed">Menganalisis performa kampanye dan media sosial klien untuk optimasi berkelanjutan</li>

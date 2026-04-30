@@ -190,22 +190,6 @@ const services = ref([
   },
 ]);
 
-const vipService = ref({
-  title: "VIP",
-  description:
-    "Penanganan kreatif lengkap all-in-one. Bundel Social Media Management dengan layanan kreatif premium untuk bisnis yang menginginkan kualitas terbaik.",
-  link: "/services/vip",
-  icon: "i-heroicons-sparkles",
-  tagline: "Semua Kebutuhan Kreatif, Satu Tim Ahli",
-  includes: [
-    "Full Social Media Management",
-    "Graphic Design",
-    "Video Production",
-    "Copywriting",
-    "Photography",
-  ],
-});
-
 const packageSMMSections = [
   {
     title: "FOKUS & OUTPUT KONTEN",

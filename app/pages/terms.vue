@@ -2,10 +2,10 @@
 useSeoMeta({
   title: "Syarat & Ketentuan",
   description:
-    "Syarat dan Ketentuan Eskala — aturan penggunaan layanan Social Media Management, Digital Marketing, dan Eskala VIP. Baca sebelum memulai kerja sama.",
+    "Syarat dan Ketentuan Eskala — aturan penggunaan layanan Social Media Management dan Digital Marketing. Baca sebelum memulai kerja sama.",
   ogTitle: "Syarat & Ketentuan | Eskala",
   ogDescription:
-    "Ketentuan layanan Eskala untuk klien Social Media Management, Digital Marketing, dan Eskala VIP. Transparan dan adil untuk kedua pihak.",
+    "Ketentuan layanan Eskala untuk klien Social Media Management dan Digital Marketing. Transparan dan adil untuk kedua pihak.",
   ogUrl: "https://eskala.id/terms",
   ogType: "website",
   ogImage: "https://eskala.id/android-chrome-512x512.png",
@@ -41,7 +41,7 @@ const lastUpdated = "22 April 2026";
         <section class="flex flex-col gap-4">
           <h2 class="font-display text-obsidian-950 font-semibold text-2xl">1. Pendahuluan</h2>
           <p class="font-body text-obsidian-700 font-light leading-relaxed">
-            Syarat dan Ketentuan ini mengatur hubungan antara Eskala ("Kami", "Penyedia Layanan") dan klien ("Anda", "Klien") yang menggunakan layanan digital marketing Eskala, termasuk Social Media Management, Digital Marketing, dan Eskala VIP.
+            Syarat dan Ketentuan ini mengatur hubungan antara Eskala ("Kami", "Penyedia Layanan") dan klien ("Anda", "Klien") yang menggunakan layanan digital marketing Eskala, termasuk Social Media Management dan Digital Marketing.
           </p>
           <p class="font-body text-obsidian-700 font-light leading-relaxed">
             Dengan menandatangani perjanjian layanan atau menggunakan layanan Eskala, Anda dianggap telah membaca, memahami, dan menyetujui seluruh syarat dan ketentuan ini. Dokumen ini berlaku bersama dengan Perjanjian Layanan (Service Agreement) yang ditandatangani kedua pihak.
@@ -54,7 +54,7 @@ const lastUpdated = "22 April 2026";
           <div class="flex flex-col gap-3 pl-4 border-l-2 border-cobalt-200">
             <div>
               <p class="font-display text-obsidian-900 font-semibold text-base">Layanan</p>
-              <p class="font-body text-obsidian-700 font-light leading-relaxed">Social Media Management, Digital Marketing (termasuk Ads Management dan KOC Management), dan Eskala VIP sebagaimana dijelaskan di eskala.id.</p>
+              <p class="font-body text-obsidian-700 font-light leading-relaxed">Social Media Management dan Digital Marketing (termasuk Ads Management dan KOC Management) sebagaimana dijelaskan di eskala.id.</p>
             </div>
             <div>
               <p class="font-display text-obsidian-900 font-semibold text-base">Konten</p>
@@ -90,12 +90,6 @@ const lastUpdated = "22 April 2026";
               </p>
             </div>
 
-            <div class="flex flex-col gap-2 rounded-2xl border border-copper-200 bg-copper-50 p-6">
-              <p class="font-display text-obsidian-900 font-semibold text-base">Eskala VIP</p>
-              <p class="font-body text-obsidian-700 font-light leading-relaxed">
-                Paket all-in-one mencakup seluruh Social Media Management (unlimited posting), desain grafis, produksi video, copywriting, dan fotografi. Ditangani oleh tim dedicated dengan dukungan 07.00–01.00, Senin–Minggu. Creative service hanya tersedia melalui paket VIP, tidak dijual secara terpisah.
-              </p>
-            </div>
           </div>
         </section>
 
