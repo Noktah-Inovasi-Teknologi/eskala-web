@@ -52,7 +52,7 @@ const keyQuestions = ref([
     number: "02",
     title: "Apakah Eskala memahami regulasi iklan kesehatan?",
     answer:
-      "Ya. Setiap konten dan creative iklan melewati medical review internal sebelum tayang, mengacu pada pedoman KKI dan Kemenkes. Kami menolak claim yang bersifat superlatif atau menjanjikan kesembuhan — dan kami akan menjelaskan alasannya kepada tim Anda.",
+      "Ya. Setiap konten dan creative iklan melewati medical review internal sebelum tayang, mengacu pada pedoman KKI dan Kemenkes. Kami menolak claim yang bersifat superlatif atau menjanjikan kesembuhan, dan kami akan menjelaskan alasannya kepada tim Anda.",
   },
   {
     number: "03",
@@ -115,7 +115,7 @@ const items = ref<TimelineItem[]>([
     date: "Bulan 0",
     header: "Pendekatan Awal",
     description:
-      "Eskala mendekati Klinik Utama Gresik (KUG), salah satu cabang dari SMEC Group. Kami berhasil mendapatkan audiensi dengan tim Digital Marketing mereka dan mempresentasikan proposal kami. Mereka setuju untuk memberikan kesempatan trial selama 1 bulan — tantangan yang kami terima dengan penuh percaya diri sebagai startup yang siap membuktikan diri.",
+      "Eskala mendekati Klinik Utama Gresik (KUG), salah satu cabang dari SMEC Group. Kami berhasil mendapatkan audiensi dengan tim Digital Marketing mereka dan mempresentasikan proposal kami. Mereka setuju untuk memberikan kesempatan trial selama 1 bulan, tantangan yang kami terima dengan penuh percaya diri sebagai startup yang siap membuktikan diri.",
     icon: "i-heroicons-hand-raised",
   },
   {
@@ -136,7 +136,7 @@ const items = ref<TimelineItem[]>([
     date: "Bulan 6",
     header: "Ekspansi Besar",
     description:
-      "Cabang terus bertambah hingga total 7 cabang. Untuk pertama kalinya, kami dipercaya menangani akun level rumah sakit — RS SMEC Balikpapan — serta akun pusat SMEC Group. Di titik ini, kami juga mulai menjalankan kampanye Ads untuk beberapa cabang, menambah channel pertumbuhan baru di samping strategi konten organik.",
+      "Cabang terus bertambah hingga total 7 cabang. Untuk pertama kalinya, kami dipercaya menangani akun level rumah sakit (RS SMEC Balikpapan) serta akun pusat SMEC Group. Di titik ini, kami juga mulai menjalankan kampanye Ads untuk beberapa cabang, menambah channel pertumbuhan baru di samping strategi konten organik.",
     icon: "i-heroicons-arrow-trending-up",
   },
   {
@@ -406,7 +406,7 @@ const heroQuote = ref<Testimonial>({
           Jadwalkan konsultasi gratis dengan kami
         </UButton>
         <UButton
-          :to="{ path: '/cases' }"
+          :to="{ path: '/case-study' }"
           size="xl"
           class="px-4 rounded-full"
           color="neutral"
@@ -606,7 +606,7 @@ const heroQuote = ref<Testimonial>({
           </UTimeline>
           <div class="w-full flex justify-center">
             <UButton
-              :to="{ path: '/cases' }"
+              :to="{ path: '/case-study' }"
               size="xl"
               class="px-4 rounded-full"
               color="neutral"
