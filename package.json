@@ -10,12 +10,9 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxt/content": "3.13.0",
     "@nuxt/fonts": "^0.14.0",
     "@nuxt/ui": "4.6.1",
-    "@nuxthub/core": "0.10.7",
     "@tailwindcss/vite": "^4.2.2",
-    "better-sqlite3": "^12.9.0",
     "nuxt": "^4.4.2",
     "tailwindcss": "^4.2.2",
     "typescript": "^6.0.3",
