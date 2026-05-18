@@ -371,7 +371,7 @@ const testimonials = ref<Testimonial[]>([
           juga konten yang aman secara medis dan relevan dengan pasien Anda.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div
           v-for="item in whatWeDo"
           :key="item.title"
@@ -405,7 +405,7 @@ const testimonials = ref<Testimonial[]>([
           faskes, bukan sekadar mengejar kehadiran di semua tempat.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <div
           v-for="platform in platforms"
           :key="platform.name"
@@ -428,7 +428,7 @@ const testimonials = ref<Testimonial[]>([
           <p class="font-display text-copper-500 font-medium">
             ──────── Paket layanan kami
           </p>
-          <div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
+          <div class="flex flex-col md:flex-row gap-6 md:gap-8">
             <h2 class="font-display text-obsidian-50 font-bold text-3xl sm:text-4xl lg:text-5xl shrink-0">
               <span class="text-cobalt-400">Tiga paket</span> untuk setiap tahap pertumbuhan faskes Anda.
             </h2>
@@ -627,7 +627,7 @@ const testimonials = ref<Testimonial[]>([
             bulan ke bulan berdasarkan pengalaman kami bersama klien faskes.
           </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-12">
           <div
             v-for="result in expectedResults"
             :key="result.title"
@@ -676,16 +676,16 @@ const testimonials = ref<Testimonial[]>([
             class="flex flex-col gap-12"
           >
             <USeparator color="obsidian" />
-            <div class="flex flex-col lg:flex-row lg:justify-between gap-4 lg:gap-12">
-              <p class="font-display text-xl sm:text-2xl lg:text-4xl font-bold italic text-copper-500">
+            <div class="flex flex-col md:flex-row md:justify-between gap-4 md:gap-8 lg:gap-12">
+              <p class="font-display text-xl sm:text-2xl lg:text-4xl font-bold italic text-copper-500 md:shrink-0">
                 {{ question.number }}
               </p>
               <h3
-                class="font-display text-xl sm:text-2xl font-semibold text-obsidian-950 lg:basis-2/5"
+                class="font-display text-xl sm:text-2xl font-semibold text-obsidian-950 md:basis-2/5"
               >
                 {{ question.title }}
               </h3>
-              <div class="flex flex-col gap-8 lg:basis-3/5">
+              <div class="flex flex-col gap-8 md:basis-3/5">
                 <p
                   class="font-display font-semibold text-sm text-cobalt-500 tracking-widest"
                 >
@@ -710,7 +710,7 @@ const testimonials = ref<Testimonial[]>([
           Cerita <span class="text-cobalt-500">dari klien</span> kami.
         </h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div
           v-for="testimonial in testimonials"
           :key="testimonial.name"
@@ -746,7 +746,7 @@ const testimonials = ref<Testimonial[]>([
       <div
         class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-6 sm:p-10 lg:p-14 flex flex-col gap-12"
       >
-        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-center">
+        <div class="flex flex-col md:flex-row gap-8 md:gap-12 md:items-center">
           <div class="flex flex-col gap-4 flex-1">
             <p
               class="font-display font-semibold text-xs tracking-widest text-cobalt-500 uppercase"
@@ -759,7 +759,7 @@ const testimonials = ref<Testimonial[]>([
               Kalau bukan sekarang mulai, <span class="text-cobalt-500">lalu kapan?</span>
             </h2>
           </div>
-          <div class="lg:basis-2/5">
+          <div class="md:basis-2/5">
             <p
               class="font-body text-lg text-obsidian-700 font-light leading-relaxed"
             >

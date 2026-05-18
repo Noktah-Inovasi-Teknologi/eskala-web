@@ -448,14 +448,14 @@ const heroQuote = ref<Testimonial>({
             class="flex flex-col gap-6"
           >
             <USeparator color="obsidian" />
-            <div class="flex flex-col lg:flex-row lg:justify-between gap-4 lg:gap-12">
-              <p class="font-display text-3xl sm:text-4xl font-bold italic text-copper-500">
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 sm:gap-8 lg:gap-12">
+              <p class="font-display text-3xl sm:text-4xl font-bold italic text-copper-500 shrink-0">
                 {{ question.number }}
               </p>
               <UAccordion
                 :items="[{ label: question.title, answer: question.answer }]"
                 :ui="{ trigger: 'px-4 py-3' }"
-                class="lg:basis-4/5"
+                class="sm:flex-1"
               >
                 <template #body="{ item }">
                   <div class="flex flex-col gap-4 pb-4">
@@ -473,12 +473,12 @@ const heroQuote = ref<Testimonial>({
         </div>
       </UContainer>
     </div>
-    <UContainer id="section-services" class="flex flex-col lg:flex-row gap-12 py-24">
+    <UContainer id="section-services" class="flex flex-col md:flex-row gap-12 py-24">
       <div class="flex flex-col gap-8">
         <p class="font-display text-copper-500 font-medium">
           ──────── Layanan yang kami tawarkan
         </p>
-        <h2 class="font-display text-obsidian-950 font-bold text-5xl">
+        <h2 class="font-display text-obsidian-950 font-bold text-3xl sm:text-4xl lg:text-5xl">
           <span class="text-cobalt-500">Dua layanan utama</span> kami yang sesuai dengan kebutuhan Anda.
         </h2>
         <p class="font-body text-lg text-obsidian-700 font-light">
@@ -532,7 +532,7 @@ const heroQuote = ref<Testimonial>({
             pengalaman kami bersama faskes di Indonesia.
           </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-12">
           <div
             v-for="result in expectedResults"
             :key="result.title"
@@ -632,7 +632,7 @@ const heroQuote = ref<Testimonial>({
           <p class="font-display text-copper-500 font-medium">
             ──────── Paket layanan kami
           </p>
-          <div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
+          <div class="flex flex-col md:flex-row gap-6 md:gap-8">
             <h2 class="font-display text-obsidian-50 font-bold text-3xl sm:text-4xl lg:text-5xl shrink-0">
               Social Media Management
             </h2>
@@ -822,7 +822,7 @@ const heroQuote = ref<Testimonial>({
           Cerita <span class="text-cobalt-500">dari klien</span> kami.
         </h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div
           v-for="testimonial in testimonials"
           :key="testimonial.name"
@@ -858,7 +858,7 @@ const heroQuote = ref<Testimonial>({
         class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-6 sm:p-10 lg:p-14 flex flex-col gap-12"
       >
         <!-- Top: subtitle+title (left) and description (right) -->
-        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-center">
+        <div class="flex flex-col md:flex-row gap-8 md:gap-12 md:items-center">
           <div class="flex flex-col gap-4 flex-1">
             <p
               class="font-display font-semibold text-xs tracking-widest text-cobalt-500 uppercase"
@@ -872,7 +872,7 @@ const heroQuote = ref<Testimonial>({
               biaya
             </h2>
           </div>
-          <div class="lg:basis-2/5">
+          <div class="md:basis-2/5">
             <p
               class="font-body text-lg text-obsidian-700 font-light leading-relaxed"
             >

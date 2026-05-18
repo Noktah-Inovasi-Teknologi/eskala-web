@@ -299,7 +299,7 @@ const faqItems = ref([
         <p class="font-display text-copper-500 font-medium">
           ──────── Ads Management
         </p>
-        <h2 class="font-display text-obsidian-950 font-bold text-5xl">
+        <h2 class="font-display text-obsidian-950 font-bold text-3xl sm:text-4xl lg:text-5xl">
           <span class="text-cobalt-500">Empat hal</span> yang kami kerjakan setiap bulan.
         </h2>
         <p class="font-body text-lg text-obsidian-700 font-light">
@@ -308,7 +308,7 @@ const faqItems = ref([
           bekerja semaksimal mungkin.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div
           v-for="item in adsCapabilities"
           :key="item.title"
@@ -334,7 +334,7 @@ const faqItems = ref([
         <p class="font-display text-copper-500 font-medium">
           ──────── Platform yang kami jalankan
         </p>
-        <h2 class="font-display text-obsidian-950 font-bold text-5xl">
+        <h2 class="font-display text-obsidian-950 font-bold text-3xl sm:text-4xl lg:text-5xl">
           Tiga platform iklan, <span class="text-cobalt-500">satu funnel pasien</span>.
         </h2>
         <p class="font-body text-lg text-obsidian-700 font-light">
@@ -343,7 +343,7 @@ const faqItems = ref([
           baru.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <div
           v-for="platform in platforms"
           :key="platform.name"
@@ -366,7 +366,7 @@ const faqItems = ref([
           <p class="font-display text-copper-500 font-medium">
             ──────── Paket layanan kami
           </p>
-          <div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
+          <div class="flex flex-col md:flex-row gap-6 md:gap-8">
             <h2 class="font-display text-obsidian-50 font-bold text-3xl sm:text-4xl lg:text-5xl shrink-0">
               <span class="text-cobalt-400">Tiga paket</span> dengan fee berbasis ad spend.
             </h2>
@@ -565,7 +565,7 @@ const faqItems = ref([
             menjalankan paid channel untuk faskes di Indonesia.
           </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-12">
           <div
             v-for="result in expectedResults"
             :key="result.title"
@@ -625,16 +625,16 @@ const faqItems = ref([
             class="flex flex-col gap-12"
           >
             <USeparator color="obsidian" />
-            <div class="flex flex-col lg:flex-row lg:justify-between gap-4 lg:gap-12">
-              <p class="font-display text-xl sm:text-2xl lg:text-4xl font-bold italic text-copper-500">
+            <div class="flex flex-col md:flex-row md:justify-between gap-4 md:gap-8 lg:gap-12">
+              <p class="font-display text-xl sm:text-2xl lg:text-4xl font-bold italic text-copper-500 md:shrink-0">
                 {{ question.number }}
               </p>
               <h3
-                class="font-display text-xl sm:text-2xl font-semibold text-obsidian-950 lg:basis-2/5"
+                class="font-display text-xl sm:text-2xl font-semibold text-obsidian-950 md:basis-2/5"
               >
                 {{ question.title }}
               </h3>
-              <div class="flex flex-col gap-8 lg:basis-3/5">
+              <div class="flex flex-col gap-8 md:basis-3/5">
                 <p
                   class="font-display font-semibold text-sm text-cobalt-500 tracking-widest"
                 >
@@ -654,7 +654,7 @@ const faqItems = ref([
       <div
         class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-6 sm:p-10 lg:p-14 flex flex-col gap-12"
       >
-        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-center">
+        <div class="flex flex-col md:flex-row gap-8 md:gap-12 md:items-center">
           <div class="flex flex-col gap-4 flex-1">
             <p
               class="font-display font-semibold text-xs tracking-widest text-cobalt-500 uppercase"
@@ -667,7 +667,7 @@ const faqItems = ref([
               Mulai jangkau pasien <span class="text-cobalt-500">di sekitar klinik Anda</span>.
             </h2>
           </div>
-          <div class="lg:basis-2/5">
+          <div class="md:basis-2/5">
             <p
               class="font-body text-lg text-obsidian-700 font-light leading-relaxed"
             >

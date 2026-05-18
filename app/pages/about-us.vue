@@ -221,8 +221,8 @@ const comparison = ref([
 
     <!-- 3. Our Story -->
     <UContainer id="section-story" class="flex flex-col gap-12 py-24">
-      <div class="flex flex-col lg:flex-row gap-8 lg:gap-16 lg:items-start">
-        <div class="flex flex-col gap-8 lg:basis-2/5 lg:shrink-0">
+      <div class="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 md:items-start">
+        <div class="flex flex-col gap-8 md:basis-2/5 md:shrink-0">
           <p class="font-display text-copper-500 font-medium">
             ──────── Cerita Kami
           </p>
@@ -231,7 +231,7 @@ const comparison = ref([
             <span class="text-cobalt-500">pertanyaan</span> sederhana.
           </h2>
         </div>
-        <div class="flex flex-col gap-6 lg:basis-3/5">
+        <div class="flex flex-col gap-6 md:basis-3/5">
           <p class="font-body text-lg text-obsidian-700 font-light leading-relaxed">
             Kami melihat banyak fasilitas kesehatan yang punya kualitas layanan
             luar biasa: dokter yang kompeten, fasilitas yang memadai, tim yang
@@ -276,7 +276,7 @@ const comparison = ref([
             yang reputasinya dibangun dari hubungan yang tulus dengan pelanggan.
           </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div
             v-for="item in whoWeServe"
             :key="item.title"
@@ -314,7 +314,7 @@ const comparison = ref([
             sehari-hari yang dapat Anda pegang sejak hari pertama.
           </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           <div
             v-for="value in coreValues"
             :key="value.number"
@@ -445,7 +445,7 @@ const comparison = ref([
             </tbody>
           </table>
         </div>
-        <div class="lg:hidden flex flex-col gap-4">
+        <div class="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div
             v-for="row in comparison"
             :key="row.aspect"
@@ -496,7 +496,7 @@ const comparison = ref([
       <div
         class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-6 sm:p-10 lg:p-14 flex flex-col gap-12"
       >
-        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-center">
+        <div class="flex flex-col md:flex-row gap-8 md:gap-12 md:items-center">
           <div class="flex flex-col gap-4 flex-1">
             <p
               class="font-display font-semibold text-xs tracking-widest text-cobalt-500 uppercase"
@@ -510,7 +510,7 @@ const comparison = ref([
               <span class="text-cobalt-500">mulai bersama kami</span>.
             </h2>
           </div>
-          <div class="lg:basis-2/5">
+          <div class="md:basis-2/5">
             <p
               class="font-body text-lg text-obsidian-700 font-light leading-relaxed"
             >

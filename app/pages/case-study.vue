@@ -94,7 +94,7 @@ watch(selectedCategory, () => {
         <p class="font-display text-copper-500 font-medium">
           ──────── Studi kasus
         </p>
-        <div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
+        <div class="flex flex-col md:flex-row gap-6 md:gap-8 md:items-end">
           <div class="flex flex-col">
             <h1 class="font-display text-obsidian-950 font-bold text-4xl sm:text-5xl lg:text-7xl">
               Bukan cuma klaim,
@@ -103,7 +103,7 @@ watch(selectedCategory, () => {
               <span class="text-obsidian-950">Ini</span> cerita klien kami.
             </h1>
           </div>
-          <p class="font-body text-lg text-obsidian-700 font-light lg:basis-1/3">
+          <p class="font-body text-lg text-obsidian-700 font-light md:basis-1/3 md:shrink-0">
             Setiap studi kasus di bawah ini adalah dokumentasi nyata dari
             perjalanan fasilitas kesehatan dan bisnis lainnya bersama Eskala.
             Studi kasus berisikan informasi yang lengkap dengan konteks awal,
@@ -141,7 +141,7 @@ watch(selectedCategory, () => {
           <p>{{ displayText }}</p>
           <UTabs v-model="selectedCategory" :items="caseStudyCategories" />
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <UCard
             v-for="item of paginatedCaseStudies"
             :key="item.id"
@@ -209,7 +209,7 @@ watch(selectedCategory, () => {
 
     <UContainer id="section-call-to-action" class="flex flex-col gap-12 py-24">
       <div class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-6 sm:p-10 lg:p-14 flex flex-col gap-12">
-        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-center">
+        <div class="flex flex-col md:flex-row gap-8 md:gap-12 md:items-center">
           <div class="flex flex-col gap-4 flex-1">
             <p class="font-display font-semibold text-xs tracking-widest text-cobalt-500 uppercase">
               SIAP UNTUK BERDISKUSI?
@@ -218,7 +218,7 @@ watch(selectedCategory, () => {
               Ingin hasil seperti ini <span class="text-cobalt-500">untuk faskes Anda?</span>
             </h2>
           </div>
-          <div class="lg:basis-2/5">
+          <div class="md:basis-2/5">
             <p class="font-body text-lg text-obsidian-700 font-light leading-relaxed">
               Konsultasi 30 menit gratis — kami mendengarkan kondisi digital faskes Anda saat ini, lalu merekomendasikan 2-3 solusi, dengan atau tanpa bekerja sama dengan kami.
             </p>
