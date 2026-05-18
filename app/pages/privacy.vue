@@ -29,7 +29,7 @@ const lastUpdated = "22 April 2026";
     <div class="bg-obsidian-100 border-b border-obsidian-200">
       <UContainer class="py-20 flex flex-col gap-4">
         <p class="font-display text-copper-500 font-medium">──────── Legal</p>
-        <h1 class="font-display text-obsidian-950 font-bold text-5xl">
+        <h1 class="font-display text-obsidian-950 font-bold text-3xl sm:text-4xl lg:text-5xl">
           Kebijakan Privasi
         </h1>
         <p class="font-body text-lg text-obsidian-600 font-light">

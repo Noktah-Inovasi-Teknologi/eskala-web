@@ -137,19 +137,19 @@ const filteredFaqs = computed(() =>
     <UContainer id="section-hero" class="flex flex-col gap-12 py-24 items-center relative">
       <div class="flex flex-col gap-8 max-w-4xl text-center items-center">
         <p class="font-display text-copper-500 font-medium">──────── FAQ</p>
-        <h1 class="font-display text-obsidian-950 font-bold text-7xl">
+        <h1 class="font-display text-obsidian-950 font-bold text-4xl sm:text-5xl lg:text-7xl">
           Pertanyaan yang sering kami terima.
         </h1>
         <p class="font-body text-lg text-obsidian-700 font-light">
           Belum menemukan jawaban yang Anda cari? Hubungi kami langsung, kami senang berdiskusi.
         </p>
       </div>
-      <div class="flex gap-12 items-center">
+      <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 items-stretch sm:items-center">
         <UButton
           href="https://wa.me/6282230712718"
           target="_blank"
           size="xl"
-          class="px-4 rounded-full"
+          class="px-4 rounded-full justify-center"
           color="success"
         >
           <Icon name="i-mdi-whatsapp" class="text-lg" />
@@ -158,7 +158,7 @@ const filteredFaqs = computed(() =>
         <UButton
           href="mailto:core@eskala.id"
           size="xl"
-          class="px-4 rounded-full"
+          class="px-4 rounded-full justify-center"
           color="neutral"
           variant="link"
         >
@@ -174,7 +174,7 @@ const filteredFaqs = computed(() =>
       <UContainer class="flex flex-col gap-12 py-24">
         <div class="flex flex-col gap-8">
           <p class="font-display text-copper-500 font-medium">──────── Pertanyaan & Jawaban</p>
-          <h2 class="font-display text-obsidian-950 font-bold text-5xl">
+          <h2 class="font-display text-obsidian-950 font-bold text-3xl sm:text-4xl lg:text-5xl">
             Hal-hal yang biasanya <span class="text-cobalt-500">ditanyakan faskes</span> sebelum mulai.
           </h2>
         </div>
@@ -189,29 +189,29 @@ const filteredFaqs = computed(() =>
 
     <!-- CTA -->
     <UContainer id="section-call-to-action" class="flex flex-col gap-12 py-24">
-      <div class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-10 lg:p-14 flex flex-col gap-12">
-        <div class="flex gap-12 items-center">
+      <div class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-6 sm:p-10 lg:p-14 flex flex-col gap-12">
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-center">
           <div class="flex flex-col gap-4 flex-1">
             <p class="font-display font-semibold text-xs tracking-widest text-cobalt-500 uppercase">
               MASIH ADA PERTANYAAN?
             </p>
-            <h2 class="font-display font-bold text-5xl text-obsidian-950 leading-tight">
+            <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-obsidian-950 leading-tight">
               Jadwalkan konsultasi gratis <span class="text-cobalt-500">dengan kami</span>.
             </h2>
           </div>
-          <div class="basis-2/5">
+          <div class="lg:basis-2/5">
             <p class="font-body text-lg text-obsidian-700 font-light leading-relaxed">
               Konsultasi 30 menit gratis dan tanpa komitmen. Kami akan mendengarkan masalah Anda, lalu merekomendasikan 2-3 solusi yang dapat Anda jalankan dengan atau tanpa Eskala.
             </p>
           </div>
         </div>
-        <div class="flex flex-row justify-center gap-8">
+        <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8">
           <UButton
             href="https://wa.me/6282230712718"
             target="_blank"
             rel="noopener noreferrer"
             size="xl"
-            class="px-4 rounded-full"
+            class="px-4 rounded-full justify-center"
             color="success"
           >
             <Icon name="i-mdi-whatsapp" class="text-lg" />
@@ -221,7 +221,7 @@ const filteredFaqs = computed(() =>
           <UButton
             href="mailto:core@eskala.id"
             size="xl"
-            class="px-4 rounded-full"
+            class="px-4 rounded-full justify-center"
             color="neutral"
             variant="outline"
           >
