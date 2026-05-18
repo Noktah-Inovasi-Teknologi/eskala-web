@@ -152,16 +152,16 @@ const comparison = ref([
       id="section-hero"
       class="flex flex-col gap-12 py-24 items-center relative"
     >
-      <div class="flex gap-12 items-center">
+      <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-center">
         <div class="flex flex-col gap-8">
           <p class="font-display text-copper-500 font-medium">
             ──────── Tentang Kami
           </p>
           <div class="flex flex-col">
-            <h1 class="font-display text-obsidian-950 font-bold text-7xl">
+            <h1 class="font-display text-obsidian-950 font-bold text-4xl sm:text-5xl lg:text-7xl">
               Partner kreatif yang
             </h1>
-            <h1 class="font-display text-cobalt-500 font-bold text-7xl">
+            <h1 class="font-display text-cobalt-500 font-bold text-4xl sm:text-5xl lg:text-7xl">
               paham dunia kesehatan.
             </h1>
           </div>
@@ -173,12 +173,12 @@ const comparison = ref([
           </p>
         </div>
       </div>
-      <div class="flex gap-12 items-center">
+      <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 items-stretch sm:items-center">
         <UButton
           href="https://wa.me/6282230712718"
           target="_blank"
           size="xl"
-          class="px-4 rounded-full"
+          class="px-4 rounded-full justify-center"
           color="success"
         >
           <Icon name="i-mdi-whatsapp" class="text-lg" />
@@ -187,7 +187,7 @@ const comparison = ref([
         <UButton
           to="/case-study"
           size="xl"
-          class="px-4 rounded-full"
+          class="px-4 rounded-full justify-center"
           color="neutral"
           variant="link"
         >
@@ -201,14 +201,14 @@ const comparison = ref([
     <div class="bg-obsidian-100">
       <UContainer class="py-12">
         <div
-          class="w-full grid grid-cols-4 divide-x divide-obsidian-300 border border-obsidian-300 rounded-3xl"
+          class="w-full grid grid-cols-2 lg:grid-cols-4 lg:divide-x divide-obsidian-300 border border-obsidian-300 rounded-3xl"
         >
           <div
             v-for="(item, index) in stats"
             :key="index"
             class="flex flex-col p-8 gap-2"
           >
-            <h2 class="font-display font-bold text-4xl text-obsidian-950">
+            <h2 class="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-obsidian-950">
               {{ item.value }}
             </h2>
             <p class="font-body text-sm font-semibold text-obsidian-700">
@@ -221,17 +221,17 @@ const comparison = ref([
 
     <!-- 3. Our Story -->
     <UContainer id="section-story" class="flex flex-col gap-12 py-24">
-      <div class="flex gap-16 items-start">
-        <div class="flex flex-col gap-8 basis-2/5 shrink-0">
+      <div class="flex flex-col lg:flex-row gap-8 lg:gap-16 lg:items-start">
+        <div class="flex flex-col gap-8 lg:basis-2/5 lg:shrink-0">
           <p class="font-display text-copper-500 font-medium">
             ──────── Cerita Kami
           </p>
-          <h2 class="font-display text-obsidian-950 font-bold text-5xl">
+          <h2 class="font-display text-obsidian-950 font-bold text-3xl sm:text-4xl lg:text-5xl">
             Dimulai dari satu
             <span class="text-cobalt-500">pertanyaan</span> sederhana.
           </h2>
         </div>
-        <div class="flex flex-col gap-6 basis-3/5">
+        <div class="flex flex-col gap-6 lg:basis-3/5">
           <p class="font-body text-lg text-obsidian-700 font-light leading-relaxed">
             Kami melihat banyak fasilitas kesehatan yang punya kualitas layanan
             luar biasa: dokter yang kompeten, fasilitas yang memadai, tim yang
@@ -266,7 +266,7 @@ const comparison = ref([
           <p class="font-display text-copper-500 font-medium">
             ──────── Siapa yang Kami Layani
           </p>
-          <h2 class="font-display text-obsidian-950 font-bold text-5xl">
+          <h2 class="font-display text-obsidian-950 font-bold text-3xl sm:text-4xl lg:text-5xl">
             Kami fokus pada industri yang membutuhkan
             <span class="text-cobalt-500">kepercayaan tinggi</span>.
           </h2>
@@ -276,7 +276,7 @@ const comparison = ref([
             yang reputasinya dibangun dari hubungan yang tulus dengan pelanggan.
           </p>
         </div>
-        <div class="grid md:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div
             v-for="item in whoWeServe"
             :key="item.title"
@@ -305,7 +305,7 @@ const comparison = ref([
           <p class="font-display text-copper-500 font-medium">
             ──────── Nilai Kami
           </p>
-          <h2 class="font-display text-obsidian-50 font-bold text-5xl">
+          <h2 class="font-display text-obsidian-50 font-bold text-3xl sm:text-4xl lg:text-5xl">
             Enam prinsip yang membentuk
             <span class="text-cobalt-400">cara kami bekerja</span>.
           </h2>
@@ -314,7 +314,7 @@ const comparison = ref([
             sehari-hari yang dapat Anda pegang sejak hari pertama.
           </p>
         </div>
-        <div class="grid md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div
             v-for="value in coreValues"
             :key="value.number"
@@ -344,7 +344,7 @@ const comparison = ref([
         <p class="font-display text-copper-500 font-medium">
           ──────── Tim Kami
         </p>
-        <h2 class="font-display text-obsidian-950 font-bold text-5xl">
+        <h2 class="font-display text-obsidian-950 font-bold text-3xl sm:text-4xl lg:text-5xl">
           Orang-orang di balik <span class="text-cobalt-500">Eskala</span>.
         </h2>
         <p class="font-body text-lg text-obsidian-700 font-light">
@@ -352,7 +352,7 @@ const comparison = ref([
           untuk mengantar pertumbuhan klien.
         </p>
       </div>
-      <div class="grid md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <div
           v-for="member in team"
           :key="member.name"
@@ -384,7 +384,7 @@ const comparison = ref([
           <p class="font-display text-copper-500 font-medium">
             ──────── Kenapa Eskala
           </p>
-          <h2 class="font-display text-obsidian-50 font-bold text-5xl">
+          <h2 class="font-display text-obsidian-50 font-bold text-3xl sm:text-4xl lg:text-5xl">
             Bukan sekadar vendor.
             <span class="text-cobalt-400">Partner bisnis</span>.
           </h2>
@@ -394,7 +394,7 @@ const comparison = ref([
           </p>
         </div>
         <div
-          class="border border-obsidian-700 rounded-2xl overflow-hidden"
+          class="hidden lg:block border border-obsidian-700 rounded-2xl overflow-hidden"
         >
           <table class="w-full border-collapse">
             <thead>
@@ -445,15 +445,58 @@ const comparison = ref([
             </tbody>
           </table>
         </div>
+        <div class="lg:hidden flex flex-col gap-4">
+          <div
+            v-for="row in comparison"
+            :key="row.aspect"
+            class="flex flex-col gap-4 rounded-2xl border border-obsidian-700 bg-obsidian-900 p-6"
+          >
+            <p
+              class="font-display text-obsidian-50 text-sm font-semibold tracking-widest"
+            >
+              {{ row.aspect.toUpperCase() }}
+            </p>
+            <div class="flex flex-col gap-3">
+              <div class="flex items-start gap-3">
+                <Icon
+                  name="i-heroicons-check-circle"
+                  class="text-copper-500 text-xl shrink-0"
+                />
+                <div class="flex flex-col">
+                  <span
+                    class="font-display text-copper-500 text-xs font-semibold tracking-widest"
+                    >ESKALA</span
+                  >
+                  <span class="text-obsidian-50 text-sm">{{ row.eskala }}</span>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <Icon
+                  name="i-heroicons-minus-circle"
+                  class="text-obsidian-500 text-xl shrink-0"
+                />
+                <div class="flex flex-col">
+                  <span
+                    class="font-display text-obsidian-400 text-xs font-semibold tracking-widest"
+                    >AGENSI LAIN</span
+                  >
+                  <span class="text-obsidian-400 text-sm">{{
+                    row.others || "—"
+                  }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </UContainer>
     </div>
 
     <!-- 8. CTA -->
     <UContainer id="section-call-to-action" class="flex flex-col gap-12 py-24">
       <div
-        class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-10 lg:p-14 flex flex-col gap-12"
+        class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-6 sm:p-10 lg:p-14 flex flex-col gap-12"
       >
-        <div class="flex gap-12 items-center">
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-center">
           <div class="flex flex-col gap-4 flex-1">
             <p
               class="font-display font-semibold text-xs tracking-widest text-cobalt-500 uppercase"
@@ -461,13 +504,13 @@ const comparison = ref([
               SIAP UNTUK BERDISKUSI?
             </p>
             <h2
-              class="font-display font-bold text-5xl text-obsidian-950 leading-tight"
+              class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-obsidian-950 leading-tight"
             >
               Kenali kami lebih jauh, atau langsung
               <span class="text-cobalt-500">mulai bersama kami</span>.
             </h2>
           </div>
-          <div class="basis-2/5">
+          <div class="lg:basis-2/5">
             <p
               class="font-body text-lg text-obsidian-700 font-light leading-relaxed"
             >
@@ -477,13 +520,13 @@ const comparison = ref([
             </p>
           </div>
         </div>
-        <div class="flex flex-row justify-center gap-8">
+        <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8">
           <UButton
             href="https://wa.me/6282230712718"
             target="_blank"
             rel="noopener noreferrer"
             size="xl"
-            class="px-4 rounded-full"
+            class="px-4 rounded-full justify-center"
             color="success"
           >
             <Icon name="i-mdi-whatsapp" class="text-lg" />
@@ -496,7 +539,7 @@ const comparison = ref([
           <UButton
             href="mailto:core@eskala.id"
             size="xl"
-            class="px-4 rounded-full"
+            class="px-4 rounded-full justify-center"
             color="neutral"
             variant="outline"
           >

@@ -13,12 +13,12 @@ const handleError = () => clearError({ redirect: "/" });
   <div class="bg-obsidian-50">
     <Navbar />
 
-    <UContainer class="min-h-[70vh] flex items-center justify-center py-24">
+    <UContainer class="min-h-[70vh] flex items-center justify-center py-16 sm:py-24">
       <div
         class="max-w-2xl mx-auto text-center flex flex-col items-center gap-8"
       >
         <div
-          class="w-24 h-24 rounded-2xl bg-cobalt-50 flex items-center justify-center"
+          class="w-16 h-16 sm:w-24 sm:h-24 rounded-2xl bg-cobalt-50 flex items-center justify-center"
         >
           <UIcon
             name="i-heroicons-wrench-screwdriver"
@@ -30,7 +30,7 @@ const handleError = () => clearError({ redirect: "/" });
           ──────── {{ error.statusCode }}
         </p>
 
-        <h1 class="font-display text-5xl font-bold text-obsidian-950">
+        <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-obsidian-950">
           Halaman Sedang Dibangun
         </h1>
 

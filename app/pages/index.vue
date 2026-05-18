@@ -338,6 +338,7 @@ const heroQuote = ref<Testimonial>({
   name: "Donny Putra N.H.",
   position: "Manager Digital Marketing SMEC Group",
 });
+
 </script>
 
 <template>
@@ -346,16 +347,16 @@ const heroQuote = ref<Testimonial>({
       id="section-hero"
       class="flex flex-col gap-12 py-24 items-center relative"
     >
-      <div class="flex gap-12 items-center">
+      <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-center">
         <div class="flex flex-col gap-8">
           <p class="font-display text-copper-500 font-medium">
             ──────── Untuk fasilitas kesehatan di Indonesia
           </p>
           <div class="flex flex-col">
-            <h1 class="font-display text-obsidian-950 font-bold text-7xl">
+            <h1 class="font-display text-obsidian-950 font-bold text-4xl sm:text-5xl lg:text-7xl">
               Gaungkan kualitas pelayanan Anda,
             </h1>
-            <h1 class="font-display text-cobalt-500 font-bold text-7xl">
+            <h1 class="font-display text-cobalt-500 font-bold text-4xl sm:text-5xl lg:text-7xl">
               genggam hati pasien Anda.
             </h1>
           </div>
@@ -368,13 +369,13 @@ const heroQuote = ref<Testimonial>({
         </div>
         <div>
           <div
-            class="flex flex-col p-8 gap-8 rounded-3xl border border-copper-200 bg-copper-50"
+            class="flex flex-col p-6 sm:p-8 gap-8 rounded-3xl border border-copper-200 bg-copper-50"
           >
             <Icon
               name="i-heroicons-chat-bubble-left"
               class="text-copper-500 text-4xl"
             />
-            <p class="font-body font-medium text-2xl text-obsidian-950">
+            <p class="font-body font-medium text-xl sm:text-2xl text-obsidian-950">
               "{{ heroQuote.quote }}"
             </p>
             <div class="flex gap-3 items-center">
@@ -395,12 +396,12 @@ const heroQuote = ref<Testimonial>({
           </div>
         </div>
       </div>
-      <div class="flex gap-12 items-center">
+      <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 items-stretch sm:items-center">
         <UButton
           href="https://wa.me/6282230712718"
           target="_blank"
           size="xl"
-          class="px-4 rounded-full"
+          class="px-4 rounded-full justify-center"
           color="success"
         >
           <Icon name="i-mdi-whatsapp" class="text-lg" />
@@ -409,7 +410,7 @@ const heroQuote = ref<Testimonial>({
         <UButton
           to="/case-study"
           size="xl"
-          class="px-4 rounded-full"
+          class="px-4 rounded-full justify-center"
           color="neutral"
           variant="link"
         >
@@ -418,7 +419,7 @@ const heroQuote = ref<Testimonial>({
         </UButton>
       </div>
       <USeparator color="obsidian" />
-      <div class="flex justify-between gap-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div
           v-for="point in keyPoints"
           :key="point.title"
@@ -436,42 +437,43 @@ const heroQuote = ref<Testimonial>({
           <p class="font-display text-copper-500 font-medium">
             ──────── Pertanyaan yang sering kami terima
           </p>
-          <h2 class="font-display text-obsidian-950 font-bold text-5xl">
+          <h2 class="font-display text-obsidian-950 font-bold text-3xl sm:text-4xl lg:text-5xl">
             <span class="text-cobalt-500">Empat pertanyaan</span> yang hampir selalu muncul pada audiensi pertama.
           </h2>
         </div>
-        <div class="flex flex-col gap-12">
+        <div class="flex flex-col gap-6">
           <div
             v-for="question in keyQuestions"
             :key="question.title"
-            class="flex flex-col gap-12"
+            class="flex flex-col gap-6"
           >
             <USeparator color="obsidian" />
-            <div class="flex justify-between gap-12">
-              <p class="font-display text-4xl font-bold italic text-copper-500">
+            <div class="flex flex-col lg:flex-row lg:justify-between gap-4 lg:gap-12">
+              <p class="font-display text-3xl sm:text-4xl font-bold italic text-copper-500">
                 {{ question.number }}
               </p>
-              <h3
-                class="font-display text-2xl font-semibold text-obsidian-950 basis-2/5"
+              <UAccordion
+                :items="[{ label: question.title, answer: question.answer }]"
+                :ui="{ trigger: 'px-4 py-3' }"
+                class="lg:basis-4/5"
               >
-                {{ question.title }}
-              </h3>
-              <div class="flex flex-col gap-8 basis-3/5">
-                <p
-                  class="font-display font-semibold text-sm text-cobalt-500 tracking-widest"
-                >
-                  JAWABAN KAMI
-                </p>
-                <p class="font-body text-lg text-obsidian-700 font-light">
-                  {{ question.answer }}
-                </p>
-              </div>
+                <template #body="{ item }">
+                  <div class="flex flex-col gap-4 pb-4">
+                    <p class="font-display font-semibold text-sm text-cobalt-500 tracking-widest">
+                      JAWABAN KAMI
+                    </p>
+                    <p class="font-body text-lg text-obsidian-700 font-light">
+                      {{ item.answer }}
+                    </p>
+                  </div>
+                </template>
+              </UAccordion>
             </div>
           </div>
         </div>
       </UContainer>
     </div>
-    <UContainer id="section-services" class="flex gap-12 py-24">
+    <UContainer id="section-services" class="flex flex-col lg:flex-row gap-12 py-24">
       <div class="flex flex-col gap-8">
         <p class="font-display text-copper-500 font-medium">
           ──────── Layanan yang kami tawarkan
@@ -499,7 +501,7 @@ const heroQuote = ref<Testimonial>({
                 item.information
               }}
             </UBadge>
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div
                 v-for="point in item.point"
                 :key="point"
@@ -519,7 +521,7 @@ const heroQuote = ref<Testimonial>({
           <p class="font-display text-copper-500 font-medium">
             ──────── Ekspektasi hasil
           </p>
-          <h2 class="font-display text-obsidian-50 font-bold text-5xl">
+          <h2 class="font-display text-obsidian-50 font-bold text-3xl sm:text-4xl lg:text-5xl">
             <span class="text-cobalt-400">Hasil yang dapat Anda harapkan</span> setelah bekerja sama dengan kami.
           </h2>
           <p class="font-body text-lg text-obsidian-300 font-light">
@@ -530,11 +532,11 @@ const heroQuote = ref<Testimonial>({
             pengalaman kami bersama faskes di Indonesia.
           </p>
         </div>
-        <div class="flex gap-12 content-stretch">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-12">
           <div
             v-for="result in expectedResults"
             :key="result.title"
-            class="flex flex-col gap-8 rounded-3xl border border-obsidian-700 bg-obsidian-900 p-8 basis-1/3"
+            class="flex flex-col gap-8 rounded-3xl border border-obsidian-700 bg-obsidian-900 p-6 sm:p-8"
           >
             <div class="flex items-center justify-between gap-8">
               <p
@@ -567,7 +569,7 @@ const heroQuote = ref<Testimonial>({
           <p class="font-display text-copper-500 font-medium">
             ──────── Studi kasus
           </p>
-          <h2 class="font-display text-obsidian-950 font-bold text-5xl">
+          <h2 class="font-display text-obsidian-950 font-bold text-3xl sm:text-4xl lg:text-5xl">
             1,5 tahun bersama <span class="text-cobalt-500">SMEC Group</span>.
           </h2>
           <p class="font-body text-lg text-obsidian-700 font-light">
@@ -585,22 +587,26 @@ const heroQuote = ref<Testimonial>({
             :items="items"
             color="primary"
             :default-value="items.length"
-            size="3xl"
+            size="xl"
+            :ui="{ root: 'gap-4' }"
           >
             <template #description="{ item }">
-              <div
-                class="mt-8 flex flex-col gap-4 p-8 rounded-3xl border border-obsidian-300 bg-obsidian-50"
-              >
-                <h3 class="font-display text-3xl font-bold text-obsidian-950">
-                  {{ item.header }}
-                </h3>
-                <p class="font-body text-lg text-obsidian-700 font-light">{{ item.description }}</p>
+              <div class="mt-4">
+                <UAccordion
+                  :items="[{ label: item.header as string, description: item.description as string }]"
+                  :ui="{ trigger: 'px-6 py-4' }"
+                  class="rounded-3xl border border-obsidian-300 bg-obsidian-50 overflow-hidden"
+                >
+                  <template #body="{ item: card }">
+                    <p class="font-body text-lg text-obsidian-700 font-light px-6 sm:px-8 pb-6 sm:pb-8">
+                      {{ card.description }}
+                    </p>
+                  </template>
+                </UAccordion>
               </div>
             </template>
             <template #date="{ item }">
-              <p
-                class="ml-8 text-copper-500 font-display font-semibold text-sm tracking-widest"
-              >
+              <p class="ml-8 text-copper-500 font-display font-semibold text-sm tracking-widest">
                 {{ item.date?.toUpperCase() }}
               </p>
             </template>
@@ -626,8 +632,8 @@ const heroQuote = ref<Testimonial>({
           <p class="font-display text-copper-500 font-medium">
             ──────── Paket layanan kami
           </p>
-          <div class="flex gap-8">
-            <h2 class="font-display text-obsidian-50 font-bold text-5xl">
+          <div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
+            <h2 class="font-display text-obsidian-50 font-bold text-3xl sm:text-4xl lg:text-5xl shrink-0">
               Social Media Management
             </h2>
             <p class="font-body text-lg text-obsidian-300 font-light">
@@ -639,7 +645,7 @@ const heroQuote = ref<Testimonial>({
           </div>
         </div>
         <div
-          class="bg-obsidian-950 border border-obsidian-700 rounded-2xl overflow-hidden"
+          class="hidden lg:block bg-obsidian-950 border border-obsidian-700 rounded-2xl overflow-hidden"
         >
         <table class="w-full border-collapse">
           <thead>
@@ -721,11 +727,74 @@ const heroQuote = ref<Testimonial>({
           </tbody>
         </table>
         </div>
-        <div class="flex gap-12 justify-center">
+        <div class="lg:hidden flex flex-col gap-6">
+          <div
+            v-for="(pkg, i) in packageSMMRaw"
+            :key="i"
+            :class="[
+              'flex flex-col gap-6 rounded-2xl border bg-obsidian-900 p-6',
+              i === 1
+                ? 'border-cobalt-500 bg-cobalt-950/40'
+                : 'border-obsidian-700',
+            ]"
+          >
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center gap-3">
+                <span class="text-2xl font-semibold text-obsidian-50">{{
+                  packageSMMTitles[i]
+                }}</span>
+                <UBadge
+                  v-if="i === 1"
+                  label="POPULER"
+                  color="secondary"
+                  variant="solid"
+                  class="text-obsidian-950 font-display tracking-widest font-bold"
+                />
+              </div>
+              <span class="text-sm text-obsidian-300">{{ pkg.mainFocus }}</span>
+            </div>
+            <div
+              v-for="section in packageSMMSections"
+              :key="section.title"
+              class="flex flex-col gap-3"
+            >
+              <p
+                class="text-obsidian-50 text-xs font-semibold tracking-widest border-b border-obsidian-700 pb-2"
+              >
+                {{ section.title }}
+              </p>
+              <div
+                v-for="key in section.keys"
+                :key="key"
+                class="flex items-center justify-between gap-4"
+              >
+                <span class="text-obsidian-300 text-sm">{{
+                  featureLabels[key]
+                }}</span>
+                <UIcon
+                  v-if="pkg[key] === true"
+                  name="i-heroicons-check"
+                  class="text-copper-500 text-2xl shrink-0"
+                />
+                <UIcon
+                  v-else-if="pkg[key] === false"
+                  name="i-heroicons-minus"
+                  class="text-obsidian-300 text-2xl shrink-0"
+                />
+                <span
+                  v-else
+                  class="text-obsidian-50 text-sm font-medium text-right"
+                  >{{ pkg[key] }}</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 lg:gap-12 justify-center">
           <UButton
             to="/services/digital-marketing"
             size="xl"
-            class="px-4 rounded-full text-obsidian-950"
+            class="px-4 rounded-full text-obsidian-950 justify-center"
             color="secondary"
           >
             Cek paket Digital Marketing / Ads
@@ -734,7 +803,7 @@ const heroQuote = ref<Testimonial>({
           <UButton
             to="/services/social-media-management"
             size="xl"
-            class="px-4 rounded-full"
+            class="px-4 rounded-full justify-center"
             color="secondary"
             variant="link"
           >
@@ -753,7 +822,7 @@ const heroQuote = ref<Testimonial>({
           Cerita <span class="text-cobalt-500">dari klien</span> kami.
         </h2>
       </div>
-      <div class="grid md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div
           v-for="testimonial in testimonials"
           :key="testimonial.name"
@@ -763,7 +832,7 @@ const heroQuote = ref<Testimonial>({
             name="i-heroicons-chat-bubble-left"
             class="text-copper-500 text-4xl"
           />
-          <p class="font-body font-medium text-2xl text-obsidian-950">
+          <p class="font-body font-medium text-xl sm:text-2xl text-obsidian-950">
             "{{ testimonial.quote }}"
           </p>
           <div class="flex gap-3 items-center">
@@ -786,10 +855,10 @@ const heroQuote = ref<Testimonial>({
     </UContainer>
     <UContainer id="section-call-to-action" class="flex flex-col gap-12 py-24">
       <div
-        class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-10 lg:p-14 flex flex-col gap-12"
+        class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-6 sm:p-10 lg:p-14 flex flex-col gap-12"
       >
         <!-- Top: subtitle+title (left) and description (right) -->
-        <div class="flex gap-12 items-center">
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-center">
           <div class="flex flex-col gap-4 flex-1">
             <p
               class="font-display font-semibold text-xs tracking-widest text-cobalt-500 uppercase"
@@ -797,13 +866,13 @@ const heroQuote = ref<Testimonial>({
               SIAP UNTUK BERDISKUSI?
             </p>
             <h2
-              class="font-display font-bold text-5xl text-obsidian-950 leading-tight"
+              class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-obsidian-950 leading-tight"
             >
               Konsultasi <span class="text-cobalt-500">30 menit</span>, tanpa
               biaya
             </h2>
           </div>
-          <div class="basis-2/5">
+          <div class="lg:basis-2/5">
             <p
               class="font-body text-lg text-obsidian-700 font-light leading-relaxed"
             >
@@ -814,13 +883,13 @@ const heroQuote = ref<Testimonial>({
           </div>
         </div>
         <!-- Buttons -->
-        <div class="flex flex-row justify-center gap-8">
+        <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8">
           <UButton
             href="https://wa.me/6282230712718"
             target="_blank"
             rel="noopener noreferrer"
             size="xl"
-            class="px-4 rounded-full"
+            class="px-4 rounded-full justify-center"
             color="success"
           >
             <Icon name="i-mdi-whatsapp" class="text-lg" />
@@ -833,7 +902,7 @@ const heroQuote = ref<Testimonial>({
           <UButton
             href="mailto:core@eskala.id"
             size="xl"
-            class="px-4 rounded-full"
+            class="px-4 rounded-full justify-center"
             color="neutral"
             variant="outline"
           >

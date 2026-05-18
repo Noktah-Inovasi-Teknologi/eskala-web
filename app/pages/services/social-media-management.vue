@@ -307,10 +307,10 @@ const testimonials = ref<Testimonial[]>([
           ──────── Social Media Management
         </p>
         <div class="flex flex-col">
-          <h1 class="font-display text-obsidian-950 font-bold text-7xl">
+          <h1 class="font-display text-obsidian-950 font-bold text-4xl sm:text-5xl lg:text-7xl">
             Hadir konsisten,
           </h1>
-          <h1 class="font-display text-cobalt-500 font-bold text-7xl">
+          <h1 class="font-display text-cobalt-500 font-bold text-4xl sm:text-5xl lg:text-7xl">
             tumbuh organik.
           </h1>
         </div>
@@ -322,12 +322,12 @@ const testimonials = ref<Testimonial[]>([
           standar medis Indonesia.
         </p>
       </div>
-      <div class="flex gap-12 items-center">
+      <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 items-stretch sm:items-center">
         <UButton
           href="https://wa.me/6282230712718"
           target="_blank"
           size="xl"
-          class="px-4 rounded-full"
+          class="px-4 rounded-full justify-center"
           color="success"
         >
           <Icon name="i-mdi-whatsapp" class="text-lg" />
@@ -336,7 +336,7 @@ const testimonials = ref<Testimonial[]>([
         <UButton
           href="#section-package"
           size="xl"
-          class="px-4 rounded-full"
+          class="px-4 rounded-full justify-center"
           color="neutral"
           variant="link"
         >
@@ -345,7 +345,7 @@ const testimonials = ref<Testimonial[]>([
         </UButton>
       </div>
       <USeparator color="obsidian" />
-      <div class="flex justify-between gap-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div
           v-for="point in keyPoints"
           :key="point.title"
@@ -363,7 +363,7 @@ const testimonials = ref<Testimonial[]>([
         <p class="font-display text-copper-500 font-medium">
           ──────── Apa yang kami kelola
         </p>
-        <h2 class="font-display text-obsidian-950 font-bold text-5xl">
+        <h2 class="font-display text-obsidian-950 font-bold text-3xl sm:text-4xl lg:text-5xl">
           <span class="text-cobalt-500">Empat pilar</span> di balik setiap konten yang tayang.
         </h2>
         <p class="font-body text-lg text-obsidian-700 font-light">
@@ -371,7 +371,7 @@ const testimonials = ref<Testimonial[]>([
           juga konten yang aman secara medis dan relevan dengan pasien Anda.
         </p>
       </div>
-      <div class="grid md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div
           v-for="item in whatWeDo"
           :key="item.title"
@@ -397,7 +397,7 @@ const testimonials = ref<Testimonial[]>([
         <p class="font-display text-copper-500 font-medium">
           ──────── Platform yang kami tumbuhkan
         </p>
-        <h2 class="font-display text-obsidian-950 font-bold text-5xl">
+        <h2 class="font-display text-obsidian-950 font-bold text-3xl sm:text-4xl lg:text-5xl">
           Tiga platform utama, <span class="text-cobalt-500">satu strategi terpadu</span>.
         </h2>
         <p class="font-body text-lg text-obsidian-700 font-light">
@@ -428,8 +428,8 @@ const testimonials = ref<Testimonial[]>([
           <p class="font-display text-copper-500 font-medium">
             ──────── Paket layanan kami
           </p>
-          <div class="flex gap-8">
-            <h2 class="font-display text-obsidian-50 font-bold text-5xl">
+          <div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
+            <h2 class="font-display text-obsidian-50 font-bold text-3xl sm:text-4xl lg:text-5xl shrink-0">
               <span class="text-cobalt-400">Tiga paket</span> untuk setiap tahap pertumbuhan faskes Anda.
             </h2>
             <p class="font-body text-lg text-obsidian-300 font-light">
@@ -440,7 +440,7 @@ const testimonials = ref<Testimonial[]>([
           </div>
         </div>
         <div
-          class="bg-obsidian-950 border border-obsidian-700 rounded-2xl overflow-x-auto"
+          class="hidden lg:block bg-obsidian-950 border border-obsidian-700 rounded-2xl overflow-x-auto"
         >
           <table class="w-full border-collapse">
             <thead>
@@ -522,12 +522,77 @@ const testimonials = ref<Testimonial[]>([
             </tbody>
           </table>
         </div>
-        <div class="flex gap-12 justify-center">
+        <div class="lg:hidden flex flex-col gap-6">
+          <div
+            v-for="(pkg, i) in packageSMMRaw"
+            :key="i"
+            :class="[
+              'flex flex-col gap-6 rounded-2xl border bg-obsidian-900 p-6',
+              i === 1
+                ? 'border-cobalt-500 bg-cobalt-950/40'
+                : 'border-obsidian-700',
+            ]"
+          >
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center gap-3">
+                <span class="text-2xl font-semibold text-obsidian-50">{{
+                  packageSMMTitles[i]
+                }}</span>
+                <UBadge
+                  v-if="i === 1"
+                  label="POPULER"
+                  color="secondary"
+                  variant="solid"
+                  class="text-obsidian-950 font-display tracking-widest font-bold"
+                />
+              </div>
+              <span class="text-sm text-obsidian-300">{{
+                packageSMMSubtitles[i]
+              }}</span>
+            </div>
+            <div
+              v-for="section in packageSMMSections"
+              :key="section.title"
+              class="flex flex-col gap-3"
+            >
+              <p
+                class="text-obsidian-50 text-xs font-semibold tracking-widest border-b border-obsidian-700 pb-2"
+              >
+                {{ section.title }}
+              </p>
+              <div
+                v-for="key in section.keys"
+                :key="key"
+                class="flex items-center justify-between gap-4"
+              >
+                <span class="text-obsidian-300 text-sm">{{
+                  featureLabels[key]
+                }}</span>
+                <UIcon
+                  v-if="pkg[key] === true"
+                  name="i-heroicons-check"
+                  class="text-copper-500 text-2xl shrink-0"
+                />
+                <UIcon
+                  v-else-if="pkg[key] === false"
+                  name="i-heroicons-minus"
+                  class="text-obsidian-300 text-2xl shrink-0"
+                />
+                <span
+                  v-else
+                  class="text-obsidian-50 text-sm font-medium text-right"
+                  >{{ pkg[key] }}</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 lg:gap-12 justify-center">
           <UButton
             href="https://wa.me/6282230712718"
             target="_blank"
             size="xl"
-            class="px-4 rounded-full text-obsidian-950"
+            class="px-4 rounded-full text-obsidian-950 justify-center"
             color="secondary"
           >
             <Icon name="i-mdi-whatsapp" class="text-lg" />
@@ -536,7 +601,7 @@ const testimonials = ref<Testimonial[]>([
           <UButton
             to="/services/digital-marketing"
             size="xl"
-            class="px-4 rounded-full"
+            class="px-4 rounded-full justify-center"
             color="secondary"
             variant="link"
           >
@@ -553,7 +618,7 @@ const testimonials = ref<Testimonial[]>([
           <p class="font-display text-copper-500 font-medium">
             ──────── Ekspektasi hasil
           </p>
-          <h2 class="font-display text-obsidian-50 font-bold text-5xl">
+          <h2 class="font-display text-obsidian-50 font-bold text-3xl sm:text-4xl lg:text-5xl">
             <span class="text-cobalt-400">Maraton, bukan sprint</span> — timeline realistis.
           </h2>
           <p class="font-body text-lg text-obsidian-300 font-light">
@@ -562,11 +627,11 @@ const testimonials = ref<Testimonial[]>([
             bulan ke bulan berdasarkan pengalaman kami bersama klien faskes.
           </p>
         </div>
-        <div class="flex gap-12 content-stretch">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-12">
           <div
             v-for="result in expectedResults"
             :key="result.title"
-            class="flex flex-col gap-8 rounded-3xl border border-obsidian-700 bg-obsidian-900 p-8 basis-1/3"
+            class="flex flex-col gap-8 rounded-3xl border border-obsidian-700 bg-obsidian-900 p-6 sm:p-8"
           >
             <div class="flex items-center justify-between gap-8">
               <p
@@ -600,7 +665,7 @@ const testimonials = ref<Testimonial[]>([
           <p class="font-display text-copper-500 font-medium">
             ──────── Pertanyaan yang sering kami terima
           </p>
-          <h2 class="font-display text-obsidian-950 font-bold text-5xl">
+          <h2 class="font-display text-obsidian-950 font-bold text-3xl sm:text-4xl lg:text-5xl">
             Hal-hal yang biasanya <span class="text-cobalt-500">ditanyakan klinik</span> sebelum mulai.
           </h2>
         </div>
@@ -611,16 +676,16 @@ const testimonials = ref<Testimonial[]>([
             class="flex flex-col gap-12"
           >
             <USeparator color="obsidian" />
-            <div class="flex justify-between gap-12">
-              <p class="font-display text-4xl font-bold italic text-copper-500">
+            <div class="flex flex-col lg:flex-row lg:justify-between gap-4 lg:gap-12">
+              <p class="font-display text-xl sm:text-2xl lg:text-4xl font-bold italic text-copper-500">
                 {{ question.number }}
               </p>
               <h3
-                class="font-display text-2xl font-semibold text-obsidian-950 basis-2/5"
+                class="font-display text-xl sm:text-2xl font-semibold text-obsidian-950 lg:basis-2/5"
               >
                 {{ question.title }}
               </h3>
-              <div class="flex flex-col gap-8 basis-3/5">
+              <div class="flex flex-col gap-8 lg:basis-3/5">
                 <p
                   class="font-display font-semibold text-sm text-cobalt-500 tracking-widest"
                 >
@@ -641,21 +706,21 @@ const testimonials = ref<Testimonial[]>([
         <p class="font-display text-copper-500 font-medium">
           ──────── Apa kata klien kami
         </p>
-        <h2 class="font-display text-obsidian-950 font-bold text-5xl">
+        <h2 class="font-display text-obsidian-950 font-bold text-3xl sm:text-4xl lg:text-5xl">
           Cerita <span class="text-cobalt-500">dari klien</span> kami.
         </h2>
       </div>
-      <div class="grid md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div
           v-for="testimonial in testimonials"
           :key="testimonial.name"
-          class="flex flex-col p-8 gap-8 rounded-3xl border border-copper-200 bg-copper-50"
+          class="flex flex-col p-6 sm:p-8 gap-8 rounded-3xl border border-copper-200 bg-copper-50"
         >
           <Icon
             name="i-heroicons-chat-bubble-left"
             class="text-copper-500 text-4xl"
           />
-          <p class="font-body font-medium text-2xl text-obsidian-950">
+          <p class="font-body font-medium text-xl sm:text-2xl text-obsidian-950">
             "{{ testimonial.quote }}"
           </p>
           <div class="flex gap-3 items-center">
@@ -679,9 +744,9 @@ const testimonials = ref<Testimonial[]>([
 
     <UContainer id="section-call-to-action" class="flex flex-col gap-12 py-24">
       <div
-        class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-10 lg:p-14 flex flex-col gap-12"
+        class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-6 sm:p-10 lg:p-14 flex flex-col gap-12"
       >
-        <div class="flex gap-12 items-center">
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-center">
           <div class="flex flex-col gap-4 flex-1">
             <p
               class="font-display font-semibold text-xs tracking-widest text-cobalt-500 uppercase"
@@ -689,12 +754,12 @@ const testimonials = ref<Testimonial[]>([
               SIAP UNTUK BERDISKUSI?
             </p>
             <h2
-              class="font-display font-bold text-5xl text-obsidian-950 leading-tight"
+              class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-obsidian-950 leading-tight"
             >
               Kalau bukan sekarang mulai, <span class="text-cobalt-500">lalu kapan?</span>
             </h2>
           </div>
-          <div class="basis-2/5">
+          <div class="lg:basis-2/5">
             <p
               class="font-body text-lg text-obsidian-700 font-light leading-relaxed"
             >
@@ -704,13 +769,13 @@ const testimonials = ref<Testimonial[]>([
             </p>
           </div>
         </div>
-        <div class="flex flex-row justify-center gap-8">
+        <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8">
           <UButton
             href="https://wa.me/6282230712718"
             target="_blank"
             rel="noopener noreferrer"
             size="xl"
-            class="px-4 rounded-full"
+            class="px-4 rounded-full justify-center"
             color="success"
           >
             <Icon name="i-mdi-whatsapp" class="text-lg" />
@@ -723,7 +788,7 @@ const testimonials = ref<Testimonial[]>([
           <UButton
             href="mailto:core@eskala.id"
             size="xl"
-            class="px-4 rounded-full"
+            class="px-4 rounded-full justify-center"
             color="neutral"
             variant="outline"
           >

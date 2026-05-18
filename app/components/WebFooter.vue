@@ -51,7 +51,7 @@ const footerLinks: FooterSection[] = [
 <template>
   <UFooter class="px-6">
     <template #top>
-      <div class="grid lg:grid-cols-4 gap-12 mx-auto max-w-7xl">
+      <div class="grid lg:grid-cols-4 gap-8 lg:gap-12 mx-auto max-w-7xl">
         <!-- Company Info -->
         <div class="lg:col-span-1">
           <div class="mb-8">
@@ -81,7 +81,7 @@ const footerLinks: FooterSection[] = [
         </div>
 
         <!-- Footer Links -->
-        <div class="lg:col-span-3 grid md:grid-cols-3 gap-12">
+        <div class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 lg:gap-12">
           <div v-for="section in footerLinks" :key="section.label">
             <h4 class="font-display font-semibold text-obsidian-900 mb-6">
               {{ section.label }}
@@ -109,7 +109,7 @@ const footerLinks: FooterSection[] = [
     </template>
 
     <template #right>
-      <div class="flex gap-8 text-sm">
+      <div class="flex flex-wrap gap-4 sm:gap-8 text-sm">
         <NuxtLink
           to="/privacy"
           class="font-body text-obsidian-500 hover:text-primary transition-colors"

@@ -94,16 +94,16 @@ watch(selectedCategory, () => {
         <p class="font-display text-copper-500 font-medium">
           ──────── Studi kasus
         </p>
-        <div class="flex gap-8">
+        <div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
           <div class="flex flex-col">
-            <h1 class="font-display text-obsidian-950 font-bold text-7xl">
+            <h1 class="font-display text-obsidian-950 font-bold text-4xl sm:text-5xl lg:text-7xl">
               Bukan cuma klaim,
             </h1>
-            <h1 class="font-display text-cobalt-500 font-bold text-7xl">
+            <h1 class="font-display text-cobalt-500 font-bold text-4xl sm:text-5xl lg:text-7xl">
               <span class="text-obsidian-950">Ini</span> cerita klien kami.
             </h1>
           </div>
-          <p class="font-body text-lg text-obsidian-700 font-light basis-1/3">
+          <p class="font-body text-lg text-obsidian-700 font-light lg:basis-1/3">
             Setiap studi kasus di bawah ini adalah dokumentasi nyata dari
             perjalanan fasilitas kesehatan dan bisnis lainnya bersama Eskala.
             Studi kasus berisikan informasi yang lengkap dengan konteks awal,
@@ -113,7 +113,7 @@ watch(selectedCategory, () => {
         </div>
       </div>
       <div
-        class="w-full grid grid-cols-4 divide-x divide-obsidian-300 border-obsidian-300 border rounded-3xl"
+        class="w-full grid grid-cols-2 lg:grid-cols-4 lg:divide-x divide-obsidian-300 border-obsidian-300 border rounded-3xl overflow-hidden"
       >
         <div
           v-for="(item, index) in achievement"
@@ -122,7 +122,7 @@ watch(selectedCategory, () => {
           :class="{ 'bg-obsidian-950': index === 2 }"
         >
           <h2
-            class="font-display font-bold text-4xl"
+            class="font-display font-bold text-2xl sm:text-3xl lg:text-4xl"
             :class="index === 2 ? 'text-amber-500' : 'text-obsidian-950'"
           >
             {{ item.value }}
@@ -137,11 +137,11 @@ watch(selectedCategory, () => {
       </div>
       <USeparator class="w-full" color="obsidian" />
       <div class="flex flex-col">
-        <div class="w-full flex justify-between items-center">
+        <div class="w-full flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
           <p>{{ displayText }}</p>
           <UTabs v-model="selectedCategory" :items="caseStudyCategories" />
         </div>
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <UCard
             v-for="item of paginatedCaseStudies"
             :key="item.id"
@@ -175,7 +175,7 @@ watch(selectedCategory, () => {
                   </UBadge>
                 </div>
                 <USeparator class="w-full" color="obsidian" />
-                <div class="flex justify-between">
+                <div class="flex flex-wrap items-center justify-between gap-4">
                   <div>
                     <p
                       class="font-semibold tracking-widest text-obsidian-500 text-sm"
@@ -200,7 +200,7 @@ watch(selectedCategory, () => {
         </div>
         <UPagination
           v-model:page="page"
-          class="mt-8 w-full flex justify-center"
+          class="mt-8 w-full flex flex-wrap justify-center"
           :total="filteredCaseStudies.length"
           :items-per-page="itemsPerPage"
         />
@@ -208,29 +208,29 @@ watch(selectedCategory, () => {
     </UContainer>
 
     <UContainer id="section-call-to-action" class="flex flex-col gap-12 py-24">
-      <div class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-10 lg:p-14 flex flex-col gap-12">
-        <div class="flex gap-12 items-center">
+      <div class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-6 sm:p-10 lg:p-14 flex flex-col gap-12">
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-center">
           <div class="flex flex-col gap-4 flex-1">
             <p class="font-display font-semibold text-xs tracking-widest text-cobalt-500 uppercase">
               SIAP UNTUK BERDISKUSI?
             </p>
-            <h2 class="font-display font-bold text-5xl text-obsidian-950 leading-tight">
+            <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-obsidian-950 leading-tight">
               Ingin hasil seperti ini <span class="text-cobalt-500">untuk faskes Anda?</span>
             </h2>
           </div>
-          <div class="basis-2/5">
+          <div class="lg:basis-2/5">
             <p class="font-body text-lg text-obsidian-700 font-light leading-relaxed">
               Konsultasi 30 menit gratis — kami mendengarkan kondisi digital faskes Anda saat ini, lalu merekomendasikan 2-3 solusi, dengan atau tanpa bekerja sama dengan kami.
             </p>
           </div>
         </div>
-        <div class="flex flex-row justify-center gap-8">
+        <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8">
           <UButton
             href="https://wa.me/6282230712718"
             target="_blank"
             rel="noopener noreferrer"
             size="xl"
-            class="px-4 rounded-full"
+            class="px-4 rounded-full justify-center"
             color="success"
           >
             <Icon name="i-mdi-whatsapp" class="text-lg" />
@@ -240,7 +240,7 @@ watch(selectedCategory, () => {
           <UButton
             href="mailto:core@eskala.id"
             size="xl"
-            class="px-4 rounded-full"
+            class="px-4 rounded-full justify-center"
             color="neutral"
             variant="outline"
           >
