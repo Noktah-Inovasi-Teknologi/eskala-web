@@ -13,9 +13,23 @@ export default defineNuxtConfig({
       titleTemplate: "Eskala - %s",
       link: [
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-        { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
-        { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
-        { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
+        {
+          rel: "apple-touch-icon",
+          sizes: "180x180",
+          href: "/apple-touch-icon.png",
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "32x32",
+          href: "/favicon-32x32.png",
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "16x16",
+          href: "/favicon-16x16.png",
+        },
         { rel: "manifest", href: "/site.webmanifest" },
       ],
       meta: [
@@ -33,12 +47,35 @@ export default defineNuxtConfig({
       { name: "Plus Jakarta Sans", provider: "google" },
     ],
   },
-  modules: ["@nuxt/fonts", "@nuxt/ui"],
+  modules: ["@nuxt/fonts", "@nuxt/ui", "nuxt-viewport"],
   ui: {
     colorMode: false,
     theme: {
-      colors: ["primary", "secondary", "success", "info", "warning", "error", "obsidian"],
+      colors: [
+        "primary",
+        "secondary",
+        "success",
+        "info",
+        "warning",
+        "error",
+        "obsidian",
+      ],
     },
+  },
+  viewport: {
+    breakpoints: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+    },
+    defaultBreakpoints: {
+      desktop: "lg",
+      mobile: "xs",
+      tablet: "md",
+    },
+    fallbackBreakpoint: "lg",
   },
   vite: {
     plugins: [tailwindcss()],
