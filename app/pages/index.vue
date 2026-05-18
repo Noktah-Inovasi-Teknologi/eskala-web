@@ -2,7 +2,8 @@
 import type { TimelineItem } from "@nuxt/ui";
 
 useSeoMeta({
-  title: "Digital Marketing Agency",
+  title: "Digital Marketing Agency — Eskala",
+  twitterCard: "summary_large_image",
   description:
     "Eskala adalah digital marketing agency berbasis di Yogyakarta yang spesialis membantu klinik, rumah sakit, dan brand kesehatan tumbuh melalui Social Media Management dan Digital Marketing.",
   ogTitle: "Eskala — Digital Marketing Agency untuk Fasilitas Kesehatan Indonesia",
@@ -23,7 +24,7 @@ useHead({
 
 const keyPoints = ref([
   {
-    title: "Dipercaya 12+ fasilitas kesehatan di Indonesia",
+    title: "Dipercaya 10+ fasilitas kesehatan di Indonesia",
     icon: "i-heroicons-shield-check",
   },
   {
@@ -52,7 +53,7 @@ const keyQuestions = ref([
     number: "02",
     title: "Apakah Eskala memahami regulasi iklan kesehatan?",
     answer:
-      "Ya. Setiap konten dan creative iklan melewati medical review internal sebelum tayang, mengacu pada pedoman KKI dan Kemenkes. Kami menolak claim yang bersifat superlatif atau menjanjikan kesembuhan, dan kami akan menjelaskan alasannya kepada tim Anda.",
+      "Ya. Setiap konten dan creative iklan melewati medical review oleh tim ahli kami sebelum tayang, mengacu pada pedoman KKI dan Kemenkes. Kami selalu siap berdiskusi dengan tim Anda untuk memastikan setiap konten sejalan dengan standar medis yang berlaku.",
   },
   {
     number: "03",
@@ -64,7 +65,7 @@ const keyQuestions = ref([
     number: "04",
     title: "Apakah kontraknya mengikat?",
     answer:
-      "Tidak. Kontrak kami berjalan per semester dengan notice period 30 hari. Kami lebih memilih klien yang memperpanjang karena hasil, bukan karena terikat dengan kami. 90% klien kami memperpanjang kontrak setelah 6 bulan pertama.",
+      "Tidak. Kontrak kami berjalan per semester dengan notice period 30 hari. Kami lebih memilih klien yang memperpanjang karena hasil, bukan karena terikat dengan kami. 80% klien kami memperpanjang kontrak setelah 6 bulan pertama.",
   },
 ]);
 
@@ -79,7 +80,7 @@ const expectedResults = ref([
       "Riset dan audit faskes & kompetitor",
       "Pembuatan atau improvisasi Content Pillars",
       "Posting rutin berdasarkan Content Plan",
-      "Views dan engagement meningkat 10-30% tiap bulan",
+      "Views dan engagement mulai menunjukkan tren naik",
     ],
   },
   {
@@ -89,9 +90,9 @@ const expectedResults = ref([
     description:
       "Konten mulai menemukan audience-nya. DM dan konsultasi dari pasien potensial mulai berdatangan secara organik. Iklan bisa mulai dijalankan, tapi hasilnya masih belum stabil dan sangat bergantung pada kualitas konten organik yang sudah ada.",
     detail: [
-      "Follower organik naik 3-15% tiap bulan",
+      "Follower organik tumbuh secara konsisten",
       "Data telah cukup untuk optimasi konten dan memulai iklan",
-      "1-2 konten viral (±10-50k reach)",
+      "Konten viral mulai bermunculan",
       "DM pasien potensial mulai berdatangan",
     ],
   },
@@ -102,7 +103,7 @@ const expectedResults = ref([
     description:
       "Performa konten mulai stabil dengan pertumbuhan yang compounding. Iklan lebih efisien dan mulai memberikan hasil yang konsisten dan terukur. Rujukan via media sosial mulai menjadi saluran yang konsisten.",
     detail: [
-      "ROAS Ads 3-33x tergantung platform dan target",
+      "ROAS Ads 5-33x tergantung platform dan target",
       "Konsultasi via DM meningkat signifikan",
       "Identitas faskes sudah lebih mudah diingat dan dipercaya pasien",
       "Repeat appointment dari pasien yang datang via media sosial mulai terlihat",
@@ -167,7 +168,7 @@ const services = ref([
       "Kalender konten bulanan untuk media sosial klinik Anda. Kami menyusun, memproduksi, dan mem-publish konten dari awal hingga akhir.",
     point: [
       "Content pillars yang konsisten",
-      "Community management harian",
+      "Medical review di setiap konten",
       "Backup konten untuk kebutuhan mendadak",
       "Laporan performa bulanan",
     ],
@@ -242,7 +243,7 @@ const featureLabels: Record<string, string> = {
 
 const packageSMMRaw = ref([
   {
-    mainFocus: "Konsistensi kehadiran faskes",
+    mainFocus: "Untuk faskes yang baru memulai kehadiran digital.",
     feed: 8,
     shortVideo: 4,
     maxSocialMedia: "1",
@@ -260,7 +261,7 @@ const packageSMMRaw = ref([
     monthlyReviewMeeting: true,
   },
   {
-    mainFocus: "Konsistensi kehadiran faskes",
+    mainFocus: "Untuk faskes yang ingin tumbuh di lebih dari satu platform.",
     feed: 10,
     shortVideo: 7,
     maxSocialMedia: "2 (Mirroring)",
@@ -278,7 +279,7 @@ const packageSMMRaw = ref([
     monthlyReviewMeeting: true,
   },
   {
-    mainFocus: "Konsistensi kehadiran faskes",
+    mainFocus: "Untuk faskes yang siap mendominasi pasar lokal.",
     feed: 16,
     shortVideo: 8,
     maxSocialMedia: "3",
@@ -406,7 +407,7 @@ const heroQuote = ref<Testimonial>({
           Jadwalkan konsultasi gratis dengan kami
         </UButton>
         <UButton
-          :to="{ path: '/case-study' }"
+          to="/case-study"
           size="xl"
           class="px-4 rounded-full"
           color="neutral"
@@ -606,7 +607,7 @@ const heroQuote = ref<Testimonial>({
           </UTimeline>
           <div class="w-full flex justify-center">
             <UButton
-              :to="{ path: '/case-study' }"
+              to="/case-study"
               size="xl"
               class="px-4 rounded-full"
               color="neutral"
@@ -627,12 +628,13 @@ const heroQuote = ref<Testimonial>({
           </p>
           <div class="flex gap-8">
             <h2 class="font-display text-obsidian-50 font-bold text-5xl">
-              End-to-end Social Media Management
+              Social Media Management
             </h2>
             <p class="font-body text-lg text-obsidian-300 font-light">
-              Kelola sosial media klinik Anda secara menyeluruh: strategi
-              konten, produksi visual, posting, hingga monitoring. Dari awal
-              hingga akhir, tinggal terima beres.
+              Kelola sosial media klinik Anda dari strategi hingga eksekusi —
+              produksi konten, medical review, posting, dan laporan bulanan.
+              Untuk memperluas jangkauan lewat iklan, lihat paket Digital
+              Marketing kami.
             </p>
           </div>
         </div>
@@ -805,8 +807,8 @@ const heroQuote = ref<Testimonial>({
             <p
               class="font-body text-lg text-obsidian-700 font-light leading-relaxed"
             >
-              Kami akan mendengarkan masalah Anda, melakukan audit, lalu
-              merekomendasikan tiga solusi, dengan atau tanpa bekerja sama
+              Konsultasi 30 menit gratis — kami mendengarkan masalah Anda, lalu
+              merekomendasikan 2-3 solusi, dengan atau tanpa bekerja sama
               dengan kami.
             </p>
           </div>

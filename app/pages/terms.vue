@@ -1,14 +1,19 @@
 <script lang="ts" setup>
 useSeoMeta({
-  title: "Syarat & Ketentuan",
+  title: "Syarat & Ketentuan — Eskala",
+  twitterCard: "summary_large_image",
   description:
     "Syarat dan Ketentuan Eskala — aturan penggunaan layanan Social Media Management dan Digital Marketing. Baca sebelum memulai kerja sama.",
-  ogTitle: "Syarat & Ketentuan | Eskala",
+  ogTitle: "Syarat & Ketentuan — Eskala",
   ogDescription:
     "Ketentuan layanan Eskala untuk klien Social Media Management dan Digital Marketing. Transparan dan adil untuk kedua pihak.",
   ogUrl: "https://eskala.id/terms",
   ogType: "website",
   ogImage: "https://eskala.id/android-chrome-512x512.png",
+  twitterTitle: "Syarat & Ketentuan — Eskala",
+  twitterDescription:
+    "Syarat dan Ketentuan Eskala untuk klien Social Media Management dan Digital Marketing.",
+  twitterImage: "https://eskala.id/android-chrome-512x512.png",
 });
 
 useHead({
@@ -54,7 +59,7 @@ const lastUpdated = "22 April 2026";
           <div class="flex flex-col gap-3 pl-4 border-l-2 border-cobalt-200">
             <div>
               <p class="font-display text-obsidian-900 font-semibold text-base">Layanan</p>
-              <p class="font-body text-obsidian-700 font-light leading-relaxed">Social Media Management dan Digital Marketing (termasuk Ads Management dan KOC Management) sebagaimana dijelaskan di eskala.id.</p>
+              <p class="font-body text-obsidian-700 font-light leading-relaxed">Social Media Management dan Digital Marketing (Ads Management) sebagaimana dijelaskan di eskala.id.</p>
             </div>
             <div>
               <p class="font-display text-obsidian-900 font-semibold text-base">Konten</p>
@@ -86,7 +91,7 @@ const lastUpdated = "22 April 2026";
             <div class="flex flex-col gap-2 rounded-2xl border border-obsidian-200 p-6">
               <p class="font-display text-obsidian-900 font-semibold text-base">Digital Marketing</p>
               <p class="font-body text-obsidian-700 font-light leading-relaxed">
-                Manajemen iklan berbayar (Meta, TikTok, Google) dan KOC Management untuk memperluas jangkauan pasien. Fee layanan dihitung berdasarkan persentase dari ad spend Klien (15%–25% tergantung paket). Ad spend bukan bagian dari fee Eskala dan dibayarkan langsung oleh Klien ke platform.
+                Manajemen iklan berbayar (Meta, TikTok, atau Google) untuk memperluas jangkauan pasien. Fee layanan dihitung berdasarkan persentase dari ad spend Klien (10%–20% tergantung paket). Ad spend bukan bagian dari fee Eskala dan dibayarkan langsung oleh Klien ke platform.
               </p>
             </div>
 
@@ -167,7 +172,7 @@ const lastUpdated = "22 April 2026";
         <section class="flex flex-col gap-4">
           <h2 class="font-display text-obsidian-950 font-semibold text-2xl">10. Kepatuhan Regulasi Kesehatan</h2>
           <p class="font-body text-obsidian-700 font-light leading-relaxed">
-            Seluruh konten yang diproduksi oleh Eskala untuk fasilitas kesehatan melalui proses medical review internal yang mengacu pada pedoman Konsil Kedokteran Indonesia (KKI) dan Kementerian Kesehatan Republik Indonesia (Kemenkes RI).
+            Seluruh konten yang diproduksi oleh Eskala untuk fasilitas kesehatan melalui proses medical review oleh tim ahli kami yang mengacu pada pedoman Konsil Kedokteran Indonesia (KKI) dan Kementerian Kesehatan Republik Indonesia (Kemenkes RI).
           </p>
           <p class="font-body text-obsidian-700 font-light leading-relaxed">
             Klien bertanggung jawab untuk memastikan bahwa informasi yang diberikan kepada Eskala — termasuk klaim layanan medis, spesialisasi, dan kompetensi tenaga kesehatan — adalah akurat dan sesuai izin yang dimiliki. Eskala tidak bertanggung jawab atas konten yang didasarkan pada informasi yang tidak akurat dari Klien.

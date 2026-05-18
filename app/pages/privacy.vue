@@ -1,14 +1,19 @@
 <script lang="ts" setup>
 useSeoMeta({
-  title: "Kebijakan Privasi",
+  title: "Kebijakan Privasi — Eskala",
+  twitterCard: "summary_large_image",
   description:
     "Kebijakan Privasi Eskala — bagaimana kami mengumpulkan, menggunakan, dan melindungi data Anda sebagai klien atau pengunjung situs eskala.id.",
-  ogTitle: "Kebijakan Privasi | Eskala",
+  ogTitle: "Kebijakan Privasi — Eskala",
   ogDescription:
     "Pelajari bagaimana Eskala melindungi data pribadi Anda. Transparansi penuh tentang pengumpulan, penggunaan, dan keamanan data.",
   ogUrl: "https://eskala.id/privacy",
   ogType: "website",
   ogImage: "https://eskala.id/android-chrome-512x512.png",
+  twitterTitle: "Kebijakan Privasi — Eskala",
+  twitterDescription:
+    "Kebijakan Privasi Eskala — bagaimana kami mengumpulkan, menggunakan, dan melindungi data Anda.",
+  twitterImage: "https://eskala.id/android-chrome-512x512.png",
 });
 
 useHead({

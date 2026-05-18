@@ -1,14 +1,19 @@
 <script lang="ts" setup>
 useSeoMeta({
-  title: "Tentang Kami | Eskala",
+  title: "Tentang Kami — Eskala",
   description:
-    "Eskala adalah digital marketing agency berbasis di Yogyakarta yang berdedikasi membantu fasilitas kesehatan dan bisnis jasa Indonesia tumbuh secara digital.",
-  ogTitle: "Tentang Kami",
+    "Eskala adalah digital marketing agency berbasis di Yogyakarta yang berdedikasi membantu fasilitas kesehatan tumbuh secara digital dengan kreativitas yang bertanggung jawab.",
+  ogTitle: "Tentang Kami — Eskala",
   ogDescription:
-    "Partner kreatif yang paham dunia kesehatan. Didirikan 2024, berbasis di Yogyakarta.",
+    "Tim kreatif yang paham dunia kesehatan. Spesialis Social Media Management dan Digital Marketing untuk klinik, rumah sakit, dan brand kesehatan di Indonesia.",
   ogUrl: "https://eskala.id/about-us",
   ogType: "website",
   ogImage: "https://eskala.id/android-chrome-512x512.png",
+  twitterTitle: "Tentang Kami — Eskala",
+  twitterDescription:
+    "Tim kreatif spesialis faskes. Social Media Management & Digital Marketing untuk klinik dan rumah sakit Indonesia.",
+  twitterImage: "https://eskala.id/android-chrome-512x512.png",
+  twitterCard: "summary_large_image",
 });
 
 useHead({
@@ -16,8 +21,8 @@ useHead({
 });
 
 const stats = ref([
-  { value: "12+", label: "Fasilitas kesehatan dipercaya" },
-  { value: "90%+", label: "Klien perpanjang kontrak" },
+  { value: "10+", label: "Fasilitas kesehatan dipercaya" },
+  { value: "80%", label: "Klien perpanjang kontrak" },
   { value: "2024", label: "Tahun berdiri" },
   { value: "Yogyakarta", label: "Berbasis di" },
 ]);
@@ -27,7 +32,7 @@ const whoWeServe = ref([
     icon: "i-heroicons-heart",
     title: "Fasilitas Kesehatan",
     description:
-      "Klinik, rumah sakit, dan brand kesehatan, spesialisasi utama kami. Setiap konten melewati medical review internal dan mengacu pada pedoman KKI & Kemenkes.",
+      "Klinik, rumah sakit, dan brand kesehatan, spesialisasi utama kami. Setiap konten melewati medical review oleh tim ahli kami dan mengacu pada pedoman KKI & Kemenkes.",
   },
   {
     icon: "i-heroicons-sparkles",
@@ -54,7 +59,7 @@ const coreValues = ref([
     number: "01",
     title: "Paham Regulasi",
     description:
-      "Setiap konten untuk klien kesehatan melewati medical review internal dan mengacu pada pedoman KKI dan Kemenkes.",
+      "Setiap konten untuk klien kesehatan melewati medical review oleh tim ahli kami dan mengacu pada pedoman KKI dan Kemenkes.",
   },
   {
     number: "02",
@@ -133,7 +138,7 @@ const comparison = ref([
   },
   {
     aspect: "Retensi klien",
-    eskala: "90%+ bertahan lebih dari 6 bulan",
+    eskala: "80% bertahan lebih dari 6 bulan",
     others: "",
     eskalaGood: true,
   },
@@ -162,9 +167,9 @@ const comparison = ref([
           </div>
           <p class="font-body text-lg text-obsidian-700 font-light max-w-xl">
             Eskala adalah digital marketing agency berbasis di Yogyakarta yang
-            berdedikasi membantu fasilitas kesehatan dan bisnis jasa Indonesia
-            tumbuh secara digital dengan kreativitas yang bertanggung jawab
-            dan pemahaman mendalam tentang kepercayaan konsumen.
+            berdedikasi membantu fasilitas kesehatan tumbuh secara digital —
+            dengan kreativitas yang bertanggung jawab dan pemahaman mendalam
+            tentang standar medis dan kepercayaan pasien.
           </p>
         </div>
       </div>
@@ -233,6 +238,11 @@ const comparison = ref([
             berdedikasi. Namun di dunia digital, mereka hampir tidak terlihat.
             Pasien yang membutuhkan justru tidak tahu mereka ada.
           </p>
+          <blockquote class="border-l-4 border-copper-500 pl-6 py-2">
+            <p class="font-display text-xl font-semibold text-obsidian-950 leading-snug">
+              "Bisnis Anda bukan kekurangan kualitas, tapi kehilangan relevansi di mata audiens."
+            </p>
+          </blockquote>
           <p class="font-body text-lg text-obsidian-700 font-light leading-relaxed">
             Di sisi lain, agensi digital pada umumnya tidak memahami kompleksitas
             regulasi konten kesehatan. Mereka membuat konten yang bagus secara
@@ -338,8 +348,8 @@ const comparison = ref([
           Orang-orang di balik <span class="text-cobalt-500">Eskala</span>.
         </h2>
         <p class="font-body text-lg text-obsidian-700 font-light">
-          Tim kecil yang bergerak cepat, berpikir strategis, dan selalu
-          berpihak pada pertumbuhan klien.
+          Tim profesional yang dapat diandalkan, bergerak cepat, dan dipercaya
+          untuk mengantar pertumbuhan klien.
         </p>
       </div>
       <div class="grid md:grid-cols-3 gap-6">
@@ -461,9 +471,9 @@ const comparison = ref([
             <p
               class="font-body text-lg text-obsidian-700 font-light leading-relaxed"
             >
-              Konsultasi pertama gratis. Tidak ada komitmen, hanya percakapan
-              jujur tentang apa yang benar-benar dibutuhkan bisnis Anda saat ini
-             dengan atau tanpa bekerja sama dengan kami.
+              Konsultasi 30 menit gratis. Tidak ada komitmen — kami mendengarkan
+              masalah Anda, lalu merekomendasikan 2-3 solusi, dengan atau tanpa
+              bekerja sama dengan kami.
             </p>
           </div>
         </div>

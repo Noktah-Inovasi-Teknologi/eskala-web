@@ -1,17 +1,18 @@
 <script lang="ts" setup>
 useSeoMeta({
-  title: "Digital Marketing",
+  title: "Digital Marketing — Eskala",
   description:
-    "Optimalkan iklan digital (Meta, TikTok, Google) dan kolaborasi KOC untuk memperluas jangkauan pasien faskes Anda. Fee berbasis persentase ad spend, tanpa biaya tetap besar.",
-  ogTitle: "Digital Marketing untuk Fasilitas Kesehatan | Eskala",
+    "Optimalkan iklan digital (Meta, TikTok, Google) untuk memperluas jangkauan pasien faskes Anda. Transparan, terukur, tanpa biaya tetap besar.",
+  ogTitle: "Digital Marketing — Eskala",
   ogDescription:
-    "Iklan yang tepat, hasil yang maksimal. Ads Management + KOC Management khusus klinik dan rumah sakit. Fee mulai 15% dari ad spend — transparan, terukur.",
+    "Iklan yang tepat, hasil yang maksimal. Ads Management khusus klinik dan rumah sakit di Meta, TikTok, dan Google — transparan dan terukur.",
   ogUrl: "https://eskala.id/services/digital-marketing",
   ogType: "website",
   ogImage: "https://eskala.id/android-chrome-512x512.png",
-  twitterTitle: "Digital Marketing untuk Fasilitas Kesehatan | Eskala",
+  twitterTitle: "Digital Marketing — Eskala",
   twitterDescription:
-    "Ads Management & KOC Management untuk klinik dan RS. Mulai 15% dari ad spend di Meta, TikTok, Google.",
+    "Ads Management untuk klinik dan RS di Meta, TikTok, atau Google.",
+  twitterCard: "summary_large_image",
   twitterImage: "https://eskala.id/android-chrome-512x512.png",
 });
 
@@ -83,28 +84,6 @@ const platforms = ref([
   },
 ]);
 
-const kocBenefits = ref([
-  "Followers 1K – 100K, masih dipercaya komunitasnya",
-  "Pengalaman pengguna nyata, bukan endorsement berbayar",
-  "Engagement rate 5–15%, jauh di atas KOL",
-  "Biaya jauh lebih efisien per konten",
-]);
-
-const kocComparison = ref({
-  koc: [
-    "Followers: 1K – 100K",
-    "Pengalaman pengguna nyata",
-    "Engagement rate: 5 – 15%",
-    "Biaya terjangkau",
-  ],
-  kol: [
-    "Followers: 100K – 10M+",
-    "Endorsement berbayar",
-    "Engagement rate: 1 – 3%",
-    "Biaya sangat tinggi",
-  ],
-});
-
 const packageDMSections = [
   {
     title: "STRUKTUR FEE & CAKUPAN",
@@ -121,10 +100,6 @@ const packageDMSections = [
     ] as const,
   },
   {
-    title: "KOC MANAGEMENT",
-    keys: ["kocSourcing", "kocCampaign"] as const,
-  },
-  {
     title: "PELAPORAN",
     keys: ["monthlyReport", "monthlyReviewMeeting"] as const,
   },
@@ -132,60 +107,52 @@ const packageDMSections = [
 
 const featureLabels: Record<string, string> = {
   fee: "Fee management",
-  platformLimit: "Maks. Platform",
+  platformLimit: "Platform",
   platformScope: "Cakupan Platform",
   campaignSetup: "Campaign Setup & Strategy",
   creativeBriefReview: "Creative Brief & Medical Review",
   abTesting: "A/B Testing Creative",
   geoTargeting: "Geo-Targeting Radius Klinik",
   weeklyOptimization: "Optimasi Mingguan",
-  kocSourcing: "Sourcing & Seleksi KOC",
-  kocCampaign: "Campaign KOC Terkelola",
   monthlyReport: "Laporan Bulanan",
   monthlyReviewMeeting: "Review Meeting Bulanan",
 };
 
 const packageDMRaw = ref([
   {
-    fee: "15% ad spend",
+    fee: "Hubungi kami",
     platformLimit: "1",
-    platformScope: "Meta saja",
+    platformScope: "Pilihan: Meta, TikTok, atau Google",
     campaignSetup: true,
     creativeBriefReview: true,
     abTesting: false,
     geoTargeting: true,
     weeklyOptimization: true,
-    kocSourcing: false,
-    kocCampaign: false,
     monthlyReport: "Basic",
     monthlyReviewMeeting: true,
   },
   {
-    fee: "20% ad spend",
-    platformLimit: "Maks. 2",
-    platformScope: "Meta + 1 platform",
+    fee: "Hubungi kami",
+    platformLimit: "1",
+    platformScope: "Pilihan: Meta, TikTok, atau Google",
     campaignSetup: true,
     creativeBriefReview: true,
     abTesting: true,
     geoTargeting: true,
     weeklyOptimization: true,
-    kocSourcing: true,
-    kocCampaign: false,
     monthlyReport: "Detailed",
     monthlyReviewMeeting: true,
   },
   {
-    fee: "25% ad spend",
-    platformLimit: "Multi",
-    platformScope: "Meta + TikTok + Google",
+    fee: "Hubungi kami",
+    platformLimit: "1",
+    platformScope: "Pilihan: Meta, TikTok, atau Google",
     campaignSetup: true,
     creativeBriefReview: true,
     abTesting: true,
     geoTargeting: true,
     weeklyOptimization: true,
-    kocSourcing: true,
-    kocCampaign: true,
-    monthlyReport: "Detailed + KOC Insights",
+    monthlyReport: "Detailed + Advanced Optimization",
     monthlyReviewMeeting: true,
   },
 ]);
@@ -193,8 +160,8 @@ const packageDMRaw = ref([
 const packageDMTitles = ["Starter", "Standard", "Premium"];
 const packageDMSubtitles = [
   "Untuk faskes yang baru pertama kali menjalankan iklan.",
-  "Untuk faskes yang siap memperluas channel iklan.",
-  "Untuk faskes yang ingin all-in di paid + KOC.",
+  "Untuk faskes yang siap mengoptimalkan kampanye dengan A/B testing.",
+  "Untuk faskes yang menginginkan hasil maksimal dengan advanced optimization.",
 ];
 
 const expectedResults = ref([
@@ -216,12 +183,12 @@ const expectedResults = ref([
     stage: "BULAN 2-3",
     title: "Optimization",
     description:
-      "Melakukan A/B testing creative, on-boarding KOC, dan mengoptimasi struktur kampanye sampai ROAS mulai stabil.",
+      "Melakukan A/B testing creative dan mengoptimasi struktur kampanye sampai ROAS mulai stabil.",
     detail: [
       "A/B testing creative & headline",
-      "KOC pertama mulai berkolaborasi",
-      "Cost per leads turun 20-40% vs bulan 1",
+      "Cost per leads menurun secara konsisten dari bulan 1",
       "ROAS mulai stabil di angka yang sehat",
+      "Targeting dan budget allocation optimal",
     ],
   },
   {
@@ -242,27 +209,27 @@ const expectedResults = ref([
 const faqItems = ref([
   {
     number: "01",
-    title: "Berapa minimum ad budget yang disarankan?",
-    answer:
-      "Untuk hasil yang dapat diukur dan dioptimasi, kami menyarankan budget iklan minimal Rp 5 juta per bulan per platform. Di bawah angka itu, data yang terkumpul biasanya belum cukup untuk pengambilan keputusan optimasi.",
-  },
-  {
-    number: "02",
     title: "Apakah pembuatan ad creative termasuk?",
     answer:
       "Tidak. Untuk paket Digital Marketing, kami menyiapkan brief dan medical review, sementara produksi creative dilakukan oleh tim internal Anda atau agensi creative pilihan Anda.",
   },
   {
-    number: "03",
+    number: "02",
     title: "Bagaimana proses approval creative dengan tim medis kami?",
     answer:
       "Setiap creative iklan kami review terlebih dahulu dari sisi regulasi (KKI & Kemenkes), lalu kami kirimkan ke tim medis Anda untuk approval final sebelum tayang. Proses ini biasanya selesai dalam 1-2 hari kerja.",
   },
   {
-    number: "04",
+    number: "03",
     title: "Bisakah kami tetap menjalankan iklan internal sambil pakai Eskala?",
     answer:
       "Bisa. Banyak klien kami yang memiliki tim internal untuk konten organik, sementara kami fokus mengelola paid channel. Kami akan berkoordinasi agar pesan iklan dan konten organik tetap selaras.",
+  },
+  {
+    number: "04",
+    title: "Apakah kontrak Eskala mengikat jangka panjang?",
+    answer:
+      "Tidak. Kontrak berjalan per semester (6 bulan) dengan notice period 30 hari. Kami lebih memilih klien yang memperpanjang karena puas dengan hasil, bukan karena terikat. 80% klien kami memperpanjang kontrak setelah 6 bulan pertama.",
   },
 ]);
 </script>
@@ -286,10 +253,9 @@ const faqItems = ref([
           </h1>
         </div>
         <p class="font-body text-lg text-obsidian-700 font-light">
-          Kami mengelola iklan Meta, TikTok, dan Google serta kolaborasi KOC
-          untuk menjangkau pasien dalam radius layanan faskes Anda. Fee
-          berbasis persentase ad spend — Anda hanya membayar lebih saat budget
-          iklan ikut bertumbuh.
+          Kami mengelola iklan Meta, TikTok, dan Google untuk menjangkau pasien
+          dalam radius layanan faskes Anda. Fee berbasis persentase ad spend —
+          Anda hanya membayar lebih saat budget iklan ikut bertumbuh.
         </p>
       </div>
       <div class="flex gap-12 items-center">
@@ -393,94 +359,6 @@ const faqItems = ref([
         </div>
       </div>
     </UContainer>
-
-    <div id="section-koc" class="bg-obsidian-100">
-      <UContainer class="flex flex-col gap-12 py-24">
-        <div class="flex flex-col gap-8">
-          <p class="font-display text-copper-500 font-medium">
-            ──────── KOC Management
-          </p>
-          <h2 class="font-display text-obsidian-950 font-bold text-5xl">
-            <span class="text-cobalt-500">KOC, bukan KOL</span> — autentik dan efisien.
-          </h2>
-        </div>
-        <div class="flex gap-12">
-          <div class="flex flex-col gap-8 basis-1/2">
-            <p class="font-body text-lg text-obsidian-700 font-light">
-              Key Opinion Customer (KOC) adalah pasien atau pengguna nyata yang
-              merekomendasikan layanan Anda kepada komunitasnya. Engagement-nya
-              jauh lebih tinggi dari KOL berbayar, dan trust-nya lebih relevan
-              untuk keputusan medis pasien.
-            </p>
-            <div class="flex flex-col gap-4">
-              <div
-                v-for="benefit in kocBenefits"
-                :key="benefit"
-                class="flex items-center gap-4"
-              >
-                <Icon
-                  name="i-heroicons-check-circle"
-                  class="text-copper-500 text-2xl shrink-0"
-                />
-                <p class="font-body text-obsidian-700">{{ benefit }}</p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="flex flex-col md:flex-row gap-0 rounded-3xl border border-obsidian-200 bg-white overflow-hidden basis-1/2"
-          >
-            <div class="flex flex-col gap-6 p-8 basis-1/2">
-              <div class="flex items-center gap-3">
-                <div class="w-2 h-2 rounded-full bg-cobalt-500" />
-                <h3
-                  class="font-display text-lg font-semibold text-obsidian-950"
-                >
-                  KOC
-                </h3>
-              </div>
-              <div class="flex flex-col gap-3">
-                <div
-                  v-for="item in kocComparison.koc"
-                  :key="item"
-                  class="flex items-start gap-3"
-                >
-                  <Icon
-                    name="i-heroicons-check-circle"
-                    class="text-cobalt-500 text-lg shrink-0 mt-0.5"
-                  />
-                  <p class="font-body text-sm text-obsidian-700">{{ item }}</p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="flex flex-col gap-6 p-8 basis-1/2 border-t border-obsidian-200 md:border-t-0 md:border-l"
-            >
-              <div class="flex items-center gap-3">
-                <div class="w-2 h-2 rounded-full bg-obsidian-300" />
-                <h3
-                  class="font-display text-lg font-semibold text-obsidian-400"
-                >
-                  KOL
-                </h3>
-              </div>
-              <div class="flex flex-col gap-3">
-                <div
-                  v-for="item in kocComparison.kol"
-                  :key="item"
-                  class="flex items-start gap-3"
-                >
-                  <Icon
-                    name="i-heroicons-minus-circle"
-                    class="text-obsidian-300 text-lg shrink-0 mt-0.5"
-                  />
-                  <p class="font-body text-sm text-obsidian-400">{{ item }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </UContainer>
-    </div>
 
     <div id="section-package" class="bg-obsidian-950">
       <UContainer class="flex flex-col gap-12 py-24">
@@ -728,9 +606,9 @@ const faqItems = ref([
             <p
               class="font-body text-lg text-obsidian-700 font-light leading-relaxed"
             >
-              Konsultasi 30 menit untuk membahas potensi iklan digital faskes
-              Anda — kami audit funnel, lalu memberikan tiga rekomendasi
-              strategi yang bisa Anda jalankan.
+              Konsultasi 30 menit gratis untuk membahas potensi iklan digital faskes
+              Anda — kami audit funnel, lalu merekomendasikan 2-3 solusi
+              yang bisa Anda jalankan.
             </p>
           </div>
         </div>

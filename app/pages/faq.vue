@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 useSeoMeta({
-  title: "FAQ — Pertanyaan yang Sering Ditanyakan",
+  title: "FAQ — Eskala",
   description:
     "Temukan jawaban atas pertanyaan umum seputar layanan Eskala — Social Media Management, Digital Marketing, kontrak, harga, dan cara kerja kami bersama faskes Anda.",
-  ogTitle: "FAQ | Eskala — Digital Marketing Agency untuk Fasilitas Kesehatan",
+  ogTitle: "FAQ — Eskala",
+  twitterCard: "summary_large_image",
   ogDescription:
     "Pertanyaan umum seputar Social Media Management, Digital Marketing, kontrak, medical review, dan cara kerja Eskala bersama klinik dan rumah sakit.",
   ogUrl: "https://eskala.id/faq",
@@ -39,13 +40,13 @@ const allFaqs = ref<FaqItem[]>([
   {
     label: "Apa itu Eskala?",
     answer:
-      "Eskala adalah digital marketing agency berbasis di Yogyakarta dengan spesialis membantu fasilitas kesehatan: klinik, rumah sakit, dan brand kesehatan untuk tumbuh di dunia digital melalui Social Media Management dan Digital Marketing.",
+      "Eskala adalah digital marketing agency berbasis di Yogyakarta, spesialis membantu fasilitas kesehatan: klinik, rumah sakit, dan brand kesehatan untuk tumbuh di dunia digital melalui Social Media Management dan Digital Marketing.",
     category: "general",
   },
   {
     label: "Apa yang membedakan Eskala dari agensi lain?",
     answer:
-      "Kami bukan vendor generik. Setiap konten melewati medical review internal mengacu pedoman KKI dan Kemenkes. Kami menawarkan revisi unlimited, eksekusi cepat, dan kontrak fleksibel per semester. Tim kami tersertifikasi Meta & Google.",
+      "Kami bukan vendor generik. Setiap konten melewati medical review oleh tim ahli kami yang mengacu pada pedoman KKI dan Kemenkes. Kami menawarkan revisi unlimited, eksekusi cepat, dan kontrak fleksibel per semester. Tim kami tersertifikasi Meta & Google.",
     category: "general",
   },
   {
@@ -64,25 +65,19 @@ const allFaqs = ref<FaqItem[]>([
   {
     label: "Apa saja layanan yang ditawarkan Eskala?",
     answer:
-      "Eskala menawarkan dua layanan utama: Social Media Management dan Digital Marketing yang mencakup Ads + KOC (mulai 10% dari ad spend).",
+      "Eskala menawarkan dua layanan utama: Social Media Management dan Digital Marketing (Ads Management mulai 10% dari ad spend).",
     category: "services",
   },
   {
     label: "Berapa harga paket Social Media Management?",
     answer:
-      "Ada tiga tier: Starter untuk 1 platform, Standard untuk 2 platform, dan Premium untuk 3 platform beserta community management dan competitor analysis. Semua tier sudah termasuk fotografi, videografi, medical review, dan revisi unlimited.",
+      "Ada tiga tier: **Starter** untuk 1 platform dengan fokus konsistensi posting — **Standard** untuk 2 platform dengan content pillars dan detailed reporting — **Premium** untuk 3 platform dengan community management dan competitor analysis. Semua tier termasuk fotografi, videografi, medical review, dan revisi unlimited.",
     category: "services",
   },
   {
     label: "Bagaimana sistem harga Digital Marketing?",
     answer:
-      "Fee dihitung berdasarkan persentase dari total ad spend: Starter 10% (1 platform), Standard 15% (maks. 2 platform), Premium 20% (multi-platform). Mencakup Ads Management dan KOC Management, tidak ada retainer tetap yang besar di awal.",
-    category: "services",
-  },
-{
-    label: "Apakah ada layanan Creative Service atau Ads Management tersendiri?",
-    answer:
-      "Ya, namun layanan tersebut termasuk dalam layanan custom. Silahkan hubungi kami lebih lanjut untuk mengenai layanan custom ini.",
+      "Fee dihitung berdasarkan persentase dari total ad spend: **Starter 10%**, **Standard 15%**, **Premium 20%**. Anda dapat memilih satu platform di antara Meta, TikTok, atau Google. Mencakup campaign setup, A/B testing, geo-targeting, optimasi mingguan, medical review untuk creative, serta laporan bulanan dan monthly review meeting. Tidak ada retainer tetap yang besar di awal.",
     category: "services",
   },
   // Proses & Eksekusi
@@ -95,7 +90,7 @@ const allFaqs = ref<FaqItem[]>([
   {
     label: "Apa itu medical review dan bagaimana prosesnya?",
     answer:
-      "Setiap konten dan iklan yang kami buat, telah melewati review internal sebelum dipublikasikan, mengacu pada pedoman KKI dan Kemenkes. Kami menolak klaim superlatif atau klaim yang menjanjikan kesembuhan.",
+      "Setiap konten dan iklan yang kami buat, telah melewati review oleh tim ahli kami sebelum dipublikasikan, mengacu pada pedoman KKI dan Kemenkes. Kami siap berdiskusi dengan tim medis Anda untuk memastikan setiap konten sejalan dengan standar yang berlaku.",
     category: "process",
   },
   {
@@ -114,7 +109,7 @@ const allFaqs = ref<FaqItem[]>([
   {
     label: "Apakah kontrak Eskala mengikat jangka panjang?",
     answer:
-      "Tidak. Kontrak berjalan per semester (6 bulan) dengan notice period 30 hari. Kami lebih memilih klien yang memperpanjang karena puas dengan hasil, bukan karena terikat. 90%+ klien kami memperpanjang kontrak setelah 6 bulan pertama.",
+      "Tidak. Kontrak berjalan per semester (6 bulan) dengan notice period 30 hari. Kami lebih memilih klien yang memperpanjang karena puas dengan hasil, bukan karena terikat. 80% klien kami memperpanjang kontrak setelah 6 bulan pertama.",
     category: "contract",
   },
   {
@@ -206,7 +201,7 @@ const filteredFaqs = computed(() =>
           </div>
           <div class="basis-2/5">
             <p class="font-body text-lg text-obsidian-700 font-light leading-relaxed">
-              Konsultasi awal sepenuhnya gratis dan tanpa komitmen. Kami senang berdiskusi tentang kebutuhan digital faskes Anda secara langsung.
+              Konsultasi 30 menit gratis dan tanpa komitmen. Kami akan mendengarkan masalah Anda, lalu merekomendasikan 2-3 solusi yang dapat Anda jalankan dengan atau tanpa Eskala.
             </p>
           </div>
         </div>
