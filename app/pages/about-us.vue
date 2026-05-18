@@ -150,7 +150,7 @@ const comparison = ref([
     <!-- 1. Hero -->
     <UContainer
       id="section-hero"
-      class="flex flex-col gap-12 py-24 items-center relative"
+      class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24 items-center relative"
     >
       <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-center">
         <div class="flex flex-col gap-8">
@@ -220,7 +220,7 @@ const comparison = ref([
     </div>
 
     <!-- 3. Our Story -->
-    <UContainer id="section-story" class="flex flex-col gap-12 py-24">
+    <UContainer id="section-story" class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24">
       <div class="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 md:items-start">
         <div class="flex flex-col gap-8 md:basis-2/5 md:shrink-0">
           <p class="font-display text-copper-500 font-medium">
@@ -261,7 +261,7 @@ const comparison = ref([
 
     <!-- 4. Who We Serve -->
     <div class="bg-obsidian-100">
-      <UContainer id="section-who-we-serve" class="flex flex-col gap-12 py-24">
+      <UContainer id="section-who-we-serve" class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24">
         <div class="flex flex-col gap-8">
           <p class="font-display text-copper-500 font-medium">
             ──────── Siapa yang Kami Layani
@@ -300,7 +300,7 @@ const comparison = ref([
 
     <!-- 5. Core Values -->
     <div class="bg-obsidian-950">
-      <UContainer id="section-values" class="flex flex-col gap-12 py-24">
+      <UContainer id="section-values" class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24">
         <div class="flex flex-col gap-8">
           <p class="font-display text-copper-500 font-medium">
             ──────── Nilai Kami
@@ -339,7 +339,7 @@ const comparison = ref([
     </div>
 
     <!-- 6. The Team -->
-    <UContainer id="section-team" class="flex flex-col gap-12 py-24">
+    <UContainer id="section-team" class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24">
       <div class="flex flex-col gap-8">
         <p class="font-display text-copper-500 font-medium">
           ──────── Tim Kami
@@ -379,7 +379,7 @@ const comparison = ref([
 
     <!-- 7. Eskala vs Agensi Lain -->
     <div class="bg-obsidian-950">
-      <UContainer id="section-comparison" class="flex flex-col gap-12 py-24">
+      <UContainer id="section-comparison" class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24">
         <div class="flex flex-col gap-8">
           <p class="font-display text-copper-500 font-medium">
             ──────── Kenapa Eskala
@@ -492,9 +492,9 @@ const comparison = ref([
     </div>
 
     <!-- 8. CTA -->
-    <UContainer id="section-call-to-action" class="flex flex-col gap-12 py-24">
+    <UContainer id="section-call-to-action" class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24">
       <div
-        class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-6 sm:p-10 lg:p-14 flex flex-col gap-12"
+        class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-6 sm:p-10 lg:p-14 flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12"
       >
         <div class="flex flex-col md:flex-row gap-8 md:gap-12 md:items-center">
           <div class="flex flex-col gap-4 flex-1">

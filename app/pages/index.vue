@@ -1,6 +1,15 @@
 <script lang="ts" setup>
 import type { TimelineItem } from "@nuxt/ui";
 
+const viewport = useViewport();
+const timelineSize = computed(() => {
+  if (viewport.isLessThan("sm")) return "sm";
+  if (viewport.isLessThan("md")) return "md";
+  if (viewport.isLessThan("lg")) return "lg";
+  if (viewport.isLessThan("xl")) return "xl";
+  return "2xl";
+});
+
 useSeoMeta({
   title: "Digital Marketing Agency — Eskala",
   twitterCard: "summary_large_image",
@@ -114,28 +123,28 @@ const expectedResults = ref([
 const items = ref<TimelineItem[]>([
   {
     date: "Bulan 0",
-    header: "Pendekatan Awal",
+    header: "Pertemuan Awal",
     description:
       "Eskala mendekati Klinik Utama Gresik (KUG), salah satu cabang dari SMEC Group. Kami berhasil mendapatkan audiensi dengan tim Digital Marketing mereka dan mempresentasikan proposal kami. Mereka setuju untuk memberikan kesempatan trial selama 1 bulan, tantangan yang kami terima dengan penuh percaya diri sebagai startup yang siap membuktikan diri.",
     icon: "i-heroicons-hand-raised",
   },
   {
     date: "Bulan 1",
-    header: "Produksi Dimulai",
+    header: "Mulai Produksi",
     description:
       "Content production untuk KUG resmi berjalan. Tim kami langsung membangun pipeline konten, menyesuaikan dengan brand guidelines, dan memastikan ritme posting yang konsisten sejak hari pertama.",
     icon: "i-heroicons-rocket-launch",
   },
   {
     date: "Bulan 3",
-    header: "Kepercayaan Terbukti",
+    header: "Hasil Terukur",
     description:
       "Konten KUG berjalan lancar dengan peningkatan engagement dan reach yang terukur. Klien sangat puas, hingga SMEC Group mulai mempercayakan 2 cabang tambahan kepada kami, termasuk cabang yang sebelumnya ditangani agensi lain yang performanya kurang memuaskan.",
     icon: "i-heroicons-trophy",
   },
   {
     date: "Bulan 6",
-    header: "Ekspansi Besar",
+    header: "Ekspansi Layanan",
     description:
       "Cabang terus bertambah hingga total 7 cabang. Untuk pertama kalinya, kami dipercaya menangani akun level rumah sakit (RS SMEC Balikpapan) serta akun pusat SMEC Group. Di titik ini, kami juga mulai menjalankan kampanye Ads untuk beberapa cabang, menambah channel pertumbuhan baru di samping strategi konten organik.",
     icon: "i-heroicons-arrow-trending-up",
@@ -345,7 +354,7 @@ const heroQuote = ref<Testimonial>({
   <div>
     <UContainer
       id="section-hero"
-      class="flex flex-col gap-12 py-24 items-center relative"
+      class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24 items-center relative"
     >
       <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-center">
         <div class="flex flex-col gap-8">
@@ -432,7 +441,7 @@ const heroQuote = ref<Testimonial>({
       <USeparator color="obsidian" />
     </UContainer>
     <div id="section-key-question" class="bg-obsidian-100">
-      <UContainer class="flex flex-col gap-12 py-24">
+      <UContainer class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24">
         <div class="flex flex-col gap-8">
           <p class="font-display text-copper-500 font-medium">
             ──────── Pertanyaan yang sering kami terima
@@ -473,7 +482,7 @@ const heroQuote = ref<Testimonial>({
         </div>
       </UContainer>
     </div>
-    <UContainer id="section-services" class="flex flex-col md:flex-row gap-12 py-24">
+    <UContainer id="section-services" class="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24">
       <div class="flex flex-col gap-8">
         <p class="font-display text-copper-500 font-medium">
           ──────── Layanan yang kami tawarkan
@@ -516,7 +525,7 @@ const heroQuote = ref<Testimonial>({
       </UAccordion>
     </UContainer>
     <div id="section-expected-results" class="bg-obsidian-950">
-      <UContainer class="flex flex-col gap-12 py-24">
+      <UContainer class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24">
         <div class="flex flex-col gap-8">
           <p class="font-display text-copper-500 font-medium">
             ──────── Ekspektasi hasil
@@ -564,7 +573,7 @@ const heroQuote = ref<Testimonial>({
       </UContainer>
     </div>
     <div id="section-case-study" class="bg-obsidian-200">
-      <UContainer class="flex flex-col gap-12 py-24">
+      <UContainer class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24">
         <div class="flex flex-col gap-8">
           <p class="font-display text-copper-500 font-medium">
             ──────── Studi kasus
@@ -587,18 +596,18 @@ const heroQuote = ref<Testimonial>({
             :items="items"
             color="primary"
             :default-value="items.length"
-            size="xl"
+            :size="timelineSize"
             :ui="{ root: 'gap-4' }"
           >
             <template #description="{ item }">
               <div class="mt-4">
                 <UAccordion
                   :items="[{ label: item.header as string, description: item.description as string }]"
-                  :ui="{ trigger: 'px-8 py-4' }"
+                  :ui="{ trigger: 'px-8 py-4 text-obsidian-950' }"
                   class="rounded-3xl border border-obsidian-300 bg-obsidian-50 overflow-hidden"
                 >
                   <template #body="{ item: card }">
-                    <p class="font-body text-lg text-obsidian-700 font-light px-6 sm:px-8 pb-6 sm:pb-8">
+                    <p class="font-body text-lg text-obsidian-700 font-light px-6 sm:px-8 pb-4 sm:pb-4">
                       {{ card.description }}
                     </p>
                   </template>
@@ -627,7 +636,7 @@ const heroQuote = ref<Testimonial>({
       </UContainer>
     </div>
     <div id="section-package" class="bg-obsidian-950">
-      <UContainer class="flex flex-col gap-12 py-24">
+      <UContainer class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24">
         <div class="flex flex-col gap-8">
           <p class="font-display text-copper-500 font-medium">
             ──────── Paket layanan kami
@@ -813,7 +822,7 @@ const heroQuote = ref<Testimonial>({
         </div>
       </UContainer>
     </div>
-    <UContainer id="section-testimonials" class="flex flex-col gap-12 py-24">
+    <UContainer id="section-testimonials" class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24">
       <div class="flex flex-col gap-8">
         <p class="font-display text-copper-500 font-medium">
           ──────── Apa kata klien kami
@@ -853,9 +862,9 @@ const heroQuote = ref<Testimonial>({
         </div>
       </div>
     </UContainer>
-    <UContainer id="section-call-to-action" class="flex flex-col gap-12 py-24">
+    <UContainer id="section-call-to-action" class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24">
       <div
-        class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-6 sm:p-10 lg:p-14 flex flex-col gap-12"
+        class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-6 sm:p-10 lg:p-14 flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12"
       >
         <!-- Top: subtitle+title (left) and description (right) -->
         <div class="flex flex-col md:flex-row gap-8 md:gap-12 md:items-center">

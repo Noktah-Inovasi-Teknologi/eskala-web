@@ -40,7 +40,7 @@ const lastUpdated = "22 April 2026";
 
     <!-- Content -->
     <UContainer class="py-16">
-      <div class="max-w-3xl flex flex-col gap-12">
+      <div class="max-w-3xl flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12">
 
         <!-- Pendahuluan -->
         <section class="flex flex-col gap-4">

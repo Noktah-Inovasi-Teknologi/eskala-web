@@ -20,6 +20,9 @@ importers:
       nuxt:
         specifier: ^4.4.2
         version: 4.4.2(@babel/core@7.29.0)(@babel/plugin-syntax-jsx@7.28.6(@babel/core@7.29.0))(@emnapi/core@1.9.2)(@emnapi/runtime@1.10.0)(@parcel/watcher@2.5.6)(@vue/compiler-sfc@3.5.32)(better-sqlite3@12.9.0)(cac@6.7.14)(db0@0.3.4(better-sqlite3@12.9.0))(ioredis@5.10.1)(lightningcss@1.32.0)(magicast@0.5.2)(rolldown@1.0.0-rc.16)(rollup-plugin-visualizer@7.0.1(rolldown@1.0.0-rc.16)(rollup@4.60.2))(rollup@4.60.2)(srvx@0.11.15)(terser@5.46.1)(typescript@6.0.3)(vite@7.3.2(jiti@2.6.1)(lightningcss@1.32.0)(terser@5.46.1)(yaml@2.8.3))(yaml@2.8.3)
+      nuxt-viewport:
+        specifier: 2.4.0
+        version: 2.4.0(magicast@0.5.2)(vue@3.5.32(typescript@6.0.3))
       tailwindcss:
         specifier: ^4.2.2
         version: 4.2.2
@@ -2320,6 +2323,7 @@ packages:
 
   '@ungap/structured-clone@1.3.0':
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
+    deprecated: Potential CWE-502 - Update to 1.3.1 or higher
 
   '@unhead/vue@2.1.13':
     resolution: {integrity: sha512-HYy0shaHRnLNW9r85gppO8IiGz0ONWVV3zGdlT8CQ0tbTwixznJCIiyqV4BSV1aIF1jJIye0pd1p/k6Eab8Z/A==}
@@ -2673,6 +2677,9 @@ packages:
   boolbase@1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
 
+  bowser@2.14.1:
+    resolution: {integrity: sha512-tzPjzCxygAKWFOJP011oxFHs57HzIhOEracIgAePE4pqB3LikALKnSzUyU4MGs9/iCEUuHlAJTjTc5M+u7YEGg==}
+
   brace-expansion@2.1.0:
     resolution: {integrity: sha512-TN1kCZAgdgweJhWWpgKYrQaMNHcDULHkWwQIspdtjV4Y5aurRdZpjAqn6yX3FPqTA9ngHCc4hJxMAMgGfve85w==}
 
@@ -2842,6 +2849,9 @@ packages:
   cookie@1.1.1:
     resolution: {integrity: sha512-ei8Aos7ja0weRpFzJnEA9UHJ/7XQmqglbRwnf2ATjcB9Wq874VKH9kfjjirM6UhU2/E5fFYadylyhFldcqSidQ==}
     engines: {node: '>=18'}
+
+  cookiejs@2.1.3:
+    resolution: {integrity: sha512-pA/nRQVka2eTXm1/Dq8pNt1PN+e1PJNItah0vL15qwpet81/tUfrAp8e0iiVM8WEAzDcTGK5/1hDyR6BdBZMVg==}
 
   core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
@@ -4164,6 +4174,9 @@ packages:
   nuxt-component-meta@0.17.2:
     resolution: {integrity: sha512-2/mSSqutOX8t+r8cAX1yUYwAPBqicPO5Rfum3XaHVszxKCF4tXEXBiPGfJY9Zn69x/CIeOdw+aM9wmHzQ5Q+lA==}
     hasBin: true
+
+  nuxt-viewport@2.4.0:
+    resolution: {integrity: sha512-2a1LWUwYxCK+F8IArhDi7rZ5F48zt8LenoI10F4ZD312z8QLVx6HDOP2woElUVKMn0O/KbXVIy1pHSTb0E9ncg==}
 
   nuxt@4.4.2:
     resolution: {integrity: sha512-iWVFpr/YEqVU/CenqIHMnIkvb2HE/9f+q8oxZ+pj2et+60NljGRClCgnmbvGPdmNFE0F1bEhoBCYfqbDOCim3Q==}
@@ -6429,7 +6442,7 @@ snapshots:
       nypm: 0.6.5
       ohash: 2.0.11
       pathe: 2.0.3
-      pkg-types: 2.3.0
+      pkg-types: 2.3.1
       remark-mdc: 3.10.0
       scule: 1.3.0
       shiki: 4.0.2
@@ -6437,7 +6450,7 @@ snapshots:
       socket.io-client: 4.8.3
       std-env: 4.1.0
       tinyglobby: 0.2.16
-      ufo: 1.6.3
+      ufo: 1.6.4
       unctx: 2.5.0
       unified: 11.0.5
       unist-util-stringify-position: 4.0.0
@@ -6942,7 +6955,7 @@ snapshots:
       remark-stringify: 11.0.0
       scule: 1.3.0
       shiki: 4.0.2
-      ufo: 1.6.3
+      ufo: 1.6.4
       unified: 11.0.5
       unist-builder: 4.0.0
       unist-util-visit: 5.1.0
@@ -8265,6 +8278,8 @@ snapshots:
 
   boolbase@1.0.0: {}
 
+  bowser@2.14.1: {}
+
   brace-expansion@2.1.0:
     dependencies:
       balanced-match: 1.0.2
@@ -8442,6 +8457,8 @@ snapshots:
   cookie-es@3.1.1: {}
 
   cookie@1.1.1: {}
+
+  cookiejs@2.1.3: {}
 
   core-util-is@1.0.3: {}
 
@@ -10257,11 +10274,22 @@ snapshots:
       ohash: 2.0.11
       scule: 1.3.0
       typescript: 5.9.3
-      ufo: 1.6.3
+      ufo: 1.6.4
       vue-component-meta: 3.2.7(typescript@5.9.3)
     transitivePeerDependencies:
       - magicast
     optional: true
+
+  nuxt-viewport@2.4.0(magicast@0.5.2)(vue@3.5.32(typescript@6.0.3)):
+    dependencies:
+      '@nuxt/kit': 4.4.2(magicast@0.5.2)
+      bowser: 2.14.1
+      cookiejs: 2.1.3
+      vue-demi: 0.14.10(vue@3.5.32(typescript@6.0.3))
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - magicast
+      - vue
 
   nuxt@4.4.2(@babel/core@7.29.0)(@babel/plugin-syntax-jsx@7.28.6(@babel/core@7.29.0))(@emnapi/core@1.9.2)(@emnapi/runtime@1.10.0)(@parcel/watcher@2.5.6)(@vue/compiler-sfc@3.5.32)(better-sqlite3@12.9.0)(cac@6.7.14)(db0@0.3.4(better-sqlite3@12.9.0))(ioredis@5.10.1)(lightningcss@1.32.0)(magicast@0.5.2)(rolldown@1.0.0-rc.16)(rollup-plugin-visualizer@7.0.1(rolldown@1.0.0-rc.16)(rollup@4.60.2))(rollup@4.60.2)(srvx@0.11.15)(terser@5.46.1)(typescript@6.0.3)(vite@7.3.2(jiti@2.6.1)(lightningcss@1.32.0)(terser@5.46.1)(yaml@2.8.3))(yaml@2.8.3):
     dependencies:

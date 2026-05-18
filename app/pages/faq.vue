@@ -134,7 +134,7 @@ const filteredFaqs = computed(() =>
 <template>
   <div>
     <!-- Hero -->
-    <UContainer id="section-hero" class="flex flex-col gap-12 py-24 items-center relative">
+    <UContainer id="section-hero" class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24 items-center relative">
       <div class="flex flex-col gap-8 max-w-4xl text-center items-center">
         <p class="font-display text-copper-500 font-medium">──────── FAQ</p>
         <h1 class="font-display text-obsidian-950 font-bold text-4xl sm:text-5xl lg:text-7xl">
@@ -171,7 +171,7 @@ const filteredFaqs = computed(() =>
 
     <!-- FAQ -->
     <div id="section-faq" class="">
-      <UContainer class="flex flex-col gap-12 py-24">
+      <UContainer class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24">
         <div class="flex flex-col gap-8">
           <p class="font-display text-copper-500 font-medium">──────── Pertanyaan & Jawaban</p>
           <h2 class="font-display text-obsidian-950 font-bold text-3xl sm:text-4xl lg:text-5xl">
@@ -188,8 +188,8 @@ const filteredFaqs = computed(() =>
     </div>
 
     <!-- CTA -->
-    <UContainer id="section-call-to-action" class="flex flex-col gap-12 py-24">
-      <div class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-6 sm:p-10 lg:p-14 flex flex-col gap-12">
+    <UContainer id="section-call-to-action" class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24">
+      <div class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-6 sm:p-10 lg:p-14 flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12">
         <div class="flex flex-col md:flex-row gap-8 md:gap-12 md:items-center">
           <div class="flex flex-col gap-4 flex-1">
             <p class="font-display font-semibold text-xs tracking-widest text-cobalt-500 uppercase">

@@ -300,7 +300,7 @@ const testimonials = ref<Testimonial[]>([
   <div>
     <UContainer
       id="section-hero"
-      class="flex flex-col gap-12 py-24 items-center relative"
+      class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24 items-center relative"
     >
       <div class="flex flex-col gap-8 max-w-4xl text-center items-center">
         <p class="font-display text-copper-500 font-medium">
@@ -358,7 +358,7 @@ const testimonials = ref<Testimonial[]>([
       <USeparator color="obsidian" />
     </UContainer>
 
-    <UContainer id="section-what-we-do" class="flex flex-col gap-12 py-24">
+    <UContainer id="section-what-we-do" class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24">
       <div class="flex flex-col gap-8">
         <p class="font-display text-copper-500 font-medium">
           ──────── Apa yang kami kelola
@@ -392,7 +392,7 @@ const testimonials = ref<Testimonial[]>([
       </div>
     </UContainer>
 
-    <UContainer id="section-platforms" class="flex flex-col gap-12 py-24">
+    <UContainer id="section-platforms" class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24">
       <div class="flex flex-col gap-8">
         <p class="font-display text-copper-500 font-medium">
           ──────── Platform yang kami tumbuhkan
@@ -423,7 +423,7 @@ const testimonials = ref<Testimonial[]>([
     </UContainer>
 
     <div id="section-package" class="bg-obsidian-950">
-      <UContainer class="flex flex-col gap-12 py-24">
+      <UContainer class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24">
         <div class="flex flex-col gap-8">
           <p class="font-display text-copper-500 font-medium">
             ──────── Paket layanan kami
@@ -613,7 +613,7 @@ const testimonials = ref<Testimonial[]>([
     </div>
 
     <div id="section-expected-results" class="bg-obsidian-950">
-      <UContainer class="flex flex-col gap-12 py-24">
+      <UContainer class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24">
         <div class="flex flex-col gap-8">
           <p class="font-display text-copper-500 font-medium">
             ──────── Ekspektasi hasil
@@ -660,7 +660,7 @@ const testimonials = ref<Testimonial[]>([
     </div>
 
     <div id="section-faq" class="bg-obsidian-100">
-      <UContainer class="flex flex-col gap-12 py-24">
+      <UContainer class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24">
         <div class="flex flex-col gap-8">
           <p class="font-display text-copper-500 font-medium">
             ──────── Pertanyaan yang sering kami terima
@@ -669,11 +669,11 @@ const testimonials = ref<Testimonial[]>([
             Hal-hal yang biasanya <span class="text-cobalt-500">ditanyakan klinik</span> sebelum mulai.
           </h2>
         </div>
-        <div class="flex flex-col gap-12">
+        <div class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12">
           <div
             v-for="question in faqItems"
             :key="question.title"
-            class="flex flex-col gap-12"
+            class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12"
           >
             <USeparator color="obsidian" />
             <div class="flex flex-col md:flex-row md:justify-between gap-4 md:gap-8 lg:gap-12">
@@ -701,7 +701,7 @@ const testimonials = ref<Testimonial[]>([
       </UContainer>
     </div>
 
-    <UContainer id="section-testimonials" class="flex flex-col gap-12 py-24">
+    <UContainer id="section-testimonials" class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24">
       <div class="flex flex-col gap-8">
         <p class="font-display text-copper-500 font-medium">
           ──────── Apa kata klien kami
@@ -742,9 +742,9 @@ const testimonials = ref<Testimonial[]>([
       </div>
     </UContainer>
 
-    <UContainer id="section-call-to-action" class="flex flex-col gap-12 py-24">
+    <UContainer id="section-call-to-action" class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 py-12 sm:py-16 md:py-20 lg:py-24">
       <div
-        class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-6 sm:p-10 lg:p-14 flex flex-col gap-12"
+        class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-6 sm:p-10 lg:p-14 flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12"
       >
         <div class="flex flex-col md:flex-row gap-8 md:gap-12 md:items-center">
           <div class="flex flex-col gap-4 flex-1">

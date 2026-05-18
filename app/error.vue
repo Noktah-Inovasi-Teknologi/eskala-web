@@ -13,7 +13,7 @@ const handleError = () => clearError({ redirect: "/" });
   <div class="bg-obsidian-50">
     <Navbar />
 
-    <UContainer class="min-h-[70vh] flex items-center justify-center py-16 sm:py-24">
+    <UContainer class="min-h-[70vh] flex items-center justify-center py-12 sm:py-16 md:py-20 lg:py-24">
       <div
         class="max-w-2xl mx-auto text-center flex flex-col items-center gap-8"
       >
