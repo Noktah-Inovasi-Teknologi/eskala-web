@@ -458,7 +458,7 @@ const heroQuote = ref<Testimonial>({
                 class="sm:flex-1"
               >
                 <template #body="{ item }">
-                  <div class="flex flex-col gap-4 pb-4">
+                  <div class="flex flex-col gap-4 p-4">
                     <p class="font-display font-semibold text-sm text-cobalt-500 tracking-widest">
                       JAWABAN KAMI
                     </p>
@@ -594,7 +594,7 @@ const heroQuote = ref<Testimonial>({
               <div class="mt-4">
                 <UAccordion
                   :items="[{ label: item.header as string, description: item.description as string }]"
-                  :ui="{ trigger: 'px-6 py-4' }"
+                  :ui="{ trigger: 'px-8 py-4' }"
                   class="rounded-3xl border border-obsidian-300 bg-obsidian-50 overflow-hidden"
                 >
                   <template #body="{ item: card }">
