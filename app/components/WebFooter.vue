@@ -27,6 +27,7 @@ const footerLinks: FooterSection[] = [
     children: [
       { label: "FAQ", to: "/faq" },
       { label: "Tentang Kami", to: "/about-us" },
+      { label: "Studi Kasus", to: "/case-study" },
     ],
   },
   {
@@ -54,9 +55,9 @@ const footerLinks: FooterSection[] = [
         <!-- Company Info -->
         <div class="lg:col-span-1">
           <div class="mb-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6">Eskala</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              Partner kreatif untuk bisnis kesehatan Anda. Kami membantu klinik,
+            <h3 class="font-display text-2xl font-bold text-obsidian-950 mb-6">Eskala</h3>
+            <p class="font-body text-obsidian-600 text-sm leading-relaxed">
+              Tim kreatif untuk fasilitas kesehatan Anda. Kami membantu klinik,
               rumah sakit, dan brand kesehatan tumbuh di dunia digital melalui
               Social Media Management dan Digital Marketing yang terukur.
             </p>
@@ -66,15 +67,15 @@ const footerLinks: FooterSection[] = [
           <div class="space-y-4 mb-8">
             <div class="flex items-center gap-3">
               <UIcon name="i-heroicons-envelope" class="text-primary" />
-              <span class="text-sm text-gray-600">core@eskala.id</span>
+              <span class="font-body text-sm text-obsidian-600">core@eskala.id</span>
             </div>
             <div class="flex items-center gap-3">
               <UIcon name="i-heroicons-phone" class="text-primary" />
-              <span class="text-sm text-gray-600">+62 822-3071-2718</span>
+              <span class="font-body text-sm text-obsidian-600">+62 822-3071-2718</span>
             </div>
             <div class="flex items-center gap-3">
               <UIcon name="i-heroicons-map-pin" class="text-primary" />
-              <span class="text-sm text-gray-600">Yogyakarta, Indonesia</span>
+              <span class="font-body text-sm text-obsidian-600">Yogyakarta, Indonesia</span>
             </div>
           </div>
         </div>
@@ -82,14 +83,14 @@ const footerLinks: FooterSection[] = [
         <!-- Footer Links -->
         <div class="lg:col-span-3 grid md:grid-cols-3 gap-12">
           <div v-for="section in footerLinks" :key="section.label">
-            <h4 class="font-semibold text-gray-900 mb-6">
+            <h4 class="font-display font-semibold text-obsidian-900 mb-6">
               {{ section.label }}
             </h4>
             <ul class="space-y-4">
               <li v-for="link in section.children" :key="link.label">
                 <NuxtLink
                   :to="link.to"
-                  class="text-sm text-gray-600 hover:text-primary transition-colors flex items-center gap-2"
+                  class="text-sm text-obsidian-600 hover:text-primary transition-colors flex items-center gap-2"
                 >
                   <UIcon v-if="link.icon" :name="link.icon" class="size-4 shrink-0" />
                   {{ link.label }}
@@ -102,8 +103,8 @@ const footerLinks: FooterSection[] = [
     </template>
 
     <template #left>
-      <p class="text-sm text-gray-500">
-        © {{ 2024 }} Eskala. All rights reserved.
+      <p class="font-body text-sm text-obsidian-500">
+        © {{ new Date().getFullYear() }} Eskala. All rights reserved.
       </p>
     </template>
 
@@ -111,13 +112,13 @@ const footerLinks: FooterSection[] = [
       <div class="flex gap-8 text-sm">
         <NuxtLink
           to="/privacy"
-          class="text-gray-500 hover:text-primary transition-colors"
+          class="font-body text-obsidian-500 hover:text-primary transition-colors"
         >
           Privacy Policy
         </NuxtLink>
         <NuxtLink
           to="/terms"
-          class="text-gray-500 hover:text-primary transition-colors"
+          class="font-body text-obsidian-500 hover:text-primary transition-colors"
         >
           Terms of Service
         </NuxtLink>

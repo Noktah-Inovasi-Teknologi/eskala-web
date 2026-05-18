@@ -108,9 +108,12 @@ Two fonts loaded via `@nuxt/fonts`:
 - Primary: Bahasa Indonesia
 - Style: Professional, warm, honest
 - Focus: Membangun kepercayaan dengan pemahaman mendalam tentang dunia faskes
+- Descriptor: "kreativitas yang bertanggung jawab" — creativity grounded in medical standards and regulatory compliance
 
 ### Core Insight
 > "Bisnis Anda bukan kekurangan kualitas, tapi kehilangan relevansi di mata audiens."
+
+Placed as a copper-accented blockquote in the **about-us "Cerita Kami"** section (`app/pages/about-us.vue`).
 
 ### Key Messages
 - "Pertumbuhan bukan tentang seberapa sering brand muncul, tetapi seberapa dalam brand diingat dan dirasakan."
@@ -121,7 +124,7 @@ Two fonts loaded via `@nuxt/fonts`:
 "Kalau bukan sekarang mulai, lalu kapan?"
 
 ### Core Value Propositions
-1. **Paham Regulasi** — Setiap konten melewati medical review internal, mengacu pedoman KKI dan Kemenkes
+1. **Paham Regulasi** — Setiap konten melewati medical review oleh tim ahli kami, mengacu pedoman KKI dan Kemenkes
 2. **Cepat & Adaptif** — Eksekusi cepat, keputusan di hari yang sama
 3. **Revisi Unlimited** — Tanpa batas, tanpa biaya tambahan
 4. **Fleksibel** — Kontrak per semester, notice period 30 hari
@@ -129,11 +132,11 @@ Two fonts loaded via `@nuxt/fonts`:
 6. **Berkualitas Tinggi** — QC berlapis untuk semua konten
 
 ### Key Metrics (homepage hero)
-- Dipercaya 12+ fasilitas kesehatan di Indonesia
+- Dipercaya 10+ fasilitas kesehatan di Indonesia
 - Bersandar pada regulasi kesehatan Indonesia dan standar medis internasional
 - Kontrak fleksibel tanpa komitmen tahunan
 - Tim tersertifikasi Meta & Google
-- 90%+ klien memperpanjang kontrak setelah 6 bulan pertama
+- 80% klien memperpanjang kontrak setelah 6 bulan pertama
 
 ### Target Client Profile
 - Fasilitas kesehatan dengan media sosial yang belum dikelola secara optimal
@@ -149,7 +152,7 @@ Two fonts loaded via `@nuxt/fonts`:
 | Eksekusi | Cepat & adaptif | Proses panjang, lambat |
 | Medical Review | Ya — setiap konten | Tidak ada |
 | Kontrak | Per semester, notice 30 hari | Lock-in 6-12 bulan |
-| Retensi klien | 90%+ bertahan >6 bulan | — |
+| Retensi klien | 80% bertahan >6 bulan | — |
 
 ## Services
 
@@ -158,41 +161,33 @@ Two fonts loaded via `@nuxt/fonts`:
 - Tagline: "Hadir Konsisten, Tumbuh Organik"
 - Platforms: Instagram, TikTok, Facebook
 
-| Tier | Price | Feed | Reels | Platforms | Key Extras |
-|------|-------|------|-------|-----------|-----------|
-| Starter | 4 Juta/bulan | 8 | 4 | 1 | — |
-| Standard | 6 Juta/bulan | 10 | 7 | 2 (Mirroring) | + Content Pillars |
-| Premium | 8 Juta/bulan | 16 | 8 | 3 | + Community Mgmt, Competitor Analysis |
+| Tier | Feed | Reels | Platforms | Key Extras |
+|------|------|-------|-----------|-----------|
+| Starter | 8 | 4 | 1 | — |
+| Standard | 10 | 7 | 2 (Mirroring) | + Content Pillars |
+| Premium | 16 | 8 | 3 | + Community Mgmt, Competitor Analysis |
 
 All tiers include: Photography, Videography, Content Editing, Copywriting, Unlimited Revisions, Monthly Content Plan, **Medical Review**, Monthly Report, Monthly Review Meeting.
 
 ### 2. Digital Marketing
 - URL: `/services/digital-marketing`
 - Tagline: "Iklan yang Tepat, Hasil yang Maksimal"
-- Scope: Ads Management (Meta, TikTok, Google) + KOC Management
-- Note: Ad creative production NOT included unless client uses VIP
+- Scope: Ads Management only (Meta, TikTok, atau Google — 1 platform per tier)
+- Note: Ad creative production NOT included in Digital Marketing; KOC is deprecated and removed
 
-| Tier | Fee | Platforms |
-|------|-----|-----------|
-| Starter | 15% of ad spend | 1 |
-| Standard | 20% of ad spend | Max 2 |
-| Premium | 25% of ad spend | Multi |
+| Tier | Platform |
+|------|----------|
+| Starter | 1 (pilihan: Meta, TikTok, atau Google) |
+| Standard | 1 (pilihan: Meta, TikTok, atau Google) |
+| Premium | 1 (pilihan: Meta, TikTok, atau Google) |
 
-KOC: 1K–100K followers, genuine users, higher engagement than KOL. Geo-targeting for patient reach within clinic service radius.
-
-### 3. Eskala VIP
-- URL: `/services/vip` (page file: `app/pages/services/eskala-vip.vue`)
-- Tagline: "Semua Kebutuhan Kreatif, Satu Tim Ahli"
-- Pricing: 15 Juta/bulan
-- Includes: Full Social Media Management (unlimited) + Graphic Design + Video Production + Copywriting + Photography
-- Support: 07.00–01.00, Senin–Minggu
-- Benefits: Dedicated team, priority handling, unlimited revisions, priority same-day requests
-- **Note**: Creative Services ONLY available through VIP — not standalone
+Fee berbasis persentase dari ad spend — tidak dipublikasikan; diskusikan dengan klien langsung.
 
 ### Deprecated (Do Not Create New Pages For)
 - Ads Management (standalone) → merged into Digital Marketing
-- KOL Management → replaced by KOC inside Digital Marketing
-- Creative Service (standalone) → exclusive to Eskala VIP
+- KOL Management → deprecated entirely (removed from all services)
+- KOC Management → deprecated entirely (removed from Digital Marketing)
+- Creative Service (standalone) → not offered as a separate service
 
 ### Entry-Level (Not Yet Built)
 - **Brand Audit & Consultation** — URL: `/services/consultation`

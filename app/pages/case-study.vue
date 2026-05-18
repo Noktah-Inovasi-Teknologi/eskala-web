@@ -2,16 +2,17 @@
 import { caseStudies } from "~/data/case-studies";
 
 useSeoMeta({
-  title: "Studi Kasus",
+  title: "Studi Kasus — Eskala",
+  twitterCard: "summary_large_image",
   description:
     "Lihat dokumentasi nyata perjalanan fasilitas kesehatan bersama Eskala — mulai dari konteks awal, strategi yang diterapkan, hingga hasil yang terukur.",
-  ogTitle: "Studi Kasus — Eskala Digital Marketing Agency",
+  ogTitle: "Studi Kasus — Eskala",
   ogDescription:
     "Bukan cuma klaim. Ini cerita nyata klien kami. Lihat bagaimana Eskala membantu klinik, rumah sakit, dan brand kesehatan tumbuh di dunia digital.",
   ogUrl: "https://eskala.id/case-study",
   ogType: "website",
   ogImage: "https://eskala.id/android-chrome-512x512.png",
-  twitterTitle: "Studi Kasus — Eskala Digital Marketing Agency",
+  twitterTitle: "Studi Kasus — Eskala",
   twitterDescription:
     "Dokumentasi nyata perjalanan fasilitas kesehatan bersama Eskala. Strategi, eksekusi, dan hasil yang terukur.",
   twitterImage: "https://eskala.id/android-chrome-512x512.png",
@@ -42,7 +43,7 @@ const achievement = computed(() => [
 
 const caseStudyCategories = [
   { label: "Semua", value: "all" },
-  { label: "Opthalmology", value: "opthalmology" },
+  { label: "Ophthalmology", value: "ophthalmology" },
   { label: "Dental", value: "dental" },
   { label: "Non-Faskes", value: "non-healthcare" },
 ];
@@ -203,6 +204,51 @@ watch(selectedCategory, () => {
           :total="filteredCaseStudies.length"
           :items-per-page="itemsPerPage"
         />
+      </div>
+    </UContainer>
+
+    <UContainer id="section-call-to-action" class="flex flex-col gap-12 py-24">
+      <div class="border border-cobalt-200 bg-cobalt-50 rounded-2xl p-10 lg:p-14 flex flex-col gap-12">
+        <div class="flex gap-12 items-center">
+          <div class="flex flex-col gap-4 flex-1">
+            <p class="font-display font-semibold text-xs tracking-widest text-cobalt-500 uppercase">
+              SIAP UNTUK BERDISKUSI?
+            </p>
+            <h2 class="font-display font-bold text-5xl text-obsidian-950 leading-tight">
+              Ingin hasil seperti ini <span class="text-cobalt-500">untuk faskes Anda?</span>
+            </h2>
+          </div>
+          <div class="basis-2/5">
+            <p class="font-body text-lg text-obsidian-700 font-light leading-relaxed">
+              Konsultasi 30 menit gratis — kami mendengarkan kondisi digital faskes Anda saat ini, lalu merekomendasikan 2-3 solusi, dengan atau tanpa bekerja sama dengan kami.
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-row justify-center gap-8">
+          <UButton
+            href="https://wa.me/6282230712718"
+            target="_blank"
+            rel="noopener noreferrer"
+            size="xl"
+            class="px-4 rounded-full"
+            color="success"
+          >
+            <Icon name="i-mdi-whatsapp" class="text-lg" />
+            Hubungi via WhatsApp
+            <Icon name="i-heroicons-arrow-top-right-on-square" class="text-lg" />
+          </UButton>
+          <UButton
+            href="mailto:core@eskala.id"
+            size="xl"
+            class="px-4 rounded-full"
+            color="neutral"
+            variant="outline"
+          >
+            <Icon name="i-heroicons-envelope" class="text-lg" />
+            Kirim brief melalui email
+            <Icon name="i-heroicons-arrow-top-right-on-square" class="text-lg" />
+          </UButton>
+        </div>
       </div>
     </UContainer>
   </div>

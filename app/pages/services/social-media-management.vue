@@ -1,17 +1,18 @@
 <script lang="ts" setup>
 useSeoMeta({
-  title: "Social Media Management",
+  title: "Social Media Management — Eskala",
   description:
-    "Kelola media sosial klinik dan rumah sakit Anda secara profesional. Paket SMM Eskala mulai 4 juta/bulan — photography, videography, copywriting, medical review, dan laporan bulanan.",
-  ogTitle: "Social Media Management untuk Faskes | Eskala",
+    "Kelola media sosial klinik dan rumah sakit Anda secara profesional. Medical review di setiap konten, revisi unlimited, laporan bulanan.",
+  ogTitle: "Social Media Management — Eskala",
   ogDescription:
-    "Hadir konsisten, tumbuh organik. Paket Social Media Management khusus fasilitas kesehatan mulai 4 juta/bulan. Medical review di setiap konten, revisi unlimited.",
+    "Hadir konsisten, tumbuh organik. Social Media Management khusus fasilitas kesehatan. Medical review di setiap konten, revisi unlimited.",
+  twitterCard: "summary_large_image",
   ogUrl: "https://eskala.id/services/social-media-management",
   ogType: "website",
   ogImage: "https://eskala.id/android-chrome-512x512.png",
-  twitterTitle: "Social Media Management untuk Faskes | Eskala",
+  twitterTitle: "Social Media Management — Eskala",
   twitterDescription:
-    "SMM profesional untuk klinik dan rumah sakit. Mulai 4 juta/bulan — foto, video, copywriting, medical review, revisi unlimited.",
+    "SMM profesional untuk klinik dan rumah sakit. Foto, video, copywriting, medical review, revisi unlimited.",
   twitterImage: "https://eskala.id/android-chrome-512x512.png",
 });
 
@@ -55,7 +56,7 @@ const whatWeDo = ref([
     icon: "i-heroicons-pencil-square",
     title: "Copywriting & Medical Review",
     description:
-      "Setiap caption ditulis dengan tone yang manusiawi dan melewati medical review internal sebelum tayang.",
+      "Setiap caption ditulis dengan tone yang manusiawi dan melewati medical review oleh tim ahli kami sebelum tayang.",
   },
   {
     icon: "i-heroicons-chat-bubble-left-right",
@@ -115,7 +116,6 @@ const packageSMMSections = [
 ];
 
 const featureLabels: Record<string, string> = {
-  price: "Biaya per bulan",
   feed: "Feed (Post/Carousel)",
   shortVideo: "Short Video (Reels)",
   maxSocialMedia: "Maks. Platform",
@@ -135,7 +135,6 @@ const featureLabels: Record<string, string> = {
 
 const packageSMMRaw = ref([
   {
-    price: "Rp 4 Juta",
     feed: 8,
     shortVideo: 4,
     maxSocialMedia: "1",
@@ -153,7 +152,6 @@ const packageSMMRaw = ref([
     monthlyReviewMeeting: true,
   },
   {
-    price: "Rp 6 Juta",
     feed: 10,
     shortVideo: 7,
     maxSocialMedia: "2 (Mirroring)",
@@ -171,7 +169,6 @@ const packageSMMRaw = ref([
     monthlyReviewMeeting: true,
   },
   {
-    price: "Rp 8 Juta",
     feed: 16,
     shortVideo: 8,
     maxSocialMedia: "3",
@@ -201,25 +198,25 @@ const expectedResults = ref([
   {
     number: "01",
     stage: "BULAN 1-3",
-    title: "Riset & Pilar Konten",
+    title: "Riset & Strategi",
     description:
       "Audit akun, riset pasien dan kompetitor, lalu menyusun pilar konten. Produksi mulai berjalan di bulan pertama dengan fokus pada konsistensi posting.",
     detail: [
       "Riset dan audit faskes & kompetitor",
       "Pembuatan atau improvisasi Content Pillars",
       "Posting rutin berdasarkan Content Plan",
-      "Views dan engagement meningkat 10-30% tiap bulan",
+      "Views dan engagement mulai menunjukkan tren naik",
     ],
   },
   {
     number: "02",
     stage: "BULAN 4-6",
-    title: "Engagement & DM Pasien",
+    title: "Fondasi & Momentum Awal",
     description:
       "Konten mulai menemukan audience-nya. DM dan konsultasi dari pasien potensial mulai berdatangan secara organik di samping pertumbuhan follower yang konsisten.",
     detail: [
-      "Follower organik naik 3-15% tiap bulan",
-      "1-2 konten viral (±10-50k reach)",
+      "Follower organik tumbuh secara konsisten",
+      "Konten viral mulai bermunculan",
       "DM pasien potensial mulai berdatangan",
       "Tone & visual identity faskes mulai dikenali",
     ],
@@ -227,14 +224,14 @@ const expectedResults = ref([
   {
     number: "03",
     stage: "BULAN 7-12",
-    title: "Pertumbuhan Compounding",
+    title: "Pertumbuhan & Optimasi",
     description:
       "Performa konten stabil dengan pertumbuhan yang compounding. Media sosial menjadi saluran rujukan pasien yang konsisten, bukan sekadar pelengkap.",
     detail: [
       "Konsultasi via DM meningkat signifikan",
       "Identitas faskes lebih mudah diingat & dipercaya",
       "Repeat appointment via media sosial mulai terlihat",
-      "Reach total compounding 5-10x dari bulan awal",
+      "Reach total tumbuh compounding dari bulan awal",
     ],
   },
 ]);
@@ -250,7 +247,7 @@ const faqItems = ref([
     number: "02",
     title: "Apakah Eskala paham regulasi konten kesehatan?",
     answer:
-      "Ya. Setiap konten melewati medical review internal sebelum tayang, mengacu pada pedoman KKI dan Kemenkes. Kami menolak claim superlatif atau yang menjanjikan kesembuhan — dan akan menjelaskan alasannya kepada tim Anda.",
+      "Ya. Setiap konten melewati medical review oleh tim ahli kami sebelum tayang, mengacu pada pedoman KKI dan Kemenkes. Kami siap berdiskusi dengan tim Anda untuk memastikan setiap konten sejalan dengan standar medis yang berlaku.",
   },
   {
     number: "03",
@@ -262,7 +259,7 @@ const faqItems = ref([
     number: "04",
     title: "Apakah kontraknya mengikat?",
     answer:
-      "Tidak. Kontrak kami berjalan per semester dengan notice period 30 hari. Kami lebih memilih klien yang memperpanjang karena hasil, bukan karena terikat dengan kami. 90% klien kami memperpanjang setelah 6 bulan pertama.",
+      "Tidak. Kontrak kami berjalan per semester dengan notice period 30 hari. Kami lebih memilih klien yang memperpanjang karena hasil, bukan karena terikat dengan kami. 80% klien kami memperpanjang setelah 6 bulan pertama.",
   },
 ]);
 
@@ -292,7 +289,7 @@ const testimonials = ref<Testimonial[]>([
   },
   {
     quote:
-      "Selama bekerja dengan Eskala, saya melihat peningkatan yang signifikan dalam engagement media sosial kami. Konten yang mereka buat benar-benar ngena ke audiens kami, dan pasien akhirnya mengetahui keberadaan klinik kami.",
+      "Selama bekerja dengan Eskala, saya melihat peningkatan yang signifikan dalam engagement media sosial kami. Konten yang mereka buat benar-benar ngena ke audiens kami, revenue kami meningkat sangat signifikan karena pasien akhirnya mengetahui keberadaan klinik kami.",
     name: "dr. Ekhtiyanto Cahyadi Khusnul Yakin, Sp.KG",
     position: "Owner & Dokter Spesialis Konservasi Gigi, Ecky Dental Center",
   },
@@ -475,22 +472,6 @@ const testimonials = ref<Testimonial[]>([
                     }}</span>
                   </div>
                 </th>
-              </tr>
-              <tr class="border-b border-obsidian-700">
-                <td class="px-6 py-4 text-obsidian-50 text-sm font-medium">
-                  {{ featureLabels.price }}
-                </td>
-                <td
-                  v-for="(pkg, i) in packageSMMRaw"
-                  :key="i"
-                  :class="[
-                    'px-6 py-4 border-l border-obsidian-700',
-                    i === 1 && 'bg-cobalt-950/40',
-                  ]"
-                >
-                  <span class="text-obsidian-50 font-display text-xl font-semibold">{{ pkg.price }}</span>
-                  <span class="text-obsidian-400 text-sm"> / bulan</span>
-                </td>
               </tr>
             </thead>
             <tbody>
@@ -717,8 +698,8 @@ const testimonials = ref<Testimonial[]>([
             <p
               class="font-body text-lg text-obsidian-700 font-light leading-relaxed"
             >
-              Konsultasi 30 menit untuk membahas kondisi media sosial faskes
-              Anda saat ini, lalu kami merekomendasikan tiga langkah konkret —
+              Konsultasi 30 menit gratis untuk membahas kondisi media sosial faskes
+              Anda saat ini, lalu kami merekomendasikan 2-3 solusi —
               dengan atau tanpa bekerja sama dengan kami.
             </p>
           </div>

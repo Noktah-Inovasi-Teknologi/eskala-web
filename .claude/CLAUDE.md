@@ -34,8 +34,7 @@ app/
 │   ├── index.vue          # Home page (hero, FAQ, services, case study, packages, testimonials, CTA)
 │   └── services/
 │       ├── digital-marketing.vue     # Digital Marketing service page
-│       ├── eskala-vip.vue            # VIP / All-in-one creative service page
-│       └── social-media-management.vue  # SMM service page (to be built)
+│       └── social-media-management.vue  # SMM service page
 ├── error.vue              # Error page
 ├── app.vue                # Root layout (Navbar + page + WebFooter)
 └── app.config.ts          # Nuxt UI config (colors, container, separator)
@@ -76,10 +75,9 @@ Always use `font-display` for headings and `font-body` for body copy — not `fo
 
 - **Primary target**: Healthcare facilities in Indonesia (klinik, rumah sakit, brand kesehatan)
 - **Core services**:
-  - Social Media Management (Starter 4 Juta, Standard 6 Juta, Premium 8 Juta/bulan)
-  - Digital Marketing — Ads + KOC (15% / 20% / 25% of ad spend)
-  - Eskala VIP — all-in-one creative bundle (15 Juta/bulan)
-- **Deprecated/merged**: Ads Management, KOL Management, Creative Service (standalone) — these no longer exist as separate pages
+  - Social Media Management — three tiers (Starter, Standard, Premium); pricing not shown publicly on site or in this repo
+  - Digital Marketing — Ads only, 1 platform per tier (Meta, TikTok, atau Google); pricing not shown publicly on site or in this repo
+- **Deprecated/merged**: Ads Management, KOL Management, KOC Management, Creative Service (standalone) — these no longer exist as separate services or pages
 - **Contact**: core@eskala.id, +62 822-3071-2718 (WhatsApp: wa.me/6282230712718)
 - **Social media**: @eskala.u on all platforms
 

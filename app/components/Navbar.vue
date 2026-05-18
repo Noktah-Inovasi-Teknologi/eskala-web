@@ -20,7 +20,7 @@ const items = ref([
         label: "Digital Marketing",
         icon: "i-heroicons-cursor-arrow-rays",
         description:
-          "Optimalisasi iklan berbayar dan kolaborasi KOC untuk ROI yang maksimal.",
+          "Iklan berbayar yang tepat sasaran di Meta, TikTok, dan Google untuk menjangkau lebih banyak pasien.",
         to: "/services/digital-marketing",
       },
     ],
