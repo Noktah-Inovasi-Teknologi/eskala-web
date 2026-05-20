@@ -20,11 +20,13 @@ useHead({
   link: [{ rel: "canonical", href: "https://eskala.id/about-us" }],
 });
 
+const { componentSize, iconSize, textSize } = useResponsiveSize();
+
 const stats = ref([
   { value: "10+", label: "Fasilitas kesehatan dipercaya" },
   { value: "80%", label: "Klien perpanjang kontrak" },
   { value: "2024", label: "Tahun berdiri" },
-  { value: "Yogyakarta", label: "Berbasis di" },
+  { value: "Yogyakarta", label: "Basis Pusat" },
 ]);
 
 const whoWeServe = ref([
@@ -101,13 +103,7 @@ interface TeamMember {
 
 const team = ref<TeamMember[]>([
   { initials: "DF", name: "Defila Priana Falarima", role: "Brand Manager & Account Executive" },
-  { initials: "MR", name: "Muhamad Rizki Al Rosid", role: "Project Manager" },
   { initials: "SN", name: "Siti Nurhayati", role: "Junior Field Associate" },
-  { initials: "HZ", name: "Halimatudz Dzakiyah", role: "Junior Field Associate" },
-  { initials: "AR", name: "M. Abdillah Rozzan", role: "Junior Field Associate" },
-  { initials: "ND", name: "Nadya Safira Alia Dinda", role: "Junior Content Editor" },
-  { initials: "AG", name: "Muhammad Anggit Rigen", role: "Junior Content Editor" },
-  { initials: "NR", name: "An-Nur Rohimah", role: "Quality Controller" },
   { initials: "BY", name: "Bagas Yadher B.N.A.R.H.", role: "Sales Representative" },
 ]);
 
@@ -115,7 +111,7 @@ const comparison = ref([
   {
     aspect: "Revisi",
     eskala: "Unlimited, tanpa biaya tambahan",
-    others: "2–3x, lalu ada biaya tambahan",
+    others: "2-3x, lalu ada biaya tambahan",
     eskalaGood: true,
   },
   {
@@ -133,7 +129,7 @@ const comparison = ref([
   {
     aspect: "Kontrak",
     eskala: "Per semester, notice period 30 hari",
-    others: "Lock-in 6–12 bulan",
+    others: "Lock-in 6-12 bulan",
     eskalaGood: true,
   },
   {
@@ -177,22 +173,22 @@ const comparison = ref([
         <UButton
           href="https://wa.me/6282230712718"
           target="_blank"
-          size="xl"
-          class="px-4 rounded-full justify-center"
+          :size="componentSize"
+          class="px-4 rounded-full justify-between text-nowrap"
           color="success"
         >
-          <Icon name="i-mdi-whatsapp" class="text-lg" />
+          <Icon name="i-mdi-whatsapp" :class="iconSize" />
           Jadwalkan konsultasi gratis
         </UButton>
         <UButton
           to="/case-study"
-          size="xl"
-          class="px-4 rounded-full justify-center"
-          color="neutral"
-          variant="link"
+          :size="componentSize"
+          class="px-4 rounded-full justify-between text-nowrap"
+          color="obsidian"
+          variant="outline"
         >
-          atau lihat cerita klien kami
-          <Icon name="i-heroicons-arrow-right" class="text-sm" />
+          Lihat studi kasus klien kami
+          <Icon name="i-heroicons-arrow-right" :class="iconSize" />
         </UButton>
       </div>
     </UContainer>
@@ -525,29 +521,29 @@ const comparison = ref([
             href="https://wa.me/6282230712718"
             target="_blank"
             rel="noopener noreferrer"
-            size="xl"
-            class="px-4 rounded-full justify-center"
+            :size="componentSize"
+            class="px-4 rounded-full justify-center text-nowrap"
             color="success"
           >
-            <Icon name="i-mdi-whatsapp" class="text-lg" />
-            Hubungi via WhatsApp
+            <Icon name="i-mdi-whatsapp" :class="iconSize" />
+            <p :class="textSize">Hubungi via WhatsApp</p>
             <Icon
               name="i-heroicons-arrow-top-right-on-square"
-              class="text-lg"
+              :class="iconSize"
             />
           </UButton>
           <UButton
             href="mailto:core@eskala.id"
-            size="xl"
-            class="px-4 rounded-full justify-center"
-            color="neutral"
+            :size="componentSize"
+            class="px-4 rounded-full justify-center text-nowrap"
+            color="obsidian"
             variant="outline"
           >
-            <Icon name="i-heroicons-envelope" class="text-lg" />
-            Kirim brief melalui email
+            <Icon name="i-heroicons-envelope" :class="iconSize" />
+            <p :class="textSize">Kirim brief melalui email</p>
             <Icon
               name="i-heroicons-arrow-top-right-on-square"
-              class="text-lg"
+              :class="iconSize"
             />
           </UButton>
         </div>

@@ -20,6 +20,8 @@ useHead({
   link: [{ rel: "canonical", href: "https://eskala.id/terms" }],
 });
 
+const { componentSize, iconSize } = useResponsiveSize();
+
 const lastUpdated = "22 April 2026";
 </script>
 
@@ -208,19 +210,19 @@ const lastUpdated = "22 April 2026";
               href="mailto:core@eskala.id"
               color="neutral"
               variant="outline"
-              class="px-4 rounded-full"
-              size="lg"
+              class="px-4 rounded-full justify-between"
+              :size="componentSize"
             >
-              <UIcon name="i-heroicons-envelope" />
+              <UIcon name="i-heroicons-envelope" :class="iconSize" />
               core@eskala.id
             </UButton>
             <UButton
               href="https://wa.me/6282230712718"
               color="success"
-              class="px-4 rounded-full"
-              size="lg"
+              class="px-4 rounded-full justify-between"
+              :size="componentSize"
             >
-              <UIcon name="i-mdi-whatsapp" />
+              <UIcon name="i-mdi-whatsapp" :class="iconSize" />
               Diskusi via WhatsApp
             </UButton>
           </div>

@@ -20,6 +20,8 @@ useHead({
   link: [{ rel: "canonical", href: "https://eskala.id/services/digital-marketing" }],
 });
 
+const { componentSize, iconSize, textSize } = useResponsiveSize();
+
 const keyPoints = ref([
   {
     title: "Tim tersertifikasi Meta & Google",
@@ -262,22 +264,22 @@ const faqItems = ref([
         <UButton
           href="https://wa.me/6282230712718"
           target="_blank"
-          size="xl"
-          class="px-4 rounded-full justify-center"
+          :size="componentSize"
+          class="px-4 rounded-full justify-between text-nowrap"
           color="success"
         >
-          <Icon name="i-mdi-whatsapp" class="text-lg" />
+          <Icon name="i-mdi-whatsapp" :class="iconSize" />
           Jadwalkan konsultasi gratis dengan kami
         </UButton>
         <UButton
           href="#section-package"
-          size="xl"
-          class="px-4 rounded-full justify-center"
+          :size="componentSize"
+          class="px-4 rounded-full justify-between text-nowrap"
           color="neutral"
           variant="link"
         >
           atau lihat paket layanan kami
-          <Icon name="i-heroicons-arrow-down" class="text-sm" />
+          <Icon name="i-heroicons-arrow-down" :class="iconSize" />
         </UButton>
       </div>
       <USeparator color="obsidian" />
@@ -285,10 +287,10 @@ const faqItems = ref([
         <div
           v-for="point in keyPoints"
           :key="point.title"
-          class="flex items-center gap-4"
+          class="w-full flex items-center gap-1 sm:gap-2 xl:gap-4 justify-between"
         >
-          <Icon :name="point.icon" class="text-copper-500 text-4xl" />
-          <p class="text-obsidian-950 font-medium text-sm">{{ point.title }}</p>
+          <Icon :name="point.icon" :class="[iconSize, 'text-copper-500']" />
+          <p :class="[textSize, 'text-obsidian-950 font-medium basis-13/15 w-full']">{{ point.title }}</p>
         </div>
       </div>
       <USeparator color="obsidian" />
@@ -529,22 +531,22 @@ const faqItems = ref([
           <UButton
             href="https://wa.me/6282230712718"
             target="_blank"
-            size="xl"
-            class="px-4 rounded-full text-obsidian-950 justify-center"
+            :size="componentSize"
+            class="px-4 rounded-full text-obsidian-950 justify-between"
             color="secondary"
           >
-            <Icon name="i-mdi-whatsapp" class="text-lg" />
+            <Icon name="i-mdi-whatsapp" :class="iconSize" />
             Diskusikan strategi iklan Anda
           </UButton>
           <UButton
             to="/services/social-media-management"
-            size="xl"
-            class="px-4 rounded-full justify-center"
+            :size="componentSize"
+            class="px-4 rounded-full justify-between"
             color="secondary"
             variant="link"
           >
             atau lihat paket Social Media Management kami
-            <Icon name="i-heroicons-arrow-right" class="text-sm" />
+            <Icon name="i-heroicons-arrow-right" :class="iconSize" />
           </UButton>
         </div>
       </UContainer>
@@ -682,29 +684,29 @@ const faqItems = ref([
             href="https://wa.me/6282230712718"
             target="_blank"
             rel="noopener noreferrer"
-            size="xl"
-            class="px-4 rounded-full justify-center"
+            :size="componentSize"
+            class="px-4 rounded-full justify-between"
             color="success"
           >
-            <Icon name="i-mdi-whatsapp" class="text-lg" />
+            <Icon name="i-mdi-whatsapp" :class="iconSize" />
             Hubungi via WhatsApp
             <Icon
               name="i-heroicons-arrow-top-right-on-square"
-              class="text-lg"
+              :class="iconSize"
             />
           </UButton>
           <UButton
             href="mailto:core@eskala.id"
-            size="xl"
-            class="px-4 rounded-full justify-center"
+            :size="componentSize"
+            class="px-4 rounded-full justify-between"
             color="neutral"
             variant="outline"
           >
-            <Icon name="i-heroicons-envelope" class="text-lg" />
+            <Icon name="i-heroicons-envelope" :class="iconSize" />
             Kirim brief melalui email
             <Icon
               name="i-heroicons-arrow-top-right-on-square"
-              class="text-lg"
+              :class="iconSize"
             />
           </UButton>
         </div>

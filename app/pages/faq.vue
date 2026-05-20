@@ -20,6 +20,8 @@ useHead({
   link: [{ rel: "canonical", href: "https://eskala.id/faq" }],
 });
 
+const { componentSize, iconSize, textSize } = useResponsiveSize();
+
 interface FaqItem {
   label: string
   answer: string
@@ -148,22 +150,22 @@ const filteredFaqs = computed(() =>
         <UButton
           href="https://wa.me/6282230712718"
           target="_blank"
-          size="xl"
-          class="px-4 rounded-full justify-center"
+          :size="componentSize"
+          class="px-4 rounded-full justify-between"
           color="success"
         >
-          <Icon name="i-mdi-whatsapp" class="text-lg" />
-          Tanya via WhatsApp
+          <Icon name="i-mdi-whatsapp" :class="iconSize" />
+          <p :class="textSize">Tanya via WhatsApp</p>
         </UButton>
         <UButton
           href="mailto:core@eskala.id"
-          size="xl"
-          class="px-4 rounded-full justify-center"
-          color="neutral"
+          :size="componentSize"
+          class="px-4 rounded-full justify-between"
+          color="obsidian"
           variant="link"
         >
-          atau kirim email
-          <Icon name="i-heroicons-arrow-top-right-on-square" class="text-sm" />
+          <p :class="textSize">atau kirim email</p>
+          <Icon name="i-heroicons-arrow-top-right-on-square" :class="iconSize" />
         </UButton>
       </div>
       <USeparator color="obsidian" />
@@ -210,24 +212,22 @@ const filteredFaqs = computed(() =>
             href="https://wa.me/6282230712718"
             target="_blank"
             rel="noopener noreferrer"
-            size="xl"
-            class="px-4 rounded-full justify-center"
+            :size="componentSize"
+            class="px-4 rounded-full justify-between text-nowrap"
             color="success"
           >
-            <Icon name="i-mdi-whatsapp" class="text-lg" />
-            Hubungi via WhatsApp
-            <Icon name="i-heroicons-arrow-top-right-on-square" class="text-lg" />
+            <Icon name="i-mdi-whatsapp" :class="iconSize" />
+            <p :class="textSize">Hubungi via WhatsApp</p>
           </UButton>
           <UButton
             href="mailto:core@eskala.id"
-            size="xl"
-            class="px-4 rounded-full justify-center"
-            color="neutral"
+            :size="componentSize"
+            class="px-4 rounded-full justify-between text-nowrap"
+            color="obsidian"
             variant="outline"
           >
-            <Icon name="i-heroicons-envelope" class="text-lg" />
-            Kirim brief melalui email
-            <Icon name="i-heroicons-arrow-top-right-on-square" class="text-lg" />
+            <Icon name="i-heroicons-envelope" :class="iconSize" />
+            <p :class="textSize">Kirim brief melalui email</p>
           </UButton>
         </div>
       </div>

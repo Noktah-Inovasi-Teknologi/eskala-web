@@ -22,6 +22,8 @@ useHead({
   link: [{ rel: "canonical", href: "https://eskala.id/case-study" }],
 });
 
+const { componentSize, iconSize } = useResponsiveSize();
+
 const achievement = computed(() => [
   {
     label: "Fasilitas kesehatan aktif",
@@ -44,6 +46,12 @@ const achievement = computed(() => [
 const caseStudyCategories = [
   { label: "Semua", value: "all" },
   { label: "Ophthalmology", value: "ophthalmology" },
+  { label: "Dental", value: "dental" },
+  { label: "Non-Faskes", value: "non-healthcare" },
+];
+
+const caseStudyCategoriesSmallScreen = [
+  { label: "Semua", value: "all" },
   { label: "Dental", value: "dental" },
   { label: "Non-Faskes", value: "non-healthcare" },
 ];
@@ -136,8 +144,8 @@ watch(selectedCategory, () => {
         </div>
       </div>
       <USeparator class="w-full" color="obsidian" />
-      <div class="flex flex-col">
-        <div class="w-full flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+      <div class="flex flex-col w-full">
+        <div class="w-full flex flex-col gap-4">
           <p>{{ displayText }}</p>
           <UTabs v-model="selectedCategory" :items="caseStudyCategories" />
         </div>
@@ -187,10 +195,10 @@ watch(selectedCategory, () => {
                   <UButton
                     :href="caseStudyWhatsAppUrl(item.title)"
                     color="success"
-                    size="sm"
-                    class="rounded-full px-4"
+                    :size="componentSize"
+                    class="rounded-full px-4 justify-between"
                     target="_blank"
-                    ><Icon class="text-lg" name="i-mdi-whatsapp" /> Request
+                    ><Icon :class="iconSize" name="i-mdi-whatsapp" /> Request
                     Dokumen Penuh
                   </UButton>
                 </div>
@@ -229,24 +237,24 @@ watch(selectedCategory, () => {
             href="https://wa.me/6282230712718"
             target="_blank"
             rel="noopener noreferrer"
-            size="xl"
-            class="px-4 rounded-full justify-center"
+            :size="componentSize"
+            class="px-4 rounded-full justify-between"
             color="success"
           >
-            <Icon name="i-mdi-whatsapp" class="text-lg" />
+            <Icon name="i-mdi-whatsapp" :class="iconSize" />
             Hubungi via WhatsApp
-            <Icon name="i-heroicons-arrow-top-right-on-square" class="text-lg" />
+            <Icon name="i-heroicons-arrow-top-right-on-square" :class="iconSize" />
           </UButton>
           <UButton
             href="mailto:core@eskala.id"
-            size="xl"
-            class="px-4 rounded-full justify-center"
+            :size="componentSize"
+            class="px-4 rounded-full justify-between"
             color="neutral"
             variant="outline"
           >
-            <Icon name="i-heroicons-envelope" class="text-lg" />
+            <Icon name="i-heroicons-envelope" :class="iconSize" />
             Kirim brief melalui email
-            <Icon name="i-heroicons-arrow-top-right-on-square" class="text-lg" />
+            <Icon name="i-heroicons-arrow-top-right-on-square" :class="iconSize" />
           </UButton>
         </div>
       </div>
