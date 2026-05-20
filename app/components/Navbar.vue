@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 const open = ref(false);
 
+const { componentSize } = useResponsiveSize();
+
 const items = ref([
   {
     label: "Beranda",
@@ -91,7 +93,7 @@ const items = ref([
       icon="i-heroicons-bars-3"
       variant="ghost"
       color="neutral"
-      size="xl"
+      :size="componentSize"
       class="lg:hidden"
       aria-label="Buka menu"
       @click="open = true"
