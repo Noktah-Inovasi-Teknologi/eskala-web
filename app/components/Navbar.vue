@@ -30,7 +30,7 @@ const items = ref([
     ],
   },
   {
-    label: "Cerita Klien",
+    label: "Studi Kasus",
     icon: "i-heroicons-chart-bar-square",
     description:
       "Lihat bagaimana kami membantu klien kami tumbuh besar dan sukses.",
