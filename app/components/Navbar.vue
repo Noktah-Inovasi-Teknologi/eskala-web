@@ -66,8 +66,9 @@ const items = ref([
         highlight
         :ui="{
           link: 'text-obsidian-700 hover:text-cobalt-600 font-medium text-sm',
-          linkLeadingIcon: 'text-obsidian-400 group-hover:text-cobalt-500',
+          linkLeadingIcon: 'text-obsidian-700 group-hover:text-cobalt-500',
           childLink: 'hover:bg-cobalt-50',
+          childLinkIcon: 'text-obsidian-800',
           childLinkLabel: 'text-obsidian-800 font-medium text-sm',
           childLinkDescription: 'text-obsidian-500 text-xs',
         }"
