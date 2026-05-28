@@ -828,7 +828,7 @@ const heroQuote = ref<Testimonial>({
           <p :class="[textSize, 'font-medium text-obsidian-950']">
             "{{ testimonial.quote }}"
           </p>
-          <div class="flex flex-col xs:flex-row gap-3 items-start xs:items-center">
+          <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
             <div
               class="w-9 h-9 rounded-full bg-copper-500 flex items-center justify-center text-white font-semibold text-sm shrink-0"
             >
