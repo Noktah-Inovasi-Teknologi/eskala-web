@@ -174,7 +174,7 @@ const comparison = ref([
           href="https://wa.me/6282230712718"
           target="_blank"
           :size="componentSize"
-          class="px-4 rounded-full justify-between text-nowrap"
+          class="px-4 rounded-full justify-center text-nowrap"
           color="success"
         >
           <Icon name="i-mdi-whatsapp" :class="iconSize" />
@@ -183,7 +183,7 @@ const comparison = ref([
         <UButton
           to="/case-study"
           :size="componentSize"
-          class="px-4 rounded-full justify-between text-nowrap"
+          class="px-4 rounded-full justify-center text-nowrap"
           color="obsidian"
           variant="outline"
         >

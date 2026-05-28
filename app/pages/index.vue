@@ -404,7 +404,7 @@ const heroQuote = ref<Testimonial>({
           href="https://wa.me/6282230712718"
           target="_blank"
           :size="componentSize"
-          class="px-4 rounded-full justify-between items-center text-nowrap"
+          class="px-4 rounded-full justify-center items-center text-nowrap"
           color="success"
         >
           <Icon name="i-mdi-whatsapp" :class="iconSize" />
@@ -413,7 +413,7 @@ const heroQuote = ref<Testimonial>({
         <UButton
           to="/case-study"
           :size="componentSize"
-          class="px-4 rounded-full justify-between"
+          class="px-4 rounded-full justify-center"
           color="obsidian"
           variant="outline"
         >
@@ -465,7 +465,7 @@ const heroQuote = ref<Testimonial>({
                     <p class="font-display font-semibold text-sm text-cobalt-500 tracking-widest">
                       JAWABAN KAMI
                     </p>
-                    <p class="font-body text-lg text-obsidian-700 font-light">
+                    <p :class="[textSize, 'text-obsidian-700 font-light']">
                       {{ item.answer }}
                     </p>
                   </div>
@@ -601,7 +601,7 @@ const heroQuote = ref<Testimonial>({
                   class="rounded-3xl border border-obsidian-300 bg-obsidian-50 overflow-hidden"
                 >
                   <template #body="{ item: card }">
-                    <p class="font-body text-lg text-obsidian-700 font-light px-6 sm:px-8 pb-4 sm:pb-4">
+                    <p :class="[textSize, 'text-obsidian-700 px-6 sm:px-8 pb-4 sm:pb-4']">
                       {{ card.description }}
                     </p>
                   </template>
@@ -797,7 +797,7 @@ const heroQuote = ref<Testimonial>({
           <UButton
             to="/services/digital-marketing"
             :size="componentSize"
-            class="px-4 rounded-full text-obsidian-950 justify-between"
+            class="px-4 rounded-full text-obsidian-950 justify-center"
             color="secondary"
           >
             Cek paket lengkap layanan kami
@@ -825,10 +825,10 @@ const heroQuote = ref<Testimonial>({
             name="i-heroicons-chat-bubble-left"
             class="text-copper-500 text-4xl"
           />
-          <p class="font-body font-medium text-xl sm:text-2xl text-obsidian-950">
+          <p :class="[textSize, 'font-medium text-obsidian-950']">
             "{{ testimonial.quote }}"
           </p>
-          <div class="flex gap-3 items-center">
+          <div class="flex flex-col xs:flex-row gap-3 items-start xs:items-center">
             <div
               class="w-9 h-9 rounded-full bg-copper-500 flex items-center justify-center text-white font-semibold text-sm shrink-0"
             >
@@ -882,7 +882,7 @@ const heroQuote = ref<Testimonial>({
             target="_blank"
             rel="noopener noreferrer"
             :size="componentSize"
-            class="px-4 rounded-full justify-between"
+            class="px-4 rounded-full justify-center"
             color="success"
           >
             <Icon name="i-mdi-whatsapp" :class="iconSize" />
@@ -895,7 +895,7 @@ const heroQuote = ref<Testimonial>({
           <UButton
             href="mailto:core@eskala.id"
             :size="componentSize"
-            class="px-4 rounded-full justify-between"
+            class="px-4 rounded-full justify-center"
             color="neutral"
             variant="outline"
           >

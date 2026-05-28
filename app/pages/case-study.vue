@@ -163,7 +163,7 @@ watch(selectedCategory, () => {
             :ui="{body:'h-full'}"
           >
             <div class="flex h-full gap-4">
-              <div class="w-full flex flex-col gap-4 justify-between">
+              <div class="w-full flex flex-col gap-4 justify-center">
                 <div class="flex flex-col gap-4">
                   <UBadge
                     class="w-fit rounded-full"
@@ -194,7 +194,7 @@ watch(selectedCategory, () => {
                   </div>
                   <USeparator class="w-full" color="obsidian" />
                   <div
-                    class="flex flex-wrap items-center justify-between gap-4"
+                    class="flex flex-wrap items-center justify-center gap-4"
                   >
                     <div>
                       <p
@@ -210,7 +210,7 @@ watch(selectedCategory, () => {
                       :href="caseStudyWhatsAppUrl(item.title)"
                       color="success"
                       :size="componentSize"
-                      class="rounded-full px-4 justify-between"
+                      class="rounded-full px-4 justify-center w-full"
                       target="_blank"
                       ><Icon :class="iconSize" name="i-mdi-whatsapp" /> Request
                       Dokumen Penuh

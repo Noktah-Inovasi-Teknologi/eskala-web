@@ -151,7 +151,7 @@ const filteredFaqs = computed(() =>
           href="https://wa.me/6282230712718"
           target="_blank"
           :size="componentSize"
-          class="px-4 rounded-full justify-between"
+          class="px-4 rounded-full justify-center"
           color="success"
         >
           <Icon name="i-mdi-whatsapp" :class="iconSize" />
@@ -160,7 +160,7 @@ const filteredFaqs = computed(() =>
         <UButton
           href="mailto:core@eskala.id"
           :size="componentSize"
-          class="px-4 rounded-full justify-between"
+          class="px-4 rounded-full justify-center"
           color="obsidian"
           variant="link"
         >
@@ -213,7 +213,7 @@ const filteredFaqs = computed(() =>
             target="_blank"
             rel="noopener noreferrer"
             :size="componentSize"
-            class="px-4 rounded-full justify-between text-nowrap"
+            class="px-4 rounded-full justify-center text-nowrap"
             color="success"
           >
             <Icon name="i-mdi-whatsapp" :class="iconSize" />
@@ -222,7 +222,7 @@ const filteredFaqs = computed(() =>
           <UButton
             href="mailto:core@eskala.id"
             :size="componentSize"
-            class="px-4 rounded-full justify-between text-nowrap"
+            class="px-4 rounded-full justify-center text-nowrap"
             color="obsidian"
             variant="outline"
           >

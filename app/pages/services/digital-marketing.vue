@@ -265,7 +265,7 @@ const faqItems = ref([
           href="https://wa.me/6282230712718"
           target="_blank"
           :size="componentSize"
-          class="px-4 rounded-full justify-between text-nowrap"
+          class="px-4 rounded-full justify-center text-nowrap"
           color="success"
         >
           <Icon name="i-mdi-whatsapp" :class="iconSize" />
@@ -274,7 +274,7 @@ const faqItems = ref([
         <UButton
           href="#section-package"
           :size="componentSize"
-          class="px-4 rounded-full justify-between text-nowrap"
+          class="px-4 rounded-full justify-center text-nowrap"
           color="neutral"
           variant="link"
         >
@@ -532,7 +532,7 @@ const faqItems = ref([
             href="https://wa.me/6282230712718"
             target="_blank"
             :size="componentSize"
-            class="px-4 rounded-full text-obsidian-950 justify-between"
+            class="px-4 rounded-full text-obsidian-950 justify-center"
             color="secondary"
           >
             <Icon name="i-mdi-whatsapp" :class="iconSize" />
@@ -541,7 +541,7 @@ const faqItems = ref([
           <UButton
             to="/services/social-media-management"
             :size="componentSize"
-            class="px-4 rounded-full justify-between"
+            class="px-4 rounded-full justify-center"
             color="secondary"
             variant="link"
           >
@@ -685,7 +685,7 @@ const faqItems = ref([
             target="_blank"
             rel="noopener noreferrer"
             :size="componentSize"
-            class="px-4 rounded-full justify-between"
+            class="px-4 rounded-full justify-center"
             color="success"
           >
             <Icon name="i-mdi-whatsapp" :class="iconSize" />
@@ -698,7 +698,7 @@ const faqItems = ref([
           <UButton
             href="mailto:core@eskala.id"
             :size="componentSize"
-            class="px-4 rounded-full justify-between"
+            class="px-4 rounded-full justify-center"
             color="neutral"
             variant="outline"
           >
