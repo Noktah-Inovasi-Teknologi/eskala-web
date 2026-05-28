@@ -33,7 +33,7 @@ export const caseStudies = ref<CaseStudy[]>([
     client: "Klinik Mata Boyolali",
     category: "ophthalmology",
     summary:
-      "Klinik baru menghadapi paradoks yang tidak banyak disadari: kualitas layanan yang baik tidak cukup untuk mendatangkan pasien jika klinik itu belum dikenal. Studi kasus ini menelusuri bagaimana Eskala mendampingi Klinik Utama Boyolali membangun kehadiran digital dari titik nol, mulai dari menata sistem konten, menyesuaikan proses produksi dengan ritme operasional klinik, hingga menjalankan iklan digital secara bertahap. Dalam 12 bulan, akun KMB membukukan lebih dari 2 juta views dan rata-rata 50 pertumbuhan followers setiap bulannya.",
+      "Klinik baru menghadapi paradoks yang tidak banyak disadari: kualitas layanan yang baik tidak cukup untuk mendatangkan pasien jika klinik itu belum dikenal. Studi kasus ini menelusuri bagaimana Eskala mendampingi Klinik Utama Boyolali membangun kehadiran digital dari titik nol, mulai dari menata sistem konten, menyesuaikan proses produksi dengan ritme operasional klinik, hingga menjalankan iklan digital secara bertahap. Dalam 12 bulan, akun KMB membukukan lebih dari 2 juta views.",
     services: ["Social Media Management", "Digital Marketing"],
     results: [
       { label: "Total Views", value: "2 juta+" },

@@ -329,7 +329,7 @@ const testimonials = ref<Testimonial[]>([
           href="https://wa.me/6282230712718"
           target="_blank"
           :size="componentSize"
-          class="px-4 rounded-full justify-between text-nowrap"
+          class="px-4 rounded-full justify-center text-nowrap"
           color="success"
         >
           <Icon name="i-mdi-whatsapp" :class="iconSize" />
@@ -338,7 +338,7 @@ const testimonials = ref<Testimonial[]>([
         <UButton
           href="#section-package"
           :size="componentSize"
-          class="px-4 rounded-full justify-between"
+          class="px-4 rounded-full justify-center"
           color="neutral"
           variant="link"
         >
@@ -351,7 +351,7 @@ const testimonials = ref<Testimonial[]>([
         <div
           v-for="point in keyPoints"
           :key="point.title"
-          class="w-full flex items-center gap-1 sm:gap-2 xl:gap-4 justify-between"
+          class="w-full flex items-center gap-1 sm:gap-2 xl:gap-4 justify-center"
         >
           <Icon :name="point.icon" :class="[iconSize, 'text-copper-500']" />
           <p :class="[textSize, 'text-obsidian-950 font-medium basis-13/15 w-full']">{{ point.title }}</p>
@@ -594,7 +594,7 @@ const testimonials = ref<Testimonial[]>([
             href="https://wa.me/6282230712718"
             target="_blank"
             :size="componentSize"
-            class="px-4 rounded-full text-obsidian-950 justify-between"
+            class="px-4 rounded-full text-obsidian-950 justify-center"
             color="secondary"
           >
             <Icon name="i-mdi-whatsapp" :class="iconSize" />
@@ -603,7 +603,7 @@ const testimonials = ref<Testimonial[]>([
           <UButton
             to="/services/digital-marketing"
             :size="componentSize"
-            class="px-4 rounded-full justify-between"
+            class="px-4 rounded-full justify-center"
             color="secondary"
             variant="link"
           >
@@ -777,7 +777,7 @@ const testimonials = ref<Testimonial[]>([
             target="_blank"
             rel="noopener noreferrer"
             :size="componentSize"
-            class="px-4 rounded-full justify-between"
+            class="px-4 rounded-full justify-center"
             color="success"
           >
             <Icon name="i-mdi-whatsapp" :class="iconSize" />
@@ -790,7 +790,7 @@ const testimonials = ref<Testimonial[]>([
           <UButton
             href="mailto:core@eskala.id"
             :size="componentSize"
-            class="px-4 rounded-full justify-between"
+            class="px-4 rounded-full justify-center"
             color="neutral"
             variant="outline"
           >

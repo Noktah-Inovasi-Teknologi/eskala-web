@@ -9,11 +9,11 @@ export function useResponsiveSize() {
     return "xl";
   });
   const iconSize = computed(() => {
-    if (viewport.isLessThan("sm")) return "text-lg";
-    if (viewport.isLessThan("md")) return "text-xl";
-    if (viewport.isLessThan("lg")) return "text-2xl";
-    if (viewport.isLessThan("xl")) return "text-3xl";
-    return "text-4xl";
+    if (viewport.isLessThan("sm")) return "text-sm";
+    if (viewport.isLessThan("md")) return "text-base";
+    if (viewport.isLessThan("lg")) return "text-lg";
+    if (viewport.isLessThan("xl")) return "text-xl";
+    return "text-2xl";
   });
   const textSize = computed(() => {
     if (viewport.isLessThan("sm")) return "text-sm";
