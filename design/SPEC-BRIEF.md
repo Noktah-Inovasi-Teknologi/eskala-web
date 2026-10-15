@@ -116,7 +116,7 @@ The redesign changes the product structure, the information architecture, the vi
 5. **Photos.** *Settled 2026-10-15:* until they arrive, image slots ship as plain brand-tinted panels with no text. Who supplies them, and when, is still open.
 6. **Contract terms.** *Settled 2026-10-15:* there is no annual commitment, and the minimum term is 6 months (one semester). The FAQ ("Kontrak fleksibel, tanpa komitmen tahunan") and Syarat & Ketentuan ("minimal per semester (6 bulan)") are both correct.
 7. **Privacy and terms links.** *Settled:* the reference footer already has them in its bottom row ("Kebijakan privasi", "Syarat layanan").
-8. **Analytics.** Is there an analytics tool or Meta pixel to keep or add? Should WhatsApp click events be tracked?
+8. **Analytics.** *Settled 2026-10-16 by [spec 001](../specs/001-search-visibility/spec.md):* Cloudflare Web Analytics (cookieless) for every visitor, plus Google Analytics 4 after the visitor taps "Terima". WhatsApp taps and form sends are tracked as key events. The Meta Pixel waits until Eskala runs its own ads.
 
 ---
 

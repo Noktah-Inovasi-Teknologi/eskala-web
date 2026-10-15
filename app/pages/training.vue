@@ -7,8 +7,7 @@ import type { InterestField, ProcessStep } from "~/types/content"
 definePageMeta({ navCta: consultLink })
 
 usePageSeo({
-  title: "Training Komunikasi untuk Klinik dan Rumah Sakit",
-  description: "Workshop, Bootcamp, dan In-house Training komunikasi untuk tim klinik dan rumah sakit, berbasis praktik. Segera hadir.",
+  title: "Training: Pelatihan Marketing Rumah Sakit dan Klinik",
   path: "/training",
 })
 
@@ -36,7 +35,7 @@ const choices = ["Workshop", "Bootcamp", "In-house Training", "Belum tahu"]
 
 const askLink = whatsappLink("Halo Eskala! Saya ingin bertanya tentang Training.")
 
-const { status, send } = useWhatsAppHandoff()
+const { status, send } = useWhatsAppHandoff("training_interest")
 function onSubmit(data: Record<string, string | string[]>) {
   send("Halo Eskala! Saya ingin mengajukan minat training.", [
     ["Nama", data.name],

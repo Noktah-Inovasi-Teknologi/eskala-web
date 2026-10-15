@@ -3,11 +3,12 @@
      returns when there is more to load. -->
 <script setup lang="ts">
 import { articleCategories, articleGrid, featuredArticle, featuredLabel } from "~/data/articles"
+import { articleFaqs } from "~/data/faqs"
 
 usePageSeo({
-  title: "Artikel Digital Marketing Kesehatan untuk Klinik dan Rumah Sakit",
-  description: "Panduan praktis seputar media sosial, iklan, dan komunikasi pasien untuk klinik, rumah sakit, dan dokter.",
+  title: "Artikel Strategi Pemasaran Klinik dan Rumah Sakit",
   path: "/articles",
+  faqs: articleFaqs,
 })
 
 const category = ref("Semua")
@@ -28,7 +29,7 @@ function reset() {
   query.value = ""
 }
 
-const { status, send } = useWhatsAppHandoff()
+const { status, send } = useWhatsAppHandoff("newsletter")
 function subscribe(email: string) {
   send("Halo Eskala! Saya ingin berlangganan artikel baru lewat email.", [["Email", email]])
 }
@@ -81,7 +82,14 @@ function subscribe(email: string) {
       </div>
     </PageSection>
 
+    <!-- FAQ (spec 001, G-23: not in the design) -->
+    <PageSection>
+      <Heading class="mb-8">Pertanyaan seputar promosi dan aturan iklan</Heading>
+      <FaqList :items="articleFaqs" />
+    </PageSection>
+
     <CtaSection
+      :pad-top="false"
       title="Konsultasi gratis 30 menit"
       body="Ceritakan kondisi klinik Anda. Kami akan memberi 2–3 rekomendasi solusi, meskipun Anda belum memutuskan bekerja sama dengan kami."
     />

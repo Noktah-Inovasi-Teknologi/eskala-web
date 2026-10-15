@@ -1,25 +1,6 @@
 <script lang="ts" setup>
 import { consultLink, contact } from "~/data/site"
-useSeoMeta({
-  title: "Syarat & Ketentuan",
-  twitterCard: "summary_large_image",
-  description:
-    "Syarat dan Ketentuan Eskala — aturan penggunaan layanan Social Media Management dan Digital Marketing. Baca sebelum memulai kerja sama.",
-  ogTitle: "Syarat & Ketentuan — Eskala",
-  ogDescription:
-    "Ketentuan layanan Eskala untuk klien Social Media Management dan Digital Marketing. Transparan dan adil untuk kedua pihak.",
-  ogUrl: "https://eskala.id/terms",
-  ogType: "website",
-  ogImage: "https://eskala.id/android-chrome-512x512.png",
-  twitterTitle: "Syarat & Ketentuan — Eskala",
-  twitterDescription:
-    "Syarat dan Ketentuan Eskala untuk klien Social Media Management dan Digital Marketing.",
-  twitterImage: "https://eskala.id/android-chrome-512x512.png",
-});
-
-useHead({
-  link: [{ rel: "canonical", href: "https://eskala.id/terms" }],
-});
+usePageSeo({ title: "Syarat & Ketentuan", path: "/terms" })
 
 
 const lastUpdated = "22 April 2026";

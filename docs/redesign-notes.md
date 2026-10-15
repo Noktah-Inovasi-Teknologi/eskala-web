@@ -35,7 +35,13 @@ build departs from `design/`, with the reason. Route decisions are in
 | Problem section caption (Beranda) | caption under the photo | hidden until the photo exists | a caption under an empty panel describes nothing |
 | Artikel "Muat artikel lainnya" | shown | hidden | nothing more to load |
 | Education and Training header button | `#kontak` | opens WhatsApp | those pages have no #kontak band |
+| Analytics consent bar (spec 001, G-16) | none | a small bar sticky at the bottom of every page, "Terima" / "Tolak", shown only when GA4 is configured | GA4 sets cookies; UU PDP consent (G-13, G-15) |
+| Footer legal row (spec 001, G-15) | two links | plus a "Pengaturan cookie" button, shown only when GA4 is configured | visitors must be able to change their choice |
+| Pre-filled WhatsApp messages (spec 001, G-14) | the design's text | the same text, then "(dari <sumber>, halaman <halaman>)" or "(halaman <halaman>)" | ties a chatbot or Google visit to a consultation before Noktah Hub |
+| FAQ sections on Studi kasus, Artikel, Tentang kami (spec 001, G-23) | none | a FAQ section above the closing CTA, on that page's topic only | per-page FAQ rule (G-20); chatbots answer from on-topic pages |
+| Beranda and Digital Marketing FAQs (spec 001, G-23) | 4 and 5 questions; the contract question on both | Beranda 6 (contract question removed), Digital Marketing 11; answers approved 2026-10-16 | same; the design's questions stay first and verbatim |
+| /faq | two groups | five groups, one per page, each question once | /faq compiles every FAQ (FR-013) |
 
 ## Still open
 
-- **Analytics** (SPEC-BRIEF question 8).
+- Nothing from SPEC-BRIEF. Analytics (question 8) was settled by [spec 001](../specs/001-search-visibility/spec.md) (G-13, G-15).

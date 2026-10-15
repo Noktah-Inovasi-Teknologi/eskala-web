@@ -1,12 +1,13 @@
 <!-- Studi kasus (design/reference/studi-kasus.html). Route kept at /case-study (ADR-0001). -->
 <script setup lang="ts">
 import { caseStudies, caseStudyFilters, caseStudyStats } from "~/data/case-studies"
+import { caseStudyFaqs } from "~/data/faqs"
 import { eckyQuote } from "~/data/testimonials"
 
 usePageSeo({
   title: "Studi Kasus Digital Marketing Klinik dan Rumah Sakit",
-  description: "Hasil kerja Eskala bersama SMEC Group dan Klinik Mata Boyolali: kondisi awal, strategi yang dijalankan, dan hasil yang terukur.",
   path: "/case-study",
+  faqs: caseStudyFaqs,
 })
 
 const filter = ref<(typeof caseStudyFilters)[number]>("Semua")
@@ -57,7 +58,14 @@ const shown = computed(() => filter.value === "Semua" ? caseStudies : caseStudie
       </div>
     </PageSection>
 
+    <!-- FAQ (spec 001, G-23: not in the design) -->
+    <PageSection>
+      <Heading class="mb-8">Pertanyaan seputar studi kasus</Heading>
+      <FaqList :items="caseStudyFaqs" />
+    </PageSection>
+
     <CtaSection
+      :pad-top="false"
       title="Ingin hasil seperti ini untuk tempat Anda?"
       body="Konsultasi gratis 30 menit. Kami melihat kondisi digital klinik, rumah sakit, atau praktik Anda saat ini, lalu memberi 2–3 rekomendasi solusi, meskipun Anda belum memutuskan bekerja sama dengan kami."
     />

@@ -1,12 +1,13 @@
 <!-- Tentang kami (design/reference/tentang-kami.html). Route kept at /about-us (ADR-0001).
      The team section shows once `team` has real people; the design has only placeholders. -->
 <script setup lang="ts">
+import { aboutFaqs } from "~/data/faqs"
 import { tagline } from "~/data/site"
 
 usePageSeo({
   title: "Tentang Eskala — Partner Komunikasi Kesehatan",
-  description: "Eskala adalah partner digital marketing dan komunikasi kesehatan untuk klinik pratama dan utama, rumah sakit, serta dokter di seluruh Indonesia.",
   path: "/about-us",
+  faqs: aboutFaqs,
   full: true,
 })
 
@@ -105,6 +106,12 @@ const team: { name: string, role: string, photo?: string }[] = []
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <TeamCard v-for="member in team" :key="member.name" v-bind="member" />
       </div>
+    </PageSection>
+
+    <!-- FAQ (spec 001, G-23: not in the design) -->
+    <PageSection class="border-t border-obsidian-300">
+      <Heading class="mb-8">Pertanyaan tentang Eskala</Heading>
+      <FaqList :items="aboutFaqs" />
     </PageSection>
 
     <CtaSection

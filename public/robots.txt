@@ -1,4 +1,21 @@
-User-Agent: *
+User-agent: *
 Allow: /
+Disallow: /dev/
+
+# AI crawlers, named so their own rules say the same (spec 001, FR-004).
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+User-agent: Bingbot
+Allow: /
+Disallow: /dev/
 
 Sitemap: https://eskala.id/sitemap.xml
