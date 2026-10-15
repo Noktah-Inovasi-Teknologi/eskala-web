@@ -61,11 +61,13 @@ The routes are being restructured. The proposed routes and redirects are in `des
 
 ## Theme & Colors
 
-The tokens in `app/assets/css/main.css` stay: **cobalt** (primary, #1D4ED8), **copper** (accent, #FB923C) and **obsidian** (slate neutrals). The redesign adds these tokens (see `design/tokens.css`):
-- `copper-ink` #A8500C: copper-coloured *text* on light backgrounds. Plain copper fails contrast on white.
-- `cobalt-soft` #6C93F0: light blue accents on dark backgrounds.
-- `whatsapp` #15803D (hover `whatsapp-hover` #166534): all WhatsApp CTAs.
-- `error-ink` #C2410C: form errors.
+Token names follow the **Eskala Design System** (https://claude.ai/artifact/EXeTAjSTXsviSH6WqX4Pau). Use its names in code; don't invent new ones. The scales in `app/assets/css/main.css` stay: **cobalt** (primary, #1D4ED8), **copper** (accent, #FB923C) and **obsidian** (slate neutrals). `design/tokens.css` adds or fixes:
+- `cobalt-400` #6C93F0 and `copper-400` #FCA65B: real mid-tones. They used to duplicate the 500 steps. Use `text-cobalt-400` for blue accents on dark backgrounds.
+- `accent-strong` #A8500C (`text-accent-strong`): copper-coloured *text* on light backgrounds. Plain copper fails contrast on white.
+- `success-*` (WhatsApp green): the button is `bg-success-700 hover:bg-success-hover active:bg-success-active`.
+- `error-*`: error text is `text-error-700`.
+
+The reference HTML uses two colours that differ from the design system: #166534 (use `success-hover`) and #C2410C (use `error-700`). The mapping is at the top of `design/tokens.css`.
 
 ## Typography
 
@@ -81,7 +83,7 @@ The tokens in `app/assets/css/main.css` stay: **cobalt** (primary, #1D4ED8), **c
 4. **TypeScript**: `lang="ts"` on every `<script setup>`, with typed props. Keep repeatable content (tiers, table rows, FAQs, case studies, articles, team) as typed data in `app/data/`.
 5. **Responsive**: Mobile-first, at the Tailwind breakpoints plus `3xl` at 1920px.
    - Container max width: 1280px, then 1440px at `2xl`, then 1600px at `3xl`.
-   - Section padding: about 96px on desktop, 64px below `md`, 48px below `sm`.
+   - Section padding: 96px at `lg`, 80px at `md`, 64px at `sm`, 48px below (`py-12 sm:py-16 md:py-20 lg:py-24`).
    - No horizontal page scroll anywhere from 320px to 2560px.
 6. **Section labels**: a short uppercase eyebrow (13px, semibold, wide tracking), used sparingly. The old `──────── Label` pattern is retired.
 7. **Accessibility**: WCAG 2.2 AA. Focus states visible, tap targets at least 44px, decorative wings `aria-hidden`.

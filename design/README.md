@@ -7,7 +7,7 @@ This folder is the source of truth for the 2026 redesign of eskala.id. It is a *
 | `reference/*.html` | The approved designs as standalone HTML, one file per page. Open them in a browser and resize the window to see every breakpoint. Copy, section order, links and responsive rules are all in here. |
 | `screenshots/*.jpg` | The same pages rendered at **1280px** (desktop) and **390px** (phone), sliced top to bottom (`home-1280-01.jpg`, `-02`, …) so each slice is readable. |
 | `assets/` | Brand mark SVGs: `wing-cobalt.svg` (nav and footer logo on light), `wing-white.svg` (logo on dark), `wing-copper.svg` (decorative wing in hero panels and dark bands). |
-| `tokens.css` | Colour and font tokens to merge into `app/assets/css/main.css`, with a map from design hex values to the existing token names. |
+| `tokens.css` | Colour and font tokens to merge into `app/assets/css/main.css`, named as in the Eskala Design System, with a map from the reference hex values to token names. |
 | `SPEC-BRIEF.md` | The feature brief to paste into `/speckit.specify`, including open questions for `/speckit.clarify`. |
 
 The reference HTML uses inline styles and container queries because it came out of a design tool. **Don't port that markup.** Read it to see what should appear and how it behaves, then write idiomatic Tailwind.
@@ -107,14 +107,17 @@ The breakpoints follow Tailwind, plus one ultra-wide step:
 
 | Width | Behaviour |
 |---|---|
-| < 640 (base) | Container padding 20px. The nav CTA is hidden, so only the burger shows. CTA pills are full width. Section padding is about 48px. Lede is 16px. Decorative rotations are removed. |
-| ≥ 640 `sm` | The nav CTA is visible next to the burger. |
-| < 768 | Section padding about 64px. The comparison table scrolls sideways (`min-width: 760px`) and shows the hint "Geser tabel ke samping untuk melihat semua paket." |
+| < 640 (base) | Container padding 20px. The nav CTA is hidden, so only the burger shows. CTA pills are full width. Section padding 48px. Lede is 16px. Decorative rotations are removed. |
+| ≥ 640 `sm` | The nav CTA is visible next to the burger. Section padding 64px. |
+| < 768 | The comparison table scrolls sideways (`min-width: 760px`) and shows the hint "Geser tabel ke samping untuk melihat semua paket." |
+| ≥ 768 `md` | Section padding 80px. |
 | < 1024 | Nav links collapse into the burger, which opens `mobile-menu.html`. Large two-column gaps shrink to 40px. |
-| ≥ 1024 `lg` | Full nav. |
+| ≥ 1024 `lg` | Full nav. Section padding 96px. |
 | ≥ 1280 `xl` | Container max 1280px. This is the main design width. |
 | ≥ 1536 `2xl` | Container max 1440px. |
 | ≥ 1920 `3xl` (custom) | Container max 1600px and lede 19px. Section backgrounds stay full-bleed; content stays centred. Check at 2560 that nothing stretches. |
+
+Section padding follows the design system's steps. The reference files use 96px between 768 and 1023px and 64px between 640 and 767px; build to the table above.
 
 Grids collapse 3 → 2 → 1 columns and 2 → 1. Compare the 390 and 1280 screenshots for each page to see where.
 

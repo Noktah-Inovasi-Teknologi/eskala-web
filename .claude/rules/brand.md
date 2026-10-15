@@ -34,7 +34,7 @@ All accounts use **@eskala.team**. Show each one as an icon link with the handle
 
 ## Color Palette
 
-The token scales are unchanged (see `app/assets/css/main.css`). These are the colours the redesign uses:
+Token names follow the Eskala Design System (https://claude.ai/artifact/EXeTAjSTXsviSH6WqX4Pau). These are the colours the redesign uses:
 
 | Role | Token | Hex |
 |---|---|---|
@@ -43,14 +43,15 @@ The token scales are unchanged (see `app/assets/css/main.css`). These are the co
 | Tints | cobalt-50 / cobalt-100 | #EFF4FE / #DCE6FD |
 | Deepest panels | cobalt-950 | #020B3D |
 | Accent, price tags, wing | copper-500 | #FB923C |
-| Copper text on light backgrounds | copper-ink | #A8500C |
+| Copper text on light backgrounds | accent-strong | #A8500C |
 | Price pill background | copper-100 | #FFEED4 |
 | Ink | obsidian-950 | #0F172A |
 | Body | obsidian-700 / 800 | #475569 / #334155 |
 | Borders | obsidian-300 / 400 | #E2E8F0 / #CBD5E1 |
 | Light section background | obsidian-100 | #F8FAFC |
-| Light blue on dark backgrounds | cobalt-soft | #6C93F0 |
-| WhatsApp CTA | whatsapp | #15803D |
+| Light blue on dark backgrounds | cobalt-400 | #6C93F0 |
+| WhatsApp CTA | success-700 (hover success-hover #0F6A31) | #15803D |
+| Error text | error-700 | #B91C1C |
 
 ## Typography
 
