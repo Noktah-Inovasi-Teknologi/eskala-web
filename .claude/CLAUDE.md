@@ -6,19 +6,32 @@ Eskala is a digital marketing and healthcare-communication partner for **klinik 
 
 ## Redesign 2026: read this first
 
-The site is being rebuilt to an approved redesign. **`design/` is the source of truth** for content, section order, links, visuals and responsive behaviour:
+The site is being rebuilt to an approved redesign. **`design/` is the visual reference** for content, section order, links, visuals and responsive behaviour. Follow it closely; tokens come from the Eskala Design System instead (see Theme & Colors):
 
 - `design/README.md`: page list, proposed routes, section order, breakpoint behaviour, placeholders
 - `design/reference/*.html`: approved pages as standalone HTML (open in a browser and resize the window)
 - `design/screenshots/`: each page at 1280px and 390px, sliced top to bottom
-- `design/tokens.css`: tokens to merge into `app/assets/css/main.css`
+- `design/tokens.css`: a snapshot of the tokens to merge into `app/assets/css/main.css`. Where it differs from the Design System, the Design System wins.
 - `design/SPEC-BRIEF.md`: feature brief, open questions and planning notes for spec-kit
 
 **Rules for the rebuild:**
 - Rebuild the pages in Vue with Tailwind and Nuxt UI. Don't copy the reference markup or its inline styles.
 - Copy the text **exactly** from the reference HTML. Don't rewrite headings or invent new copy.
-- Where a page or component in `app/` conflicts with `design/`, `design/` wins.
-- The markup examples in `.claude/skills/*` predate the redesign. Use them for workflow steps only.
+- Where a page or component in `app/` conflicts with `design/`, follow `design/`. Deviations are fine when the Design System, accessibility or a technical constraint requires them; record each one in the feature's plan.
+
+## Workflow
+
+Features go through spec-kit, with the constitution at `.specify/memory/constitution.md`:
+
+```text
+/speckit-grill → /speckit-specify → /speckit-clarify → /speckit-plan → /speckit-tasks → /speckit-implement
+```
+
+- `/speckit-grill` interviews you until the decisions are settled, writing `CONTEXT.md` (the glossary), ADRs in `docs/adr/` (rarely), and a ledger `specs/NNN-*/grill.md` that `/speckit-specify` must trace row by row. Use it when a feature is still fuzzy; the open questions in `design/SPEC-BRIEF.md` come up in its first round.
+- `/ui-sweep` renders every page from 320 to 2560px, runs the layout and accessibility checks, and lays each capture beside `design/screenshots/`. It is the gate for constitution III and V: no phase is done without it.
+- `eskala-copy` (skill) holds the voice and the rules for text the design doesn't give: form errors, success states, alt text, aria-labels, titles, meta descriptions. Load it before writing any visible text.
+- Commits and PRs carry no AI attribution: no `Co-Authored-By` trailers, no session links, no "Generated with" lines, and commits are authored by the person, not "Claude". `.claude/settings.json` turns the automatic attribution off.
+- Agents: `ux-copy-advisor` suggests copy and UX fixes for a string, section, page or path; `performance` measures what makes a page slow. Both suggest; neither edits. When to delegate is in `.claude/rules/delegation.md`; how to write code is in `.claude/rules/coding.md`.
 
 ## Tech Stack
 
@@ -27,37 +40,56 @@ The site is being rebuilt to an approved redesign. **`design/` is the source of 
 - **Styling**: Tailwind CSS 4 with a custom theme in `app/assets/css/main.css`
 - **Language**: TypeScript
 - **Package manager**: pnpm
-- **Deployment**: Cloudflare Workers (Wrangler)
+- **Deployment**: Cloudflare Workers (Wrangler): `pnpm build`, then deploy with the Wrangler CLI
+- **Nuxt modules**: `@nuxt/fonts` (Plus Jakarta Sans and Livvic; `nuxt.config.ts` still lists Poppins until the rebuild swaps it), `@nuxt/ui`, `nuxt-viewport`. `@nuxt/content` is **not** installed; don't add it unless open question 4 in `design/SPEC-BRIEF.md` settles on it.
 
 ## Development Commands
 
 ```bash
+pnpm install   # Install dependencies (runs nuxt prepare)
 pnpm dev       # Start development server (http://localhost:3000)
 pnpm build     # Production build (Cloudflare Workers)
 pnpm generate  # Static site generation
 pnpm preview   # Preview production build
+pnpm ui:sweep  # UI sweep: every breakpoint, screenshots + report, records without failing
+pnpm ui:gate   # UI gate: 320/390/1280/2560, fails on findings (report: test-results/ui-sweep/report.md)
+pnpm nuxi typecheck   # Type-check the app
+pnpm nuxi prepare     # Regenerate .nuxt types
 ```
 
-## Project Structure (current, before the rebuild)
+When something doesn't update:
+- Changes to `nuxt.config.ts` need a dev-server restart; pages, components, composables and `main.css` reload on their own.
+- Changes still not showing: delete `.nuxt` and restart `pnpm dev`.
+- Types wrong or missing: `pnpm nuxi prepare`, then restart the editor's TypeScript server.
+- Fonts not loading: check `fonts.families` in `nuxt.config.ts`, and that `main.css` has `@import "@nuxt/ui"`.
+
+## Project Structure
 
 ```
 app/
-├── assets/css/main.css    # Tailwind theme (fonts, colors)
-├── components/
-│   ├── Navbar.vue         # Top navigation (to be rebuilt: flat nav + mobile menu)
-│   └── WebFooter.vue      # Footer (to be rebuilt)
-├── data/case-studies.ts   # Case study data (outdated: fix to "10+ cabang", "Klinik Mata Boyolali")
-├── pages/
-│   ├── index.vue
-│   ├── about-us.vue, case-study.vue, faq.vue, privacy.vue, terms.vue
-│   └── services/digital-marketing.vue, services/social-media-management.vue
-├── app.vue                # Root layout (Navbar + page + WebFooter)
-└── app.config.ts          # Nuxt UI config (colors, container, separator)
+├── assets/css/main.css    # Theme tokens (mirror of the Design System), base styles, focus ring
+├── components/            # Folders only organise; names are the file names (pathPrefix: false)
+│   ├── base/              # Smallest pieces: BrandLogo, PillButton, ArrowLink, Eyebrow, Tag, Chip, FilterChip,
+│   │                      #   PricePill, PriceBadge, WingDecor, MediaPlaceholder, StatTile, StatChip, Heading, Lede
+│   ├── blocks/            # Cards and blocks: FeatureCard, TierCard, ComparisonTable, ProcessSteps, FaqList,
+│   │                      #   QuoteBlock, FloatingQuote, ClaimCard, ArticleCard, FeaturedArticle, CaseStudyCard,
+│   │                      #   StatStrip, Milestones, ShortcutCard, TeamCard, SectionHeader, forms (InterestForm, …)
+│   └── site/              # Page chrome: SiteHeader, MobileMenu, SiteFooter, SocialLinks, PageSection, WingPanel, CtaSection
+├── composables/           # usePageSeo (title, description, canonical), useWhatsAppHandoff (form submit)
+├── data/                  # site.ts (contact, nav, the two prices, WhatsApp links), smm, faqs, articles,
+│                          #   case-studies, testimonials
+├── pages/                 # index, digital-marketing, education, training, case-study, articles, about-us,
+│                          #   faq, privacy, terms; dev/components (component gallery, dev only)
+├── types/                 # content.ts (shapes of app/data), nuxt.d.ts (page meta: navCta)
+├── app.vue                # UApp (Indonesian locale) + SiteHeader + main + SiteFooter
+└── app.config.ts          # Nuxt UI config (colors, container widths)
 design/                    # Redesign handoff (reference only, not served)
-public/                    # Static assets
+docs/                      # ADRs, redesign-notes.md (decisions and design deviations)
+e2e/                       # Playwright: ui-sweep.e2e.ts (ROUTES table) + ui-sweep/audit.ts (in-page checks)
+public/brand/              # Wing marks (cobalt, white, copper)
 ```
 
-The routes are being restructured. The proposed routes and redirects are in `design/README.md` and `design/SPEC-BRIEF.md`.
+The routes are being restructured: English slugs, services at the root (`docs/adr/0001-english-route-slugs.md`). The route table is in `design/README.md`; the redirects are in `design/SPEC-BRIEF.md`.
 
 ## Theme & Colors
 
@@ -77,8 +109,12 @@ The reference HTML uses two colours that differ from the design system: #166534 
 
 ## Key Conventions
 
-1. **Components**: PascalCase, in `app/components/`.
-2. **Pages**: kebab-case, in `app/pages/`.
+1. **Components**: PascalCase, in `app/components/`, auto-imported. Cards are `[Name]Card.vue`, reusable page sections `[Name]Section.vue`. Extend the header and footer components; don't create a second one.
+2. **Pages**: kebab-case, in `app/pages/`, at the routes in ADR-0001. Give each section an `id` so anchor links work (`#paket`, `#ads-management`, `#daftar`). A new page also needs:
+   - its links in the header, the mobile menu and the footer (and on the home page, if it is one of the services there);
+   - a row in `ROUTES` in `e2e/ui-sweep.e2e.ts`;
+   - a title and meta description written by the `eskala-copy` rules;
+   - a 301 in `routeRules` if it replaces an old URL, and an entry in the sitemap.
 3. **Styling**: Tailwind utility classes only, and Nuxt UI components where they fit. No inline styles and no hardcoded hex values; use the theme tokens.
 4. **TypeScript**: `lang="ts"` on every `<script setup>`, with typed props. Keep repeatable content (tiers, table rows, FAQs, case studies, articles, team) as typed data in `app/data/`.
 5. **Responsive**: Mobile-first, at the Tailwind breakpoints plus `3xl` at 1920px.
@@ -96,6 +132,7 @@ The reference HTML uses two colours that differ from the design system: #166534 
   - **Ads Management**: Meta, Google, TikTok. A separate service with its own fee.
 - **Education**: Online Class, Webinar, Course Videos, Modules. *Segera hadir*; collects a waitlist.
 - **Training**: Workshop, Bootcamp, In-house Training. *Segera hadir*; collects interest.
+- These are the only services. KOL Management, KOC Management, Creative Service and "Eskala VIP" don't exist; don't bring them back from old pages.
 
 **Pricing.** Show **only** starting prices, and make them prominent:
 - SMM: "Mulai dari Rp2,5 juta per bulan".
@@ -112,9 +149,10 @@ The reference HTML uses two colours that differ from the design system: #166534 
 - https://www.threads.net/@eskala.team
 
 **Never on the site:**
-- the parent company name (Noktah);
 - dr. Sukardi's testimonial;
 - paraphrased testimonials (quotes are verbatim only).
+
+**Parent company (Noktah):** name it only where it's genuinely needed, such as the legal entity on Privacy or Terms. Keep it out of marketing copy, headings and CTAs.
 
 ## Copy Rules
 

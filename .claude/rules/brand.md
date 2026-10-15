@@ -1,6 +1,6 @@
 # Eskala Brand Guidelines (redesign 2026)
 
-`design/` is the source of truth for page content and visuals. This file holds the brand decisions behind it.
+`design/` is the visual reference for page content and visuals. Tokens come from the Eskala Design System (https://claude.ai/artifact/EXeTAjSTXsviSH6WqX4Pau). This file holds the brand decisions behind it.
 
 ## Brand Identity
 
@@ -8,8 +8,8 @@
 - **Line**: "Membumikan kesehatan". It is the home page h1 and appears under the wordmark in the footer.
 - **What Eskala is**: a digital marketing and healthcare-communication partner for klinik pratama dan utama, rumah sakit, and dokter umum maupun spesialis across Indonesia.
 - **Stance**: Eskala works *with* the client's in-house marketing team. The internal team keeps direction and approval; Eskala adds production capacity, medical review and performance analysis.
-- **Positioning**: national. Don't name a city, and don't call Eskala a "tim kreatif kesehatan".
-- **Never shown on the site**: the parent company name (Noktah).
+- **Positioning**: national. Don't name a city where Eskala works or serves clients, and don't call Eskala a "tim kreatif kesehatan". (A legal clause such as the court of jurisdiction in Syarat & Ketentuan is not positioning.)
+- **Parent company (Noktah)**: name it only where it's genuinely needed, such as the legal entity on Privacy or Terms. Keep it out of marketing copy, headings and CTAs.
 
 Purpose, mission, vision, differentiators and the five values are written out on the Tentang kami page (`design/reference/tentang-kami.html`). Copy them verbatim from there.
 
@@ -111,7 +111,7 @@ Workshop, Bootcamp, In-house Training. The page collects training interest.
 - SMEC Group: jaringan klinik mata dengan **10+ cabang**, >4x ROAS, 250+ konten per bulan.
 - Klinik Mata Boyolali: 12 bulan, 2 jt+ views, 1,28 jt+ reach, 16 rb+ profile visits.
 - Studi kasus header: 10+ fasilitas, 2 studi kasus, +200% reach organik, 80% perpanjang kontrak.
-- Contract: "Kontrak fleksibel, tanpa komitmen tahunan".
+- Contract: "Kontrak fleksibel, tanpa komitmen tahunan". There is no annual commitment; the minimum term is 6 months (one semester), as Syarat & Ketentuan states.
 - Every piece of content goes through medical review and is checked against the health advertising rules (Permenkes 1787/2010).
 
 ## CTAs

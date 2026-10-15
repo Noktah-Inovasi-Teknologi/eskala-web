@@ -1,6 +1,6 @@
 # Eskala redesign: design handoff
 
-This folder is the source of truth for the 2026 redesign of eskala.id. It is a **reference only** and is not served by Nuxt. Rebuild every page in Vue with Nuxt UI and Tailwind, following the rules in `.claude/CLAUDE.md`.
+This folder is the visual reference for the 2026 redesign of eskala.id: follow it closely, and record any deviation in the feature's plan (constitution Principle I). Tokens come from the Eskala Design System, which wins over `tokens.css` where they differ. It is a **reference only** and is not served by Nuxt. Rebuild every page in Vue with Nuxt UI and Tailwind, following the rules in `.claude/CLAUDE.md`.
 
 | Path | What it is |
 |---|---|
@@ -14,15 +14,17 @@ The reference HTML uses inline styles and container queries because it came out 
 
 ## Pages and proposed routes
 
-| Page (nav label) | Reference | Proposed route | Replaces in the current repo |
+Routes use English slugs, settled 2026-10-15 (`SPEC-BRIEF.md`, open question 1).
+
+| Page (nav label) | Reference | Route | Replaces in the current repo |
 |---|---|---|---|
 | Beranda | `home.html` | `/` | `pages/index.vue` |
 | Digital Marketing | `digital-marketing.html` | `/digital-marketing` (anchors `#smm`, `#paket`, `#ads-management`) | `pages/services/digital-marketing.vue` and `pages/services/social-media-management.vue` |
 | Education | `education.html` | `/education` | new |
 | Training | `training.html` | `/training` | new |
-| Studi kasus | `studi-kasus.html` | `/studi-kasus` | `pages/case-study.vue` |
-| Artikel | `artikel.html` | `/artikel` (detail page `/artikel/[slug]` is not designed yet) | new |
-| Tentang kami | `tentang-kami.html` | `/tentang-kami` | `pages/about-us.vue` |
+| Studi kasus | `studi-kasus.html` | `/case-study` | `pages/case-study.vue` |
+| Artikel | `artikel.html` | `/articles` (detail page `/articles/[slug]` is not designed yet) | new |
+| Tentang kami | `tentang-kami.html` | `/about-us` | `pages/about-us.vue` |
 | Mobile menu (open state) | `mobile-menu.html` | component state, below 1024px | `components/Navbar.vue` |
 
 Old URLs need 301 redirects (see `SPEC-BRIEF.md`). `privacy.vue` and `terms.vue` stay, restyled with the new tokens.
