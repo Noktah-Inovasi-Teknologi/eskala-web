@@ -1,6 +1,7 @@
 <script lang="ts" setup>
+import { consultLink, contact } from "~/data/site"
 useSeoMeta({
-  title: "Syarat & Ketentuan — Eskala",
+  title: "Syarat & Ketentuan",
   twitterCard: "summary_large_image",
   description:
     "Syarat dan Ketentuan Eskala — aturan penggunaan layanan Social Media Management dan Digital Marketing. Baca sebelum memulai kerja sama.",
@@ -20,7 +21,6 @@ useHead({
   link: [{ rel: "canonical", href: "https://eskala.id/terms" }],
 });
 
-const { componentSize, iconSize } = useResponsiveSize();
 
 const lastUpdated = "22 April 2026";
 </script>
@@ -29,70 +29,70 @@ const lastUpdated = "22 April 2026";
   <div>
     <!-- Hero -->
     <div class="bg-obsidian-100 border-b border-obsidian-200">
-      <UContainer class="py-20 flex flex-col gap-4">
-        <p class="font-display text-copper-500 font-medium">──────── Legal</p>
-        <h1 class="font-display text-obsidian-950 font-bold text-3xl sm:text-4xl lg:text-5xl">
+      <UContainer class="flex flex-col gap-4 py-12 sm:py-16 md:py-20">
+        <Eyebrow>Legal</Eyebrow>
+        <h1 class="text-[clamp(34px,11.3vw,44px)] leading-[1.02] font-extrabold tracking-[-0.035em] text-balance text-obsidian-950 sm:text-5xl">
           Syarat & Ketentuan
         </h1>
-        <p class="font-body text-lg text-obsidian-600 font-light">
+        <p class="text-base text-obsidian-700 sm:text-lg">
           Terakhir diperbarui: {{ lastUpdated }}
         </p>
       </UContainer>
     </div>
 
     <!-- Content -->
-    <UContainer class="py-16">
+    <UContainer class="py-12 sm:py-16 md:py-20 lg:py-24">
       <div class="max-w-3xl flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12">
 
         <!-- Pendahuluan -->
         <section class="flex flex-col gap-4">
-          <h2 class="font-display text-obsidian-950 font-semibold text-2xl">1. Pendahuluan</h2>
-          <p class="font-body text-obsidian-700 font-light leading-relaxed">
+          <h2 class="text-xl font-extrabold text-obsidian-950 sm:text-2xl">1. Pendahuluan</h2>
+          <p class="text-obsidian-700 leading-relaxed">
             Syarat dan Ketentuan ini mengatur hubungan antara Eskala ("Kami", "Penyedia Layanan") dan klien ("Anda", "Klien") yang menggunakan layanan digital marketing Eskala, termasuk Social Media Management dan Digital Marketing.
           </p>
-          <p class="font-body text-obsidian-700 font-light leading-relaxed">
+          <p class="text-obsidian-700 leading-relaxed">
             Dengan menandatangani perjanjian layanan atau menggunakan layanan Eskala, Anda dianggap telah membaca, memahami, dan menyetujui seluruh syarat dan ketentuan ini. Dokumen ini berlaku bersama dengan Perjanjian Layanan (Service Agreement) yang ditandatangani kedua pihak.
           </p>
         </section>
 
         <!-- Definisi -->
         <section class="flex flex-col gap-4">
-          <h2 class="font-display text-obsidian-950 font-semibold text-2xl">2. Definisi</h2>
+          <h2 class="text-xl font-extrabold text-obsidian-950 sm:text-2xl">2. Definisi</h2>
           <div class="flex flex-col gap-3 pl-4 border-l-2 border-cobalt-200">
             <div>
-              <p class="font-display text-obsidian-900 font-semibold text-base">Layanan</p>
-              <p class="font-body text-obsidian-700 font-light leading-relaxed">Social Media Management dan Digital Marketing (Ads Management) sebagaimana dijelaskan di eskala.id.</p>
+              <p class="text-base font-bold text-obsidian-950">Layanan</p>
+              <p class="text-obsidian-700 leading-relaxed">Social Media Management dan Digital Marketing (Ads Management) sebagaimana dijelaskan di eskala.id.</p>
             </div>
             <div>
-              <p class="font-display text-obsidian-900 font-semibold text-base">Konten</p>
-              <p class="font-body text-obsidian-700 font-light leading-relaxed">Materi yang dibuat oleh Eskala untuk Klien, termasuk foto, video, teks (copywriting), desain grafis, dan materi iklan.</p>
+              <p class="text-base font-bold text-obsidian-950">Konten</p>
+              <p class="text-obsidian-700 leading-relaxed">Materi yang dibuat oleh Eskala untuk Klien, termasuk foto, video, teks (copywriting), desain grafis, dan materi iklan.</p>
             </div>
             <div>
-              <p class="font-display text-obsidian-900 font-semibold text-base">Ad Spend</p>
-              <p class="font-body text-obsidian-700 font-light leading-relaxed">Anggaran iklan yang dikelola oleh Eskala atas nama Klien di platform seperti Meta Ads, Google Ads, dan TikTok Ads. Ad spend dibayar langsung oleh Klien ke platform terkait.</p>
+              <p class="text-base font-bold text-obsidian-950">Ad Spend</p>
+              <p class="text-obsidian-700 leading-relaxed">Anggaran iklan yang dikelola oleh Eskala atas nama Klien di platform seperti Meta Ads, Google Ads, dan TikTok Ads. Ad spend dibayar langsung oleh Klien ke platform terkait.</p>
             </div>
             <div>
-              <p class="font-display text-obsidian-900 font-semibold text-base">Periode Kontrak</p>
-              <p class="font-body text-obsidian-700 font-light leading-relaxed">Durasi kerja sama yang disepakati, minimal per semester (6 bulan), kecuali disepakati lain secara tertulis.</p>
+              <p class="text-base font-bold text-obsidian-950">Periode Kontrak</p>
+              <p class="text-obsidian-700 leading-relaxed">Durasi kerja sama yang disepakati, minimal per semester (6 bulan), kecuali disepakati lain secara tertulis.</p>
             </div>
           </div>
         </section>
 
         <!-- Layanan yang Disediakan -->
         <section class="flex flex-col gap-4">
-          <h2 class="font-display text-obsidian-950 font-semibold text-2xl">3. Layanan yang Disediakan</h2>
+          <h2 class="text-xl font-extrabold text-obsidian-950 sm:text-2xl">3. Layanan yang Disediakan</h2>
 
           <div class="flex flex-col gap-6">
             <div class="flex flex-col gap-2 rounded-2xl border border-obsidian-200 p-6">
-              <p class="font-display text-obsidian-900 font-semibold text-base">Social Media Management</p>
-              <p class="font-body text-obsidian-700 font-light leading-relaxed">
+              <p class="text-base font-bold text-obsidian-950">Social Media Management</p>
+              <p class="text-obsidian-700 leading-relaxed">
                 Pengelolaan media sosial Klien (Instagram, TikTok, Facebook) mencakup perencanaan konten bulanan, produksi konten (foto, video, copywriting), medical review, posting terjadwal, dan laporan performa bulanan. Paket Starter, Standard, dan Premium tersedia sesuai kebutuhan.
               </p>
             </div>
 
             <div class="flex flex-col gap-2 rounded-2xl border border-obsidian-200 p-6">
-              <p class="font-display text-obsidian-900 font-semibold text-base">Digital Marketing</p>
-              <p class="font-body text-obsidian-700 font-light leading-relaxed">
+              <p class="text-base font-bold text-obsidian-950">Digital Marketing</p>
+              <p class="text-obsidian-700 leading-relaxed">
                 Manajemen iklan berbayar (Meta, TikTok, atau Google) untuk memperluas jangkauan pasien. Fee layanan dihitung berdasarkan persentase dari ad spend Klien (10%–20% tergantung paket). Ad spend bukan bagian dari fee Eskala dan dibayarkan langsung oleh Klien ke platform.
               </p>
             </div>
@@ -102,129 +102,112 @@ const lastUpdated = "22 April 2026";
 
         <!-- Pembayaran -->
         <section class="flex flex-col gap-4">
-          <h2 class="font-display text-obsidian-950 font-semibold text-2xl">4. Pembayaran</h2>
+          <h2 class="text-xl font-extrabold text-obsidian-950 sm:text-2xl">4. Pembayaran</h2>
           <ul class="flex flex-col gap-3 pl-5 list-disc">
-            <li class="font-body text-obsidian-700 font-light leading-relaxed">Fee layanan dibayarkan di muka setiap bulan atau sesuai jadwal yang disepakati dalam Perjanjian Layanan.</li>
-            <li class="font-body text-obsidian-700 font-light leading-relaxed">Keterlambatan pembayaran lebih dari 7 hari kerja dapat mengakibatkan penghentian sementara layanan.</li>
-            <li class="font-body text-obsidian-700 font-light leading-relaxed">Fee yang telah dibayar tidak dapat dikembalikan (non-refundable), kecuali terjadi kelalaian signifikan di pihak Eskala.</li>
-            <li class="font-body text-obsidian-700 font-light leading-relaxed">Ad spend untuk layanan Digital Marketing tidak termasuk dalam fee Eskala dan merupakan tanggung jawab penuh Klien.</li>
-            <li class="font-body text-obsidian-700 font-light leading-relaxed">Harga layanan dapat berubah dengan pemberitahuan tertulis minimal 30 hari sebelum berlaku.</li>
+            <li class="text-obsidian-700 leading-relaxed">Fee layanan dibayarkan di muka setiap bulan atau sesuai jadwal yang disepakati dalam Perjanjian Layanan.</li>
+            <li class="text-obsidian-700 leading-relaxed">Keterlambatan pembayaran lebih dari 7 hari kerja dapat mengakibatkan penghentian sementara layanan.</li>
+            <li class="text-obsidian-700 leading-relaxed">Fee yang telah dibayar tidak dapat dikembalikan (non-refundable), kecuali terjadi kelalaian signifikan di pihak Eskala.</li>
+            <li class="text-obsidian-700 leading-relaxed">Ad spend untuk layanan Digital Marketing tidak termasuk dalam fee Eskala dan merupakan tanggung jawab penuh Klien.</li>
+            <li class="text-obsidian-700 leading-relaxed">Harga layanan dapat berubah dengan pemberitahuan tertulis minimal 30 hari sebelum berlaku.</li>
           </ul>
         </section>
 
         <!-- Revisi & Persetujuan Konten -->
         <section class="flex flex-col gap-4">
-          <h2 class="font-display text-obsidian-950 font-semibold text-2xl">5. Revisi & Persetujuan Konten</h2>
-          <p class="font-body text-obsidian-700 font-light leading-relaxed">
+          <h2 class="text-xl font-extrabold text-obsidian-950 sm:text-2xl">5. Revisi & Persetujuan Konten</h2>
+          <p class="text-obsidian-700 leading-relaxed">
             Eskala menyediakan revisi <span class="font-medium">unlimited</span> tanpa biaya tambahan untuk setiap konten yang diproduksi. Namun, beberapa ketentuan berlaku:
           </p>
           <ul class="flex flex-col gap-2 pl-5 list-disc">
-            <li class="font-body text-obsidian-700 font-light leading-relaxed">Revisi harus diajukan dalam 3 hari kerja setelah konten dikirimkan untuk review Klien.</li>
-            <li class="font-body text-obsidian-700 font-light leading-relaxed">Konten yang tidak mendapat respons dalam 5 hari kerja dianggap disetujui dan akan dijadwalkan untuk dipublikasikan.</li>
-            <li class="font-body text-obsidian-700 font-light leading-relaxed">Perubahan mendasar pada arahan kreatif atau konsep yang telah disetujui bersama di awal bulan dapat dikenakan biaya tambahan atas kesepakatan kedua pihak.</li>
-            <li class="font-body text-obsidian-700 font-light leading-relaxed">Klien bertanggung jawab atas akurasi informasi medis atau klaim yang diminta untuk dimuat dalam konten.</li>
+            <li class="text-obsidian-700 leading-relaxed">Revisi harus diajukan dalam 3 hari kerja setelah konten dikirimkan untuk review Klien.</li>
+            <li class="text-obsidian-700 leading-relaxed">Konten yang tidak mendapat respons dalam 5 hari kerja dianggap disetujui dan akan dijadwalkan untuk dipublikasikan.</li>
+            <li class="text-obsidian-700 leading-relaxed">Perubahan mendasar pada arahan kreatif atau konsep yang telah disetujui bersama di awal bulan dapat dikenakan biaya tambahan atas kesepakatan kedua pihak.</li>
+            <li class="text-obsidian-700 leading-relaxed">Klien bertanggung jawab atas akurasi informasi medis atau klaim yang diminta untuk dimuat dalam konten.</li>
           </ul>
         </section>
 
         <!-- Hak Kekayaan Intelektual -->
         <section class="flex flex-col gap-4">
-          <h2 class="font-display text-obsidian-950 font-semibold text-2xl">6. Hak Kekayaan Intelektual</h2>
-          <p class="font-body text-obsidian-700 font-light leading-relaxed">
+          <h2 class="text-xl font-extrabold text-obsidian-950 sm:text-2xl">6. Hak Kekayaan Intelektual</h2>
+          <p class="text-obsidian-700 leading-relaxed">
             Setelah pembayaran lunas untuk periode yang bersangkutan, seluruh konten yang diproduksi oleh Eskala untuk Klien menjadi milik Klien dan dapat digunakan sepenuhnya oleh Klien.
           </p>
-          <p class="font-body text-obsidian-700 font-light leading-relaxed">
+          <p class="text-obsidian-700 leading-relaxed">
             Eskala berhak menggunakan hasil karya yang telah dipublikasikan sebagai bagian dari portofolio atau materi promosi Eskala, kecuali Klien mengajukan keberatan tertulis.
           </p>
-          <p class="font-body text-obsidian-700 font-light leading-relaxed">
+          <p class="text-obsidian-700 leading-relaxed">
             Metodologi, template, sistem kerja, dan alat yang digunakan Eskala dalam proses produksi tetap menjadi hak eksklusif Eskala.
           </p>
         </section>
 
         <!-- Kerahasiaan -->
         <section class="flex flex-col gap-4">
-          <h2 class="font-display text-obsidian-950 font-semibold text-2xl">7. Kerahasiaan</h2>
-          <p class="font-body text-obsidian-700 font-light leading-relaxed">
+          <h2 class="text-xl font-extrabold text-obsidian-950 sm:text-2xl">7. Kerahasiaan</h2>
+          <p class="text-obsidian-700 leading-relaxed">
             Kedua pihak setuju untuk menjaga kerahasiaan informasi bisnis sensitif yang dibagikan selama masa kerja sama. Eskala tidak akan mengungkapkan strategi, data performa, atau informasi rahasia Klien kepada pihak ketiga tanpa izin tertulis, kecuali diwajibkan oleh hukum.
           </p>
         </section>
 
         <!-- Penghentian Layanan -->
         <section class="flex flex-col gap-4">
-          <h2 class="font-display text-obsidian-950 font-semibold text-2xl">8. Penghentian Layanan</h2>
+          <h2 class="text-xl font-extrabold text-obsidian-950 sm:text-2xl">8. Penghentian Layanan</h2>
           <ul class="flex flex-col gap-3 pl-5 list-disc">
-            <li class="font-body text-obsidian-700 font-light leading-relaxed"><span class="font-medium">Notice period</span>: Klien yang ingin mengakhiri kerja sama wajib memberikan pemberitahuan tertulis minimal 30 hari sebelum tanggal penghentian yang diinginkan.</li>
-            <li class="font-body text-obsidian-700 font-light leading-relaxed">Penghentian di tengah periode kontrak yang aktif tidak menghilangkan kewajiban pembayaran untuk bulan berjalan.</li>
-            <li class="font-body text-obsidian-700 font-light leading-relaxed">Eskala berhak menghentikan layanan secara sepihak apabila Klien melanggar syarat dan ketentuan ini, melakukan keterlambatan pembayaran berulang, atau meminta Eskala untuk memproduksi konten yang melanggar regulasi kesehatan (KKI, Kemenkes) atau hukum yang berlaku.</li>
-            <li class="font-body text-obsidian-700 font-light leading-relaxed">Setelah penghentian, Eskala akan menyerahkan semua aset konten yang dimiliki Klien dalam 7 hari kerja.</li>
+            <li class="text-obsidian-700 leading-relaxed"><span class="font-medium">Notice period</span>: Klien yang ingin mengakhiri kerja sama wajib memberikan pemberitahuan tertulis minimal 30 hari sebelum tanggal penghentian yang diinginkan.</li>
+            <li class="text-obsidian-700 leading-relaxed">Penghentian di tengah periode kontrak yang aktif tidak menghilangkan kewajiban pembayaran untuk bulan berjalan.</li>
+            <li class="text-obsidian-700 leading-relaxed">Eskala berhak menghentikan layanan secara sepihak apabila Klien melanggar syarat dan ketentuan ini, melakukan keterlambatan pembayaran berulang, atau meminta Eskala untuk memproduksi konten yang melanggar regulasi kesehatan (KKI, Kemenkes) atau hukum yang berlaku.</li>
+            <li class="text-obsidian-700 leading-relaxed">Setelah penghentian, Eskala akan menyerahkan semua aset konten yang dimiliki Klien dalam 7 hari kerja.</li>
           </ul>
         </section>
 
         <!-- Tanggung Jawab -->
         <section class="flex flex-col gap-4">
-          <h2 class="font-display text-obsidian-950 font-semibold text-2xl">9. Batasan Tanggung Jawab</h2>
-          <p class="font-body text-obsidian-700 font-light leading-relaxed">
+          <h2 class="text-xl font-extrabold text-obsidian-950 sm:text-2xl">9. Batasan Tanggung Jawab</h2>
+          <p class="text-obsidian-700 leading-relaxed">
             Eskala tidak memberikan jaminan atas hasil spesifik seperti jumlah follower, leads, atau konversi pasien tertentu, karena hasil dipengaruhi oleh berbagai faktor eksternal di luar kendali kami. Eskala berkomitmen pada standar kualitas tinggi dan eksekusi terbaik berdasarkan data dan best practice industri.
           </p>
-          <p class="font-body text-obsidian-700 font-light leading-relaxed">
+          <p class="text-obsidian-700 leading-relaxed">
             Tanggung jawab Eskala atas kerugian yang timbul tidak akan melebihi total fee yang dibayarkan Klien dalam satu bulan terakhir. Eskala tidak bertanggung jawab atas kerugian tidak langsung, kehilangan pendapatan, atau kerugian konsekuensial lainnya.
           </p>
         </section>
 
         <!-- Regulasi Kesehatan -->
         <section class="flex flex-col gap-4">
-          <h2 class="font-display text-obsidian-950 font-semibold text-2xl">10. Kepatuhan Regulasi Kesehatan</h2>
-          <p class="font-body text-obsidian-700 font-light leading-relaxed">
+          <h2 class="text-xl font-extrabold text-obsidian-950 sm:text-2xl">10. Kepatuhan Regulasi Kesehatan</h2>
+          <p class="text-obsidian-700 leading-relaxed">
             Seluruh konten yang diproduksi oleh Eskala untuk fasilitas kesehatan melalui proses medical review oleh tim ahli kami yang mengacu pada pedoman Konsil Kedokteran Indonesia (KKI) dan Kementerian Kesehatan Republik Indonesia (Kemenkes RI).
           </p>
-          <p class="font-body text-obsidian-700 font-light leading-relaxed">
+          <p class="text-obsidian-700 leading-relaxed">
             Klien bertanggung jawab untuk memastikan bahwa informasi yang diberikan kepada Eskala — termasuk klaim layanan medis, spesialisasi, dan kompetensi tenaga kesehatan — adalah akurat dan sesuai izin yang dimiliki. Eskala tidak bertanggung jawab atas konten yang didasarkan pada informasi yang tidak akurat dari Klien.
           </p>
         </section>
 
         <!-- Hukum yang Berlaku -->
         <section class="flex flex-col gap-4">
-          <h2 class="font-display text-obsidian-950 font-semibold text-2xl">11. Hukum yang Berlaku</h2>
-          <p class="font-body text-obsidian-700 font-light leading-relaxed">
+          <h2 class="text-xl font-extrabold text-obsidian-950 sm:text-2xl">11. Hukum yang Berlaku</h2>
+          <p class="text-obsidian-700 leading-relaxed">
             Syarat dan Ketentuan ini diatur oleh dan ditafsirkan sesuai hukum Republik Indonesia. Setiap sengketa yang timbul akan diselesaikan secara musyawarah terlebih dahulu. Apabila tidak tercapai kesepakatan, sengketa akan diselesaikan melalui Pengadilan Negeri Yogyakarta.
           </p>
         </section>
 
         <!-- Perubahan -->
         <section class="flex flex-col gap-4">
-          <h2 class="font-display text-obsidian-950 font-semibold text-2xl">12. Perubahan Syarat & Ketentuan</h2>
-          <p class="font-body text-obsidian-700 font-light leading-relaxed">
+          <h2 class="text-xl font-extrabold text-obsidian-950 sm:text-2xl">12. Perubahan Syarat & Ketentuan</h2>
+          <p class="text-obsidian-700 leading-relaxed">
             Eskala berhak memperbarui Syarat dan Ketentuan ini sewaktu-waktu. Perubahan material akan diberitahukan kepada klien aktif melalui email minimal 14 hari sebelum berlaku. Penggunaan layanan secara berkelanjutan setelah tanggal berlakunya perubahan dianggap sebagai persetujuan atas syarat baru.
           </p>
         </section>
 
         <!-- Kontak -->
-        <section class="flex flex-col gap-6 bg-cobalt-50 border border-cobalt-200 rounded-2xl p-8">
+        <section class="flex flex-col gap-6 rounded-3xl border border-cobalt-200 bg-cobalt-50 p-6 sm:p-8">
           <div class="flex flex-col gap-2">
-            <h2 class="font-display text-obsidian-950 font-semibold text-2xl">Ada Pertanyaan?</h2>
-            <p class="font-body text-obsidian-700 font-light leading-relaxed">
+            <h2 class="text-xl font-extrabold text-obsidian-950 sm:text-2xl">Ada Pertanyaan?</h2>
+            <p class="text-obsidian-700 leading-relaxed">
               Jika Anda memiliki pertanyaan tentang Syarat & Ketentuan ini sebelum memulai kerja sama, tim kami siap berdiskusi.
             </p>
           </div>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <UButton
-              href="mailto:core@eskala.id"
-              color="neutral"
-              variant="outline"
-              class="px-4 rounded-full justify-between"
-              :size="componentSize"
-            >
-              <UIcon name="i-heroicons-envelope" :class="iconSize" />
-              core@eskala.id
-            </UButton>
-            <UButton
-              href="https://wa.me/6282230712718"
-              color="success"
-              class="px-4 rounded-full justify-between"
-              :size="componentSize"
-            >
-              <UIcon name="i-mdi-whatsapp" :class="iconSize" />
-              Diskusi via WhatsApp
-            </UButton>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <PillButton variant="whatsapp" :to="consultLink">Diskusi via WhatsApp</PillButton>
+            <PillButton variant="outline" :to="`mailto:${contact.email}`" icon="i-ph-envelope-simple">{{ contact.email }}</PillButton>
           </div>
         </section>
 

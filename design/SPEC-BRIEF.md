@@ -36,7 +36,7 @@ The redesign changes the product structure, the information architecture, the vi
    - Headings are plain and direct. Copy the text exactly from the reference HTML.
    - Testimonials are verbatim, and only from the people named in the designs: Donny Putra N.H. (SMEC Group) and the Ecky Dental quote.
 6. **Social links.** Instagram, TikTok and Threads, all @eskala.team, shown as icon links with the handle.
-7. **Positioning.** National, with no city in the positioning. The brand name behind Eskala (Noktah) never appears on the site.
+7. **Positioning.** National, with no city in the positioning. The parent company (Noktah) is named only where it's genuinely needed, such as the legal entity on Privacy or Terms, and stays out of marketing copy, headings and CTAs.
 
 **User scenarios**
 - *A clinic owner on a phone* lands on Beranda, sees the starting price and what Eskala does within the first screen, and taps "Konsultasi gratis 30 menit". WhatsApp opens with a pre-filled message.
@@ -73,8 +73,6 @@ The redesign changes the product structure, the information architecture, the vi
 |---|---|
 | `/services/social-media-management` | `/digital-marketing#smm` |
 | `/services/digital-marketing` | `/digital-marketing#ads-management` |
-| `/case-study` | `/studi-kasus` |
-| `/about-us` | `/tentang-kami` |
 | `/faq` | `/#faq` (or keep a `/faq` page; see open questions) |
 
 **Non-functional requirements**
@@ -104,19 +102,20 @@ The redesign changes the product structure, the information architecture, the vi
 - Playwright checks at 390, 640, 768, 1024, 1280, 1536 and 2560 find no horizontal overflow, and no console errors.
 - All old URLs return 301 to the right page.
 - No price other than the two starting prices appears anywhere in the built HTML.
-- The words "Noktah" and "Yogyakarta" and the handle "@eskala.u" do not appear anywhere in the built HTML.
+- No city appears where the site says who Eskala serves or where it works (positioning is national). The legal jurisdiction in Syarat & Ketentuan is not positioning and may name a city. The handle "@eskala.u" does not appear anywhere in the built HTML.
+- "Noktah" appears only on the Privacy and Terms pages, if at all.
 
 ---
 
 ## Open questions (for /speckit.clarify)
 
-1. **Routes.** Should slugs follow the Indonesian nav labels (`/studi-kasus`, `/tentang-kami`, `/artikel`), or should the existing slugs (`/case-study`, `/about-us`) stay to avoid redirects? Should services sit at the root (`/digital-marketing`) or under `/services/`?
-2. **FAQ page.** The footer links to "FAQ". Should that be a `/faq` page combining both FAQ sets, or an anchor to `/#faq`?
-3. **Form delivery.** Where should waitlist, interest and newsletter submissions go? Options include a Cloudflare Worker endpoint writing to a sheet, email via a form service, or a mailing-list provider for the newsletter.
-4. **Articles.** Should the Artikel page ship now with placeholder cards hidden, or wait until the first articles are written? If articles are planned, should they use Nuxt Content (Markdown in the repo)? That would lift the current "no `@nuxt/content`" rule in `.claude/skills/development.md`.
-5. **Photos.** Who supplies the placeholder photos listed in `design/README.md`, and when? Until they arrive, should the grey placeholders ship, or should those sections be hidden?
-6. **Contract terms.** The redesign says "Kontrak fleksibel, tanpa komitmen tahunan". The old brand notes say "kontrak per semester, notice 30 hari". Which is current?
-7. **Privacy and terms links.** The redesigned footer has no links to privacy or terms. Should they be added to the footer's bottom row?
+1. **Routes.** *Settled 2026-10-15:* slugs are English: `/digital-marketing`, `/education`, `/training`, `/case-study`, `/articles` (detail `/articles/[slug]`), `/about-us`. Services sit at the root, not under `/services/`. `/case-study` and `/about-us` keep their current URLs, so only the `/services/*` pages need redirects.
+2. **FAQ page.** *Settled 2026-10-15:* a `/faq` page combining both FAQ sets; the footer links there.
+3. **Form delivery.** *Settled for launch 2026-10-15:* a valid submission opens WhatsApp with the answers pre-filled. A real endpoint can replace it later without changing the forms.
+4. **Articles.** *Settled 2026-10-15:* the page ships with the proposed topics as cards tagged *Segera*, not links. Nuxt Content is not added yet.
+5. **Photos.** *Settled 2026-10-15:* until they arrive, image slots ship as plain brand-tinted panels with no text. Who supplies them, and when, is still open.
+6. **Contract terms.** *Settled 2026-10-15:* there is no annual commitment, and the minimum term is 6 months (one semester). The FAQ ("Kontrak fleksibel, tanpa komitmen tahunan") and Syarat & Ketentuan ("minimal per semester (6 bulan)") are both correct.
+7. **Privacy and terms links.** *Settled:* the reference footer already has them in its bottom row ("Kebijakan privasi", "Syarat layanan").
 8. **Analytics.** Is there an analytics tool or Meta pixel to keep or add? Should WhatsApp click events be tracked?
 
 ---
@@ -128,11 +127,11 @@ The redesign changes the product structure, the information architecture, the vi
 - **Container.** Nuxt UI's container is `max-w-7xl` (1280px). Add `2xl:max-w-[1440px] 3xl:max-w-[1600px]` to the `container` slot in `app.config.ts`, and `px-5 sm:px-6`.
 - **Icons.** The designs use Phosphor (regular weight). Add `@iconify-json/ph` and use `i-ph-*` through `UIcon`. Use `i-ph-whatsapp-logo`, `i-ph-instagram-logo`, `i-ph-tiktok-logo` and `i-ph-threads-logo`.
 - **Brand mark.** Copy the SVGs from `design/assets/` into `public/brand/`.
-- **Redirects.** Use `routeRules` in `nuxt.config.ts`, for example `'/case-study': { redirect: { to: '/studi-kasus', statusCode: 301 } }`.
+- **Redirects.** Use `routeRules` in `nuxt.config.ts`, for example `'/services/digital-marketing': { redirect: { to: '/digital-marketing#ads-management', statusCode: 301 } }`.
 - **Sitemap.** `@nuxtjs/sitemap`, or `@nuxtjs/seo` for sitemap, robots and schema.org together.
 - **Data files.** Keep repeatable content as typed data in `app/data/`: tiers, the comparison table rows, FAQs, case studies, articles, team.
 - **Case study data.** `app/data/case-studies.ts` is out of date. It says "15 cabang" and "Klinik Utama Boyolali"; update it to **10+ cabang** and **Klinik Mata Boyolali**.
 - **Shared components.** Suggested components: `SiteHeader`/`MobileMenu`, `SiteFooter`, `CtaSection`, `PriceTag`, `ServiceCard`, `TierCard`, `ComparisonTable`, `FaqList`, `CaseStudyCard`, `ArticleCard`, `QuoteCard`, `WingPanel`, `WaitlistForm`.
 - **Stale metadata.** `nuxt.config.ts` still has `twitter:site: @eskala.u` and `titleTemplate: "Eskala - %s"`. The reference pages use titles of the form "… — Eskala".
-- **After the rebuild.** Rewrite the markup examples in `.claude/skills/*.md` to match the new components.
+- **After the rebuild.** If a "create a page" or "create a component" skill is wanted, write it around the new components (the old pre-redesign skill files were removed on 2026-10-15).
 - **Verification.** Run Playwright screenshots at 390, 640, 768, 1024, 1280, 1536 and 2560 for every page, and compare them against `design/screenshots/`.

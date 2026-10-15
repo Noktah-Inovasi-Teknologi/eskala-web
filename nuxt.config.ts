@@ -3,6 +3,8 @@ import tailwindcss from "@tailwindcss/vite";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
+  // Folders under app/components (base/, blocks/, site/) only organise; names stay the file names.
+  components: [{ path: "~/components", pathPrefix: false }],
   css: ["./app/assets/css/main.css"],
   devtools: { enabled: true },
   app: {
@@ -10,7 +12,7 @@ export default defineNuxtConfig({
       htmlAttrs: { lang: "id" },
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
-      titleTemplate: "Eskala - %s",
+      titleTemplate: "%s — Eskala",
       link: [
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
         {
@@ -37,17 +39,16 @@ export default defineNuxtConfig({
         { property: "og:site_name", content: "Eskala" },
         { property: "og:locale", content: "id_ID" },
         { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:site", content: "@eskala.u" },
       ],
     },
   },
   fonts: {
     families: [
-      { name: "Poppins", provider: "google" },
-      { name: "Plus Jakarta Sans", provider: "google" },
+      { name: "Plus Jakarta Sans", provider: "google", weights: [400, 500, 600, 700, 800], styles: ["normal", "italic"] },
+      { name: "Livvic", provider: "google", weights: [900] },
     ],
   },
-  modules: ["@nuxt/fonts", "@nuxt/ui", "nuxt-viewport"],
+  modules: ["@nuxt/fonts", "@nuxt/image", "@nuxt/ui"],
   ui: {
     colorMode: false,
     theme: {
@@ -62,21 +63,10 @@ export default defineNuxtConfig({
       ],
     },
   },
-  viewport: {
-    breakpoints: {
-      xs: 320,
-      sm: 640,
-      md: 768,
-      lg: 1024,
-      xl: 1280,
-      "2xl": 1536,
-    },
-    defaultBreakpoints: {
-      desktop: "lg",
-      mobile: "xs",
-      tablet: "md",
-    },
-    fallbackBreakpoint: "lg",
+  // Old URLs (design/SPEC-BRIEF.md, ADR-0001). /case-study and /about-us keep their URLs.
+  routeRules: {
+    "/services/social-media-management": { redirect: { to: "/digital-marketing#smm", statusCode: 301 } },
+    "/services/digital-marketing": { redirect: { to: "/digital-marketing#ads-management", statusCode: 301 } },
   },
   vite: {
     plugins: [tailwindcss()],

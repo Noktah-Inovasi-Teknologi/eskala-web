@@ -25,9 +25,9 @@ Use the following order in Vue SFC files:
 Prefer Nuxt UI components over custom implementations:
 - `<UButton>` for buttons
 - `<UCard>` for card layouts
-- `<UIcon>` for icons (Heroicons)
+- `<UIcon>` for icons (Phosphor, `i-ph-*`)
 - `<UTabs>` for tabbed content
-- `<UDropdown>` for dropdown menus
+- `<UDropdownMenu>` for dropdown menus
 
 ## State Management
 
