@@ -1,0 +1,245 @@
+<!doctype html>
+<!-- Eskala redesign reference: training. Design reference only. Rebuild in Vue + Tailwind; do not copy this markup or its inline styles. Responsive rules live in the <style> block (container queries on .pg). -->
+
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Training Komunikasi untuk Klinik dan Rumah Sakit — Eskala</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>x-dc,helmet{display:block}</style>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Livvic:wght@900&amp;family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1D4ED8}a:hover{color:#1A46C2}
+.wrap{max-width:1280px;margin:0 auto;padding:0 24px;box-sizing:border-box}
+.eyebrow{margin:0;font-size:13px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#475569}
+.h2{margin:0;font-size:clamp(32px,3.6cqi,50px);font-weight:800;line-height:1.08;letter-spacing:-.03em;color:#0F172A}
+.lede{margin:0;font-size:18px;line-height:1.65;color:#475569}
+.pill-wa{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px;border-radius:9999px;background:#15803D;color:#FFFFFF;font-size:16px;font-weight:600;text-decoration:none}
+.pill-wa:hover{color:#FFFFFF;background:#166534}
+.pill-dark{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px;border-radius:9999px;background:#1D4ED8;color:#FFFFFF;font-size:16px;font-weight:600;text-decoration:none}
+.pill-dark:hover{color:#FFFFFF;background:#1A46C2}
+.link-arrow{display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:600;text-decoration:none}
+.badge{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:600;color:#0F172A}
+.badge i{flex:none;width:36px;height:36px;border-radius:9999px;background:#DBEAFE;display:flex;align-items:center;justify-content:center;font-style:normal;color:#1D4ED8;font-weight:800;font-size:15px}
+.soon{display:inline-block;padding:6px 12px;border-radius:9999px;background:#FFEDD5;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#A8500C}
+.svc{flex:1 1 340px;min-width:0;border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:14px}
+.svc h3{margin:0;font-size:24px;font-weight:800;color:#0F172A}
+.svc p{margin:0;font-size:16px;line-height:1.6;color:#475569}
+.svc ul,.list{margin:4px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:15px;color:#334155}
+.svc li,.list li{display:flex;gap:10px}.svc li:before,.list li:before{content:"";flex:none;width:8px;height:8px;margin-top:7px;border-radius:9999px;background:#FB923C}
+.step{flex:1 1 180px;min-width:0;display:flex;flex-direction:column;gap:8px;padding:14px 20px 0 0;border-top:2px solid #CBD5E1}
+.step b{font-size:14px;color:#A8500C}.step strong{font-size:18px;color:#0F172A}.step span{font-size:15px;line-height:1.5;color:#475569}
+.phase{flex:1 1 300px;min-width:0;border-radius:24px;padding:30px;display:flex;flex-direction:column;gap:12px}
+.phase .m{font-size:14px;font-weight:700}
+.phase h3{margin:0;font-size:22px;font-weight:800;color:#0F172A}
+.phase p{margin:0;font-size:15px;line-height:1.6;color:#334155}
+.ms{flex:1 1 140px;min-width:0;display:flex;flex-direction:column;gap:6px;padding-top:18px;position:relative}
+.ms:before{content:"";position:absolute;left:0;top:-7px;width:14px;height:14px;border-radius:9999px;background:#FFFFFF;border:3px solid #1D4ED8;box-sizing:border-box}
+.ms b{font-size:13px;font-weight:700;color:#DCE6FD}.ms span{font-size:16px;font-weight:700;color:#FFFFFF}
+.tier{flex:1 1 320px;min-width:0;border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:16px;border:1px solid #E2E8F0;background:#FFFFFF}
+.tier .nm{font-size:22px;font-weight:800;color:#0F172A}
+.tier .pr{font-size:40px;font-weight:800;letter-spacing:-.03em;color:#0F172A;line-height:1}
+.tier .pr small{font-size:15px;font-weight:600;letter-spacing:0;color:#475569}
+.tier .role{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#A8500C}
+.tier q{display:block;font-size:16px;line-height:1.55;color:#0F172A;font-style:italic;quotes:none}
+.tier p{margin:0;font-size:15px;line-height:1.6;color:#475569}
+table.ft{width:100%;border-collapse:separate;border-spacing:0;font-size:15px}
+table.ft th,table.ft td{padding:15px 18px;text-align:left;border-bottom:1px solid #E2E8F0;vertical-align:top;line-height:1.5}
+table.ft thead th{font-size:18px;font-weight:800;color:#0F172A;background:#F8FAFC}
+table.ft td:first-child{color:#0F172A;font-weight:700;width:28%}
+table.ft td{color:#334155}
+table.ft .pop{background:#EFF4FF}
+table.ft tr.grp td{background:#F8FAFC;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#475569}
+.q{border-top:1px solid #E2E8F0;padding:24px 0;display:flex;flex-wrap:wrap;gap:8px 48px}
+.q h3{flex:1 1 320px;margin:0;font-size:19px;font-weight:800;color:#0F172A;line-height:1.35}
+.q p{flex:1 1 480px;margin:0;font-size:16px;line-height:1.65;color:#475569}
+.quote{border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:18px}
+.quote p{margin:0;font-size:20px;font-weight:600;line-height:1.5;color:#0F172A}
+.quote span{font-size:14px;line-height:1.5;color:#475569}
+.fmt{flex:1 1 260px;min-width:0;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:12px}
+.fmt h3{margin:0;font-size:21px;font-weight:800;color:#0F172A}
+.fmt p{margin:0;font-size:15px;line-height:1.6;color:#475569}
+.field{display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600;color:#0F172A}
+.field input,.field select,.field textarea{font:inherit;font-weight:500;font-size:16px;color:#0F172A;background:#FFFFFF;border:1px solid #CBD5E1;border-radius:12px;padding:13px 14px;min-height:48px;box-sizing:border-box;width:100%}
+.field textarea{min-height:110px;resize:vertical}
+.chk{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:500;color:#334155;padding:10px 14px;border:1px solid #CBD5E1;border-radius:9999px;background:#FFFFFF}
+.chk input{width:18px;height:18px;margin:0;accent-color:#1D4ED8}
+
+/* ---- responsive (container queries on .pg, Tailwind breakpoints) ---- */
+.pg{container-type:inline-size;container-name:pg}
+.navburger{display:none;align-items:center;justify-content:center;width:44px;height:44px;margin-left:auto;border-radius:9999px;border:1px solid #CBD5E1;background:#FFFFFF;color:#0F172A;cursor:pointer}
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tblwrap table{min-width:760px}
+.tblhint{display:none;margin:0 0 12px;font-size:13px;color:#64748B}
+/* below lg: collapse nav */
+@container pg (max-width: 1023px){
+  .navlinks{display:none !important}
+  .navburger{display:inline-flex}
+  .pg section[style*="gap: 56px"],.pg [style*="gap: 48px 72px"],.pg [style*="gap: 48px 64px"],.pg [style*="gap: 40px 64px"],.pg [style*="gap: 40px 56px"]{gap:40px !important}
+  .pg [style*="padding: 72px 56px"]{padding:56px 40px !important}
+}
+/* below md: tablet-portrait / large phone */
+@container pg (max-width: 767px){
+  .tblhint{display:block}
+  .pg [style*="padding-top: 96px"],.pg [style*="padding-top: 104px"],.pg [style*="padding-top: 88px"],.pg [style*="padding-top: 72px"]{padding-top:64px !important}
+  .pg [style*="padding-bottom: 96px"],.pg [style*="padding-bottom: 88px"],.pg [style*="padding-bottom: 72px"]{padding-bottom:64px !important}
+  .pg section{padding-top:48px !important;padding-bottom:64px !important}
+  .pg [style*="padding: 48px"]{padding:32px !important}
+}
+/* base: phones (< sm) */
+@container pg (max-width: 639px){
+  .wrap{padding:0 20px}
+  .navcta{display:none !important}
+  .pg nav{padding-top:16px !important;padding-bottom:16px !important}
+  .pg [style*="padding-top: 96px"],.pg [style*="padding-top: 104px"],.pg [style*="padding-top: 88px"],.pg [style*="padding-top: 72px"],.pg [style*="padding-top: 64px"]{padding-top:48px !important}
+  .pg [style*="padding-bottom: 96px"],.pg [style*="padding-bottom: 88px"],.pg [style*="padding-bottom: 72px"]{padding-bottom:48px !important}
+  .pg section{padding-top:32px !important;padding-bottom:48px !important}
+  .pg [style*="padding: 72px 56px"]{padding:40px 24px !important}
+  .pg [style*="padding: 48px"]{padding:24px !important}
+  .pg [style*="padding: 40px"],.pg [style*="padding: 36px"]{padding:24px !important}
+  .svc,.tier,.quote,.phase{padding:24px}
+  .fmt{padding:22px}
+  .lede{font-size:16px}
+  .q{padding:20px 0}
+  .q h3{font-size:17px}
+  .pg [style*="font-size: 20px; line-height: 1.6"],.pg [style*="font-size: 19px"]{font-size:17px !important}
+  .pg [style*="gap: 56px"]{gap:32px !important}
+  .pg [style*="rotate(-2deg)"]{transform:none !important}
+  .pg .pill-wa,.pg .pill-dark{width:100%;justify-content:center;box-sizing:border-box}
+}
+/* 2xl and ultra-wide: wider container, content stays readable */
+@container pg (min-width: 1536px){ .wrap{max-width:1440px} }
+@container pg (min-width: 1920px){
+  .wrap{max-width:1600px}
+  .lede{font-size:19px}
+}
+</style>
+</helmet>
+<div class="pg" style="width: 100%; box-sizing: border-box; background: #FFFFFF; font-family: 'Plus Jakarta Sans', sans-serif; color: #475569; overflow: hidden">
+  <div style="border-bottom: 1px solid #E2E8F0">
+    <nav class="wrap" style="padding-top: 22px; padding-bottom: 22px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 40px">
+      <a href="#" style="display: flex; align-items: center; gap: 10px; text-decoration: none">
+        <img src="../assets/wing-cobalt.svg" alt="" style="height: 28px; width: auto">
+        <span style="font-family: 'Livvic', sans-serif; font-weight: 900; font-size: 24px; letter-spacing: 0.005em; text-transform: uppercase; color: #1D4ED8; line-height: 1">Eskala</span>
+      </a>
+      <div class="navlinks" style="display: flex; flex-wrap: wrap; gap: 8px 30px; font-size: 15px; font-weight: 500; flex-grow: 1"><a href="#" style="color: #0F172A; text-decoration: none">Digital Marketing</a><a href="#" style="color: #0F172A; text-decoration: none">Education</a><a href="#" style="color: #1D4ED8; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; text-decoration-color: #FB923C">Training</a><a href="#" style="color: #0F172A; text-decoration: none">Studi kasus</a><a href="#" style="color: #0F172A; text-decoration: none">Artikel</a><a href="#" style="color: #0F172A; text-decoration: none">Tentang kami</a></div>
+      <a href="#kontak" class="navcta" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 9999px; border: 1px solid #CBD5E1; color: #0F172A; font-size: 14px; font-weight: 600; text-decoration: none">Konsultasi gratis</a>
+      <button class="navburger" aria-label="Buka menu" type="button"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path></svg></button>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <div class="wrap">
+    <section style="display: flex; flex-wrap: wrap; align-items: center; gap: 56px; padding: 64px 0 88px">
+      <div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 26px">
+        <span class="soon" style="align-self: flex-start">Segera hadir</span>
+        <h1 style="margin: 0; font-size: clamp(46px, 5.6cqi, 82px); font-weight: 800; line-height: 1; letter-spacing: -0.035em; color: #0F172A">Training komunikasi untuk <span style="color: #1D4ED8">klinik dan rumah sakit</span></h1>
+        <p style="margin: 0; max-width: 540px; font-size: 19px; line-height: 1.65">Pelatihan tatap muka yang berfokus pada praktik: cara menyambut, menjelaskan, dan menjawab pasien. Programnya sedang kami siapkan.</p>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px">
+          <a href="#daftar" class="pill-dark">Ajukan minat training <svg aria-hidden="true" width="18" height="18" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg></a>
+          <a href="https://wa.me/6282230712718" class="link-arrow">Tanya via WhatsApp <svg aria-hidden="true" width="18" height="18" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg></a>
+        </div>
+      </div>
+      <div style="flex: 1 1 440px; min-width: 0; position: relative; aspect-ratio: 1 / 1; max-width: 560px; background: #1D4ED8; border-radius: 24px; overflow: hidden">
+        <img src="../assets/wing-copper.svg" alt="" aria-hidden="true" style="position: absolute; height: 128%; width: auto; right: -20%; top: -8%">
+        <div style="position: absolute; left: 28px; top: 32px; width: 260px; background: #FFFFFF; padding: 12px 12px 40px; transform: rotate(-3deg); box-shadow: 0 16px 34px rgba(2, 11, 61, 0.35)">
+          <div style="height: 180px; background: #CBD5E1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px; box-sizing: border-box; font-size: 14px; font-weight: 500; color: #334155">[Foto: role-play di meja depan]</div>
+          <span style="position: absolute; left: 14px; bottom: 12px; font-size: 14px; font-weight: 700; color: #334155">Simulasi menyambut pasien</span>
+        </div>
+        <div style="position: absolute; right: 28px; bottom: 32px; max-width: 280px; background: #FFFFFF; border-left: 5px solid #FB923C; padding: 18px 20px; transform: rotate(2deg)">
+          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #334155"><b style="color: #0F172A">Berbasis praktik.</b> Peserta melatih percakapan nyata dari klinik masing-masing.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- FORMAT -->
+  <div style="background: #F8FAFC; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0">
+    <div class="wrap" style="padding-top: 96px; padding-bottom: 96px">
+      <h2 class="h2" style="margin-bottom: 40px">Tiga format training</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 20px">
+        <div class="svc" style="background: #FFFFFF; border: 1px solid #E2E8F0"><span style="font-size: 14px; font-weight: 700; color: #A8500C">Workshop</span><h3>Satu topik, langsung praktik</h3><p>Sesi singkat untuk satu kebutuhan, misalnya menjawab pertanyaan biaya atau menangani keluhan.</p><ul><li>Peserta dari berbagai klinik</li><li>Cocok untuk mencoba lebih dulu</li></ul></div>
+        <div class="svc" style="background: #FFFFFF; border: 1px solid #E2E8F0"><span style="font-size: 14px; font-weight: 700; color: #A8500C">Bootcamp</span><h3>Program intensif beberapa sesi</h3><p>Beberapa topik dalam satu rangkaian, dengan latihan dan evaluasi di setiap sesi.</p><ul><li>Untuk staf baru atau tim yang ingin naik level</li><li>Peserta dari berbagai klinik</li></ul></div>
+        <div class="svc" style="background: #1D4ED8; position: relative; overflow: hidden"><img src="../assets/wing-copper.svg" alt="" aria-hidden="true" style="position: absolute; height: 120%; width: auto; right: -50%; bottom: -45%; opacity: 0.5"><span style="position: relative; font-size: 14px; font-weight: 700; color: #FED7AA">In-house Training</span><h3 style="position: relative; color: #FFFFFF">Di tempat Anda, untuk tim Anda</h3><p style="position: relative; color: #DCE6FD">Materi disesuaikan dengan layanan, pasien, dan situasi di klinik Anda.</p><ul style="position: relative; color: #FFFFFF"><li>Contoh kasus dari klinik sendiri</li><li>Jadwal mengikuti operasional klinik</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALUR IN-HOUSE -->
+  <div class="wrap" style="padding-top: 96px; padding-bottom: 88px">
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 40px; margin-bottom: 40px">
+      <h2 class="h2" style="max-width: 640px">Alur In-house Training</h2>
+      <p class="lede" style="max-width: 440px">Rencana alur yang akan kami gunakan. Detailnya bisa berubah saat program dibuka.</p>
+    </div>
+    <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 24px 0">
+      <li class="step" style="border-top-color: #0F172A"><b>01</b><strong>Diskusi kebutuhan</strong><span>Masalah komunikasi yang paling sering muncul di klinik.</span></li>
+      <li class="step"><b>02</b><strong>Observasi</strong><span>Melihat langsung alur pasien dan percakapan sehari-hari.</span></li>
+      <li class="step" style="border-top-color: #1D4ED8"><b>03</b><strong style="color: #1D4ED8">Materi khusus</strong><span>Skrip dan contoh disusun dari kasus klinik Anda.</span></li>
+      <li class="step"><b>04</b><strong>Sesi praktik</strong><span>Role-play dan umpan balik langsung.</span></li>
+      <li class="step"><b>05</b><strong>Evaluasi</strong><span>Catatan perkembangan dan rekomendasi lanjutan.</span></li>
+    </ol>
+  </div>
+
+  <div id="daftar" class="wrap" style="padding-top: 96px; padding-bottom: 96px">
+    <div style="display: flex; flex-wrap: wrap; gap: 48px 72px; align-items: flex-start">
+      <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+        <h2 class="h2">Ajukan minat training</h2>
+        <p class="lede">Ceritakan kebutuhan tim Anda. Kami hubungi saat program dibuka, dan klinik yang mendaftar lebih dulu kami ajak berdiskusi soal materinya.</p>
+      </div>
+      <form style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px; padding: 36px; border-radius: 24px; background: #F8FAFC; border: 1px solid #E2E8F0" onsubmit="return false">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px"><label class="field"><span>Nama</span><input type="text" placeholder="Nama lengkap"></label><label class="field"><span>WhatsApp atau email</span><input type="text" placeholder="08xx / nama@klinik.id"></label><label class="field"><span>Nama klinik</span><input type="text" placeholder="Nama klinik"></label><label class="field"><span>Jumlah staf yang akan ikut</span><select><option value="">Pilih</option><option>1–5</option><option>6–15</option><option>16–30</option><option>Lebih dari 30</option></select></label></div>
+        <div class="field"><span>Format yang diminati</span><div style="display: flex; flex-wrap: wrap; gap: 10px"><label class="chk"><input type="checkbox"> Workshop</label><label class="chk"><input type="checkbox"> Bootcamp</label><label class="chk"><input type="checkbox"> In-house Training</label><label class="chk"><input type="checkbox"> Belum tahu</label></div></div>
+        <button type="submit" class="pill-dark" style="align-self: flex-start; border: 0; cursor: pointer; font-family: inherit">Kirim minat <svg aria-hidden="true" width="18" height="18" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg></button>
+        <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #64748B">Data Anda hanya dipakai untuk mengirim kabar tentang program ini.</p>
+      </form>
+    </div>
+  </div>
+
+  <footer style="border-top: 1px solid #E2E8F0">
+    <div class="wrap" style="padding-top: 48px; padding-bottom: 48px; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 32px 64px; font-size: 15px">
+      <div style="display: flex; flex-direction: column; gap: 12px; flex: 1 1 300px; max-width: 360px">
+        <span style="display: flex; align-items: center; gap: 10px"><img src="../assets/wing-cobalt.svg" alt="" style="height: 24px; width: auto"><span style="font-family: 'Livvic', sans-serif; font-weight: 900; font-size: 20px; text-transform: uppercase; color: #1D4ED8; line-height: 1">Eskala</span></span>
+        <span style="font-size: 14px; font-style: italic; color: #64748B">Membumikan kesehatan</span>
+        <span style="line-height: 1.6">Partner digital marketing dan komunikasi kesehatan untuk klinik pratama dan utama, rumah sakit, serta dokter di seluruh Indonesia.</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <b style="color: #0F172A">Layanan</b>
+        <a href="#" style="color: #475569; text-decoration: none">Digital Marketing</a>
+        <a href="#" style="color: #475569; text-decoration: none">Education</a>
+        <a href="#" style="color: #475569; text-decoration: none">Training</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <b style="color: #0F172A">Dukungan</b>
+        <a href="#" style="color: #475569; text-decoration: none">FAQ</a>
+        <a href="#" style="color: #475569; text-decoration: none">Studi kasus</a>
+        <a href="#" style="color: #475569; text-decoration: none">Artikel</a>
+        <a href="#" style="color: #475569; text-decoration: none">Tentang kami</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <b style="color: #0F172A">Kontak</b>
+        <span>+62 822-3071-2718</span>
+        <a href="mailto:core@eskala.id" style="color: #475569">core@eskala.id</a>
+        <span>Melayani seluruh Indonesia</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <b style="color: #0F172A">Media sosial</b>
+        <a href="https://instagram.com/eskala.team" target="_blank" rel="noopener" aria-label="Instagram Eskala" style="display: inline-flex; align-items: center; gap: 10px; color: #475569; text-decoration: none"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 256 256" fill="currentColor"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"/></svg><span>@eskala.team</span></a>
+        <a href="https://www.tiktok.com/@eskala.team" target="_blank" rel="noopener" aria-label="TikTok Eskala" style="display: inline-flex; align-items: center; gap: 10px; color: #475569; text-decoration: none"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 256 256" fill="currentColor"><path d="M224,72a48.05,48.05,0,0,1-48-48,8,8,0,0,0-8-8H128a8,8,0,0,0-8,8V156a20,20,0,1,1-28.57-18.08A8,8,0,0,0,96,130.69V88a8,8,0,0,0-9.4-7.88C50.91,86.48,24,119.1,24,156a76,76,0,0,0,152,0V116.29A103.25,103.25,0,0,0,224,128a8,8,0,0,0,8-8V80A8,8,0,0,0,224,72Zm-8,39.64a87.19,87.19,0,0,1-43.33-16.15A8,8,0,0,0,160,102v54a60,60,0,0,1-120,0c0-25.9,16.64-49.13,40-57.6v27.67A36,36,0,1,0,136,156V32h24.5A64.14,64.14,0,0,0,216,87.5Z"/></svg><span>@eskala.team</span></a>
+        <a href="https://www.threads.net/@eskala.team" target="_blank" rel="noopener" aria-label="Threads Eskala" style="display: inline-flex; align-items: center; gap: 10px; color: #475569; text-decoration: none"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 256 256" fill="currentColor"><path d="M186.42,123.65a63.81,63.81,0,0,0-11.13-6.72c-4-29.89-24-39.31-33.1-42.07-19.78-6-42.51,1.19-52.85,16.7a8,8,0,0,0,13.32,8.88c6.37-9.56,22-14.16,34.89-10.27,9.95,3,16.82,10.3,20.15,21a81.05,81.05,0,0,0-15.29-1.43c-13.92,0-26.95,3.59-36.67,10.1C94.3,127.57,88,139,88,152c0,20.58,15.86,35.52,37.71,35.52a48,48,0,0,0,34.35-14.81c6.44-6.7,14-18.36,15.61-37.1.38.26.74.53,1.1.8C186.88,144.05,192,154.68,192,168c0,19.36-20.34,48-64,48-26.73,0-45.48-8.65-57.34-26.44C60.93,175,56,154.26,56,128s4.93-47,14.66-61.56C82.52,48.65,101.27,40,128,40c32.93,0,54,13.25,64.53,40.52a8,8,0,1,0,14.93-5.75C194.68,41.56,167.2,24,128,24,96,24,72.19,35.29,57.34,57.56,45.83,74.83,40,98.52,40,128s5.83,53.17,17.34,70.44C72.19,220.71,96,232,128,232c30.07,0,48.9-11.48,59.4-21.1C200.3,199.08,208,183,208,168,208,149.66,200.54,134.32,186.42,123.65Zm-37.89,38a31.94,31.94,0,0,1-22.82,9.9c-10.81,0-21.71-6-21.71-19.52,0-12.63,12-26.21,38.41-26.21A63.88,63.88,0,0,1,160,128.24C160,142.32,156,153.86,148.53,161.62Z"/></svg><span>@eskala.team</span></a>
+      </div>
+      <div style="flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 8px 24px; padding-top: 24px; border-top: 1px solid #E2E8F0; font-size: 13px; color: #64748B">
+        <span>© 2026 Eskala</span><span style="flex-grow: 1"></span>
+        <a href="#" style="color: #64748B">Kebijakan privasi</a><a href="#" style="color: #64748B">Syarat layanan</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>
