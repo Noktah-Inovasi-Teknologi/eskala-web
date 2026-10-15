@@ -1,5 +1,7 @@
 # Skill: Create New Component
 
+> **Redesign 2026:** the markup examples below predate the redesign. For layout, typography, colours and copy, follow `design/` and `.claude/CLAUDE.md`. Use this skill for workflow steps only.
+
 ## When to Use
 When the user asks to create a reusable Vue component.
 
@@ -35,9 +37,9 @@ When the user asks to create a reusable Vue component.
 
 3. **Follow conventions**
    - Always `<script setup lang="ts">` — no Options API
-   - Use Nuxt UI components (`UButton`, `UBadge`, `UIcon`, `UCard`) where applicable
-   - Use `font-display` (Poppins) for headings, `font-body` (Plus Jakarta Sans) for body text
-   - Apply Tailwind classes; never inline styles or `font-[Poppins]`
+   - Use Nuxt UI components (`UButton`, `UBadge`, `UIcon`, `UCard`) where applicable. Icons are Phosphor (`i-ph-*`).
+   - Plus Jakarta Sans throughout (`font-display` and `font-body` both resolve to it). Livvic (`font-wordmark`) is for the wordmark only.
+   - Apply Tailwind classes and theme tokens. No inline styles and no hex values.
    - Type all props with `defineProps<Props>()`
    - Use `defineEmits<{ ... }>()` for typed events
 

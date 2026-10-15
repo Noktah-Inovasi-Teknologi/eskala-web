@@ -1,0 +1,76 @@
+/*
+ * Eskala redesign: design tokens (Tailwind v4)
+ * ---------------------------------------------------------------------------
+ * Merge into app/assets/css/main.css. Do not import this file as-is.
+ *
+ * The existing cobalt / copper / obsidian scales already cover almost every
+ * colour in the redesign. Keep them unchanged. This file only adds what is
+ * missing and changes the fonts.
+ *
+ * How the colours in design/reference/*.html map to existing tokens:
+ *
+ *   #0F172A  obsidian-950   headings, ink
+ *   #334155  obsidian-800   strong body
+ *   #475569  obsidian-700   body text
+ *   #64748B  obsidian-600   secondary text
+ *   #94A3B8  obsidian-500   muted text on dark
+ *   #CBD5E1  obsidian-400   input borders, outline buttons
+ *   #E2E8F0  obsidian-300   card borders, dividers
+ *   #F8FAFC  obsidian-100   light section background
+ *   #1D4ED8  cobalt-500     primary, links, accent word in headings
+ *   #1A46C2  cobalt-600     link/button hover
+ *   #DCE6FD  cobalt-100     tints (#DBEAFE in the design is the same tint)
+ *   #EFF4FF  cobalt-50
+ *   #020B3D  cobalt-950     darkest panels
+ *   #FB923C  copper-500     price tags, accents, wing
+ *   #FED7AA  copper-200
+ *   #FFEDD5  copper-100     price pill background (existing #FFEED4 is fine)
+ *   #FFF7ED  copper-50
+ *
+ * New tokens are defined below.
+ */
+
+@theme {
+  /* Fonts: Plus Jakarta Sans everywhere. Poppins is retired.
+     Keep both names so existing font-display / font-body classes keep working. */
+  --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  /* Livvic 900 is used ONLY for the "ESKALA" wordmark in the nav, footer and mobile menu. */
+  --font-wordmark: "Livvic", sans-serif;
+
+  /* Ultra-wide breakpoint (Tailwind's defaults stop at 2xl = 1536px). */
+  --breakpoint-3xl: 120rem; /* 1920px */
+}
+
+@theme static {
+  /* Copper is too light for text on white (#FB923C is 2.3:1).
+     Use copper-ink for copper-coloured TEXT on light backgrounds:
+     eyebrow lines, tier labels, "Segera" tags (5.5:1 on white). */
+  --color-copper-ink: #A8500C;
+
+  /* Light cobalt for text and accents on dark (cobalt-950 / obsidian-950) backgrounds. */
+  --color-cobalt-soft: #6C93F0;
+
+  /* WhatsApp CTA. White text on #15803D is 5.0:1. Do not use brand green #25D366: it fails contrast. */
+  --color-whatsapp: #15803D;
+  --color-whatsapp-hover: #166534;
+
+  /* Form validation errors (orange-red, so it doesn't clash with the palette). */
+  --color-error-ink: #C2410C;
+}
+
+/*
+ * Layout constants used by the design (apply with Tailwind classes, these are reference values):
+ *   Container       max-w-[1280px] px-6        (sm and below: px-5)
+ *   2xl (>=1536)    max-w-[1440px]
+ *   3xl (>=1920)    max-w-[1600px]            content stays centred; backgrounds still go full-bleed
+ *   Radii           cards 24px (rounded-3xl), pills 9999px, inputs 12px
+ *   Section padding 96px desktop -> 64px below md -> 48px below sm
+ *   H1              weight 800, tracking -0.035em, leading ~1; size is fluid per page:
+ *                   home clamp(52px, 7vw, 104px); other pages clamp(42-46px, 5-5.6vw, 72-84px)
+ *                   (the reference files use cqi, which equals vw for a full-width page)
+ *   H2              clamp(32px, 3.6vw, 50px), weight 800, tracking -0.03em, leading 1.08
+ *   Eyebrow         13px, weight 600, tracking 0.09em, uppercase, obsidian-700 (or copper-ink)
+ *   Lede            18px / 1.65, obsidian-700 (16px below sm, 19px at 3xl)
+ *   CTA pill        min-h 52px, px 26px, rounded-full, weight 600
+ */
