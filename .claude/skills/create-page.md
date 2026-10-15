@@ -125,7 +125,7 @@ When the user asks to create a new page or route in the application.
 ## Key Rules
 
 - Use `UContainer` with an `id` attribute for each section, so anchor links work.
-- Section padding is responsive: `py-12 md:py-16 lg:py-24`.
+- Section padding is responsive: `py-12 sm:py-16 md:py-20 lg:py-24`.
 - Plus Jakarta Sans for everything (`font-body` / `font-display`). Livvic (`font-wordmark`) is for the wordmark only.
 - Eyebrows are short uppercase labels, used sparingly. The `──────── Label` pattern is retired.
 - Dark sections: `bg-obsidian-950` or `bg-cobalt-950`, with white headings and `text-obsidian-300` body.

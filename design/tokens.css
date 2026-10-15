@@ -3,74 +3,103 @@
  * ---------------------------------------------------------------------------
  * Merge into app/assets/css/main.css. Do not import this file as-is.
  *
- * The existing cobalt / copper / obsidian scales already cover almost every
- * colour in the redesign. Keep them unchanged. This file only adds what is
- * missing and changes the fonts.
+ * Token names follow the Eskala Design System
+ * (https://claude.ai/artifact/EXeTAjSTXsviSH6WqX4Pau, project/tokens.json).
+ * Use the same names in code so the design system and the site stay comparable.
  *
- * How the colours in design/reference/*.html map to existing tokens:
+ * The cobalt / copper / obsidian scales in main.css are the design system's
+ * scales, with two exceptions fixed below: cobalt-400 and copper-400 used to
+ * duplicate their 500 steps and are now real mid-tones. The current pages use
+ * text-cobalt-400 only on dark sections, where the new lighter blue is correct.
  *
- *   #0F172A  obsidian-950   headings, ink
- *   #334155  obsidian-800   strong body
- *   #475569  obsidian-700   body text
- *   #64748B  obsidian-600   secondary text
- *   #94A3B8  obsidian-500   muted text on dark
- *   #CBD5E1  obsidian-400   input borders, outline buttons
- *   #E2E8F0  obsidian-300   card borders, dividers
- *   #F8FAFC  obsidian-100   light section background
- *   #1D4ED8  cobalt-500     primary, links, accent word in headings
- *   #1A46C2  cobalt-600     link/button hover
- *   #DCE6FD  cobalt-100     tints (#DBEAFE in the design is the same tint)
- *   #EFF4FF  cobalt-50
- *   #020B3D  cobalt-950     darkest panels
- *   #FB923C  copper-500     price tags, accents, wing
+ * Mapping from the hex values in design/reference/*.html to tokens:
+ *
+ *   #0F172A  obsidian-950        headings, ink                (DS text-heading)
+ *   #334155  obsidian-800        strong body
+ *   #475569  obsidian-700        body text                    (DS text-body, text-eyebrow)
+ *   #64748B  obsidian-600        secondary text               (DS text-muted)
+ *   #94A3B8  obsidian-500        muted text on dark only
+ *   #CBD5E1  obsidian-400        input borders, outline buttons
+ *   #E2E8F0  obsidian-300        card borders, dividers       (DS border-default)
+ *   #F8FAFC  obsidian-100        light section background     (DS surface-subtle)
+ *   #1D4ED8  cobalt-500          primary, links, accent phrase (DS brand-primary, text-emphasis)
+ *   #1A46C2  cobalt-600          link and button hover
+ *   #DCE6FD  cobalt-100          tints; #DBEAFE in the reference is this token
+ *   #EFF4FF  cobalt-50           highlighted tier ground      (DS surface-selected)
+ *   #6C93F0  cobalt-400          blue text and accents on dark (DS text-emphasis-on-dark)
+ *   #020B3D  cobalt-950          darkest panels
+ *   #FB923C  copper-500          price tags, accents, wing    (DS brand-accent)
  *   #FED7AA  copper-200
- *   #FFEDD5  copper-100     price pill background (existing #FFEED4 is fine)
+ *   #FFEDD5  copper-100          price pill ground (#FFEED4)
  *   #FFF7ED  copper-50
- *
- * New tokens are defined below.
+ *   #A8500C  accent-strong       copper-coloured TEXT on light (DS text-accent-strong)
+ *   #15803D  success-700         WhatsApp button              (DS action-success)
+ *   #166534  -> success-hover    the reference used #166534; the DS hover is #0F6A31
+ *   #C2410C  -> error-700        the reference used orange-red; the DS error text is red #B91C1C
  */
 
 @theme {
-  /* Fonts: Plus Jakarta Sans everywhere. Poppins is retired.
-     Keep both names so existing font-display / font-body classes keep working. */
+  /* Plus Jakarta Sans everywhere (DS: font-display and font-body are the same family).
+     Livvic 900 is used ONLY for the "ESKALA" wordmark. */
   --font-display: "Plus Jakarta Sans", sans-serif;
   --font-body: "Plus Jakarta Sans", sans-serif;
-  /* Livvic 900 is used ONLY for the "ESKALA" wordmark in the nav, footer and mobile menu. */
   --font-wordmark: "Livvic", sans-serif;
 
-  /* Ultra-wide breakpoint (Tailwind's defaults stop at 2xl = 1536px). */
+  /* Ultra-wide breakpoint (DS bp-3xl). Tailwind's defaults stop at 2xl = 1536px. */
   --breakpoint-3xl: 120rem; /* 1920px */
 }
 
 @theme static {
-  /* Copper is too light for text on white (#FB923C is 2.3:1).
-     Use copper-ink for copper-coloured TEXT on light backgrounds:
-     eyebrow lines, tier labels, "Segera" tags (5.5:1 on white). */
-  --color-copper-ink: #A8500C;
+  /* Fixed mid-tones (were duplicates of 500). */
+  --color-cobalt-400: #6C93F0; /* text and accents on dark grounds, 6.01:1 on obsidian-950 */
+  --color-copper-400: #FCA65B;
 
-  /* Light cobalt for text and accents on dark (cobalt-950 / obsidian-950) backgrounds. */
-  --color-cobalt-soft: #6C93F0;
+  /* DS role colours that sit outside the ramps. */
+  --color-accent-strong: #A8500C; /* text-accent-strong: copper words on light, 5.50:1 on white */
+  --color-accent-active: #D96A16; /* pressed copper button */
 
-  /* WhatsApp CTA. White text on #15803D is 5.0:1. Do not use brand green #25D366: it fails contrast. */
-  --color-whatsapp: #15803D;
-  --color-whatsapp-hover: #166534;
+  /* Success = the WhatsApp green. Same values as Tailwind green. Text and fills use 700. */
+  --color-success-50: #F0FDF4;
+  --color-success-200: #BBF7D0;
+  --color-success-400: #4ADE80; /* success text on dark */
+  --color-success-500: #22C55E; /* icons and badges only, never under white text */
+  --color-success-600: #16A34A;
+  --color-success-700: #15803D; /* WhatsApp button, 5.02:1 under white */
+  --color-success-hover: #0F6A31;
+  --color-success-active: #0B5527;
 
-  /* Form validation errors (orange-red, so it doesn't clash with the palette). */
-  --color-error-ink: #C2410C;
+  /* Error. Same values as Tailwind red. Error TEXT uses 700; fills use 600. */
+  --color-error-50: #FEF2F2;
+  --color-error-200: #FECACA;
+  --color-error-400: #F87171; /* error text on dark */
+  --color-error-500: #EF4444;
+  --color-error-600: #DC2626;
+  --color-error-700: #B91C1C; /* text-error, 6.47:1 on white */
 }
 
 /*
- * Layout constants used by the design (apply with Tailwind classes, these are reference values):
- *   Container       max-w-[1280px] px-6        (sm and below: px-5)
- *   2xl (>=1536)    max-w-[1440px]
- *   3xl (>=1920)    max-w-[1600px]            content stays centred; backgrounds still go full-bleed
- *   Radii           cards 24px (rounded-3xl), pills 9999px, inputs 12px
- *   Section padding 96px desktop -> 64px below md -> 48px below sm
- *   H1              weight 800, tracking -0.035em, leading ~1; size is fluid per page:
- *                   home clamp(52px, 7vw, 104px); other pages clamp(42-46px, 5-5.6vw, 72-84px)
- *                   (the reference files use cqi, which equals vw for a full-width page)
- *   H2              clamp(32px, 3.6vw, 50px), weight 800, tracking -0.03em, leading 1.08
- *   Eyebrow         13px, weight 600, tracking 0.09em, uppercase, obsidian-700 (or copper-ink)
+ * Classes this gives you:
+ *   text-accent-strong            copper text on light (eyebrows, tier labels, "Segera" tags, price numbers)
+ *   text-cobalt-400               blue accents on dark bands
+ *   bg-success-700 hover:bg-success-hover active:bg-success-active     WhatsApp button
+ *   text-error-700, bg-error-50, border-error-200                       form errors
+ *
+ * Layout values (DS spacing and breakpoint tokens):
+ *   Container       DS container-max 80rem; container-max-2xl 90rem (>=1536); container-max-3xl 100rem (>=1920)
+ *                   side padding container-pad 24px, container-pad-xs 20px below 640px
+ *                   Backgrounds stay full-bleed; content stays centred.
+ *   Section padding DS section-pad-y: 96px >=1024, 80px >=768, 64px >=640, 48px below
+ *                   -> py-12 sm:py-16 md:py-20 lg:py-24
+ *   Radii           cards 24px (rounded-3xl), panels 16px, inputs 12px, controls pill
+ *   H1 (type-hero)  weight 800, tracking -0.035em, leading ~1, fluid:
+ *                   inner pages about clamp(44px, 5.4vw, 80px); home clamp(52px, 7vw, 104px)
+ *   H2 (type-section) clamp(32px, 3.6vw, 50px), weight 800, tracking -0.03em, leading 1.08
+ *   Eyebrow         13px, weight 600, tracking 0.09em, uppercase, obsidian-700 (or accent-strong).
+ *                   On the website: no copper rule, used sparingly.
  *   Lede            18px / 1.65, obsidian-700 (16px below sm, 19px at 3xl)
- *   CTA pill        min-h 52px, px 26px, rounded-full, weight 600
+ *   CTA pill        type-button-lg: 16px / 600, min-h 52px, px 26px, rounded-full
+ *   Small button    type-button: 14px / 600, min-h 44px (nav "Konsultasi gratis")
+ *   Floating callout shadows (only for elements overlapping a panel):
+ *                   shadow-float        0 14px 32px rgb(2 11 61 / 0.28)   quote card on the hero panel
+ *                   shadow-float-accent 0 18px 36px rgb(168 80 12 / 0.25) copper price badge
  */

@@ -28,9 +28,9 @@ The redesign changes the product structure, the information architecture, the vi
 4. **Visual identity.**
    - Plus Jakarta Sans everywhere, replacing Poppins. Livvic 900 is used only for the "ESKALA" wordmark.
    - The wing mark (`design/assets/`) appears next to the wordmark.
-   - The palette stays cobalt, copper and slate, with a few added tokens (`design/tokens.css`).
+   - The palette stays cobalt, copper and slate. Token names follow the Eskala Design System (`design/tokens.css` maps them).
    - Phosphor-style icons.
-   - The WhatsApp CTA is green #15803D.
+   - The WhatsApp CTA is green (`success-700`, #15803D).
 5. **Copy.**
    - Indonesian throughout, addressing the reader as "Anda".
    - Headings are plain and direct. Copy the text exactly from the reference HTML.
@@ -84,7 +84,7 @@ The redesign changes the product structure, the information architecture, the vi
   - 1600px at 1920px and up, with backgrounds full-bleed.
 - No horizontal page scroll at any width from 320px to 2560px. The comparison table is the only element that scrolls on its own.
 - Accessibility to WCAG 2.2 AA:
-  - Text contrast at least 4.5:1. Copper text uses `copper-ink`.
+  - Text contrast at least 4.5:1. Copper text uses `accent-strong`.
   - Visible focus states.
   - Tap targets at least 44px.
   - Alt text on real images; decorative wings get `aria-hidden`.
