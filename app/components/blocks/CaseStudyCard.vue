@@ -40,7 +40,14 @@ const onCobalt = computed(() => props.variant === "cobalt")
       <div class="flex flex-wrap gap-3">
         <StatTile v-for="stat in stats" :key="stat.label" v-bind="stat" :tone="onCobalt ? 'on-cobalt' : 'light'" />
       </div>
-      <PillButton :to="documentLink" :variant="onCobalt ? 'light' : 'primary'" icon="i-ph-file-arrow-down" class="self-start">
+      <PillButton
+        :to="documentLink"
+        :variant="onCobalt ? 'light' : 'primary'"
+        icon="i-ph-file-arrow-down"
+        class="self-start"
+        data-track="document_request"
+        :data-case-study="documentTitle"
+      >
         Minta dokumen lengkap
       </PillButton>
     </div>

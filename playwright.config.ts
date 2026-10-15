@@ -29,6 +29,8 @@ export default defineConfig({
     command: `pnpm exec nuxt dev --port ${PORT}`,
     url: `http://localhost:${PORT}`,
     reuseExistingServer: true,
+    // A test GA ID turns the consent bar on (spec 001); gtag never loads because nothing accepts.
+    env: { NUXT_PUBLIC_GA_ID: 'G-SWEEP00000' },
     timeout: 180_000,
   },
 })

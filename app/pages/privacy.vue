@@ -1,28 +1,9 @@
 <script lang="ts" setup>
 import { consultLink, contact } from "~/data/site"
-useSeoMeta({
-  title: "Kebijakan Privasi",
-  twitterCard: "summary_large_image",
-  description:
-    "Kebijakan Privasi Eskala — bagaimana kami mengumpulkan, menggunakan, dan melindungi data Anda sebagai klien atau pengunjung situs eskala.id.",
-  ogTitle: "Kebijakan Privasi — Eskala",
-  ogDescription:
-    "Pelajari bagaimana Eskala melindungi data pribadi Anda. Transparansi penuh tentang pengumpulan, penggunaan, dan keamanan data.",
-  ogUrl: "https://eskala.id/privacy",
-  ogType: "website",
-  ogImage: "https://eskala.id/android-chrome-512x512.png",
-  twitterTitle: "Kebijakan Privasi — Eskala",
-  twitterDescription:
-    "Kebijakan Privasi Eskala — bagaimana kami mengumpulkan, menggunakan, dan melindungi data Anda.",
-  twitterImage: "https://eskala.id/android-chrome-512x512.png",
-});
-
-useHead({
-  link: [{ rel: "canonical", href: "https://eskala.id/privacy" }],
-});
+usePageSeo({ title: "Kebijakan Privasi", path: "/privacy" })
 
 
-const lastUpdated = "22 April 2026";
+const lastUpdated = "16 Oktober 2026";
 </script>
 
 <template>
@@ -111,7 +92,7 @@ const lastUpdated = "22 April 2026";
           </p>
           <ul class="flex flex-col gap-2 pl-5 list-disc">
             <li class="text-obsidian-700 leading-relaxed"><span class="font-medium">Platform Iklan & Media Sosial</span> — Meta, Google, TikTok, dan platform lain yang diperlukan untuk menjalankan kampanye klien. Data ini diatur oleh kebijakan privasi masing-masing platform.</li>
-            <li class="text-obsidian-700 leading-relaxed"><span class="font-medium">Penyedia Layanan</span> — Pihak ketiga yang membantu operasional kami (penyimpanan cloud, alat analitik, platform komunikasi) yang terikat perjanjian kerahasiaan.</li>
+            <li class="text-obsidian-700 leading-relaxed"><span class="font-medium">Penyedia Layanan</span> — Pihak ketiga yang membantu operasional kami (penyimpanan cloud, alat analitik seperti Google Analytics dan Cloudflare Web Analytics, platform komunikasi) yang terikat perjanjian kerahasiaan.</li>
             <li class="text-obsidian-700 leading-relaxed"><span class="font-medium">Kewajiban Hukum</span> — Apabila diwajibkan oleh hukum Indonesia atau perintah pengadilan yang sah.</li>
           </ul>
         </section>
@@ -157,7 +138,19 @@ const lastUpdated = "22 April 2026";
         <section class="flex flex-col gap-4">
           <h2 class="text-xl font-extrabold text-obsidian-950 sm:text-2xl">8. Cookies</h2>
           <p class="text-obsidian-700 leading-relaxed">
-            Situs kami menggunakan cookies untuk meningkatkan pengalaman pengguna dan menganalisis lalu lintas situs. Cookies adalah file kecil yang disimpan di perangkat Anda. Anda dapat mengatur browser untuk menolak cookies, namun beberapa fitur situs mungkin tidak berfungsi optimal.
+            Situs kami memakai dua alat analitik untuk memahami halaman mana yang membantu pengunjung.
+          </p>
+          <p class="text-obsidian-700 leading-relaxed">
+            <span class="font-medium">Cloudflare Web Analytics</span> menghitung kunjungan tanpa cookie dan tanpa mengenali Anda secara pribadi. Alat ini berjalan untuk semua pengunjung.
+          </p>
+          <p class="text-obsidian-700 leading-relaxed">
+            <span class="font-medium">Google Analytics</span> (layanan Google LLC) memakai cookie untuk mencatat halaman yang dibuka dan tombol yang dipakai, misalnya tombol WhatsApp atau pengiriman formulir. Google Analytics hanya aktif setelah Anda memilih &ldquo;Terima&rdquo; pada pilihan analitik yang muncul saat pertama kali membuka situs. Jika Anda memilih &ldquo;Tolak&rdquo;, Google Analytics tidak dimuat. Data Google Analytics disimpan selama 14 bulan, lalu dihapus otomatis.
+          </p>
+          <p class="text-obsidian-700 leading-relaxed">
+            Anda bisa mengubah pilihan kapan saja lewat tautan &ldquo;Pengaturan cookie&rdquo; di bagian bawah setiap halaman. Pilihan Anda tersimpan di browser selama 6 bulan, lalu kami tanyakan lagi.
+          </p>
+          <p class="text-obsidian-700 leading-relaxed">
+            Pesan WhatsApp yang disiapkan situs ini diakhiri catatan singkat tentang halaman yang Anda buka dan, jika diketahui, dari mana Anda datang (misalnya Google atau ChatGPT). Catatan ini membantu kami menyiapkan konsultasi. Anda bisa menghapusnya sebelum mengirim pesan.
           </p>
         </section>
 

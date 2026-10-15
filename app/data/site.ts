@@ -26,6 +26,8 @@ export const pricing = {
     amountShort: "Rp2,5 jt",
     tag: "Mulai dari Rp2,5 juta",
     sentence: "Mulai dari Rp2,5 juta per bulan",
+    /** The same starting price as a number, for structured data (IDR per month). */
+    minPerMonth: 2_500_000,
   },
   ads: {
     from: "Fee mulai dari",
@@ -72,6 +74,37 @@ export const footerNav: { title: string, links: NavLink[] }[] = [
     ],
   },
 ]
+
+export interface PublicPage {
+  path: string
+  /** The page's name in breadcrumbs and in the WhatsApp source tag. */
+  name: string
+  /** Meta description (eskala-copy: ≤155 characters, only the starting prices). */
+  description: string
+}
+
+/**
+ * Every public page, in nav order. The sitemap, llms.txt, breadcrumbs and the source tag read
+ * this list; /dev/* is never in it (spec 001, FR-001).
+ */
+export const publicPages: PublicPage[] = [
+  { path: "/", name: "Beranda", description: "Partner digital marketing dan komunikasi kesehatan untuk klinik pratama dan utama, rumah sakit, serta dokter. Konsultasi gratis 30 menit lewat WhatsApp." },
+  { path: "/digital-marketing", name: "Digital Marketing", description: "Social Media Management dan Ads Management untuk klinik, rumah sakit, dan dokter, dengan medical review sebelum tayang. Mulai dari Rp2,5 juta per bulan." },
+  { path: "/education", name: "Education", description: "Online Class, Webinar, Course Videos, dan Modules komunikasi kesehatan untuk staf, tenaga kesehatan, dan manajemen klinik. Segera hadir." },
+  { path: "/training", name: "Training", description: "Pelatihan marketing dan humas untuk tim klinik dan rumah sakit lewat Workshop, Bootcamp, dan In-house Training berbasis praktik. Segera hadir." },
+  { path: "/case-study", name: "Studi kasus", description: "Hasil kerja Eskala bersama SMEC Group dan Klinik Mata Boyolali: kondisi awal, strategi yang dijalankan, dan hasil yang terukur." },
+  { path: "/articles", name: "Artikel", description: "Panduan strategi pemasaran klinik dan rumah sakit: cara promosi klinik baru, konten edukasi kesehatan, dan aturan iklan kesehatan." },
+  { path: "/about-us", name: "Tentang kami", description: "Eskala adalah partner digital marketing dan komunikasi kesehatan untuk klinik pratama dan utama, rumah sakit, serta dokter di seluruh Indonesia." },
+  { path: "/faq", name: "FAQ", description: "Jawaban atas pertanyaan yang sering diajukan tentang layanan Eskala, aturan iklan kesehatan, paket, dan kontrak." },
+  { path: "/privacy", name: "Kebijakan privasi", description: "Kebijakan Privasi Eskala — bagaimana kami mengumpulkan, menggunakan, dan melindungi data Anda sebagai klien atau pengunjung situs eskala.id." },
+  { path: "/terms", name: "Syarat layanan", description: "Syarat dan Ketentuan Eskala — aturan penggunaan layanan Social Media Management dan Digital Marketing. Baca sebelum memulai kerja sama." },
+]
+
+/** The public page at a path, ignoring a trailing slash; undefined for /dev/* and unknown paths. */
+export function publicPage(path: string): PublicPage | undefined {
+  const clean = path.length > 1 ? path.replace(/\/+$/, "") : path
+  return publicPages.find(page => page.path === clean)
+}
 
 export const legalNav: NavLink[] = [
   { label: "Kebijakan privasi", to: "/privacy" },

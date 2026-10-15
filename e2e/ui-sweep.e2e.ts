@@ -23,7 +23,7 @@ import { CELLS_DIR, SHOTS_DIR, type Cell } from './ui-sweep/paths'
  * no design. A page that isn't listed is a page nobody checked: add each new
  * route here when it is built, and move a path when the redesign renames it.
  */
-const ROUTES: { slug: string, path: string, design: string | null }[] = [
+const ROUTES: { slug: string, path: string, design: string | null, consent?: boolean }[] = [
   // Dev-only gallery of every shared component (app/pages/dev/components.vue).
   { slug: 'components', path: '/dev/components', design: null },
   { slug: 'home', path: '/', design: 'home' },
@@ -36,6 +36,8 @@ const ROUTES: { slug: string, path: string, design: string | null }[] = [
   { slug: 'faq', path: '/faq', design: null },
   { slug: 'privacy', path: '/privacy', design: null },
   { slug: 'terms', path: '/terms', design: null },
+  // Beranda with the analytics consent bar showing (spec 001, contract C-7); every other route has a choice preset.
+  { slug: 'consent', path: '/', design: null, consent: true },
 ]
 
 const OPTIONS = {
@@ -104,6 +106,10 @@ for (const route of ROUTES) {
   test(route.slug, async ({ page }, testInfo) => {
     const { widths, soft } = testInfo.project.metadata as { widths: number[], soft: boolean }
     mkdirSync(CELLS_DIR, { recursive: true })
+    // A preset choice hides the consent bar so captures stay comparable to design/screenshots/.
+    if (!route.consent) {
+      await page.addInitScript(() => localStorage.setItem('eskala-consent', JSON.stringify({ value: 'denied', at: new Date().toISOString() })))
+    }
 
     for (const width of widths) {
       await test.step(`${width}px`, async () => {
@@ -111,6 +117,9 @@ for (const route of ROUTES) {
         const response = await page.goto(route.path, { waitUntil: 'networkidle' })
         expect(response?.status(), `${route.path} answered`).toBeLessThan(400)
         await settle(page)
+        if (route.consent) {
+          await expect(page.getByRole('region', { name: 'Pilihan analitik' }), 'consent bar missing: stop any server on port 3100 (it was started without NUXT_PUBLIC_GA_ID) and rerun').toBeVisible()
+        }
 
         const options = { ...OPTIONS, phoneTextPx: width < 640 ? 16 : null }
         const findings: AuditFinding[] = await page.evaluate(auditDocument, options)

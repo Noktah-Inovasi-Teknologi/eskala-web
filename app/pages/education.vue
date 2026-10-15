@@ -8,7 +8,6 @@ definePageMeta({ navCta: consultLink })
 
 usePageSeo({
   title: "Education: Kelas Komunikasi Kesehatan untuk Klinik dan Rumah Sakit",
-  description: "Online Class, Webinar, Course Videos, dan Modules komunikasi kesehatan untuk staf, tenaga kesehatan, dan manajemen klinik. Segera hadir.",
   path: "/education",
 })
 
@@ -33,7 +32,7 @@ const fields: InterestField[] = [
 ]
 const topics = ["Komunikasi dengan pasien", "Menjelaskan biaya", "Aturan iklan kesehatan", "Media sosial untuk tenaga kesehatan", "Edukasi pra- dan pasca-tindakan", "Lainnya"]
 
-const { status, send } = useWhatsAppHandoff()
+const { status, send } = useWhatsAppHandoff("education_waitlist")
 function onSubmit(data: Record<string, string | string[]>) {
   send("Halo Eskala! Saya ingin mendapat kabar pertama tentang Education.", [
     ["Nama", data.name],

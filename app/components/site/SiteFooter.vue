@@ -2,6 +2,7 @@
 import { contact, footerNav, legalNav, tagline } from "~/data/site"
 
 const year = new Date().getFullYear()
+const consent = useConsent()
 </script>
 
 <template>
@@ -48,6 +49,14 @@ const year = new Date().getFullYear()
         >
           {{ link.label }}
         </NuxtLink>
+        <button
+          v-if="consent.enabled"
+          type="button"
+          class="inline-flex min-h-11 cursor-pointer items-center whitespace-nowrap underline transition-colors hover:text-cobalt-500"
+          @click="consent.reopen()"
+        >
+          Pengaturan cookie
+        </button>
       </div>
     </UContainer>
   </footer>

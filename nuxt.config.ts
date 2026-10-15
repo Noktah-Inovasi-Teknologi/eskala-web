@@ -63,10 +63,19 @@ export default defineNuxtConfig({
       ],
     },
   },
-  // Old URLs (design/SPEC-BRIEF.md, ADR-0001). /case-study and /about-us keep their URLs.
+  // GA4 measurement ID: public, not a secret, so it ships with the code and survives any deploy.
+  // Production builds only, so `nuxt dev` never reports to the live property; NUXT_PUBLIC_GA_ID
+  // overrides it (the UI sweep sets a test ID). Empty: no consent bar and no GA4 (spec 001, FR-019).
+  runtimeConfig: { public: { gaId: process.env.NODE_ENV === "production" ? "G-GT2D6YXFFP" : "" } },
+  nitro: { prerender: { routes: ["/sitemap.xml", "/llms.txt"] } },
+  // Old URLs (design/SPEC-BRIEF.md, ADR-0001, spec 001 FR-002). /case-study and /about-us keep their URLs.
   routeRules: {
     "/services/social-media-management": { redirect: { to: "/digital-marketing#smm", statusCode: 301 } },
     "/services/digital-marketing": { redirect: { to: "/digital-marketing#ads-management", statusCode: 301 } },
+    "/services/ads-management": { redirect: { to: "/digital-marketing#ads-management", statusCode: 301 } },
+    "/services/kol-management": { redirect: { to: "/digital-marketing", statusCode: 301 } },
+    "/services/creative-service": { redirect: { to: "/digital-marketing", statusCode: 301 } },
+    "/services/eskala-vip": { redirect: { to: "/digital-marketing", statusCode: 301 } },
   },
   vite: {
     plugins: [tailwindcss()],

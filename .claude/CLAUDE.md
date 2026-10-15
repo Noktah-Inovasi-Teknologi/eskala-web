@@ -53,6 +53,7 @@ pnpm generate  # Static site generation
 pnpm preview   # Preview production build
 pnpm ui:sweep  # UI sweep: every breakpoint, screenshots + report, records without failing
 pnpm ui:gate   # UI gate: 320/390/1280/2560, fails on findings (report: test-results/ui-sweep/report.md)
+pnpm test:unit # Unit tests (node --test e2e/unit/*.test.ts): the visit-source detector
 pnpm nuxi typecheck   # Type-check the app
 pnpm nuxi prepare     # Regenerate .nuxt types
 ```

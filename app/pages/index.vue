@@ -9,9 +9,9 @@ import type { Milestone, ProcessStep } from "~/types/content"
 
 usePageSeo({
   title: "Eskala — Digital Marketing untuk Klinik, Rumah Sakit, dan Dokter",
-  description: "Partner digital marketing dan komunikasi kesehatan untuk klinik pratama dan utama, rumah sakit, serta dokter. Konsultasi gratis 30 menit lewat WhatsApp.",
   path: "/",
   full: true,
+  faqs: homeFaqs,
 })
 
 const services = [

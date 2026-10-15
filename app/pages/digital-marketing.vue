@@ -5,10 +5,46 @@ import { digitalMarketingFaqs } from "~/data/faqs"
 import { consultLink, pricing } from "~/data/site"
 import { comparison, popularBadge, tiers } from "~/data/smm"
 
+const audience = {
+  "@type": "Audience",
+  "audienceType": "Klinik pratama dan utama, rumah sakit, serta dokter umum maupun spesialis",
+}
 usePageSeo({
   title: "Digital Marketing Klinik, Rumah Sakit, dan Dokter",
-  description: "Social Media Management dan Ads Management untuk klinik, rumah sakit, dan dokter, dengan medical review sebelum tayang. Mulai dari Rp2,5 juta per bulan.",
   path: "/digital-marketing",
+  faqs: digitalMarketingFaqs,
+  // Only the SMM starting price; Ads Management's fee is a percentage, so it carries no amount (constitution IV).
+  schema: [
+    {
+      "@type": "Service",
+      "@id": "https://eskala.id/digital-marketing#smm",
+      "name": "Social Media Management",
+      "serviceType": "Social Media Management",
+      "provider": { "@id": "https://eskala.id/#organization" },
+      "areaServed": { "@type": "Country", "name": "Indonesia" },
+      "audience": audience,
+      "offers": {
+        "@type": "Offer",
+        "description": pricing.smm.sentence,
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "minPrice": pricing.smm.minPerMonth,
+          "priceCurrency": "IDR",
+          "unitText": "MONTH",
+        },
+      },
+    },
+    {
+      "@type": "Service",
+      "@id": "https://eskala.id/digital-marketing#ads-management",
+      "name": "Ads Management",
+      "serviceType": "Ads Management (Meta, Google, TikTok)",
+      "description": pricing.ads.sentence,
+      "provider": { "@id": "https://eskala.id/#organization" },
+      "areaServed": { "@type": "Country", "name": "Indonesia" },
+      "audience": audience,
+    },
+  ],
 })
 
 const phases = [
