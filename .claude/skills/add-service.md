@@ -1,17 +1,19 @@
 # Skill: Add New Service
 
+> **Redesign 2026:** the markup examples below predate the redesign. For layout, typography, colours and copy, follow `design/` and `.claude/CLAUDE.md`. Use this skill for workflow steps only.
+
 ## When to Use
 When adding a new service page to the website.
 
-## Current Active Services
+## Current Services (redesign 2026)
 
-| Service | URL | Page File |
-|---------|-----|-----------|
-| Social Media Management | `/services/social-media-management` | `social-media-management.vue` |
-| Digital Marketing | `/services/digital-marketing` | `digital-marketing.vue` |
-| Eskala VIP | `/services/vip` | `eskala-vip.vue` |
+| Service | Proposed URL | Status |
+|---------|--------------|--------|
+| Digital Marketing (Social Media Management and Ads Management on one page) | `/digital-marketing` | Live |
+| Education (Online Class, Webinar, Course Videos, Modules) | `/education` | Segera hadir, waitlist |
+| Training (Workshop, Bootcamp, In-house Training) | `/training` | Segera hadir, interest form |
 
-**Note**: Ads Management, KOL Management, and Creative Service are deprecated as standalone services. Do not create new pages for them.
+The routes are proposals; see `design/SPEC-BRIEF.md`. Ads Management is a sub-service of Digital Marketing, with its own section `#ads-management` and its own fee. KOL Management, KOC Management, Creative Service and "Eskala VIP" do not exist. Show only starting prices.
 
 ## Steps
 
@@ -70,10 +72,10 @@ All services use **Starter / Standard / Premium** naming (not Basic/Professional
 | Tier | Notes |
 |------|-------|
 | Starter | Entry-level, essential features |
-| Standard | Mid-tier, most popular (highlight with "POPULER" badge) |
+| Standard | Mid-tier, badge "Paling dipilih" |
 | Premium | Full-featured, maximum output |
 
-The "POPULER" badge uses: `<UBadge label="POPULER" color="secondary" variant="solid" />`
+The Standard tier carries the badge "Paling dipilih" (see `design/reference/digital-marketing.html`).
 
 ## Pricing Table Pattern
 

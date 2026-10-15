@@ -1,5 +1,7 @@
 # Skill: Create New Page
 
+> **Redesign 2026:** the markup examples below predate the redesign. For layout, typography, colours and copy, follow `design/` and `.claude/CLAUDE.md`. Use this skill for workflow steps only.
+
 ## When to Use
 When the user asks to create a new page or route in the application.
 
@@ -122,10 +124,10 @@ When the user asks to create a new page or route in the application.
 
 ## Key Rules
 
-- Use `UContainer` with `id` attribute for each section (enables anchor links)
-- Use `py-24` for all sections (no `py-16 md:py-24`)
-- Use `font-display` for headings (Poppins), `font-body` for paragraphs (Plus Jakarta Sans)
-- Use copper decorative labels (`──────── Label`) before every section heading
-- Dark sections: `bg-obsidian-950` with `text-obsidian-50` headings and `text-obsidian-300` body
-- Light sections: `bg-obsidian-100` or `bg-obsidian-200`
-- Neutral sections: no background class (white/default)
+- Use `UContainer` with an `id` attribute for each section, so anchor links work.
+- Section padding is responsive: `py-12 sm:py-16 md:py-20 lg:py-24`.
+- Plus Jakarta Sans for everything (`font-body` / `font-display`). Livvic (`font-wordmark`) is for the wordmark only.
+- Eyebrows are short uppercase labels, used sparingly. The `──────── Label` pattern is retired.
+- Dark sections: `bg-obsidian-950` or `bg-cobalt-950`, with white headings and `text-obsidian-300` body.
+- Light sections: `bg-white` or `bg-obsidian-100`.
+- Copy the page text exactly from `design/reference/<page>.html`.

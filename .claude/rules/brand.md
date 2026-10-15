@@ -1,244 +1,121 @@
-# Eskala Brand Guidelines
+# Eskala Brand Guidelines (redesign 2026)
+
+`design/` is the source of truth for page content and visuals. This file holds the brand decisions behind it.
 
 ## Brand Identity
 
-- **Brand Name**: Eskala
-- **Tagline**: "Supporting you, creatively"
-- **Displayed tagline**: `Supporting you creatively` (italic, `text-obsidian-500 font-[Poppins] text-xs italic`) in Navbar
-- **Mission**: Partner kreatif yang bantu fasilitas kesehatan tumbuh di dunia digital.
-- **Positioning**: Digital marketing agency berbasis di Yogyakarta, spesialis Social Media Management dan Digital Marketing untuk fasilitas kesehatan (faskes) di Indonesia.
-- **Primary market**: Klinik, rumah sakit, dan brand kesehatan di Indonesia
+- **Brand name**: Eskala
+- **Line**: "Membumikan kesehatan". It is the home page h1 and appears under the wordmark in the footer.
+- **What Eskala is**: a digital marketing and healthcare-communication partner for klinik pratama dan utama, rumah sakit, and dokter umum maupun spesialis across Indonesia.
+- **Stance**: Eskala works *with* the client's in-house marketing team. The internal team keeps direction and approval; Eskala adds production capacity, medical review and performance analysis.
+- **Positioning**: national. Don't name a city, and don't call Eskala a "tim kreatif kesehatan".
+- **Never shown on the site**: the parent company name (Noktah).
 
-### Brand Positioning Statement
+Purpose, mission, vision, differentiators and the five values are written out on the Tentang kami page (`design/reference/tentang-kami.html`). Copy them verbatim from there.
 
-Eskala adalah digital marketing agency berbasis di Yogyakarta yang fokus membantu fasilitas kesehatan Indonesia tumbuh melalui Social Media Management dan Digital Marketing. Kami menggabungkan kreativitas dengan pemahaman mendalam tentang standar medis dan regulasi kesehatan.
+## Contact
 
-### Unique Value Proposition
+- Email: core@eskala.id
+- Phone / WhatsApp: +62 822-3071-2718. Link: `https://wa.me/6282230712718`, with a page-specific `?text=` where the design shows one.
+- Location line in the footer: "Melayani seluruh Indonesia".
 
-Tim kreatif yang memahami dunia kesehatan — bukan vendor yang menunggu brief, tapi partner bisnis yang membantu faskes tumbuh di dunia digital.
+## Social Media
 
-## Contact Information
+All accounts use **@eskala.team**. Show each one as an icon link with the handle.
+- Instagram: https://instagram.com/eskala.team
+- TikTok: https://www.tiktok.com/@eskala.team
+- Threads: https://www.threads.net/@eskala.team
 
-- **Email**: core@eskala.id
-- **Phone / WhatsApp**: +62 822-3071-2718
-- **WhatsApp link**: `https://wa.me/6282230712718`
+## Logo
 
-## Social Media Handles
-
-All platforms use consistent handle: `@eskala.u`
-- Instagram: instagram.com/eskala.u
-- TikTok: tiktok.com/@eskala.u
-- Facebook: facebook.com/eskala.u
-- YouTube: youtube.com/@eskala.u
+- The wing mark (`design/assets/wing-cobalt.svg`; `wing-white.svg` on dark backgrounds) sits next to the wordmark "ESKALA", set in **Livvic 900**.
+- `wing-copper.svg` is decorative only. It appears as a large cropped wing in hero panels and dark bands, and is always `aria-hidden`.
+- The old "Eskala." text logo and the "Supporting you creatively" tagline are retired.
 
 ## Color Palette
 
-Defined in `app/assets/css/main.css` as `@theme static`. Actual hex values:
+Token names follow the Eskala Design System (https://claude.ai/artifact/EXeTAjSTXsviSH6WqX4Pau). These are the colours the redesign uses:
 
-### Primary - Cobalt (Blue)
-
-| Token | Hex | Usage |
-|-------|-----|-------|
-| cobalt-50 | #EFF4FE | Light backgrounds |
-| cobalt-100 | #DCE6FD | Subtle highlights |
-| cobalt-200 | #BFDBFE | Secondary backgrounds |
-| cobalt-300 | #93C5FD | Borders, dividers |
-| cobalt-400 | #1D4ED8 | Interactive elements |
-| cobalt-500 | #1D4ED8 | Primary buttons, links (same as 400) |
-| cobalt-600 | #1A46C2 | Hover states |
-| cobalt-700 | #0D2D9F | Active states |
-| cobalt-800 | #09238C | Dark accents |
-| cobalt-900 | #0f2668 | Dark text on light |
-| cobalt-950 | #020B3D | Darkest shade |
-
-### Secondary - Copper (Orange)
-
-| Token | Hex | Usage |
-|-------|-----|-------|
-| copper-50 | #FFF7ED | Soft backgrounds (testimonials, hero quote card) |
-| copper-100 | #FFEED4 | Subtle highlights |
-| copper-200 | #FED7AA | Light accents, borders |
-| copper-300 | #FDBA74 | Badges, tags |
-| copper-400 | #FB923C | Interactive accents |
-| copper-500 | #FB923C | Accents, dots, icons (same as 400) |
-| copper-600 | #EF7A1B | Hover states |
-| copper-700 | #C45F12 | Active states |
-| copper-800 | #9A3412 | Dark accents |
-| copper-900 | #7C2D12 | Dark text |
-| copper-950 | #431407 | Darkest shade |
-
-### Neutral - Obsidian (Gray)
-
-| Token | Hex | Usage |
-|-------|-----|-------|
-| obsidian-50 | #FAFBFC | Page backgrounds |
-| obsidian-100 | #F8FAFC | Card backgrounds |
-| obsidian-200 | #F1F5F9 | Section backgrounds (case study) |
-| obsidian-300 | #E2E8F0 | Borders |
-| obsidian-400 | #CBD5E1 | Disabled states, separator color |
-| obsidian-500 | #94A3B8 | Placeholder text |
-| obsidian-600 | #64748B | Secondary text |
-| obsidian-700 | #475569 | Body text on light backgrounds |
-| obsidian-800 | #334155 | Headings |
-| obsidian-900 | #1E293B | Primary text |
-| obsidian-950 | #0F172A | Darkest text, dark section backgrounds |
+| Role | Token | Hex |
+|---|---|---|
+| Primary, links, accent word in headings | cobalt-500 | #1D4ED8 |
+| Hover | cobalt-600 | #1A46C2 |
+| Tints | cobalt-50 / cobalt-100 | #EFF4FE / #DCE6FD |
+| Deepest panels | cobalt-950 | #020B3D |
+| Accent, price tags, wing | copper-500 | #FB923C |
+| Copper text on light backgrounds | accent-strong | #A8500C |
+| Price pill background | copper-100 | #FFEED4 |
+| Ink | obsidian-950 | #0F172A |
+| Body | obsidian-700 / 800 | #475569 / #334155 |
+| Borders | obsidian-300 / 400 | #E2E8F0 / #CBD5E1 |
+| Light section background | obsidian-100 | #F8FAFC |
+| Light blue on dark backgrounds | cobalt-400 | #6C93F0 |
+| WhatsApp CTA | success-700 (hover success-hover #0F6A31) | #15803D |
+| Error text | error-700 | #B91C1C |
 
 ## Typography
 
-Two fonts loaded via `@nuxt/fonts`:
+| Use | Font |
+|---|---|
+| Everything: headings, body, labels | Plus Jakarta Sans 400–800 |
+| "ESKALA" wordmark only | Livvic 900 |
 
-| Role | Font | CSS class | Use for |
-|------|------|-----------|---------|
-| Display / Headings | Poppins | `font-display` | Headings, labels, navbar brand, section titles, numbers |
-| Body | Plus Jakarta Sans | `font-body` | Paragraph text, descriptions, body copy |
+Poppins is retired.
 
-**Do not** use `font-[Poppins]` inline (legacy). Use `font-display` and `font-body`.
+## Voice & Copy
 
-### Text Hierarchy
-- **Hero Headlines**: `font-display text-7xl font-bold`
-- **Section Headings**: `font-display text-5xl font-bold`
-- **Sub-headings**: `font-display text-2xl font-semibold` or `text-3xl`
-- **Body Text**: `font-body text-lg text-obsidian-700 font-light`
-- **Small Labels**: `font-display text-sm font-semibold tracking-widest text-cobalt-500` (uppercase)
-- **Decorative label**: `font-display text-copper-500 font-medium` — `──────── Section Name`
-
-## Brand Voice & Tone
-
-### Language
-- Primary: Bahasa Indonesia
-- Style: Professional, warm, honest
-- Focus: Membangun kepercayaan dengan pemahaman mendalam tentang dunia faskes
-- Descriptor: "kreativitas yang bertanggung jawab" — creativity grounded in medical standards and regulatory compliance
-
-### Core Insight
-> "Bisnis Anda bukan kekurangan kualitas, tapi kehilangan relevansi di mata audiens."
-
-Placed as a copper-accented blockquote in the **about-us "Cerita Kami"** section (`app/pages/about-us.vue`).
-
-### Key Messages
-- "Pertumbuhan bukan tentang seberapa sering brand muncul, tetapi seberapa dalam brand diingat dan dirasakan."
-- "Brand yang paling mengerti akan selalu lebih diingat."
-- "Saya ingin faskes lebih mengerti dan lebih masuk dalam dunia pasien. Kita bisa lakukan itu secara digital."
-
-### Closing CTA
-"Kalau bukan sekarang mulai, lalu kapan?"
-
-### Core Value Propositions
-1. **Paham Regulasi** — Setiap konten melewati medical review oleh tim ahli kami, mengacu pedoman KKI dan Kemenkes
-2. **Cepat & Adaptif** — Eksekusi cepat, keputusan di hari yang sama
-3. **Revisi Unlimited** — Tanpa batas, tanpa biaya tambahan
-4. **Fleksibel** — Kontrak per semester, notice period 30 hari
-5. **Transparan** — Laporan performa bulanan yang jelas
-6. **Berkualitas Tinggi** — QC berlapis untuk semua konten
-
-### Key Metrics (homepage hero)
-- Dipercaya 10+ fasilitas kesehatan di Indonesia
-- Bersandar pada regulasi kesehatan Indonesia dan standar medis internasional
-- Kontrak fleksibel tanpa komitmen tahunan
-- Tim tersertifikasi Meta & Google
-- 80% klien memperpanjang kontrak setelah 6 bulan pertama
-
-### Target Client Profile
-- Fasilitas kesehatan dengan media sosial yang belum dikelola secara optimal
-- Klinik/RS yang ingin memperluas jangkauan pasien secara digital
-- Brand kesehatan yang siap investasi dalam partnership marketing profesional
-- **Tidak cocok untuk**: Faskes yang belum beroperasi
-
-## Why Eskala
-
-| Aspek | Eskala | Agensi Lain |
-|-------|--------|-------------|
-| Revisi | Unlimited, tanpa biaya tambahan | 2-3x, lalu biaya tambahan |
-| Eksekusi | Cepat & adaptif | Proses panjang, lambat |
-| Medical Review | Ya — setiap konten | Tidak ada |
-| Kontrak | Per semester, notice 30 hari | Lock-in 6-12 bulan |
-| Retensi klien | 80% bertahan >6 bulan | — |
+- Bahasa Indonesia, addressing the reader as "Anda". Professional, warm and plain.
+- Headings say the thing directly. Avoid:
+  - "X. Y." fragment pairs;
+  - "X, bukan Y" constructions;
+  - stacked parallel phrases;
+  - an eyebrow on every section.
+- Explain medical and marketing jargon the first time it appears (see `docs/unfamiliar-terms-checklist.md`).
+- **Testimonials.** Use verbatim quotes only, from the people shown in the designs:
+  - Donny Putra N.H., Manager Digital Marketing, SMEC Group;
+  - the Ecky Dental client quote.
+- Don't use dr. Sukardi's testimonial anywhere.
 
 ## Services
 
-### 1. Social Media Management
-- URL: `/services/social-media-management`
-- Tagline: "Hadir Konsisten, Tumbuh Organik"
-- Platforms: Instagram, TikTok, Facebook
+Product names are in English.
 
-| Tier | Feed | Reels | Platforms | Key Extras |
-|------|------|-------|-----------|-----------|
-| Starter | 8 | 4 | 1 | — |
-| Standard | 10 | 7 | 2 (Mirroring) | + Content Pillars |
-| Premium | 16 | 8 | 3 | + Community Mgmt, Competitor Analysis |
+### Digital Marketing (live)
 
-All tiers include: Photography, Videography, Content Editing, Copywriting, Unlimited Revisions, Monthly Content Plan, **Medical Review**, Monthly Report, Monthly Review Meeting.
+**Social Media Management.** Tiers: **Starter** ("Untuk konsistensi"), **Standard** ("Untuk optimasi", badge *Paling dipilih*) and **Premium** ("Untuk pertumbuhan").
+- The full feature comparison is in `design/reference/digital-marketing.html`; copy the rows exactly.
+- Out-of-schedule content requests: Starter "Paling lambat H-3", Standard "H-3 hingga H-1", Premium "Hingga hari H".
+- Replying to DMs is Premium only.
 
-### 2. Digital Marketing
-- URL: `/services/digital-marketing`
-- Tagline: "Iklan yang Tepat, Hasil yang Maksimal"
-- Scope: Ads Management only (Meta, TikTok, atau Google — 1 platform per tier)
-- Note: Ad creative production NOT included in Digital Marketing; KOC is deprecated and removed
+**Ads Management.** Covers Meta, Google and TikTok. It is a separate service from SMM.
+- Fee = package percentage × (ad spend + tax).
+- KPIs are agreed before ads go live.
 
-| Tier | Platform |
-|------|----------|
-| Starter | 1 (pilihan: Meta, TikTok, atau Google) |
-| Standard | 1 (pilihan: Meta, TikTok, atau Google) |
-| Premium | 1 (pilihan: Meta, TikTok, atau Google) |
+### Education (Segera hadir)
 
-Fee berbasis persentase dari ad spend — tidak dipublikasikan; diskusikan dengan klien langsung.
+Online Class, Webinar, Course Videos, Modules. The page collects a waitlist.
 
-### Deprecated (Do Not Create New Pages For)
-- Ads Management (standalone) → merged into Digital Marketing
-- KOL Management → deprecated entirely (removed from all services)
-- KOC Management → deprecated entirely (removed from Digital Marketing)
-- Creative Service (standalone) → not offered as a separate service
+### Training (Segera hadir)
 
-### Entry-Level (Not Yet Built)
-- **Brand Audit & Consultation** — URL: `/services/consultation`
-- Price: 750.000–1.500.000 (one-time); credited toward first month if client signs ongoing
+Workshop, Bootcamp, In-house Training. The page collects training interest.
 
-## Logo & Brand Mark
+## Pricing Display
 
-- Navbar: `Eskala` (`text-obsidian-950`) + `.` (`text-copper-500`), class: `font-display text-2xl font-bold`
-- Tagline: `Supporting you creatively` — `text-obsidian-500 text-xs italic font-normal`
+- Show **only** starting prices, and make them prominent. The designs use a copper tag, a pill and a circle badge.
+  - SMM: **"Mulai dari Rp2,5 juta per bulan"**.
+  - Ads Management: **"Fee mulai dari 10% dari total biaya iklan"**.
+- Never publish tier prices, per-tier ad fees or CPR targets.
 
-## UI Patterns
+## Proof Points Used on the Site
 
-### Testimonial / Quote Cards
-- Container: `bg-copper-50 border border-copper-200 rounded-3xl p-8 gap-8 flex flex-col`
-- Quote icon: `i-heroicons-chat-bubble-left`, `text-copper-500 text-4xl`
-- Avatar: `w-9 h-9 rounded-full bg-copper-500`, white initials, `text-sm font-semibold`
+- SMEC Group: jaringan klinik mata dengan **10+ cabang**, >4x ROAS, 250+ konten per bulan.
+- Klinik Mata Boyolali: 12 bulan, 2 jt+ views, 1,28 jt+ reach, 16 rb+ profile visits.
+- Studi kasus header: 10+ fasilitas, 2 studi kasus, +200% reach organik, 80% perpanjang kontrak.
+- Contract: "Kontrak fleksibel, tanpa komitmen tahunan".
+- Every piece of content goes through medical review and is checked against the health advertising rules (Permenkes 1787/2010).
 
-### Dark Sections (Packages, Expected Results)
-- Background: `bg-obsidian-950`
-- Headings: `text-obsidian-50`
-- Body: `text-obsidian-300`
-- Card borders: `border-obsidian-700`
-- Card background: `bg-obsidian-900`
+## CTAs
 
-### Light Sections (FAQ, Case Study)
-- Background: `bg-obsidian-100` or `bg-obsidian-200`
-- Headings: `text-obsidian-950`
-- Body: `text-obsidian-700 font-body font-light`
-
-### CTA Section
-- Background: `bg-cobalt-50 border border-cobalt-200 rounded-2xl p-10 lg:p-14`
-- Primary: WhatsApp — `color="success"`, icon `i-mdi-whatsapp`, `rounded-full`
-- Secondary: Email — `color="neutral" variant="outline"`, icon `i-heroicons-envelope`, `rounded-full`
-
-### Buttons
-- WhatsApp / Primary: `color="success"` with WhatsApp icon, `rounded-full`
-- Copper accent: `color="secondary"` (maps to copper in app.config)
-- Neutral link: `color="neutral" variant="link"`
-
-### Section Label Pattern
-```vue
-<p class="font-display text-copper-500 font-medium">──────── Section label</p>
-<h2 class="font-display text-obsidian-950 font-bold text-5xl">Section heading</h2>
-```
-
-## Website CTAs
-
-### Primary CTA
-- Text: "Jadwalkan konsultasi gratis dengan kami" / "Hubungi via WhatsApp"
-- Link: `https://wa.me/6282230712718`
-- Style: `color="success"`, `rounded-full`, WhatsApp icon
-
-### WhatsApp Message Template
-"Halo Eskala! Saya tertarik untuk konsultasi tentang [layanan] untuk faskes kami. Bisnis kami bergerak di bidang [spesialisasi]. Kapan bisa jadwalkan diskusi?"
+- Primary: **"Konsultasi gratis 30 menit"** opens WhatsApp. It is a green pill with the WhatsApp icon.
+- The nav button reads "Konsultasi gratis" and is an outline pill.
+- Secondary CTA: email core@eskala.id.

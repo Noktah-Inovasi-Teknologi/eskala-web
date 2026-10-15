@@ -41,10 +41,10 @@ pnpm nuxi prepare
 ## Project Modules
 
 Active Nuxt modules (from `nuxt.config.ts`):
-- `@nuxt/fonts` — Loads Poppins and Plus Jakarta Sans from Google Fonts
+- `@nuxt/fonts` — loads Plus Jakarta Sans and Livvic. The redesign retires Poppins; update `nuxt.config.ts` `fonts.families` accordingly.
 - `@nuxt/ui` — UI component library (Heroicons, Simple Icons included)
 
-Note: `@nuxt/content` is **NOT** in use. Do not install or reference it.
+Note: `@nuxt/content` is **NOT** in use. Don't install it unless the Artikel decision in `design/SPEC-BRIEF.md` (open question 4) says to.
 
 ## File Watching
 

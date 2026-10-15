@@ -1,161 +1,99 @@
-# Tailwind CSS Styling Guidelines
+# Tailwind CSS Styling Guidelines (redesign 2026)
+
+The visual target is `design/screenshots/` and `design/reference/*.html`. Every value below comes from those files.
 
 ## General Principles
 
-- Always use Tailwind utility classes over custom CSS
-- Follow mobile-first responsive design
-- Use the project's custom color tokens: `cobalt`, `copper`, `obsidian`
-- Use `font-display` (Poppins) for headings and `font-body` (Plus Jakarta Sans) for body text
+- Use Tailwind utility classes and theme tokens. No inline styles and no hardcoded hex values.
+- Design mobile-first. Check every page at 390, 640, 768, 1024, 1280, 1536 and 2560 widths.
+- Prefer Nuxt UI components (`UButton`, `UAccordion`, `UIcon`, form inputs), styled to match the design.
 
-## Typography Classes
+## Typography
 
-```
-font-display   →  Poppins (headings, labels, numbers, brand elements)
-font-body      →  Plus Jakarta Sans (body text, descriptions, paragraphs)
-```
-
-**Do NOT use** `font-[Poppins]` inline style — use `font-display` instead.
-
-### Text Hierarchy
-```
-Hero headline:      font-display text-7xl font-bold text-obsidian-950
-Section heading:    font-display text-5xl font-bold text-obsidian-950
-Sub-heading:        font-display text-2xl font-semibold text-obsidian-950
-Body paragraph:     font-body text-lg text-obsidian-700 font-light
-Small label (caps): font-display text-sm font-semibold tracking-widest text-cobalt-500
-Decorative label:   font-display text-copper-500 font-medium
-```
-
-## Color Usage
+All text is Plus Jakarta Sans (`font-body`; `font-display` now resolves to the same font). The "ESKALA" wordmark uses `font-wordmark` (Livvic 900) and nothing else does.
 
 ```
-Primary (cobalt):    text-cobalt-500, bg-cobalt-50, border-cobalt-200
-Secondary (copper):  text-copper-500, bg-copper-50, border-copper-200
-Neutral (obsidian):  text-obsidian-700, bg-obsidian-100, border-obsidian-300
-Dark sections:       bg-obsidian-950, text-obsidian-50, border-obsidian-700
+H1        font-extrabold tracking-[-0.035em] leading-none text-obsidian-950
+          fluid size: home ≈ text-[clamp(52px,7vw,104px)]; other pages ≈ text-[clamp(44px,5.4vw,80px)]
+H2        font-extrabold tracking-[-0.03em] leading-[1.08] text-[clamp(32px,3.6vw,50px)] text-obsidian-950
+H3        text-xl/2xl font-bold text-obsidian-950
+Eyebrow   text-[13px] font-semibold uppercase tracking-[0.09em] text-obsidian-700   (or text-accent-strong); no copper rule on the website
+Lede      text-base sm:text-lg 3xl:text-[19px] leading-[1.65] text-obsidian-700
+Body      text-base text-obsidian-700
+Accent    one word or phrase in a heading can be text-cobalt-500 (e.g. "Membumikan <kesehatan>")
 ```
 
-In Nuxt UI components:
-- `color="primary"` → cobalt
-- `color="secondary"` → copper
-- `color="neutral"` → obsidian
-- `color="success"` → green (used for WhatsApp button)
+Use eyebrows sparingly. Many sections in the design have none.
 
-## Spacing Standards
-
-- **Section vertical padding**: `py-24` (consistent across all sections)
-- **Container**: Use `<UContainer>` — configured as `max-w-7xl mx-auto px-6`
-- **Section gaps**: `flex flex-col gap-12` for major content blocks
-- **Sub-gaps**: `gap-8` for heading groups, `gap-4` or `gap-6` for smaller items
-- **Grid columns**: `grid-cols-2`, `md:grid-cols-2`, `lg:grid-cols-3`, `lg:grid-cols-4`
-
-## Section Structure Pattern
-
-Every section follows this structure:
-
-```vue
-<UContainer id="section-name" class="flex flex-col gap-12 py-24">
-  <div class="flex flex-col gap-8">
-    <p class="font-display text-copper-500 font-medium">──────── Section label</p>
-    <h2 class="font-display text-obsidian-950 font-bold text-5xl">Section heading</h2>
-    <p class="font-body text-lg text-obsidian-700 font-light">
-      Supporting description text.
-    </p>
-  </div>
-  <!-- Section content -->
-</UContainer>
-```
-
-For dark sections (obsidian-950 background):
-```vue
-<UContainer id="section-name" class="flex flex-col gap-12 py-24 bg-obsidian-950">
-  <div class="flex flex-col gap-8">
-    <p class="font-display text-copper-500 font-medium">──────── Section label</p>
-    <h2 class="font-display text-obsidian-50 font-bold text-5xl">Section heading</h2>
-    <p class="font-body text-lg text-obsidian-300 font-light">Description.</p>
-  </div>
-</UContainer>
-```
-
-## Card Patterns
-
-### Standard card (light)
-```vue
-<div class="flex flex-col gap-8 rounded-3xl border border-obsidian-200 p-8">
-  <!-- content -->
-</div>
-```
-
-### Dark card (inside dark sections)
-```vue
-<div class="flex flex-col gap-8 rounded-3xl border border-obsidian-700 bg-obsidian-900 p-8">
-  <!-- content -->
-</div>
-```
-
-### Copper accent card (testimonials, hero quote)
-```vue
-<div class="flex flex-col p-8 gap-8 rounded-3xl border border-copper-200 bg-copper-50">
-  <!-- content -->
-</div>
-```
-
-### VIP / Premium card
-```vue
-<div class="bg-copper-50 rounded-2xl p-8 border-2 border-copper-400">
-  <!-- content -->
-</div>
-```
-
-## Button Patterns
-
-```vue
-<!-- Primary: WhatsApp / main CTA -->
-<UButton href="https://wa.me/6282230712718" color="success" class="px-4 rounded-full" size="xl">
-  <Icon name="i-mdi-whatsapp" />Hubungi via WhatsApp
-</UButton>
-
-<!-- Secondary: email / outline -->
-<UButton href="mailto:core@eskala.id" color="neutral" variant="outline" class="px-4 rounded-full" size="xl">
-  <Icon name="i-heroicons-envelope" />Kirim brief melalui email
-</UButton>
-
-<!-- Tertiary: link style -->
-<UButton color="neutral" variant="link" class="px-4 rounded-full" size="xl">
-  atau pelajari detail
-  <Icon name="i-heroicons-arrow-top-right-on-square" />
-</UButton>
-
-<!-- Copper accent -->
-<UButton color="secondary" class="px-4 rounded-full" size="xl">
-  Label
-</UButton>
-```
-
-## Custom Animations
-
-```css
-/* Defined in main.css — use via class on the element */
-.animate-bounce-bottom {
-  animation: bounce-from-bottom 1s infinite;
-}
-```
-
-## Responsive Breakpoints
+## Colors
 
 ```
-sm:  640px   (small tablets)
-md:  768px   (tablets)
-lg:  1024px  (laptops)
-xl:  1280px  (desktops)
-2xl: 1536px  (large screens)
+Light section    bg-white or bg-obsidian-100
+Dark section     bg-obsidian-950 or bg-cobalt-950; headings text-white, body text-obsidian-300/400, accents text-cobalt-400
+Cobalt panel     bg-cobalt-500 with the copper wing (hero panels, featured service card)
+Borders          border-obsidian-300 (cards), border-obsidian-400 (inputs, outline buttons)
+Copper text      text-accent-strong, never text-copper-500 on a white background
+Errors           text-error-700 on white; bg-error-50 + border-error-200 for a message block
+Price tag        bg-copper-500 text-obsidian-950 rounded-full, inside a bg-copper-100 pill
+```
+
+## Layout & Spacing
+
+- **Container**: `UContainer`. Its width is `max-w-[1280px]`, then `2xl:max-w-[1440px]` and `3xl:max-w-[1600px]`, with `px-5 sm:px-6`. Section backgrounds stay full-bleed outside the container.
+- **Section padding**: `py-12 sm:py-16 md:py-20 lg:py-24` (48, 64, 80, 96px; the design system's `section-pad-y` steps). This replaces the old "always `py-24`" rule.
+- **Two-column gaps**: `gap-10 lg:gap-16`.
+- **Grids**:
+  - 3 columns: `grid-cols-1 md:grid-cols-2 lg:grid-cols-3`.
+  - 2 columns: `grid-cols-1 lg:grid-cols-2`.
+- **CTA section**: leave clear space above it (`pt-24`) when it follows a coloured band.
+
+## Components
+
+```
+Card              rounded-3xl border border-obsidian-300 bg-white p-6 sm:p-8
+Highlighted tier  border-2 border-cobalt-500 bg-cobalt-50   ("Paling dipilih")
+Inner card, dark  bg-white/10 to bg-white/15, rounded-2xl   (stats and chips on dark bands)
+Dark CTA band     rounded-3xl bg-cobalt-950 px-14 py-18 (px-6 py-10 below sm) + copper wing, overflow-hidden
+Quote on panel    rounded-[14px] bg-white px-6 py-5 shadow-float, slight rotation (none below sm)
+Price badge       bg-copper-500 text-obsidian-950 rounded-3xl shadow-float-accent, slight rotation (none below sm)
+                  Define shadow-float / shadow-float-accent as --shadow-* theme tokens (values in design/tokens.css).
+                  These are the only shadows: cards stay flat, with borders.
+Pill button       inline-flex min-h-[52px] items-center gap-2.5 rounded-full px-6.5 text-base font-semibold   (DS type-button-lg)
+  WhatsApp        bg-success-700 hover:bg-success-hover active:bg-success-active text-white + i-ph-whatsapp-logo   (full width below sm)
+  Primary         bg-cobalt-500 hover:bg-cobalt-600 text-white
+  Nav outline     min-h-11 rounded-full border border-obsidian-400 px-5 text-sm font-semibold
+Arrow link        inline-flex items-center gap-2 font-semibold text-cobalt-500 + i-ph-arrow-right
+Input             min-h-12 rounded-xl border border-obsidian-400 px-3.5 text-base
+Segera tag        rounded-full bg-copper-100 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.06em] text-accent-strong
+"Paling dipilih"  same shape; bg-cobalt-500 text-white on the Digital Marketing tiers, bg-cobalt-100 text-cobalt-500 on the home summary
+```
+
+## Navigation
+
+- **At `lg` and above**: the mark and wordmark, then the 6 links, then the outline "Konsultasi gratis" button.
+- **Below `lg`**: the links are replaced by a 44px round burger button. It opens the full-screen menu shown in `design/reference/mobile-menu.html`.
+- **Below `sm`**: the outline CTA is hidden as well, so only the logo and burger show.
+
+## Tables
+
+The SMM comparison table sits in an `overflow-x-auto` wrapper with the table at `min-w-[760px]`. Below `md`, show the hint line "Geser tabel ke samping untuk melihat semua paket." The page itself must never scroll sideways.
+
+## Breakpoints
+
+```
+base  < 640    phones
+sm    640
+md    768
+lg    1024     nav expands
+xl    1280     main design width
+2xl   1536     container 1440
+3xl   1920     container 1600 (custom: --breakpoint-3xl: 120rem)
 ```
 
 ## Avoid
 
-- Inline styles
-- `font-[Poppins]` (use `font-display` instead)
-- Custom CSS unless absolutely necessary
-- Hardcoded color hex values (use theme tokens)
-- Fixed pixel spacing (use Tailwind scale)
-- `py-16 md:py-24` — use just `py-24` to keep sections consistent
+- Inline styles and hardcoded hex values.
+- Poppins and `font-[...]` arbitrary font classes.
+- The old `──────── Label` decorative section labels.
+- Copper (`copper-500`) as text on white.
+- Decorative rotations below `sm`. The design removes them on phones.
