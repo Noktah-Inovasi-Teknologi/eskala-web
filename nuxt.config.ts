@@ -45,7 +45,6 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       { name: "Plus Jakarta Sans", provider: "google", weights: [400, 500, 600, 700, 800], styles: ["normal", "italic"] },
-      { name: "Livvic", provider: "google", weights: [900] },
     ],
   },
   modules: ["@nuxt/fonts", "@nuxt/image", "@nuxt/ui"],

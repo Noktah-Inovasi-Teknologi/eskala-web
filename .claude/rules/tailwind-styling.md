@@ -10,7 +10,7 @@ The visual target is `design/screenshots/` and `design/reference/*.html`. Every 
 
 ## Typography
 
-All text is Plus Jakarta Sans (`font-body`; `font-display` now resolves to the same font). The "ESKALA" wordmark uses `font-wordmark` (Livvic 900) and nothing else does.
+All text is Plus Jakarta Sans (`font-body`; `font-display` now resolves to the same font). The "ESKALA" wordmark uses `font-wordmark` (also Plus Jakarta Sans, at 800) and nothing else does.
 
 ```
 H1        font-extrabold tracking-[-0.035em] leading-none text-obsidian-950

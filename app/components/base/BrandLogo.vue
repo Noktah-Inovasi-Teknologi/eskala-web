@@ -25,7 +25,7 @@ const mark = computed(() => props.tone === "dark" ? "/brand/wing-white.svg" : "/
       :class="size === 'sm' ? 'h-6' : 'h-7'"
     >
     <span
-      class="font-wordmark font-black uppercase leading-none tracking-[0.005em]"
+      class="font-wordmark font-extrabold uppercase leading-none tracking-[0.005em]"
       :class="[
         size === 'sm' ? 'text-xl' : 'text-2xl',
         tone === 'dark' ? 'text-white' : 'text-cobalt-500',
