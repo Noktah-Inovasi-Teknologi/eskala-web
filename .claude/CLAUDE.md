@@ -41,7 +41,7 @@ Features go through spec-kit, with the constitution at `.specify/memory/constitu
 - **Language**: TypeScript
 - **Package manager**: pnpm
 - **Deployment**: Cloudflare Workers (Wrangler): `pnpm build`, then deploy with the Wrangler CLI
-- **Nuxt modules**: `@nuxt/fonts` (Plus Jakarta Sans and Livvic; `nuxt.config.ts` still lists Poppins until the rebuild swaps it), `@nuxt/ui`, `nuxt-viewport`. `@nuxt/content` is **not** installed; don't add it unless open question 4 in `design/SPEC-BRIEF.md` settles on it.
+- **Nuxt modules**: `@nuxt/fonts` (Plus Jakarta Sans; `nuxt.config.ts` still lists Poppins until the rebuild swaps it), `@nuxt/ui`, `nuxt-viewport`. `@nuxt/content` is **not** installed; don't add it unless open question 4 in `design/SPEC-BRIEF.md` settles on it.
 
 ## Development Commands
 
@@ -105,7 +105,7 @@ The reference HTML uses two colours that differ from the design system: #166534 
 ## Typography
 
 - **Plus Jakarta Sans** (400–800) for all text: headings, body and labels. **Poppins is retired.** `font-display` and `font-body` both resolve to Plus Jakarta Sans.
-- **Livvic 900** (`font-wordmark`) for the "ESKALA" wordmark **only**.
+- The "ESKALA" wordmark (`font-wordmark`) is Plus Jakarta Sans 800 as well. Livvic is retired (2026-10-20).
 - Headings are weight 800 with tight tracking. Sizes are in `design/tokens.css`.
 
 ## Key Conventions

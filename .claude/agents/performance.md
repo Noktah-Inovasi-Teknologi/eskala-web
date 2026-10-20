@@ -17,7 +17,7 @@ Read first: `.claude/rules/coding.md`, `nuxt.config.ts`, and the page and compon
 - **Images.** Photos larger than they are shown, no `width`/`height` (layout shift), no
   modern format, the hero image lazy-loaded (it should load first) or below-the-fold images
   loaded eagerly. `NuxtImg` where it is available; SVG for the wing marks.
-- **Fonts.** Plus Jakarta Sans (400–800) and Livvic 900 only (Poppins is retired). Weights
+- **Fonts.** Plus Jakarta Sans (400–800) only (Poppins and Livvic are retired). Weights
   that are loaded but never used; no `font-display: swap`; fonts fetched from a third party
   on every page when `@nuxt/fonts` can self-host them.
 - **JavaScript.** A marketing page needs little. Look for: components hydrated that never

@@ -28,7 +28,7 @@ All accounts use **@eskala.team**. Show each one as an icon link with the handle
 
 ## Logo
 
-- The wing mark (`design/assets/wing-cobalt.svg`; `wing-white.svg` on dark backgrounds) sits next to the wordmark "ESKALA", set in **Livvic 900**.
+- The wing mark (`design/assets/wing-cobalt.svg`; `wing-white.svg` on dark backgrounds) sits next to the wordmark "ESKALA", set in **Plus Jakarta Sans 800**, uppercase.
 - `wing-copper.svg` is decorative only. It appears as a large cropped wing in hero panels and dark bands, and is always `aria-hidden`.
 - The old "Eskala." text logo and the "Supporting you creatively" tagline are retired.
 
@@ -58,9 +58,9 @@ Token names follow the Eskala Design System (https://claude.ai/artifact/EXeTAjST
 | Use | Font |
 |---|---|
 | Everything: headings, body, labels | Plus Jakarta Sans 400–800 |
-| "ESKALA" wordmark only | Livvic 900 |
+| "ESKALA" wordmark | Plus Jakarta Sans 800, uppercase |
 
-Poppins is retired.
+Poppins and Livvic are retired.
 
 ## Voice & Copy
 

@@ -41,6 +41,7 @@ build departs from `design/`, with the reason. Route decisions are in
 | FAQ sections on Studi kasus, Artikel, Tentang kami (spec 001, G-23) | none | a FAQ section above the closing CTA, on that page's topic only | per-page FAQ rule (G-20); chatbots answer from on-topic pages |
 | Beranda and Digital Marketing FAQs (spec 001, G-23) | 4 and 5 questions; the contract question on both | Beranda 6 (contract question removed), Digital Marketing 11; answers approved 2026-10-16 | same; the design's questions stay first and verbatim |
 | /faq | two groups | five groups, one per page, each question once | /faq compiles every FAQ (FR-013) |
+| "ESKALA" wordmark (2026-10-20) | Livvic 900 | Plus Jakarta Sans 800, same tracking | Owner's decision: one family for the whole brand. The Design System changed first (Principle II); Livvic is no longer loaded |
 
 ## Still open
 

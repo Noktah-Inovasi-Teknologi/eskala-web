@@ -8,10 +8,10 @@
  */
 
 @theme {
-  /* Plus Jakarta Sans everywhere; Livvic 900 only for the "ESKALA" wordmark. */
+  /* Plus Jakarta Sans everywhere, the "ESKALA" wordmark included (at 800). */
   --font-display: "Plus Jakarta Sans", sans-serif;
   --font-body: "Plus Jakarta Sans", sans-serif;
-  --font-wordmark: "Livvic", sans-serif;
+  --font-wordmark: "Plus Jakarta Sans", sans-serif;
 
   /* bp-3xl: the container widens to 1600px. */
   --breakpoint-3xl: 120rem;
