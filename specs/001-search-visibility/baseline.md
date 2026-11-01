@@ -2,6 +2,8 @@
 
 Fill in the **Before** columns ahead of Release 1 going live, and the **8 weeks** columns 8 weeks after. These are tracked goals, not pass/fail gates (G-21).
 
+The answers and numbers are recorded in the tracker on the [Eskala Web Reference](https://claude.ai/artifact/8yzF3h5XCwa4d5xywd94nm#baseline) (Before round: 2026-10-16 to 18). Run the 8-week round there too; Claude reads the results back from it.
+
 - Release 1 live on: ____
 - 8-week re-measure due: ____
 
