@@ -61,7 +61,7 @@ function onSubmit(data: Record<string, string | string[]>) {
             <ArrowLink :to="askLink">Tanya via WhatsApp</ArrowLink>
           </div>
         </div>
-        <WingPanel class="aspect-square w-full max-w-140 min-w-0 flex-[1_1_440px]" wing-class="-top-[8%] -right-[20%] h-[128%]">
+        <WingPanel land class="aspect-square w-full max-w-140 min-w-0 flex-[1_1_440px]" wing-class="-top-[8%] -right-[20%] h-[128%]">
           <div class="absolute top-6 left-5 w-[min(260px,78%)] bg-white p-3 pb-10 shadow-float sm:top-8 sm:left-7 sm:-rotate-3">
             <MediaPlaceholder label="Foto: role-play di meja depan" tone="neutral-strong" class="h-[min(180px,40vw)]" />
             <span class="absolute bottom-3 left-3.5 text-sm font-bold text-obsidian-800">Simulasi menyambut pasien</span>

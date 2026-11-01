@@ -10,7 +10,8 @@
     "postinstall": "nuxt prepare",
     "ui:sweep": "playwright test --project=sweep",
     "ui:gate": "playwright test --project=gate",
-    "test:unit": "node --test \"e2e/unit/*.test.ts\""
+    "test:unit": "node --test \"e2e/unit/*.test.ts\"",
+    "size": "node e2e/size-budget.ts"
   },
   "dependencies": {
     "@iconify-json/ph": "^1.2.2",

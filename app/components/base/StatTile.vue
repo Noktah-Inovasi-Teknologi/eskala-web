@@ -17,7 +17,7 @@ withDefaults(defineProps<{
     <span
       class="text-[34px] font-extrabold leading-[1.05] tracking-[-0.03em]"
       :class="tone === 'on-cobalt' ? 'text-white' : 'text-obsidian-950'"
-    >{{ value }}</span>
+    ><CountUp :value="value" /></span>
     <span
       class="text-sm font-semibold"
       :class="tone === 'on-cobalt' ? 'text-white' : 'text-obsidian-700'"

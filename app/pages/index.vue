@@ -68,7 +68,8 @@ const milestones: Milestone[] = [
   { when: "Bulan 18", what: "Kerja sama berlanjut" },
 ]
 
-const highlight = "bg-[linear-gradient(transparent_48%,var(--color-copper-500)_48%,var(--color-copper-500)_62%,transparent_62%)]"
+const highlight = "motion-sweep bg-[linear-gradient(transparent_48%,var(--color-copper-500)_48%,var(--color-copper-500)_62%,transparent_62%)] bg-no-repeat"
+const termsMotion = useMotionOnce(useTemplateRef<HTMLElement>("terms"))
 </script>
 
 <template>
@@ -90,8 +91,8 @@ const highlight = "bg-[linear-gradient(transparent_48%,var(--color-copper-500)_4
           </div>
         </div>
         <div class="flex min-w-0 flex-[1_1_440px] justify-end">
-          <WingPanel class="aspect-square w-full max-w-150">
-            <FloatingQuote v-bind="donnyQuote" class="absolute right-5 bottom-5 left-5 sm:right-8 sm:bottom-8 sm:left-8" />
+          <WingPanel land class="aspect-square w-full max-w-150">
+            <FloatingQuote v-bind="donnyQuote" class="motion-rise absolute right-5 bottom-5 left-5 sm:right-8 sm:bottom-8 sm:left-8" />
           </WingPanel>
         </div>
       </div>
@@ -148,19 +149,20 @@ const highlight = "bg-[linear-gradient(transparent_48%,var(--color-copper-500)_4
           <Heading size="display" tone="white">Istilah medis yang <span class="text-cobalt-400">mudah dipahami pasien</span></Heading>
           <p class="text-base leading-[1.65] sm:text-lg">Kami menyederhanakan istilah medis tanpa mengubah artinya. Setiap penjelasan dicek tim medis klinik Anda sebelum tayang.</p>
         </div>
-        <div class="flex min-w-0 flex-[1_1_540px] flex-col">
+        <!-- Each term's marker sweeps in, then its plain version comes into focus; pairs 700ms apart. -->
+        <div ref="terms" class="flex min-w-0 flex-[1_1_540px] flex-col" :class="termsMotion">
           <div class="border-b border-obsidian-800 pb-8">
             <p class="text-[clamp(20px,2vw,28px)] font-semibold text-obsidian-500"><span :class="highlight">Katarak senilis</span></p>
-            <p class="mt-2.5 text-[clamp(26px,3vw,42px)] font-extrabold leading-[1.14] tracking-[-0.02em] text-white">Lensa mata keruh karena usia. Rasanya seperti melihat lewat kaca berembun.</p>
+            <p class="motion-focus mt-2.5 text-[clamp(26px,3vw,42px)] font-extrabold leading-[1.14] tracking-[-0.02em] text-white">Lensa mata keruh karena usia. Rasanya seperti melihat lewat kaca berembun.</p>
           </div>
           <div class="flex flex-wrap gap-x-10 pt-6.5 sm:pl-[min(80px,8%)]">
-            <div class="min-w-0 flex-[1_1_220px] pb-5.5">
+            <div class="min-w-0 flex-[1_1_220px] pb-5.5 [--d:700ms]">
               <p class="text-[17px] font-semibold text-obsidian-500"><span :class="highlight">Hipertensi derajat 1</span></p>
-              <p class="mt-2 text-xl font-bold leading-[1.3] text-white sm:text-[21px]">Tekanan darah tinggi, tahap awal.</p>
+              <p class="motion-focus mt-2 text-xl font-bold leading-[1.3] text-white sm:text-[21px]">Tekanan darah tinggi, tahap awal.</p>
             </div>
-            <div class="min-w-0 flex-[1_1_220px] pb-5.5 sm:mt-8">
+            <div class="min-w-0 flex-[1_1_220px] pb-5.5 sm:mt-8 [--d:1400ms]">
               <p class="text-base font-semibold text-obsidian-500"><span :class="highlight">Karies media</span></p>
-              <p class="mt-2 text-lg font-bold leading-[1.35] text-white">Gigi berlubang yang sudah melewati lapisan terluar.</p>
+              <p class="motion-focus mt-2 text-lg font-bold leading-[1.35] text-white">Gigi berlubang yang sudah melewati lapisan terluar.</p>
             </div>
           </div>
         </div>

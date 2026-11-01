@@ -25,7 +25,7 @@ const cell = (i: number) => [
         class="text-[clamp(32px,10vw,44px)] font-extrabold leading-none tracking-[-0.04em] sm:text-[44px]"
         :class="stat.tone === 'cobalt' ? 'text-cobalt-500' : stat.tone === 'accent' ? 'text-accent-strong' : 'text-obsidian-950'"
       >
-        {{ stat.value }}
+        <CountUp :value="stat.value" />
       </dd>
     </div>
   </dl>

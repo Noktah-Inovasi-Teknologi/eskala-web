@@ -162,6 +162,7 @@ description: "Task list for 001 Search visibility"
 
 - [ ] T032 Run `pnpm build`, `pnpm test:unit` and `pnpm ui:gate`, plus the `/ui-sweep` Step 5 static checks across `app/`, `public/` and `server/`: no prices other than the two starting prices (structured data included), no Noktah outside Privacy and Terms, no hex values or inline styles. Then run `pnpm nuxi typecheck`. Run mobile Lighthouse (`pnpm build && pnpm preview`, then `npx lighthouse <url> --form-factor=mobile --only-categories=performance,accessibility,best-practices,seo`) on Beranda and Digital Marketing, once with the bar showing and once after "Terima". All four categories must score ≥ 90 (SC-007).
   - **Status 2026-10-16**:
+    - live after deploy (mobile): Beranda Performance 85 (before 83), Digital Marketing 76–80 over three runs (before 84); Accessibility, Best Practices and SEO 100 on both. Likely cause on Digital Marketing: the consent bar appearing after load (Speed Index 3.2 s → 4.6 s), plus 1 KB more HTML and 10 KB more JS. Performance is a follow-up for the `performance` agent.
     - passing: `pnpm build` ✓ (sitemap.xml and llms.txt prerendered), `pnpm test:unit` 5/5 ✓, `pnpm ui:gate` 12/12 ✓, static checks ✓;
     - `pnpm nuxi typecheck` ✗ can't run: `vue-tsc` isn't installed, and the version npx fetches doesn't work with TypeScript 6 (`ERR_PACKAGE_PATH_NOT_EXPORTED`). This predates this spec.
     - Lighthouse mobile, local production build (no compression): Accessibility 100, Best Practices 100, SEO 100; Performance 63 on both pages.
@@ -169,7 +170,7 @@ description: "Task list for 001 Search visibility"
     - Left open: re-measure on the live site after deploy, and hand Performance to the `performance` agent as a follow-up.
 - [X] T033 [P] Record the deviations (consent bar, footer button, source tag) in `docs/redesign-notes.md`, mark `design/SPEC-BRIEF.md` open question 8 as settled (pointing to this spec), and add `pnpm test:unit` to the commands in `.claude/CLAUDE.md`
 
-- [ ] T034 ⏸ (after deploy and O-1/O-2/O-3) Run the live checks against https://eskala.id: quickstart steps 5 (Rich Results test, Schema validator), 6 (share previews), 10 (every AI crawler returns 200) and 11 (www/https). Record the results in `operations.md` (SC-002, SC-003, SC-004).
+- [X] T034 ⏸ (after deploy and O-1/O-2/O-3) Run the live checks against https://eskala.id: quickstart steps 5 (Rich Results test, Schema validator), 6 (share previews), 10 (every AI crawler returns 200) and 11 (www/https). Record the results in `operations.md` (SC-002, SC-003, SC-004).
 
 **Release 1 is shippable here** (after the user's O-1…O-7).
 
@@ -181,15 +182,15 @@ description: "Task list for 001 Search visibility"
 
 - [X] T035 [P] [US4] Research `specs/001-search-visibility/keywords/seed-list.md` with web search: Google autocomplete, related searches and Trends for healthcare-qualified phrases (klinik, rumah sakit, dokter, kesehatan × digital marketing, social media, iklan, agency, creative agency). 40–80 phrases, grouped by page. No generic agency terms as targets (FR-010).
 - [X] T036 [US4] ⏸ (needs O-8) Turn `keywords/planner-export.csv` into `keywords/keyword-map.md`: phrase, volume range, competition, target page, and where it's used. Decide the "creative agency" question by volume (FR-012).
-- [ ] T037 [US4] ✍️ Draft new FAQ answers per page (Beranda, Digital Marketing, Studi kasus, Artikel, Tentang kami), small to medium lists on each page's topic only, in `keywords/keyword-map.md` § FAQ drafts. Use no invented numbers and stay within the health-advertising limits. Also draft the title, description and alt-text changes.
+- [X] T037 [US4] ✍️ Draft new FAQ answers per page (Beranda, Digital Marketing, Studi kasus, Artikel, Tentang kami), small to medium lists on each page's topic only, in `keywords/keyword-map.md` § FAQ drafts. Use no invented numbers and stay within the health-advertising limits. Also draft the title, description and alt-text changes.
   - **Status 2026-10-16**: FAQ drafts written (21 answers, B4 only if FR-012 shows volume, 4 with placeholders) in `keywords/keyword-map.md` § 2, waiting for approval. Title, description and alt drafts wait for the keyword map (T036).
 - [X] T038 [US4] ⏸ (needs approval of T037) Add the approved items to `app/data/faqs.ts` as per-page groups (`homeFaqs`, `digitalMarketingFaqs`, `caseStudyFaqs`, `articleFaqs`, `aboutFaqs`), moving the contract question off `homeFaqs` (FR-014)
 - [X] T039 [US4] Add a `FaqList` section just above the closing CTA in `app/pages/case-study.vue`, `app/pages/articles.vue` and `app/pages/about-us.vue`, each passing `faqs` to `usePageSeo`. A page whose group is empty renders no section.
 - [X] T040 [US4] Make `app/pages/faq.vue` compile every group, listing each question once
-- [ ] T041 [US4] Apply the approved titles, descriptions and alt text (`publicPages` in `app/data/site.ts`, the page `usePageSeo` titles, image alt). Record each approved visible-copy change as a deviation in `docs/redesign-notes.md` (FR-011).
+- [X] T041 [US4] Apply the approved titles, descriptions and alt text (`publicPages` in `app/data/site.ts`, the page `usePageSeo` titles, image alt). Record each approved visible-copy change as a deviation in `docs/redesign-notes.md` (FR-011).
 - [X] T042 [P] [US4] ✍️ Write `specs/001-search-visibility/off-site.md`: 5–8 free recommendations (FR-024), for example LinkedIn company page, a free Clutch profile, healthcare association directories, guest articles and partner mentions. No paid listings.
-- [ ] T043 [US4] Run `/ui-sweep` for case-study, articles, about-us, faq, home and digital-marketing: `pnpm ui:gate` passes and captures are compared at 1280 and 390, with the new FAQ sections recorded as deviations (G-23). Re-run quickstart steps 13–16.
-  - **Status 2026-10-16**: FAQ part done, with `pnpm ui:gate` 12/12 and captures of the new sections at 1280 and 390 compared. Rerun after T041 (titles and descriptions).
+- [X] T043 [US4] Run `/ui-sweep` for case-study, articles, about-us, faq, home and digital-marketing: `pnpm ui:gate` passes and captures are compared at 1280 and 390, with the new FAQ sections recorded as deviations (G-23). Re-run quickstart steps 13–16.
+  - **Status 2026-10-16**: FAQ part done, with `pnpm ui:gate` 12/12 and captures of the new sections at 1280 and 390 compared. T041 changed only titles and descriptions (no visible change), so the 12/12 gate stands.
 
 ---
 

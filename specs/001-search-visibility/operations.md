@@ -50,7 +50,7 @@ Account: core@noktah.co (G-29).
 ## O-6 · Switch GA4 on
 
 - [x] Done 2026-10-16. The Measurement ID `G-GT2D6YXFFP` is set in `nuxt.config.ts` for production builds, so it ships with the code. It also exists as a Worker variable in the dashboard, which is harmless but redundant. Cloudflare's notice "Update your Wrangler configuration" can be dismissed: a deploy that drops dashboard variables no longer affects GA.
-- [ ] Check after deploying Release 1: open https://eskala.id in a fresh private window. The consent bar shows, and "Pengaturan cookie" is in the footer.
+- [x] **Verified 2026-10-16**: on the live site the consent bar shows, nothing from Google loads before a choice, and "Terima" loads GA with G-GT2D6YXFFP. Check after deploying Release 1: open https://eskala.id in a fresh private window. The consent bar shows, and "Pengaturan cookie" is in the footer.
 
 ## O-7 · Approve the privacy update (FR-022)
 
@@ -66,7 +66,7 @@ Account: core@noktah.co (G-29).
 
 | Check | Result | Date |
 |---|---|---|
-| Rich Results test / Schema validator (Beranda, Digital Marketing, FAQ, Tentang kami) | | |
-| Share previews (LinkedIn Post Inspector, Facebook Sharing Debugger, WhatsApp) | | |
-| AI crawlers return 200 (GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot, Google-Extended) | | |
-| www and http → https://eskala.id (301) | | |
+| Rich Results test / Schema validator (Beranda, Digital Marketing, FAQ, Tentang kami) | JSON-LD on all 10 pages parses; FAQ counts match the pages; the only price is 2500000; no Noktah. Google's own test: run by the user | 2026-10-16 |
+| Share previews (LinkedIn Post Inspector, Facebook Sharing Debugger, WhatsApp) | og:image 1200×630 with width, height and alt on every page; WhatsApp preview: check by the user | 2026-10-16 |
+| AI crawlers return 200 (GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot, Google-Extended) | all 200, plus CCBot | 2026-10-16 |
+| www and http → https://eskala.id (301) | all 301 in one step | 2026-10-16 |

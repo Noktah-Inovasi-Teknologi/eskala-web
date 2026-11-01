@@ -5,6 +5,6 @@ defineProps<{ value: string, label: string }>()
 
 <template>
   <span class="rounded-[14px] bg-white/14 px-4 py-2.5 text-[15px] text-white">
-    <b class="text-[22px]">{{ value }}</b> {{ label }}
+    <b class="text-[22px]"><CountUp :value="value" /></b> {{ label }}
   </span>
 </template>
