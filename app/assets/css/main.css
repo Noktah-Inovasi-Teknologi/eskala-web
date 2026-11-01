@@ -100,3 +100,48 @@
     outline-offset: 2px;
   }
 }
+
+/*
+ * Motion, as approved in the preview (https://claude.ai/artifact/1HXPuDKohMCFuSTNmhjpmD). Each plays once.
+ * Hero pieces run from CSS alone on first paint. Below the fold, useMotionOnce adds .motion-armed (holds
+ * the first frame) and .motion-play when the element scrolls in. Without JS, or with reduced motion, every
+ * section shows its finished state. The Design System has no motion tokens yet, so the curves live here.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  .motion-wing-land { animation: motion-wing-land 1100ms cubic-bezier(.22, 1.18, .36, 1) both; }
+  .motion-rise { animation: motion-rise 550ms cubic-bezier(.16, 1, .3, 1) 600ms both; }
+  .motion-pop { animation: motion-pop 600ms cubic-bezier(.34, 1.56, .64, 1) 650ms both; }
+
+  .motion-armed .motion-line { animation: motion-draw 420ms cubic-bezier(.16, 1, .3, 1) calc(var(--i, 0) * 170ms) both; }
+  .motion-armed .motion-draw > :where(:not(.motion-line)) { animation: motion-firm 380ms cubic-bezier(.16, 1, .3, 1) calc(var(--i, 0) * 170ms + 160ms) both; }
+  .motion-armed.motion-fade { animation: motion-fade 500ms cubic-bezier(.16, 1, .3, 1) both; }
+  .motion-armed .motion-sweep { animation: motion-sweep 520ms cubic-bezier(.65, 0, .35, 1) var(--d, 0ms) both; }
+  .motion-armed .motion-focus { animation: motion-focus 600ms cubic-bezier(.16, 1, .3, 1) calc(var(--d, 0ms) + 400ms) both; }
+
+  .motion-armed:not(.motion-play),
+  .motion-armed:not(.motion-play) * { animation-play-state: paused; }
+}
+
+/* No rotations on phones: the wing drops straight down and the badge scales in flat. */
+@media (prefers-reduced-motion: no-preference) and (width < 40rem) {
+  .motion-wing-land { animation: motion-wing-drop 800ms cubic-bezier(.16, 1, .3, 1) both; }
+  .motion-pop { animation-name: motion-pop-flat; }
+}
+
+.motion-draw:nth-child(2) { --i: 1; }
+.motion-draw:nth-child(3) { --i: 2; }
+.motion-draw:nth-child(4) { --i: 3; }
+.motion-draw:nth-child(5) { --i: 4; }
+.motion-draw:nth-child(6) { --i: 5; }
+
+@keyframes motion-wing-land { from { transform: translate(14%, -24%) rotate(-9deg); opacity: 0; } }
+@keyframes motion-wing-drop { from { transform: translateY(-16%); opacity: 0; } }
+@keyframes motion-rise { from { transform: translateY(24px); opacity: 0; } }
+/* Composes with the badge's own `rotate`, so it lands on its -10deg tilt. */
+@keyframes motion-pop { from { transform: scale(.55) rotate(24deg); opacity: 0; } }
+@keyframes motion-pop-flat { from { transform: scale(.7); opacity: 0; } }
+@keyframes motion-draw { from { transform: scaleX(0); } }
+@keyframes motion-firm { from { transform: translateY(6px); opacity: .3; } }
+@keyframes motion-fade { from { transform: translateY(10px); opacity: 0; } }
+@keyframes motion-sweep { from { background-size: 0% 100%; } to { background-size: 100% 100%; } }
+@keyframes motion-focus { from { transform: translateY(10px); opacity: 0; filter: blur(6px); } }

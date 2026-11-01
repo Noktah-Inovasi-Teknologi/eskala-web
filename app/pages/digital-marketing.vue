@@ -85,6 +85,7 @@ const platforms = [
           </div>
         </div>
         <WingPanel
+          land
           class="flex min-h-115 min-w-0 flex-[1_1_440px] flex-col justify-end gap-4.5 p-5 sm:p-10"
           wing-class="-top-[15%] -right-[25%] h-[125%]"
         >
@@ -93,7 +94,7 @@ const platforms = [
             :label="pricing.smm.from"
             :value="pricing.smm.amountShort"
             sub="per bulan"
-            class="absolute top-5 right-5 sm:top-7 sm:right-7"
+            class="motion-pop absolute top-5 right-5 sm:top-7 sm:right-7"
           />
           <ShortcutCard title="Social Media Management" :sub="pricing.smm.sentence" to="#smm" />
           <ShortcutCard title="Ads Management" sub="Meta, Google & TikTok Ads" to="#ads-management" />
