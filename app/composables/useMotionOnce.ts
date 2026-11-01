@@ -14,16 +14,22 @@ export function useMotionOnce(target: Readonly<Ref<HTMLElement | null>>, hooks: 
 
   onMounted(() => {
     const el = target.value
-    // Already on screen (an anchor link, a restored scroll) or reduced motion: keep the finished state.
-    if (!el || matchMedia("(prefers-reduced-motion: reduce)").matches || el.getBoundingClientRect().top < innerHeight) return
-    motion.value = "motion-armed"
-    hooks.onArm?.()
-    observer = new IntersectionObserver(([entry]) => {
-      if (!entry?.isIntersecting) return
+    if (!el || matchMedia("(prefers-reduced-motion: reduce)").matches) return
+    // The first callback says whether it is on screen already (an anchor link, a restored scroll):
+    // then it keeps the finished state. Asking an observer avoids forcing a layout at start-up.
+    observer = new IntersectionObserver(([first]) => {
       observer?.disconnect()
-      motion.value = "motion-armed motion-play"
-      hooks.onPlay?.()
-    }, { rootMargin: "0px 0px -20% 0px" })
+      if (first?.isIntersecting) return
+      motion.value = "motion-armed"
+      hooks.onArm?.()
+      observer = new IntersectionObserver(([entry]) => {
+        if (!entry?.isIntersecting) return
+        observer?.disconnect()
+        motion.value = "motion-armed motion-play"
+        hooks.onPlay?.()
+      }, { rootMargin: "0px 0px -20% 0px" })
+      observer.observe(el)
+    })
     observer.observe(el)
   })
   onBeforeUnmount(() => observer?.disconnect())
