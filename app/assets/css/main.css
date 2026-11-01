@@ -102,7 +102,7 @@
 }
 
 /*
- * Motion, as approved in the preview (https://claude.ai/artifact/1HXPuDKohMCFuSTNmhjpmD). Each plays once.
+ * Motion, as specified in the web reference (https://claude.ai/artifact/8yzF3h5XCwa4d5xywd94nm#motion). Each plays once.
  * Hero pieces run from CSS alone on first paint. Below the fold, useMotionOnce adds .motion-armed (holds
  * the first frame) and .motion-play when the element scrolls in. Without JS, or with reduced motion, every
  * section shows its finished state. The Design System has no motion tokens yet, so the curves live here.
