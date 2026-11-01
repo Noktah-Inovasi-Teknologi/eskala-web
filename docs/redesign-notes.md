@@ -43,6 +43,7 @@ build departs from `design/`, with the reason. Route decisions are in
 | /faq | two groups | five groups, one per page, each question once | /faq compiles every FAQ (FR-013) |
 | Italic text (TierCard quote, footer tagline) | Plus Jakarta Sans italic | the browser's slant of the upright face | dropping the italic font file saves 29 KB on every page (approved 2026-11-01) |
 | Motion (approved 2026-11-01, [preview](https://claude.ai/artifact/1HXPuDKohMCFuSTNmhjpmD)) | static | four effects, each played once: the wing lands on the Beranda, Digital Marketing and Training heroes (with the quote / price badge); ProcessSteps rules draw in; result numbers count up (`CountUp`); the Bahasa pasien terms get a marker sweep. Nothing with reduced motion or without JS | the site felt static. The Design System has no motion tokens, so the curves sit in `main.css` until it does |
+| "ESKALA" wordmark (2026-10-20) | Livvic 900 | Plus Jakarta Sans 800, same tracking | Owner's decision: one family for the whole brand. The Design System changed first (Principle II); Livvic is no longer loaded |
 
 ## Still open
 

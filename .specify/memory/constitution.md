@@ -1,5 +1,13 @@
 <!--
 Sync Impact Report
+- Version change: 2.0.1 → 2.0.2 (PATCH: one font constraint changed, no principle touched)
+- Technical Constraints: the "ESKALA" wordmark moves from Livvic 900 to Plus Jakarta Sans 800,
+  following the Eskala Design System (changed first, per Principle II). Livvic is retired.
+- Aligned: ✅ .claude/CLAUDE.md, ✅ .claude/rules/brand.md, ✅ .claude/rules/tailwind-styling.md,
+  ✅ .claude/agents/performance.md, ✅ docs/redesign-notes.md (deviation from design/ recorded)
+- Left as history: design/ (handoff), specs/001 (research and tasks describe what was done then)
+
+Previous report (2.0.1):
 - Version change: 2.0.0 → 2.0.1 (PATCH: quality gates name the tools that now exist)
 - Gates 4 and 5 now point at `/ui-sweep` (`pnpm ui:gate` and its static checks).
 - Resolved: Playwright added (`@playwright/test`, `playwright.config.ts`, `e2e/ui-sweep.e2e.ts`).
@@ -101,7 +109,7 @@ page follows it.
 - Stack: Nuxt 4 (Vue 3.5), Nuxt UI 4, Tailwind CSS 4, TypeScript (strict), pnpm,
   Cloudflare Workers via Wrangler.
 - Icons go through Iconify; the redesign uses Phosphor (`i-ph-*`).
-- Fonts: Plus Jakarta Sans for all text; Livvic 900 only for the "ESKALA" wordmark.
+- Fonts: Plus Jakarta Sans for all text, the "ESKALA" wordmark included (at 800).
 - Repeatable content (tiers, table rows, FAQs, case studies, articles, team) lives as typed
   data in `app/data/`.
 
@@ -129,4 +137,4 @@ Before a phase is marked done:
   principles. Any justified exception is recorded in the plan's Complexity Tracking table.
 - Runtime guidance for agents lives in `.claude/CLAUDE.md` and `.claude/rules/`.
 
-**Version**: 2.0.1 | **Ratified**: 2026-10-15 | **Last Amended**: 2026-10-15
+**Version**: 2.0.2 | **Ratified**: 2026-10-15 | **Last Amended**: 2026-10-20

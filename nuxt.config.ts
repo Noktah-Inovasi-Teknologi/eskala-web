@@ -47,7 +47,6 @@ export default defineNuxtConfig({
     families: [
       // No italic file (−29 KB): the two italic spots (tier quote, footer tagline) use the browser's slant.
       { name: "Plus Jakarta Sans", provider: "google", weights: [400, 500, 600, 700, 800], styles: ["normal"] },
-      { name: "Livvic", provider: "google", weights: [900], styles: ["normal"] },
     ],
   },
   modules: ["@nuxt/fonts", "@nuxt/image", "@nuxt/ui"],
