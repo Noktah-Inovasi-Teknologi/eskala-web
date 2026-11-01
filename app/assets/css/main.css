@@ -141,7 +141,8 @@
 @keyframes motion-pop { from { transform: scale(.55) rotate(24deg); opacity: 0; } }
 @keyframes motion-pop-flat { from { transform: scale(.7); opacity: 0; } }
 @keyframes motion-draw { from { transform: scaleX(0); } }
-@keyframes motion-firm { from { transform: translateY(6px); opacity: .3; } }
+/* No fade: the step text keeps full contrast while it waits below the fold. */
+@keyframes motion-firm { from { transform: translateY(8px); } }
 @keyframes motion-fade { from { transform: translateY(10px); opacity: 0; } }
 @keyframes motion-sweep { from { background-size: 0% 100%; } to { background-size: 100% 100%; } }
 @keyframes motion-focus { from { transform: translateY(10px); opacity: 0; filter: blur(6px); } }
