@@ -14,6 +14,13 @@ declare global {
   }
 }
 
+/**
+ * Runs in <head> before first paint: marks <html data-consent> when a saved choice is still valid,
+ * so the server-rendered bar is hidden from the start instead of popping in after hydration.
+ * The same rule as readChoice(); init() then hands control to `open`.
+ */
+export const consentSeenScript = `try{var s=JSON.parse(localStorage.getItem(${JSON.stringify(STORAGE_KEY)})||"null");if(s&&s.value&&s.at&&Date.now()-Date.parse(s.at)<=${MAX_AGE_MS})document.documentElement.dataset.consent=s.value}catch(e){}`
+
 function readChoice(): Choice | null {
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "null") as { value?: Choice, at?: string } | null
@@ -63,13 +70,16 @@ export function useConsent() {
   const gaId = useRuntimeConfig().public.gaId as string
   const enabled = !!gaId
   const choice = useState<Choice | null>("consent-choice", () => null)
-  const open = useState("consent-open", () => false)
+  // Rendered open on the server so a first visit sees the bar in the first paint (consentSeenScript
+  // hides it for returning visitors until init() decides).
+  const open = useState("consent-open", () => enabled)
 
   /** Client start-up: restore the saved choice, start GA4 if granted, show the bar if unset. */
   function init() {
     if (!enabled) return
     choice.value = readChoice()
     open.value = choice.value === null
+    delete document.documentElement.dataset.consent
     if (choice.value === "granted") loadGa(gaId)
   }
 

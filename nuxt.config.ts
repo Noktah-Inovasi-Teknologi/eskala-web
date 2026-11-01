@@ -1,4 +1,5 @@
 import tailwindcss from "@tailwindcss/vite";
+import { publicPages } from "./app/data/site";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -44,8 +45,9 @@ export default defineNuxtConfig({
   },
   fonts: {
     families: [
-      { name: "Plus Jakarta Sans", provider: "google", weights: [400, 500, 600, 700, 800], styles: ["normal", "italic"] },
-      { name: "Livvic", provider: "google", weights: [900] },
+      // No italic file (−29 KB): the two italic spots (tier quote, footer tagline) use the browser's slant.
+      { name: "Plus Jakarta Sans", provider: "google", weights: [400, 500, 600, 700, 800], styles: ["normal"] },
+      { name: "Livvic", provider: "google", weights: [900], styles: ["normal"] },
     ],
   },
   modules: ["@nuxt/fonts", "@nuxt/image", "@nuxt/ui"],
@@ -67,7 +69,16 @@ export default defineNuxtConfig({
   // Production builds only, so `nuxt dev` never reports to the live property; NUXT_PUBLIC_GA_ID
   // overrides it (the UI sweep sets a test ID). Empty: no consent bar and no GA4 (spec 001, FR-019).
   runtimeConfig: { public: { gaId: process.env.NODE_ENV === "production" ? "G-GT2D6YXFFP" : "" } },
-  nitro: { prerender: { routes: ["/sitemap.xml", "/llms.txt"] } },
+  // Every public page is built once and served as a static file: nothing needs per-request rendering
+  // (forms hand off to WhatsApp, consent lives in localStorage). Listed rather than crawled, so the
+  // /services/* 301s below get no stub pages. `page.html`, not `page/index.html`, so /page needs no
+  // trailing-slash redirect.
+  nitro: {
+    prerender: {
+      routes: [...publicPages.map(page => page.path), "/sitemap.xml", "/llms.txt"],
+      autoSubfolderIndex: false,
+    },
+  },
   // Old URLs (design/SPEC-BRIEF.md, ADR-0001, spec 001 FR-002). /case-study and /about-us keep their URLs.
   routeRules: {
     "/services/social-media-management": { redirect: { to: "/digital-marketing#smm", statusCode: 301 } },

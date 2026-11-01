@@ -2,14 +2,18 @@
      deviation. It sits after the footer and sticks to the bottom of the viewport, so every part of
      the page, WhatsApp buttons included, can be scrolled clear of it. -->
 <script setup lang="ts">
+import { consentSeenScript } from "~/composables/useConsent"
+
 const consent = useConsent()
+
+if (consent.enabled) useHead({ script: [{ key: "consent-seen", innerHTML: consentSeenScript, tagPosition: "head" }] })
 </script>
 
 <template>
   <section
     v-if="consent.enabled && consent.open.value"
     aria-label="Pilihan analitik"
-    class="sticky bottom-0 z-40 border-t border-obsidian-300 bg-white"
+    class="sticky bottom-0 z-40 border-t border-obsidian-300 bg-white [[data-consent]_&]:hidden"
   >
     <UContainer class="flex flex-col gap-3 py-4 sm:flex-row sm:items-center sm:gap-6">
       <p class="text-sm leading-[1.55] text-obsidian-700 sm:flex-1">
