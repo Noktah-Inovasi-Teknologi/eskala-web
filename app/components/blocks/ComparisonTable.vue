@@ -1,18 +1,22 @@
 <script setup lang="ts">
 import type { ComparisonGroup } from "~/types/content"
 
-defineProps<{
+withDefaults(defineProps<{
   caption: string
   columns: string[]
   /** Index into `columns` of the highlighted tier. */
   popular?: number
   groups: ComparisonGroup[]
-}>()
+  /** The heading of the first column. */
+  featureLabel?: string
+  /** One group with no title row of its own. */
+  flat?: boolean
+}>(), { featureLabel: "Fitur" })
 </script>
 
 <template>
   <div>
-    <p class="mb-3 text-[13px] text-obsidian-600 md:hidden">Geser tabel ke samping untuk melihat semua paket.</p>
+    <p class="mb-3 text-[13px] text-obsidian-600 md:hidden">Geser tabel ke samping untuk melihat semua kolom.</p>
     <div
       class="relative overflow-x-auto rounded-3xl border border-obsidian-300"
       role="region"
@@ -24,7 +28,7 @@ defineProps<{
         <thead>
           <tr>
             <th scope="col" class="border-b border-obsidian-300 bg-obsidian-100 px-4.5 py-3.75 text-left align-top text-[13px] font-semibold uppercase tracking-[0.09em] text-obsidian-700">
-              Fitur
+              {{ featureLabel }}
             </th>
             <th
               v-for="(column, c) in columns"
@@ -39,7 +43,7 @@ defineProps<{
         </thead>
         <tbody>
           <template v-for="(group, g) in groups" :key="group.title">
-            <tr>
+            <tr v-if="!flat">
               <th
                 scope="colgroup"
                 :colspan="columns.length + 1"

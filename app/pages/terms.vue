@@ -50,11 +50,11 @@ const lastUpdated = "22 April 2026";
             </div>
             <div>
               <p class="text-base font-bold text-obsidian-950">Ad Spend</p>
-              <p class="text-obsidian-700 leading-relaxed">Anggaran iklan yang dikelola oleh Eskala atas nama Klien di platform seperti Meta Ads, Google Ads, dan TikTok Ads. Ad spend dibayar langsung oleh Klien ke platform terkait.</p>
+              <p class="text-obsidian-700 leading-relaxed">Anggaran iklan yang dikelola oleh Eskala atas nama Klien di platform Meta Ads dan TikTok Ads. Ad spend dibayar langsung oleh Klien ke platform terkait.</p>
             </div>
             <div>
               <p class="text-base font-bold text-obsidian-950">Periode Kontrak</p>
-              <p class="text-obsidian-700 leading-relaxed">Durasi kerja sama yang disepakati, minimal per semester (6 bulan), kecuali disepakati lain secara tertulis.</p>
+              <p class="text-obsidian-700 leading-relaxed">Durasi kerja sama yang disepakati, minimal 3 bulan, kecuali disepakati lain secara tertulis.</p>
             </div>
           </div>
         </section>
@@ -67,14 +67,14 @@ const lastUpdated = "22 April 2026";
             <div class="flex flex-col gap-2 rounded-2xl border border-obsidian-200 p-6">
               <p class="text-base font-bold text-obsidian-950">Social Media Management</p>
               <p class="text-obsidian-700 leading-relaxed">
-                Pengelolaan media sosial Klien (Instagram, TikTok, Facebook) mencakup perencanaan konten bulanan, produksi konten (foto, video, copywriting), medical review, posting terjadwal, dan laporan performa bulanan. Paket Starter, Standard, dan Premium tersedia sesuai kebutuhan.
+                Pengelolaan media sosial Klien (Instagram, TikTok, Facebook) mencakup perencanaan konten bulanan, produksi konten (foto, video, copywriting), pemeriksaan QA atas klaim medis dan aturan iklan kesehatan, posting terjadwal, dan laporan performa bulanan. Paket Starter, Standard, dan Premium tersedia sesuai kebutuhan.
               </p>
             </div>
 
             <div class="flex flex-col gap-2 rounded-2xl border border-obsidian-200 p-6">
               <p class="text-base font-bold text-obsidian-950">Digital Marketing</p>
               <p class="text-obsidian-700 leading-relaxed">
-                Manajemen iklan berbayar (Meta, TikTok, atau Google) untuk memperluas jangkauan pasien. Fee layanan dihitung berdasarkan persentase dari ad spend Klien (10%–20% tergantung paket). Ad spend bukan bagian dari fee Eskala dan dibayarkan langsung oleh Klien ke platform.
+                Manajemen iklan berbayar (Meta atau TikTok) untuk memperluas jangkauan pasien. Fee layanan mulai dari 10% dari belanja iklan nyata tanpa pajak platform, mengikuti hasil, dan ditagih setelah periode berakhir. Ad spend bukan bagian dari fee Eskala dan dibayarkan langsung oleh Klien ke platform, tanpa markup dari Eskala.
               </p>
             </div>
 
@@ -85,7 +85,7 @@ const lastUpdated = "22 April 2026";
         <section class="flex flex-col gap-4">
           <h2 class="text-xl font-extrabold text-obsidian-950 sm:text-2xl">4. Pembayaran</h2>
           <ul class="flex flex-col gap-3 pl-5 list-disc">
-            <li class="text-obsidian-700 leading-relaxed">Fee layanan dibayarkan di muka setiap bulan atau sesuai jadwal yang disepakati dalam Perjanjian Layanan.</li>
+            <li class="text-obsidian-700 leading-relaxed">Fee layanan dibayarkan di muka setiap bulan atau sesuai jadwal yang disepakati dalam Perjanjian Layanan, kecuali fee Ads Management yang ditagih setelah periode berakhir.</li>
             <li class="text-obsidian-700 leading-relaxed">Keterlambatan pembayaran lebih dari 7 hari kerja dapat mengakibatkan penghentian sementara layanan.</li>
             <li class="text-obsidian-700 leading-relaxed">Fee yang telah dibayar tidak dapat dikembalikan (non-refundable), kecuali terjadi kelalaian signifikan di pihak Eskala.</li>
             <li class="text-obsidian-700 leading-relaxed">Ad spend untuk layanan Digital Marketing tidak termasuk dalam fee Eskala dan merupakan tanggung jawab penuh Klien.</li>
@@ -155,7 +155,7 @@ const lastUpdated = "22 April 2026";
         <section class="flex flex-col gap-4">
           <h2 class="text-xl font-extrabold text-obsidian-950 sm:text-2xl">10. Kepatuhan Regulasi Kesehatan</h2>
           <p class="text-obsidian-700 leading-relaxed">
-            Seluruh konten yang diproduksi oleh Eskala untuk fasilitas kesehatan melalui proses medical review oleh tim ahli kami yang mengacu pada pedoman Konsil Kedokteran Indonesia (KKI) dan Kementerian Kesehatan Republik Indonesia (Kemenkes RI).
+            Seluruh konten yang diproduksi oleh Eskala untuk fasilitas kesehatan diperiksa oleh QA kami untuk klaim medis dan aturan iklan kesehatan, dengan mengacu pada pedoman Konsil Kedokteran Indonesia (KKI) dan Kementerian Kesehatan Republik Indonesia (Kemenkes RI).
           </p>
           <p class="text-obsidian-700 leading-relaxed">
             Klien bertanggung jawab untuk memastikan bahwa informasi yang diberikan kepada Eskala — termasuk klaim layanan medis, spesialisasi, dan kompetensi tenaga kesehatan — adalah akurat dan sesuai izin yang dimiliki. Eskala tidak bertanggung jawab atas konten yang didasarkan pada informasi yang tidak akurat dari Klien.

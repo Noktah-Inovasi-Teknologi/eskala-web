@@ -70,7 +70,7 @@ rule can be traced back. Desk, dashboard, dark-mode and app rules were dropped; 
 | `primary-action` — one primary action per screen | the green WhatsApp pill, "Konsultasi gratis 30 menit" | **Look** |
 | `above-the-fold` — what, for whom, and the next step in the first screen at 390px | the hero: h1, lede, price pill, CTA | **Look** (390 capture) |
 | `price-transparency` — show the price to start | only the two starting prices (constitution IV) | **Static**; **Look** |
-| `social-proof-near-cta` — proof beside the ask | SMEC numbers, the verbatim quotes, medical review and Permenkes near a CTA | **Look** |
+| `social-proof-near-cta` — proof beside the ask | SMEC numbers, the verbatim quotes, the QA check and Permenkes near a CTA | **Look** |
 | `cta-thumb-reach` — the CTA full width below `sm` | the Pill button spec | **Look** |
 | `external-link-clarity` — say when a link leaves the site | the WhatsApp icon and "Chat via WhatsApp" | **Look** |
 | `form-length` — ask only what you need | the fields the design shows, no more | **Look** |

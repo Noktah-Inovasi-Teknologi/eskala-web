@@ -1,5 +1,15 @@
 <!--
 Sync Impact Report
+- Version change: 2.0.2 → 2.1.0 (MINOR: Principle IV expanded; no principle removed or redefined)
+- IV. Pricing and Brand Restraint: the Ads sentence is now "Fee mulai dari 10% dari belanja iklan"
+  (was "... dari total biaya iklan"); a recommended ad budget joins the things that MUST NOT appear;
+  the content check is described as QA's check for medical claims and health advertising rules.
+  Ads platforms named on the site are Meta and TikTok.
+- Aligned: ✅ app/data/site.ts, ✅ app/data/smm.ts, ✅ app/data/faqs.ts, ✅ server/routes/llms.txt.ts,
+  ✅ .claude/CLAUDE.md, ✅ .claude/rules/brand.md, ✅ .claude/skills/eskala-copy/SKILL.md
+- Left as history: design/ (handoff), specs/001
+
+Previous report (2.0.2):
 - Version change: 2.0.1 → 2.0.2 (PATCH: one font constraint changed, no principle touched)
 - Technical Constraints: the "ESKALA" wordmark moves from Livvic 900 to Plus Jakarta Sans 800,
   following the Eskala Design System (changed first, per Principle II). Livvic is retired.
@@ -83,8 +93,12 @@ expect an accessible site.
 ### IV. Pricing and Brand Restraint
 
 - Only starting prices are shown: "Mulai dari Rp2,5 juta per bulan" (SMM) and
-  "Fee mulai dari 10% dari total biaya iklan" (Ads). Tier prices, per-tier ad fees and CPR
-  targets MUST NOT appear anywhere in the site, its data files or its metadata.
+  "Fee mulai dari 10% dari belanja iklan" (Ads). Tier prices, per-tier ad fees, CPR
+  targets and a recommended ad budget MUST NOT appear anywhere in the site, its data files or
+  its metadata.
+- The check on every piece of content is described as QA's ("QA memeriksa setiap konten untuk
+  klaim medis dan aturan iklan kesehatan", or a natural shorter form). Ads are described for
+  Meta and TikTok only.
 - Eskala is the brand the site presents. The parent company (Noktah) MAY be named where it is
   genuinely needed, such as the legal entity on Privacy or Terms, but MUST NOT be used in
   marketing copy, headings, CTAs or as a selling point.
@@ -137,4 +151,4 @@ Before a phase is marked done:
   principles. Any justified exception is recorded in the plan's Complexity Tracking table.
 - Runtime guidance for agents lives in `.claude/CLAUDE.md` and `.claude/rules/`.
 
-**Version**: 2.0.2 | **Ratified**: 2026-10-15 | **Last Amended**: 2026-10-20
+**Version**: 2.1.0 | **Ratified**: 2026-10-15 | **Last Amended**: 2026-11-05

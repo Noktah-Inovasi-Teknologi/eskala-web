@@ -3,16 +3,28 @@
 export interface ProcessStep {
   title: string
   body: string
-  /** ink: the first step's dark rule · cobalt: the step the section is about (medical review) */
+  /** ink: the first step's dark rule · cobalt: the step the section is about (the claims check) */
   highlight?: "ink" | "cobalt"
 }
 
 /** true: included · false: not included · a string: what the tier gets */
 export type ComparisonCell = boolean | string
 
+export interface ComparisonRow {
+  feature: string
+  cells: ComparisonCell[]
+}
+
 export interface ComparisonGroup {
   title: string
-  rows: { feature: string, cells: ComparisonCell[] }[]
+  rows: ComparisonRow[]
+}
+
+/** What GET /api/service-points answers (server/api/service-points.get.ts). */
+export interface ServicePoints {
+  smm: { columns: string[], groups: ComparisonGroup[] }
+  ads: string[]
+  compare: ComparisonRow[]
 }
 
 export interface FaqItem {

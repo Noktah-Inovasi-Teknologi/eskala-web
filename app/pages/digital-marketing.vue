@@ -3,7 +3,9 @@
 <script setup lang="ts">
 import { digitalMarketingFaqs } from "~/data/faqs"
 import { consultLink, pricing } from "~/data/site"
-import { comparison, popularBadge, tiers } from "~/data/smm"
+import { compareColumns, popularBadge, tiers } from "~/data/smm"
+
+const { smm, ads, compareRows } = useServicePoints()
 
 const audience = {
   "@type": "Audience",
@@ -38,7 +40,7 @@ usePageSeo({
       "@type": "Service",
       "@id": "https://eskala.id/digital-marketing#ads-management",
       "name": "Ads Management",
-      "serviceType": "Ads Management (Meta, Google, TikTok)",
+      "serviceType": "Ads Management (Meta dan TikTok)",
       "description": pricing.ads.sentence,
       "provider": { "@id": "https://eskala.id/#organization" },
       "areaServed": { "@type": "Country", "name": "Indonesia" },
@@ -61,7 +63,6 @@ const examples = [
 
 const platforms = [
   { tone: "cobalt-soft" as const, title: "Meta Ads", body: "Awareness dan jangkauan lokal, engagement, atau hasil lain sesuai objective kampanye." },
-  { tone: "subtle" as const, title: "Google Ads", body: "Menjangkau orang yang sedang mencari layanan atau informasi kesehatan tertentu lewat kata kunci." },
   { tone: "copper-soft" as const, title: "TikTok Ads", body: "Distribusi video berbayar untuk menjangkau audiens sesuai tujuan kampanye." },
 ]
 </script>
@@ -77,7 +78,7 @@ const platforms = [
             <span class="text-accent-strong">Klinik pratama &amp; utama · Rumah sakit · Dokter umum &amp; spesialis</span>
           </Eyebrow>
           <Heading as="h1" size="hero">Media sosial dan iklan untuk <span class="text-cobalt-500">klinik, rumah sakit, dan dokter</span></Heading>
-          <Lede size="lg" class="max-w-135">Kami mengelola konten dan iklan bersama tim marketing dan tenaga medis Anda. Setiap konten melewati medical review sebelum tayang.</Lede>
+          <Lede size="lg" class="max-w-135">Kami mengelola konten dan iklan bersama tim marketing dan tenaga medis Anda. QA kami memeriksa setiap konten untuk klaim medis dan aturan iklan kesehatan sebelum tayang.</Lede>
           <PricePill />
           <div class="flex flex-wrap items-center gap-x-7 gap-y-4">
             <PillButton variant="whatsapp" :to="consultLink">Konsultasi gratis 30 menit</PillButton>
@@ -97,7 +98,7 @@ const platforms = [
             class="motion-pop absolute top-5 right-5 sm:top-7 sm:right-7"
           />
           <ShortcutCard title="Social Media Management" :sub="pricing.smm.sentence" to="#smm" />
-          <ShortcutCard title="Ads Management" sub="Meta, Google & TikTok Ads" to="#ads-management" />
+          <ShortcutCard title="Ads Management" sub="Meta & TikTok Ads" to="#ads-management" />
         </WingPanel>
       </div>
     </UContainer>
@@ -111,14 +112,14 @@ const platforms = [
           class="scroll-mt-4"
           title="Social Media Management"
           body="Konten Instagram, TikTok, dan platform lain yang dirancang dari pertanyaan pasien."
-          :items="['Riset klinik, target pasien, dan pilar konten', 'Content plan bulanan', 'Foto, video, editing, dan copywriting', 'Medical review dan QA sebelum tayang', 'Laporan dan meeting evaluasi bulanan']"
+          :items="['Riset klinik, target pasien, dan pilar konten', 'Content plan bulanan', 'Foto, video, editing, dan copywriting', 'QA klaim medis dan aturan iklan kesehatan sebelum tayang', 'Laporan bulanan']"
         />
         <FeatureCard
           id="iklan"
           title="Ads Management"
-          body="Iklan Meta, Google, dan TikTok untuk layanan klinik, dikelola tim bersertifikat."
+          body="Iklan Meta dan TikTok untuk layanan klinik, dikelola tim kami."
           :items="['Objective, targeting, dan budget', 'Creative brief dan pengecekan komunikasi kesehatan', 'Monitoring dan optimasi', 'Laporan hasil iklan']"
-          :link="{ label: 'Fee mulai dari 10% dari biaya iklan', to: '#ads-management' }"
+          :link="{ label: pricing.ads.sentence, to: '#ads-management' }"
         />
       </div>
       <p class="mt-7 max-w-190 text-base leading-[1.65]">Kebanyakan klinik memulai dengan Social Media Management, lalu menambah Ads Management setelah konten organiknya berjalan.</p>
@@ -136,7 +137,7 @@ const platforms = [
     <PageSection id="paket" class="scroll-mt-4" pad="top">
       <SectionHeader
         title="Paket Social Media Management"
-        lede="Paket dibedakan dari kedalaman evaluasi dan dukungan, bukan hanya jumlah konten. Rincian harga tiap paket kami kirim dalam proposal setelah konsultasi."
+        lede="Paket dibedakan dari jumlah konten, kedalaman insight, dan dukungan. Rincian harga tiap paket kami kirim dalam proposal setelah konsultasi."
         layout="stack"
         title-class="max-w-160 flex-[1_1_480px]"
       >
@@ -164,11 +165,25 @@ const platforms = [
       <h3 class="mb-5 text-2xl font-extrabold text-obsidian-950">Perbandingan fitur</h3>
       <ComparisonTable
         caption="Perbandingan fitur paket Social Media Management"
-        :columns="tiers.map(t => t.name)"
+        :columns="smm.columns"
         :popular="tiers.findIndex(t => t.popular)"
-        :groups="comparison"
+        :groups="smm.groups"
       />
       <p class="mt-4 text-sm leading-[1.6] text-obsidian-600">Fitur, kuota, dan batas layanan mengikuti penawaran yang disepakati. Permintaan tambahan dihitung setelah brief dan bahan lengkap diterima.</p>
+    </PageSection>
+
+    <!-- Dibanding mengerjakan sendiri -->
+    <PageSection pad="top">
+      <h3 class="mb-5 text-2xl font-extrabold text-obsidian-950">Dibanding mengerjakan sendiri</h3>
+      <ComparisonTable
+        caption="Perbandingan tim sendiri, freelancer, dan Eskala"
+        feature-label="Perbandingan"
+        :columns="compareColumns"
+        :popular="compareColumns.length - 1"
+        :groups="[{ title: 'Dibanding mengerjakan sendiri', rows: compareRows }]"
+        flat
+      />
+      <p class="mt-4 max-w-190 text-base leading-[1.65]">Anda bisa tetap memakai tim sendiri dan menambah Eskala untuk kapasitas produksi, QA, dan analisis.</p>
     </PageSection>
 
     <!-- Satu topik, tiga paket -->
@@ -200,22 +215,21 @@ const platforms = [
     <PageSection id="ads-management" class="scroll-mt-4">
       <SectionHeader
         title="Ads Management"
-        lede="Iklan klinik di Meta, Google, dan TikTok, dari perencanaan objective dan targeting sampai optimasi dan laporan. Setiap materi iklan dicek sesuai aturan komunikasi kesehatan dan kebijakan platform."
+        lede="Iklan klinik di Meta dan TikTok, dari perencanaan objective dan targeting sampai optimasi dan laporan. Setiap materi iklan dicek sesuai aturan komunikasi kesehatan dan kebijakan platform."
         layout="stack"
         title-class="max-w-165 flex-[1_1_480px]"
       >
         <template #aside>
-          <PriceBadge :label="pricing.ads.from" :value="pricing.ads.amount" sub="dari total biaya iklan" />
+          <PriceBadge :label="pricing.ads.from" :value="pricing.ads.amount" sub="dari belanja iklan" />
         </template>
       </SectionHeader>
-      <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <div class="grid gap-5 md:grid-cols-2">
         <FeatureCard v-for="p in platforms" :key="p.title" v-bind="p" size="md" />
       </div>
       <div class="mt-5 flex flex-wrap gap-5">
         <WingPanel class="flex min-w-0 flex-[1_1_520px] flex-col gap-4.5 p-6 sm:p-9" wing-class="-top-[20%] -right-[30%] h-[140%] opacity-45">
-          <h3 class="relative text-[22px] font-extrabold text-white">Cara fee dihitung</h3>
-          <div class="relative self-start rounded-2xl bg-white px-5.5 py-4.5 text-base font-bold leading-normal text-obsidian-950 sm:text-lg">Fee = persentase paket × (ad spend + pajak)</div>
-          <p class="relative text-base leading-[1.65] text-cobalt-100">Budget iklan dibayarkan ke platform dan terpisah dari fee pengelolaan. Paket Starter, Standard, dan Premium berbeda pada persentase fee dan target biaya per hasil (CPR) di tiap platform. Rinciannya ada di proposal.</p>
+          <h3 class="relative text-[22px] font-extrabold text-white">Yang Anda dapatkan di Ads Management</h3>
+          <BulletList class="relative sm:max-w-[72%]" tone="light" :items="ads" />
         </WingPanel>
         <div class="flex min-w-0 flex-[1_1_420px] flex-col gap-4 rounded-3xl border border-obsidian-300 bg-white p-6 sm:p-9">
           <h3 class="text-[22px] font-extrabold text-obsidian-950">Disepakati sebelum iklan tayang</h3>

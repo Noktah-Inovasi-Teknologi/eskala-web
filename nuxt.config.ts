@@ -67,7 +67,14 @@ export default defineNuxtConfig({
   // GA4 measurement ID: public, not a secret, so it ships with the code and survives any deploy.
   // Production builds only, so `nuxt dev` never reports to the live property; NUXT_PUBLIC_GA_ID
   // overrides it (the UI sweep sets a test ID). Empty: no consent bar and no GA4 (spec 001, FR-019).
-  runtimeConfig: { public: { gaId: process.env.NODE_ENV === "production" ? "G-GT2D6YXFFP" : "" } },
+  // hubApiBase, accessClientId and accessClientSecret stay server-only: set them as Worker secrets named
+  // NUXT_HUB_API_BASE, NUXT_ACCESS_CLIENT_ID and NUXT_ACCESS_CLIENT_SECRET, never in wrangler.toml or [vars].
+  runtimeConfig: {
+    hubApiBase: "",
+    accessClientId: "",
+    accessClientSecret: "",
+    public: { gaId: process.env.NODE_ENV === "production" ? "G-GT2D6YXFFP" : "" },
+  },
   // Every public page is built once and served as a static file: nothing needs per-request rendering
   // (forms hand off to WhatsApp, consent lives in localStorage). Listed rather than crawled, so the
   // /services/* 301s below get no stub pages. `page.html`, not `page/index.html`, so /page needs no

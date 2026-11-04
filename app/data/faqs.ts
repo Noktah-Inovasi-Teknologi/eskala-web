@@ -12,11 +12,11 @@ export const homeFaqs: FaqItem[] = [
   },
   {
     question: "Apakah Eskala paham aturan iklan kesehatan?",
-    answer: "Ya. Setiap konten dicek terhadap aturan iklan layanan kesehatan dan etika profesi, lalu melewati medical review sebelum tayang.",
+    answer: "Ya. Setiap konten dicek terhadap aturan iklan layanan kesehatan dan etika profesi, lalu QA kami memeriksanya untuk klaim medis sebelum tayang.",
   },
   {
     question: "Kami sudah punya tim marketing. Apakah Eskala tetap dibutuhkan?",
-    answer: "Eskala bekerja sebagai perpanjangan tim marketing Anda. Tim internal tetap memegang arah dan persetujuan, sementara kami menambah kapasitas produksi, medical review, dan analisis performa.",
+    answer: "Eskala bekerja sebagai perpanjangan tim marketing Anda. Tim internal tetap memegang arah dan persetujuan, sementara kami menambah kapasitas produksi, pemeriksaan QA, dan analisis performa.",
   },
   {
     question: "Apa yang dikerjakan Eskala?",
@@ -48,11 +48,11 @@ export const digitalMarketingFaqs: FaqItem[] = [
   },
   {
     question: "Apakah Ads Management termasuk dalam paket Social Media Management?",
-    answer: "Tidak. Ads Management adalah layanan terpisah. Fee pengelolaannya dihitung dari persentase total biaya iklan (ad spend ditambah pajak), terpisah dari budget iklan yang dibayarkan ke platform.",
+    answer: "Tidak. Ads Management adalah layanan terpisah. Fee pengelolaannya dihitung dari belanja iklan, terpisah dari anggaran iklan yang dibayarkan langsung ke platform.",
   },
   {
     question: "Apakah kontraknya mengikat?",
-    answer: "Tidak. Kontrak fleksibel, tanpa komitmen tahunan.",
+    answer: "Kontrak fleksibel, tanpa komitmen tahunan, dengan masa minimal 3 bulan. Saat kerja sama berakhir, akun dan konten tetap milik Anda.",
   },
   {
     question: "Berapa biaya Social Media Management untuk klinik?",
@@ -60,15 +60,15 @@ export const digitalMarketingFaqs: FaqItem[] = [
   },
   {
     question: "Berapa fee Ads Management?",
-    answer: "Fee mulai dari 10% dari total biaya iklan. Fee dihitung dari persentase paket dikali ad spend (anggaran iklan) ditambah pajak. Budget iklan dibayarkan ke platform dan terpisah dari fee pengelolaan.",
+    answer: "Fee mulai dari 10% dari belanja iklan. Fee mengikuti hasil, ditagih setelah periode berakhir, dan dihitung dari belanja iklan nyata tanpa PPN platform. Anggaran iklan dibayarkan langsung ke platform, tanpa markup dari kami.",
   },
   {
     question: "Apa saja yang termasuk dalam Social Media Management?",
-    answer: "Riset klinik, target pasien, dan pilar konten; content plan bulanan; foto, video, editing, dan copywriting; medical review dan QA sebelum tayang; serta laporan dan meeting evaluasi bulanan. Kontennya untuk Instagram, TikTok, dan platform lain.",
+    answer: "Riset klinik, target pasien, dan pilar konten; content plan bulanan; foto, video, editing, dan copywriting; pemeriksaan QA untuk klaim medis dan aturan iklan kesehatan sebelum tayang; serta laporan bulanan. Kontennya untuk Instagram, TikTok, dan platform lain.",
   },
   {
     question: "Apa bedanya paket Starter, Standard, dan Premium?",
-    answer: "Paket dibedakan dari kedalaman evaluasi dan dukungan. Starter menjaga konten tetap aktif dan konsisten. Standard menambah evaluasi performa dan rekomendasi berdasarkan data. Premium menambah analisis lebih dalam, insight kompetitor dari data publik, dan pengelolaan DM.",
+    answer: "Paket dibedakan dari kedalaman evaluasi dan dukungan. Semua paket mendapat analisis views, reach, dan konten terbaik. Standard menambah jumlah konten, Facebook, dan variasi yang terencana. Premium menambah insight kompetitor dan audiens, analisis perbandingan, deep insight, serta balasan DM dan komentar.",
   },
   {
     question: "Kapan klinik sebaiknya mulai beriklan?",
@@ -127,8 +127,8 @@ export const aboutFaqs: FaqItem[] = [
     answer: "Kami menjanjikan cara kerja yang rapi, komunikasi yang akurat, dan evaluasi berdasarkan tujuan yang disepakati bersama. Konten viral, jumlah followers, leads, pasien, atau revenue tertentu tidak kami janjikan, karena hasil seperti itu dipengaruhi banyak hal di luar konten.",
   },
   {
-    question: "Apa itu medical review?",
-    answer: "Pemeriksaan setiap konten sebelum tayang untuk akurasi klaim, visual, dan copy medis, lalu dicek terhadap aturan iklan kesehatan dan etika profesi.",
+    question: "Siapa yang memeriksa klaim medis di konten?",
+    answer: "QA kami memeriksa setiap konten sebelum tayang untuk klaim medis dan aturan iklan kesehatan, termasuk akurasi klaim, visual, dan copy.",
   },
   {
     question: "Siapa yang mengerjakan konten di Eskala?",

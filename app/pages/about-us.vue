@@ -18,7 +18,7 @@ const pillars = [
 ]
 
 const differentiators = [
-  { tone: "cobalt-soft" as const, title: "Memahami konteks kesehatan", body: "Kami memahami layanan medis, bahasa pasien, dan aturan iklan kesehatan. Setiap konten melewati medical review." },
+  { tone: "cobalt-soft" as const, title: "Memahami konteks kesehatan", body: "Kami memahami layanan medis, bahasa pasien, dan aturan iklan kesehatan. QA kami memeriksa setiap konten untuk klaim medis dan aturan iklan kesehatan." },
   { tone: "subtle" as const, title: "Produksi yang rapi", body: "Konten tetap konsisten walau permintaan datang dari banyak pihak dan banyak cabang. Ada SOP, QC, dan satu jalur feedback." },
   { tone: "copper-soft" as const, title: "Evaluasi yang bisa ditindaklanjuti", body: "Laporan kami menjelaskan apa yang terjadi dan apa langkah berikutnya, bukan hanya daftar angka." },
 ]

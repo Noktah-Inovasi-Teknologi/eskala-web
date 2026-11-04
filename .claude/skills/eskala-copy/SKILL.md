@@ -48,7 +48,7 @@ What makes them hesitate: health advertising rules (Permenkes 1787/2010) and the
 1. **Avoid the four tics** (CLAUDE.md): "X. Y." fragment pairs; "X, bukan Y" constructions; stacked parallel phrases (three matching clauses in a row); an eyebrow over every heading.
 2. **Never say a city.** Positioning is national: "seluruh Indonesia", never a city where Eskala works or serves clients. (Legal text, such as the court of jurisdiction in Syarat & Ketentuan, is not positioning.) Never call Eskala a "tim kreatif kesehatan".
 3. **Audience wording is fixed**: "klinik pratama dan utama, rumah sakit, serta dokter umum maupun spesialis". Don't shorten it to "faskes" in a heading, and don't add groups the design doesn't name.
-4. **Prices: only the two starting prices**, in these words: "Mulai dari Rp2,5 juta per bulan" (Social Media Management) and "Fee mulai dari 10% dari total biaya iklan" (Ads Management). Never a tier price, a per-tier fee or a CPR target — not in copy, alt text, meta descriptions or structured data. "Rincian harga tiap paket kami kirim dalam proposal" is the way to say there is more.
+4. **Prices: only the two starting prices**, in these words: "Mulai dari Rp2,5 juta per bulan" (Social Media Management) and "Fee mulai dari 10% dari belanja iklan" (Ads Management). Never a tier price, a per-tier fee, a CPR target or a recommended ad budget — not in copy, alt text, meta descriptions or structured data. "Rincian harga tiap paket kami kirim dalam proposal" is the way to say there is more.
 5. **Health-advertising limits.** Eskala's own copy must pass the rules it sells. Never: "dijamin", "pasti berhasil", "100%", "tanpa rasa sakit", "terbaik", a promised number of followers or patients, or a comparison naming a competitor. Results are past facts about named clients ("2 jt+ views dalam 12 bulan"), never promises.
 6. **Testimonials are verbatim**, and only Donny Putra N.H. (Manager Digital Marketing, SMEC Group) and the Ecky Dental quote. Never paraphrase, trim or translate a quote; never use dr. Sukardi's.
 7. **Noktah** appears only where it is genuinely needed, such as the legal entity on Privacy or Terms (constitution IV). Never in marketing copy, headings or CTAs.
@@ -83,13 +83,13 @@ What makes them hesitate: health advertising rules (Permenkes 1787/2010) and the
 |---|---|---|
 | the primary CTA | Konsultasi gratis 30 menit (nav: Konsultasi gratis) | Hubungi kami, Konsultasi sekarang, Free consultation |
 | the starting price | Mulai dari Rp2,5 juta per bulan | Harga mulai, Start from, mulai Rp 2.500.000 |
-| the Ads fee | Fee mulai dari 10% dari total biaya iklan | biaya admin, komisi |
+| the Ads fee | Fee mulai dari 10% dari belanja iklan | biaya admin, komisi |
 | the most-chosen tier badge | Paling dipilih | Terpopuler, Best seller, Rekomendasi |
 | not launched yet | Segera hadir (tag: Segera) | Coming soon, Akan datang |
-| the content check | medical review (explained once per page) | review dokter, cek medis |
+| the content check | QA memeriksa setiap konten untuk klaim medis dan aturan iklan kesehatan (or a natural shorter form) | review dokter, cek medis |
 | who Eskala works with | tim marketing Anda / tim internal | karyawan Anda, staf Anda |
 | what Eskala is | partner komunikasi kesehatan / partner digital marketing | agensi, vendor, tim kreatif kesehatan |
-| the contract | Kontrak fleksibel, tanpa komitmen tahunan (minimum 6 bulan, per Syarat & Ketentuan) | kontrak tahunan, tanpa minimum |
+| the contract | Kontrak fleksibel, tanpa komitmen tahunan (minimum 3 bulan, per Syarat & Ketentuan) | kontrak tahunan, tanpa minimum |
 | where Eskala works | seluruh Indonesia | any city |
 
 `CONTEXT.md`, once it exists (`/speckit-grill` writes it), is the glossary for *what* a thing is; this table is the word on screen. If they disagree, the glossary wins and the disagreement is a finding.

@@ -80,7 +80,7 @@ Then read every page you touched as the person using it — a clinic owner on a 
 1. **What is this, and is it for me?** The hero says what Eskala does and for whom, in one screen at 390px.
 2. **What does it cost to start?** The starting price is visible without hunting.
 3. **What do I do next?** One primary action per screen — the WhatsApp CTA — and it's reachable with a thumb.
-4. **Why should I trust it?** Proof (numbers, the verbatim quotes, medical review, Permenkes) sits near the ask.
+4. **Why should I trust it?** Proof (numbers, the verbatim quotes, the QA check, Permenkes) sits near the ask.
 5. **Did it work?** After a form is sent, the page says so, and says what happens next.
 
 ## Step 4 — Fix by the rules
