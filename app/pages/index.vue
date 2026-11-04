@@ -19,8 +19,8 @@ const services = [
     tone: "cobalt" as const,
     kicker: "01",
     title: "Digital Marketing",
-    body: "Pengelolaan media sosial dan iklan untuk klinik, rumah sakit, dan dokter, dengan medical review sebelum tayang.",
-    items: ["Social Media Management", "Ads Management: Meta, Google, TikTok"],
+    body: "Pengelolaan media sosial dan iklan untuk klinik, rumah sakit, dan dokter, dengan pemeriksaan klaim medis oleh QA sebelum tayang.",
+    items: ["Social Media Management", "Ads Management: Meta dan TikTok"],
     link: { label: "Lihat Digital Marketing", to: "/digital-marketing" },
   },
   {
@@ -45,15 +45,15 @@ const services = [
 
 const partnership = [
   { tone: "cobalt-soft" as const, title: "Tim Anda memegang arah", body: "Strategi, prioritas, dan persetujuan akhir tetap di tim internal." },
-  { tone: "subtle" as const, title: "Kami menambah kapasitas", body: "Produksi konten, medical review, iklan, dan analisis performa." },
-  { tone: "subtle" as const, title: "Satu ritme kerja", body: "Kalender konten bersama, PIC yang jelas, dan meeting evaluasi bulanan." },
+  { tone: "subtle" as const, title: "Kami menambah kapasitas", body: "Produksi konten, QA klaim medis, iklan, dan analisis performa." },
+  { tone: "subtle" as const, title: "Satu ritme kerja", body: "Kalender konten bersama, PIC yang jelas, dan laporan bulanan." },
   { tone: "copper-soft" as const, title: "Tim medis tetap dilibatkan", body: "Dokter dan tenaga medis Anda meninjau isi sebelum konten tayang." },
 ]
 
 const steps: ProcessStep[] = [
   { title: "Brief", body: "Tujuan, audiens, dan satu pesan utama.", highlight: "ink" },
   { title: "Angle", body: "Dari nama layanan ke pertanyaan pasien." },
-  { title: "Medical review", body: "Klaim dan istilah dicek sebelum produksi.", highlight: "cobalt" },
+  { title: "Cek klaim medis", body: "QA memeriksa klaim dan istilah sebelum produksi.", highlight: "cobalt" },
   { title: "Produksi", body: "Foto, video, desain, dan copy." },
   { title: "QA", body: "Typo, brand, CTA, dan format." },
   { title: "Laporan", body: "Apa yang terjadi, dan langkah berikutnya." },
@@ -137,7 +137,7 @@ const termsMotion = useMotionOnce(useTemplateRef<HTMLElement>("terms"))
 
     <!-- Alur -->
     <PageSection>
-      <SectionHeader title="Alur produksi konten" lede="Medical review dilakukan sebelum produksi, bukan setelah konten jadi." lede-class="max-w-105" />
+      <SectionHeader title="Alur produksi konten" lede="Klaim medis dicek sebelum produksi, bukan setelah konten jadi." lede-class="max-w-105" />
       <ProcessSteps :steps="steps" />
     </PageSection>
 

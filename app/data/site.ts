@@ -32,7 +32,7 @@ export const pricing = {
   ads: {
     from: "Fee mulai dari",
     amount: "10%",
-    sentence: "Fee mulai dari 10% dari total biaya iklan",
+    sentence: "Fee mulai dari 10% dari belanja iklan",
   },
 } as const
 
@@ -89,7 +89,7 @@ export interface PublicPage {
  */
 export const publicPages: PublicPage[] = [
   { path: "/", name: "Beranda", description: "Partner digital marketing dan komunikasi kesehatan untuk klinik pratama dan utama, rumah sakit, serta dokter. Konsultasi gratis 30 menit lewat WhatsApp." },
-  { path: "/digital-marketing", name: "Digital Marketing", description: "Social Media Management dan Ads Management untuk klinik, rumah sakit, dan dokter, dengan medical review sebelum tayang. Mulai dari Rp2,5 juta per bulan." },
+  { path: "/digital-marketing", name: "Digital Marketing", description: "Social Media Management dan Ads Management untuk klinik, rumah sakit, dan dokter. QA memeriksa setiap konten. Mulai dari Rp2,5 juta per bulan." },
   { path: "/education", name: "Education", description: "Online Class, Webinar, Course Videos, dan Modules komunikasi kesehatan untuk staf, tenaga kesehatan, dan manajemen klinik. Segera hadir." },
   { path: "/training", name: "Training", description: "Pelatihan marketing dan humas untuk tim klinik dan rumah sakit lewat Workshop, Bootcamp, dan In-house Training berbasis praktik. Segera hadir." },
   { path: "/case-study", name: "Studi kasus", description: "Hasil kerja Eskala bersama SMEC Group dan Klinik Mata Boyolali: kondisi awal, strategi yang dijalankan, dan hasil yang terukur." },

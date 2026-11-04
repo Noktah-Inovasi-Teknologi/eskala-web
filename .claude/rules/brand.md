@@ -7,7 +7,7 @@
 - **Brand name**: Eskala
 - **Line**: "Membumikan kesehatan". It is the home page h1 and appears under the wordmark in the footer.
 - **What Eskala is**: a digital marketing and healthcare-communication partner for klinik pratama dan utama, rumah sakit, and dokter umum maupun spesialis across Indonesia.
-- **Stance**: Eskala works *with* the client's in-house marketing team. The internal team keeps direction and approval; Eskala adds production capacity, medical review and performance analysis.
+- **Stance**: Eskala works *with* the client's in-house marketing team. The internal team keeps direction and approval; Eskala adds production capacity, QA checks and performance analysis.
 - **Positioning**: national. Don't name a city where Eskala works or serves clients, and don't call Eskala a "tim kreatif kesehatan". (A legal clause such as the court of jurisdiction in Syarat & Ketentuan is not positioning.)
 - **Parent company (Noktah)**: name it only where it's genuinely needed, such as the legal entity on Privacy or Terms. Keep it out of marketing copy, headings and CTAs.
 
@@ -85,10 +85,10 @@ Product names are in English.
 **Social Media Management.** Tiers: **Starter** ("Untuk konsistensi"), **Standard** ("Untuk optimasi", badge *Paling dipilih*) and **Premium** ("Untuk pertumbuhan").
 - The full feature comparison is in `design/reference/digital-marketing.html`; copy the rows exactly.
 - Out-of-schedule content requests: Starter "Paling lambat H-3", Standard "H-3 hingga H-1", Premium "Hingga hari H".
-- Replying to DMs is Premium only.
+- Replying to DMs and comments is Premium only. Starter's analysis of views, reach and the best and weakest content is included.
 
-**Ads Management.** Covers Meta, Google and TikTok. It is a separate service from SMM.
-- Fee = package percentage × (ad spend + tax).
+**Ads Management.** Covers Meta and TikTok. It is a separate service from SMM.
+- Fee from 10% of real ad spend without the platform's tax; it follows results and is billed after the period. The Ads budget goes to the platform with no markup. No fee differs by Package.
 - KPIs are agreed before ads go live.
 
 ### Education (Segera hadir)
@@ -103,16 +103,16 @@ Workshop, Bootcamp, In-house Training. The page collects training interest.
 
 - Show **only** starting prices, and make them prominent. The designs use a copper tag, a pill and a circle badge.
   - SMM: **"Mulai dari Rp2,5 juta per bulan"**.
-  - Ads Management: **"Fee mulai dari 10% dari total biaya iklan"**.
-- Never publish tier prices, per-tier ad fees or CPR targets.
+  - Ads Management: **"Fee mulai dari 10% dari belanja iklan"**.
+- Never publish tier prices, per-tier ad fees, CPR targets or a recommended ad budget.
 
 ## Proof Points Used on the Site
 
 - SMEC Group: jaringan klinik mata dengan **10+ cabang**, >4x ROAS, 250+ konten per bulan.
 - Klinik Mata Boyolali: 12 bulan, 2 jt+ views, 1,28 jt+ reach, 16 rb+ profile visits.
 - Studi kasus header: 10+ fasilitas, 2 studi kasus, +200% reach organik, 80% perpanjang kontrak.
-- Contract: "Kontrak fleksibel, tanpa komitmen tahunan". There is no annual commitment; the minimum term is 6 months (one semester), as Syarat & Ketentuan states.
-- Every piece of content goes through medical review and is checked against the health advertising rules (Permenkes 1787/2010).
+- Contract: "Kontrak fleksibel, tanpa komitmen tahunan". There is no annual commitment; the minimum term is 3 months, as Syarat & Ketentuan states.
+- QA checks every piece of content for medical claims and the health advertising rules (Permenkes 1787/2010).
 
 ## CTAs
 

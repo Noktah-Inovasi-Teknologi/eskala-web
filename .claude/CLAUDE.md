@@ -131,15 +131,17 @@ The reference HTML uses two colours that differ from the design system: #166534 
 **Services.** Product names stay in English:
 - **Digital Marketing**, made up of two services:
   - **Social Media Management**: Starter, Standard (Paling dipilih), Premium.
-  - **Ads Management**: Meta, Google, TikTok. A separate service with its own fee.
+  - **Ads Management**: Meta and TikTok. A separate service with its own fee.
 - **Education**: Online Class, Webinar, Course Videos, Modules. *Segera hadir*; collects a waitlist.
 - **Training**: Workshop, Bootcamp, In-house Training. *Segera hadir*; collects interest.
 - These are the only services. KOL Management, KOC Management, Creative Service and "Eskala VIP" don't exist; don't bring them back from old pages.
 
 **Pricing.** Show **only** starting prices, and make them prominent:
 - SMM: "Mulai dari Rp2,5 juta per bulan".
-- Ads: "Fee mulai dari 10% dari total biaya iklan".
-- Never publish tier prices, per-tier ad fees or CPR targets.
+- Ads: "Fee mulai dari 10% dari belanja iklan".
+- Never publish tier prices, per-tier ad fees, CPR targets or a recommended ad budget.
+- The content check is QA's: "QA memeriksa setiap konten untuk klaim medis dan aturan iklan kesehatan".
+- The Digital Marketing page's tables read `server/api/service-points.get.ts` and fall back to `app/data/smm.ts`.
 
 **Audience wording.** Write "klinik pratama dan utama, rumah sakit, serta dokter umum maupun spesialis". Positioning is national: don't mention a city, and don't use "tim kreatif kesehatan".
 

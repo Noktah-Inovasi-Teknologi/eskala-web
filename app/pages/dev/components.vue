@@ -92,7 +92,7 @@ const formStatus = ref<"idle" | "sending" | "sent" | "failed">("idle")
         </div>
         <div class="flex flex-wrap items-end gap-8">
           <PriceBadge label="Mulai dari" value="Rp2,5 juta" sub="per bulan, per akun" />
-          <PriceBadge label="Fee mulai dari" value="10%" sub="dari total biaya iklan" />
+          <PriceBadge label="Fee mulai dari" value="10%" sub="dari belanja iklan" />
           <PriceBadge shape="circle" label="Mulai dari" value="Rp2,5 jt" sub="per bulan" />
           <PriceBadge shape="tag" label="Tagline" value="Membumikan kesehatan" />
         </div>
@@ -114,7 +114,7 @@ const formStatus = ref<"idle" | "sending" | "sent" | "failed">("idle")
     <PageSection>
       <SectionHeader title="Layanan Eskala" lede="Digital Marketing sudah berjalan untuk lebih dari 10 fasilitas kesehatan. Education dan Training sedang kami siapkan." />
       <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        <FeatureCard tone="cobalt" wing kicker="01" title="Digital Marketing" body="Pengelolaan media sosial dan iklan untuk klinik, rumah sakit, dan dokter, dengan medical review sebelum tayang." :items="['Social Media Management', 'Ads Management: Meta, Google, TikTok']" :link="{ label: 'Lihat Digital Marketing', to: '/digital-marketing' }" />
+        <FeatureCard tone="cobalt" wing kicker="01" title="Digital Marketing" body="Pengelolaan media sosial dan iklan untuk klinik, rumah sakit, dan dokter, dengan pemeriksaan klaim medis oleh QA sebelum tayang." :items="['Social Media Management', 'Ads Management: Meta dan TikTok']" :link="{ label: 'Lihat Digital Marketing', to: '/digital-marketing' }" />
         <FeatureCard kicker="02" tag="Segera" title="Education" body="Materi belajar komunikasi kesehatan untuk staf, tenaga kesehatan, dan manajemen klinik." :items="['Online Class', 'Webinar', 'Course Videos & Modules']" :link="{ label: 'Lihat rencana Education', to: '/education' }" />
         <FeatureCard tone="subtle-plain" size="md" kicker="Bulan 1–3" kicker-tone="muted" title="Riset & strategi" body="Riset klinik dan target pasien, penyusunan strategi, dan produksi konten sejak bulan pertama. Fokusnya pada konsistensi posting." />
         <FeatureCard tone="cobalt-soft" size="md" tag="Langsung" tag-tone="white-cobalt" title="Online Class" body="Kelas interaktif dengan fasilitator, latihan, dan tanya jawab." />
